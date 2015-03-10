@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base  
   #attr_accessible :email, :password_hash, :password_salt, :password, :password_confirmation
   #require 'bcrypt'
+  has_one :basic_profile
+  has_one :full_profile
+  has_one :linkedin_oauth_setting
   
   has_many :user_emails, dependent: :destroy
   attr_accessor :password,:password_confirmation
