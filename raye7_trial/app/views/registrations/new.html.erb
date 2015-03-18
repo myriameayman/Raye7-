@@ -1,3 +1,5 @@
+<h2>Sign up</h2>
+<h1>lets try</h1>
 
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -39,44 +41,44 @@
     <%= f.email_field :email %>
   </p>  
     </div>
-<div class="section"><span>2</span>Email</div>
+<div class="section"><span>2</span>Username</div>
     <div class="inner-wrap">
         <label>Username</label>    
-		  <p>  
-		    <%= f.text_field :username %>
-		  </p>  
+      <p>  
+        <%= f.text_field :username %>
+      </p>  
     </div>
  <div class="section"><span>3</span>Passwords</div>
         <div class="inner-wrap">
         <label>Password</label>
-         	<p>  
-  			  <%= f.password_field :password %>  <br>
+          <p>  
+          <%= f.password_field :password %>  <br>
 
- 		 	</p>  
-    	</div>
-		<div class="inner-wrap">
+      </p>  
+      </div>
+    <div class="inner-wrap">
         <label>Confirm Password</label>
-         	<p>  
-  			  <%= f.password_field :password_confirmation  %>  <br>
+          <p>  
+          <%= f.password_field :password_confirmation  %>  <br>
 
- 		 	</p>  
-    	</div>
+      </p>  
+      </div>
 
-	<div class="section"><span>4</span>First Name</div>
+  <div class="section"><span>4</span>First Name</div>
     <div class="inner-wrap">
         <label>First Name</label>
         <p>  
-    		<%= f.text_field :firstName %>  
-  		</p> 
+        <%= f.text_field :firstName %>  
+      </p> 
     </div>
 
 
 <div class="section"><span>5</span>Last name</div>
     <div class="inner-wrap">
         <label>Last name</label>
-		  <p>  
-		    <%= f.text_field :lastName %>  
-		  </p>  
+      <p>  
+        <%= f.text_field :lastName %>  
+      </p>  
     </div>
 
   <p class="button"><%= f.submit 'Sign Up' %></p>  
@@ -84,9 +86,18 @@
 <% end %>  
 
  
+<p>lorem
+</p>
+<%= link_to "Sign up", "/registrations/myAccount", :class => 'btn btn-primary btn-larg'  %> 
+
+<a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+
+<%= render "devise/shared/links" %>
+
 
 
 <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+<a href="/newLinkedin" class="btn btn-primary btn-larg">LinkedIn</a>
 
 <%= render "devise/shared/links" %>
 

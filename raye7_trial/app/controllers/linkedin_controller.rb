@@ -9,9 +9,19 @@ class LinkedinController < ApplicationController
   }
 
   def index
+    #redirect_to new_user_registration_path
+    #@user = User.new
+    #client = LinkedIn::Client.new('iv6uehul4g5m', 'wtMfG2MbFerSULTC', @@config)
+      #request_token = client.request_token(:oauth_callback => "http://#{request.host}:#{request.port}/oauth_account")
+      #session[:rtoken] = request_token.token
+      #session[:rsecret] = request_token.secret
+      
+      #redirect_to request_token.authorize_url
+    
     unless LinkedinOauthSetting.find_by_user_id(current_user.id).nil?
-      redirect_to "/linkedin_profile"
+     redirect_to "/linkedin_profile"
     end
+   #redirect_to "registrations/myAccount" 
   end
 
   def linkedin_profile
@@ -20,17 +30,9 @@ class LinkedinController < ApplicationController
     @positions = get_positions
     @educations = get_educations
   end
-  def logout
-  
-    session[:user_id] = nil
-    current_user.id = nil
-    if something_is_not_kosher
-      redirect_to signout_path and return
-    end
-    #redirect_to index
-  
-  end 
 
+
+ 
 
   def oauth_account
     client = LinkedIn::Client.new('iv6uehul4g5m', 'wtMfG2MbFerSULTC', @@config)
@@ -62,7 +64,15 @@ class LinkedinController < ApplicationController
     client.authorize_from_access(linkedin_oauth_setting.atoken, linkedin_oauth_setting.asecret)
     client
   end
-
+def merge_info
+   client = get_client
+    full_profile = client.profile(:fields => [:associations, :honors, :interests])
+    full_profile = full_profile.to_hash
+    new_full_profile = FullProfile.new(full_profile)
+    new_full_profile.user = current_user
+    new_full_profile.save 
+    new_full_profile
+end
 
   def get_basic_profile
     bprofile = BasicProfile.find_by_user_id(current_user.id)
@@ -85,7 +95,7 @@ class LinkedinController < ApplicationController
     fprofile = FullProfile.find_by_user_id(current_user.id)
     if fprofile.nil?
       client = get_client
-      full_profile = client.profile(:fields => [:associations, :honors, :interests])
+      full_profile = client.profile(:fields => [:associations, :honors, :interests, :following])
       full_profile = full_profile.to_hash
       new_full_profile = FullProfile.new(full_profile)
       new_full_profile.user = current_user

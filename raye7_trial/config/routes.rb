@@ -1,19 +1,36 @@
 RsgLinkedinGem::Application.routes.draw do
-  devise_for :users
+  get "welcome/index"
+  #root :to => 'welcome#index'
 
+  #devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+ # match '/newLinkedin' => "registrations#newLinkedin"
+  #get 'registrations/newLinkedin'
   resources :linkedin
+  get 'linkedin/index'
   match '/linkedin_profile' => "linkedin#linkedin_profile"
+  #match '/index' => "linkedin#index"
   match '/oauth_account' => "linkedin#oauth_account"
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url'
-  match 'users/sign_out' => "devise/sessions#destroy"
-  get "/log_out" => "linkedin#logout", :as => "log_out"
-  root :to => 'linkedin#index'
+  #match 'users/sign_out' => "user/sessions#destroy"
+  #get "/log_out" => "linkedin#logout", :as => "logout"
+  #root :to => 'linkedin#index'
   #get "/users/sign_out"
+   #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
    devise_scope :user do
-    get '/signout', to: 'devise/sessions#destroy', as: :signout
+    root :to => 'user/registrations#myAccount'
+    get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
+    #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
+    #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
+
+    #get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    #get 'newLinkedin' => 'registrations#new'. as: :
+    #match '/newLinkedin' => "registrations#newLinkedin"
+     get 'users/sign_out', to: 'devise/sessions#destroy', as: :signout
+   # get '/users/signout', to: 'user/sessions#destroy', as: :signout
   end
 
-  # The priority is based upon order of creation:
+  # The priority is based upon order of cr eation:
   # first created -> highest priority.
 
   # Sample of regular route:

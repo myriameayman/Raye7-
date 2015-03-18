@@ -29,7 +29,7 @@
 
 <div class="form-style-10">
 
-<h2>Sign up</h2>
+<h2>Sign in</h2>
 <form>
 
 <div class="section"><span>1</span>Email</div>
@@ -39,14 +39,7 @@
     <%= f.email_field :email %>
   </p>  
     </div>
-<div class="section"><span>2</span>Email</div>
-    <div class="inner-wrap">
-        <label>Username</label>    
-		  <p>  
-		    <%= f.text_field :username %>
-		  </p>  
-    </div>
- <div class="section"><span>3</span>Passwords</div>
+ <div class="section"><span>2</span>Passwords</div>
         <div class="inner-wrap">
         <label>Password</label>
          	<p>  
@@ -79,13 +72,12 @@
 		  </p>  
     </div>
 
-  <p class="button"><%= f.submit 'Sign Up' %></p>  
+  <p class="button"><%= f.submit 'Sign in' %></p>  
 
 <% end %>  
 
- 
 
-
+<a href="devise/registrations/newLinkedin.html.erb" > lll</a>
 <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
 
 <%= render "devise/shared/links" %>

@@ -34,10 +34,17 @@
 <div class="section"><span>1</span>Email</div>
     <div class="inner-wrap">
         <label>Email</label>    
-  <p>  
-    <%= f.email_field :email %>
-  </p>  
+		  <p>  
+		    <%= f.email_field :email %>
+		  </p>  
+    </div> 
+    <div class="inner-wrap">
+        <label>username</label>    
+		  <p>  
+		    <%= f.text_field :username %>
+		  </p>  	
     </div>
+    
  <div class="section"><span>2</span>Passwords</div>
         <div class="inner-wrap">
         <label>Password</label>
@@ -52,7 +59,7 @@
 <% end %>  
 
 
-
-<a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+<!--
+<a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a> -->
 
 <%= render "devise/shared/links" %>
