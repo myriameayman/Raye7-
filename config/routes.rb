@@ -28,6 +28,7 @@ RsgLinkedinGem::Application.routes.draw do
     root :to => 'user/registrations#myAccount'
     #get 'user/registrations/myAccount'
     get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
+    get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo"
     #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
     #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
 

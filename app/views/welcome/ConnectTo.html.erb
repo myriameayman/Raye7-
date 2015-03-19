@@ -1,4 +1,4 @@
-<h1>Account Info</h1>
+<h1> Connect To twitter or LinkedIN or google+ </h1>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -21,14 +21,12 @@
             Logged in as <strong><%= current_user.email %></strong>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
           <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <% end %>
         </p>
     </div>
   </div>
 </nav>
-		<p>Your name is <%= @sessUserName %> <br>
-		<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add more accounts zawed tawsilatak :D</a>
-	
-		</p>
+<a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+
+<a href="/twitter_oauth_url" class="btn btn-primary btn-larg">Connect to Twitter</a>
 </body>
