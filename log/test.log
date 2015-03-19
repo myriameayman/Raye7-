@@ -1,0 +1,46 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "linkedin_oauth_settings"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "linkedin_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:14', '2015-03-19 17:51:14', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "linkedin_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:14', '2015-03-19 17:51:14', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "twitter_oauth_settings"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "twitter_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:14', '2015-03-19 17:51:14', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "twitter_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:14', '2015-03-19 17:51:14', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "basic_profiles"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "basic_profiles" ("first_name", "last_name", "maiden_name", "formatted_name", "headline", "location", "industry", "summary", "specialties", "picture_url", "public_profile_url", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 1, '2015-03-19 17:51:14', '2015-03-19 17:51:14', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "basic_profiles" ("first_name", "last_name", "maiden_name", "formatted_name", "headline", "location", "industry", "summary", "specialties", "picture_url", "public_profile_url", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 1, '2015-03-19 17:51:14', '2015-03-19 17:51:14', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-03-19 17:51:14', '2015-03-19 17:51:14', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-03-19 17:51:14', '2015-03-19 17:51:14', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-03-19 17:51:14', '2015-03-19 17:51:14', 298486374)
+  [1m[35m (0.2ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "linkedin_oauth_settings"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "linkedin_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:38', '2015-03-19 17:51:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "linkedin_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:38', '2015-03-19 17:51:38', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "twitter_oauth_settings"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "twitter_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:38', '2015-03-19 17:51:38', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "twitter_oauth_settings" ("atoken", "asecret", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, '2015-03-19 17:51:38', '2015-03-19 17:51:38', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "basic_profiles"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "basic_profiles" ("first_name", "last_name", "maiden_name", "formatted_name", "headline", "location", "industry", "summary", "specialties", "picture_url", "public_profile_url", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 1, '2015-03-19 17:51:38', '2015-03-19 17:51:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "basic_profiles" ("first_name", "last_name", "maiden_name", "formatted_name", "headline", "location", "industry", "summary", "specialties", "picture_url", "public_profile_url", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 1, '2015-03-19 17:51:38', '2015-03-19 17:51:38', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-03-19 17:51:38', '2015-03-19 17:51:38', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-03-19 17:51:38', '2015-03-19 17:51:38', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2015-03-19 17:51:38', '2015-03-19 17:51:38', 298486374)
+  [1m[35m (0.2ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
