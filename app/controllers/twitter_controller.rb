@@ -44,7 +44,14 @@ end
     #@user_timeline = get_client.user_timeline
     @home_timeline = get_client.home_timeline
     #@user_following = get_client.user_following
-   
+    user_twitter_profile = get_client.user
+	  current_user.update_attributes({
+	    screen_name: user_twitter_profile.screen_name, 
+	    url: user_twitter_profile.url, 
+	    profile_image_url: user_twitter_profile.profile_image_url, 
+	    location: user_twitter_profile.location, 
+	    description: user_twitter_profile.description
+	  })
   end
 
 	private
