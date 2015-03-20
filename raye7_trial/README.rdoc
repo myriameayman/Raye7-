@@ -1,1 +1,0 @@
-"Ruby Social Gem: LinkedIn gem" it a series of tutorials for rubysource.com
