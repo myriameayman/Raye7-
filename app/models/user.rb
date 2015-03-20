@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   has_one :basic_profile
   has_one :full_profile
   has_many :emails
+  has_many :circles
   has_one :linkedin_oauth_setting
 
   validates :firstName, presence: true

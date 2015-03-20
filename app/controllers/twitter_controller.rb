@@ -38,13 +38,15 @@ class TwitterController < ApplicationController
   config.access_token_secret = TwitterOauthSetting.find_by_user_id(current_user.id).asecret
 end
 	end
-	
-  def twitter_profile
-
-    #@user_timeline = get_client.user_timeline
-    @home_timeline = get_client.home_timeline
+ def twitter_profile
+  	
+        #@home_timeline = get_client.home_timeline
     #@user_following = get_client.user_following
-    user_twitter_profile = get_client.user
+    client = get_client 
+   # @user_timeline = client.user_timeline
+    @friends = client.friends
+    @followers = client.followers
+    user_twitter_profile = client.user
 	  current_user.update_attributes({
 	    screen_name: user_twitter_profile.screen_name, 
 	    url: user_twitter_profile.url, 
@@ -52,8 +54,17 @@ end
 	    location: user_twitter_profile.location, 
 	    description: user_twitter_profile.description
 	  })
+	 tCircle = Circle.new 
+	 tCircle.user_id = current_user.id 
+	 tCircle.name = "twitter"
+	 tCircle.save 
+	 @friends.each do |f| 
+        tFriend = Friend.new 
+        tFriend.circle_id = tCircle.id   
+        tFriend.name = f.screen_name 
+        tFriend.save  
+        end       
   end
-
 	private
 
 	
