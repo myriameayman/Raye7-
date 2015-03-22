@@ -79,6 +79,7 @@ GEM
     naught (1.0.0)
     oauth (0.4.7)
     orm_adapter (0.5.0)
+    pg (0.18.1)
     polyglot (0.3.5)
     rack (1.4.5)
     rack-cache (1.2)
@@ -95,6 +96,11 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -153,7 +159,9 @@ DEPENDENCIES
   devise (~> 2.1.2)
   jquery-rails
   linkedin
+  pg
   rails (= 3.2.8)
+  rails_12factor
   sass-rails (~> 3.2.3)
   sqlite3
   twitter
