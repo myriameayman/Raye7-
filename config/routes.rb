@@ -1,6 +1,6 @@
 RsgLinkedinGem::Application.routes.draw do
   get "welcome/index"
-  #root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   #devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations"}
