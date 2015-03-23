@@ -13,6 +13,7 @@ RsgLinkedinGem::Application.routes.draw do
   match '/twitter_profile' => "twitter#twitter_profile"
   match '/oauth_account' => "twitter#oauth_account"
   match '/twitter_oauth_url' => 'twitter#generate_twitter_oauth_url'
+  
   resources :linkedin
   get 'linkedin/index'
   match '/linkedin_profile' => "linkedin#linkedin_profile"
