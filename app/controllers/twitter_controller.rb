@@ -42,11 +42,11 @@ end
   	
         #@home_timeline = get_client.home_timeline
     #@user_following = get_client.user_following
-    client = get_client 
+    #client = get_client 
    # @user_timeline = client.user_timeline
-    @friends = client.friends
-    @followers = client.followers
-    user_twitter_profile = client.user
+    @friends = get_client.friends
+    @followers = get_client.followers
+    user_twitter_profile = get_client.user
 	  current_user.update_attributes({
 	    screen_name: user_twitter_profile.screen_name, 
 	    url: user_twitter_profile.url, 
