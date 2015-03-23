@@ -196,7 +196,11 @@ var helper = (function() {
           people.totalItems + '<br/>');
       for (var personIndex in people.items) {
         person = people.items[personIndex];
-        $('#visiblePeople').append('<img src="' + person.image.url + '">');
+        $('#visiblePeople').append('<img src="' + person.image.url + '">' + person.displayName);
+         
+         tFriend = Friend.new 
+        tFriend.name = people.items[personIndex]
+        tFriend.save  
       }
     },
   };
