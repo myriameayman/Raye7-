@@ -1,5 +1,5 @@
 class TwitterOauthSetting < ActiveRecord::Base
-  attr_accessible :asecret, :atoken, :user_id
+  	attr_accessible :asecret, :atoken, :user_id
 
-  belongs_to :user
+  	belongs_to :user
 end

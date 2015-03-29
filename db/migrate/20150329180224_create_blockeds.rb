@@ -1,9 +1,9 @@
 class CreateBlockeds < ActiveRecord::Migration
   def change
-    create_table :blockeds do |t|
-      t.integer :friend_id
+    	create_table :blockeds do |t|
+      	t.integer :friend_id
 
-      t.timestamps
-    end
+      	t.timestamps
+    	end
   end
 end
