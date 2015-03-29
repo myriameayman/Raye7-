@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
   has_one :full_profile
   has_many :emails
   has_many :circles
+  has_many :requests
+  has_many :ratings
+
+  has_many :visits
+  has_many :places, through: :visits
   has_one :linkedin_oauth_setting
 
   validates :firstName, presence: true
