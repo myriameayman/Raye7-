@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150320172108) do
+ActiveRecord::Schema.define(:version => 20150329191022) do
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(:version => 20150320172108) do
     t.integer  "user_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "blockeds", :force => true do |t|
+    t.integer  "friend_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "circles", :force => true do |t|
@@ -82,6 +88,14 @@ ActiveRecord::Schema.define(:version => 20150320172108) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "places", :force => true do |t|
+    t.decimal  "long"
+    t.decimal  "lat"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "positions", :force => true do |t|
     t.string   "title"
     t.string   "summary"
@@ -92,6 +106,29 @@ ActiveRecord::Schema.define(:version => 20150320172108) do
     t.integer  "full_profile_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "stars"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "requests", :force => true do |t|
+    t.decimal  "long_destination"
+    t.decimal  "lat_destination"
+    t.decimal  "long_curr"
+    t.decimal  "lat_curr"
+    t.string   "car_color"
+    t.string   "car_model"
+    t.string   "car_number"
+    t.integer  "seats"
+    t.boolean  "air_conditioner"
+    t.boolean  "smoking"
+    t.boolean  "trunk"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "twitter_oauth_settings", :force => true do |t|
@@ -124,9 +161,20 @@ ActiveRecord::Schema.define(:version => 20150320172108) do
     t.string   "profile_image_url"
     t.string   "location"
     t.string   "description"
+    t.string   "fb_email"
+    t.string   "nickname"
+    t.string   "gmail"
+    t.integer  "budget"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "visits", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "place_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
