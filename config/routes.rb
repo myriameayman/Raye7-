@@ -9,6 +9,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   #root :to => 'user/registrations#myAccount'
 
+  resources :circles
+  
   resources :twitter
   match '/twitter_profile' => "twitter#twitter_profile"
   match '/oauth_account' => "twitter#oauth_account"

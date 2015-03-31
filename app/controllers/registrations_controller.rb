@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+ 
 
 
   def new
@@ -28,17 +29,11 @@ class RegistrationsController < Devise::RegistrationsController
 
 
   def myAccount  
-
-       # @user=User.find(session[:user_id])  
-      if(current_user != nil)      
-          @sessUserEmail = current_user.username
+      unless(current_user == nil)      
+          @sessUserUserName = current_user.username
+          @user = current_user
+          @circles = @user.circles
           session[:user_id]  = current_user.id
-          if session[:user_id] != nil
-            #@user = User.find(session[:user_id])
-             @sessUserName = User.find(session[:user_id]).username            
-          else
-          	@sessUserName = "Guest"      
-          end
       else
         redirect_to new_user_session_path
       end
