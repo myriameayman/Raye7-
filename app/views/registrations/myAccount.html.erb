@@ -1,12 +1,14 @@
 <h1>Account Info</h1>
+
 <body>
 
 		<p>Your name is <%= @sessUserName %> <br>
 		<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add more accounts zawed tawsilatak :D</a>
 		</p>
 
+		
 		<% @circles.each do |c| %>
-			<%= c.name %><br>
+			<a href="circles/".<%c.id%>><%= c.name =%></a><br>
 		<% end %>
 		
 	
