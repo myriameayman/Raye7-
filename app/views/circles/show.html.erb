@@ -1,4 +1,8 @@
 <h1>Circles#show</h1>
 <p>Find me in app/views/circles/show.html.erb</p>
-<%= @circle.name %>
-<%= link_to "aaa", controller: "circles", action: "index"%>
+<h3>your are in circle : </h3> Circle name :<%= @circle.name %><br>
+<h4> Friends in the circle :- </h4><br>
+		<% @circle.friends.each do |c| %>
+			<%= c.name %><br>
+		<% end %>
+

@@ -1,4 +1,17 @@
 RsgLinkedinGem::Application.routes.draw do
+  root :to => 'profiles#myAccount'
+  get "profiles/new"
+
+  get "profiles/create"
+
+  get "profiles/show"
+
+  get "profiles/delete"
+
+  get "profiles/index"
+
+  get "profiles/edit"
+
   get "welcome/index"
   #root :to => 'welcome#index'
 
@@ -10,6 +23,7 @@ RsgLinkedinGem::Application.routes.draw do
   #root :to => 'user/registrations#myAccount'
 
   resources :circles
+  resources :profiles
   get '/show' => "circles#show"
   resources :twitter
   match '/twitter_profile' => "twitter#twitter_profile"
@@ -29,8 +43,7 @@ RsgLinkedinGem::Application.routes.draw do
   #get "/users/sign_out"
    #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
    devise_scope :user do
-    
-    resources :circles
+    #root :to => 'profiles#myAccount'
     root :to => 'user/registrations#myAccount'
     #get 'user/registrations/myAccount'
     get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"

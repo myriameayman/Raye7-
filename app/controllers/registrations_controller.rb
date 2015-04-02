@@ -1,20 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
  
-
-
   def new
     super
   end
 
 
   def create
-  	
   	super
-  	#redirect_to :my_account, :notice => "Logged in!"  and return
-  	#return 
-    # add custom create logic here
   end
-#=begin
+  
   def edit
   	super
   end
@@ -23,14 +17,8 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
-
-#=end
-
-
-
   def myAccount  
       unless(current_user == nil)      
-          @sessUserUserName = current_user.username
           @user = current_user
           @circles = @user.circles
           session[:user_id]  = current_user.id
@@ -40,7 +28,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def newLinkedin
-  	new
   end
 
 
