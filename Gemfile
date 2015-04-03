@@ -27,6 +27,8 @@ gem 'linkedin'
 gem 'twitter-bootstrap-rails'
 gem 'sinatra'
 gem 'google-api-client'
+gem 'gmaps4rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

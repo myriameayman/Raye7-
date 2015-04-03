@@ -2,6 +2,11 @@ RsgLinkedinGem::Application.routes.draw do
   get "welcome/index"
   #root :to => 'welcome#index'
 
+  root :to => "pages#home"
+  
+  get "/home", to: "pages#home", as: "home"
+  get "/geocoding", to: "pages#geocoding", as: "geocoding"
+  get "/reverse_geocoding", to: "pages#reverse_geocoding", as: "reverse_geocoding"
   #devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations"}
  # match '/newLinkedin' => "registrations#newLinkedin"
@@ -26,7 +31,7 @@ RsgLinkedinGem::Application.routes.draw do
   #get "/users/sign_out"
    #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
    devise_scope :user do
-    root :to => 'user/registrations#myAccount'
+    #root :to => 'user/registrations#myAccount'
     #get 'user/registrations/myAccount'
     get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
     get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo"
