@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def delete
@@ -20,7 +21,6 @@ class ProfilesController < ApplicationController
 
   def myAccount  
       unless(current_user == nil)      
-          @sessUserUserName = current_user.username
           @user = current_user
           @circles = @user.circles
           session[:user_id]  = current_user.id
