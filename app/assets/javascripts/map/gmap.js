@@ -1,4 +1,4 @@
-$(window).load(function() {
+ $(window).load(function() {
   loadScript();
 });
 
@@ -17,7 +17,7 @@ function initialize() {
         };
         // initializing map
         map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-        
+        alert("hello");
    // geocoding 
       var geocoding  = new google.maps.Geocoder();
       $("#submit_button_geocoding").click(function(){
@@ -95,20 +95,10 @@ function codeAddress(geocoding){
          var output = results[0].geometry.location.lat();
 
          var output2 = results[0].geometry.location.lng();
-           
-         var line = '<div id="result">' ;
-              line+= '<% e = Try.new %>';
-              line+= '<% e.lon = '; 
-              line+= output 
-              line+= ' %>' ;
-              line+= '<% e.lat = ' ;
-              line+= output2; 
-              line+= ' %>'; 
-              line+= '<% e.save %>';
-              line+= '</div>'; 
+        
                
                var node = document.getElementById('node-id');
-            node.innerHTML = '<div id="result"> <% e = Try.new %> <% e.lon = ' + output + ' %> <% e.lat = '+  output2 + ' %> <% e.save %> </div>';   
+         
             alert("hello");
           
          
@@ -122,7 +112,7 @@ function codeAddress(geocoding){
 }
 
 function loadScript() {
-	console.log("map loading ...");
+  console.log("map loading ...");
   var script = document.createElement('script');
   script.type = 'text/javascript';
   //'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBJYFdplGeKUUEmGZ-vL4ydiSZ09Khsa_o&sensor=false&libraries=drawing'
