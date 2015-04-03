@@ -15,6 +15,11 @@ class ProfilesControllerTest < ActionController::TestCase
     get :show
     assert_response :success
   end
+  test "should get show" do
+    get :show
+    assert_not_nil( :user, ["the user is nil"] )
+    assert_response :success
+  end
 
   test "should get delete" do
     get :delete
