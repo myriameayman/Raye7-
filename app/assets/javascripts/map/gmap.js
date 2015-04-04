@@ -83,6 +83,7 @@ function codeLatLng(geocoding){
   }
 }
 function codeAddress(geocoding){
+  debugger;
   var address = $("#search_box_geocoding").val();
   if(address.length > 0){
     geocoding.geocode({'address': address},function(results, status){

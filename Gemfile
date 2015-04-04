@@ -10,7 +10,7 @@ gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+#group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -18,8 +18,8 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-end
-
+#end
+gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'jquery-rails'
  gem 'twitter'
 gem 'devise', '~> 2.1.2'
@@ -28,7 +28,8 @@ gem 'twitter-bootstrap-rails'
 gem 'sinatra'
 gem 'google-api-client'
 gem 'gmaps4rails'
-
+ gem 'rails_layout', '~> 0.5.11'
+ gem 'font-awesome-sass', '~> 4.0.2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
