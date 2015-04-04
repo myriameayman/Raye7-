@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require bootstrap
+//= require map/gmap
 //= require_tree .

@@ -138,3 +138,11 @@ th { border-bottom: 1px solid #DDD; }
     
 
 
+#map-container {
+    height: 400px;
+    border-radius: 16px;
+    border-color: #FFF;
+    border-style: solid;
+    box-shadow: 2px 2px 10px #B1B1B1;
+    border-width: 7px;
+}
