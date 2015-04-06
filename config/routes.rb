@@ -1,4 +1,6 @@
 RsgLinkedinGem::Application.routes.draw do
+  get "request/index"
+
   root :to => 'profiles#myAccount'
   get "profiles/new"
 
