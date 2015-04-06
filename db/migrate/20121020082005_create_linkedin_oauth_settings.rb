@@ -4,6 +4,7 @@ class CreateLinkedinOauthSettings < ActiveRecord::Migration
       t.string :atoken
       t.string :asecret
       t.integer :user_id
+
       t.timestamps
     end
   end
