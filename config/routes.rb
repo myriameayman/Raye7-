@@ -6,6 +6,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "profiles/create"
 
+  get "profiles/search"
+
   get "profiles/show"
 
   get "profiles/delete"

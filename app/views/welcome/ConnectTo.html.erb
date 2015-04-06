@@ -2,6 +2,13 @@
 <html>
 <head>
   <title></title>
+  <%= form_tag :controller => 'profiles', :action => 'search', :method => 'index' do %>
+      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+      <%= submit_tag "Search", :name => nil %> 
+      <%= link_to_function "Clear", "$('search_field').clear()" %>
+ <% end %> 
+
+
   <link rel="stylesheet" type="text/css" href="assets/button.css">
 </head>
 <h1 style="color:black;text-align:center;"> Connect to Twitter or Linkedin or Google+ </h1>

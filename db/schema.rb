@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150329191022) do
+ActiveRecord::Schema.define(:version => 20150406205841) do
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20150329191022) do
     t.boolean  "trunk"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "destination"
   end
 
   create_table "twitter_oauth_settings", :force => true do |t|

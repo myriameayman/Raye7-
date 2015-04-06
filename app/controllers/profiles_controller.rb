@@ -6,6 +6,11 @@ class ProfilesController < ApplicationController
   def create
   end
 
+
+def search
+  @requests = Request.search params[:search]
+end
+
   def show
     @user = User.find(params[:id])
   end
