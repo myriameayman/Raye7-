@@ -6,14 +6,10 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
 
-  def create
-  	
+  def create  	
   	super
-  	#redirect_to :my_account, :notice => "Logged in!"  and return
-  	#return 
-    # add custom create logic here
   end
-#=begin
+
   def edit
   	super
   end

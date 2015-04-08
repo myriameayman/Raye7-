@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150329191022) do
+ActiveRecord::Schema.define(:version => 20150408214723) do
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20150329191022) do
     t.integer  "circle_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "fb_id"
   end
 
   create_table "full_profiles", :force => true do |t|
@@ -165,6 +166,11 @@ ActiveRecord::Schema.define(:version => 20150329191022) do
     t.string   "nickname"
     t.string   "gmail"
     t.integer  "budget"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "faceboook_profileimage"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
