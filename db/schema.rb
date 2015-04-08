@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150329191022) do
+ActiveRecord::Schema.define(:version => 20150407004535) do
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -84,6 +84,21 @@ ActiveRecord::Schema.define(:version => 20150329191022) do
     t.string   "atoken"
     t.string   "asecret"
     t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+
+  create_table "maps", :force => true do |t|
+    t.decimal  "long"
+    t.decimal  "lat"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.decimal  "long"
+    t.decimal  "lat"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -165,6 +180,11 @@ ActiveRecord::Schema.define(:version => 20150329191022) do
     t.string   "nickname"
     t.string   "gmail"
     t.integer  "budget"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "faceboook_profileimage"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

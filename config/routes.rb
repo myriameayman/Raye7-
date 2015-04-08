@@ -1,14 +1,79 @@
 RsgLinkedinGem::Application.routes.draw do
+ 
+  
+
+  
+
+  get "requests/index"
+
+  get "requests/new"
+
+  get "requests/create"
+
+  get "requests/update"
+
+  get "requests/edit"
+
+  get "requests/delete"
+
+  get "request/index"
+
+  get "request/new"
+
+  get "request/create"
+
+  get "request/update"
+
+  get "request/edit"
+
+  get "request/delete"
+
+  get 'auth/:provider/callback', to: 'facebook#create'
+
+  get 'auth/failure', to: redirect('/')
+
+  get 'signout', to: 'facebook#destroy', as: 'signout'
+  
+  #root :to => 'profiles#myAccount'
+  
+  get "profiles/new"
+
+  get "profiles/create"
+
+  get "profiles/show"
+
+  get "profiles/delete"
+
+  get "profiles/index"
+
+  get "profiles/edit"
+
   get "welcome/index"
   #root :to => 'welcome#index'
 
+  #root :to => 'requests#new'
+  root :to => 'requests#new'
+  get "/requests/new", to: "requests#new", as: "new"
+  get "/home", to: "requests#home", as: "home"
+  get "/geocoding", to: "requests#geocoding", as: "geocoding"
+  get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding"
   #devise_for :users
+  get "/requests/home/:latitude/:longitude" ,to: "requests#show", as: "create_form"
+  get "/requests/create_curr_location/:latitude/:longitude" ,to: "requests#show", as: "create_form"
+  get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
+  get "/requests/create_ride_info" ,to: "requests#create_ride_info", as: "create_form" 
+  
+  # get pages/create",to: "pages#create", as: "create"
   devise_for :users, :controllers => {:registrations => "registrations"}
  # match '/newLinkedin' => "registrations#newLinkedin"
   #get 'registrations/newLinkedin'
 
   #root :to => 'user/registrations#myAccount'
-
+  resources :requests 
+  
+  resources :circles
+  resources :profiles
+  get '/show' => "circles#show"
   resources :twitter
   match '/twitter_profile' => "twitter#twitter_profile"
   match '/oauth_account' => "twitter#oauth_account"
@@ -20,13 +85,16 @@ RsgLinkedinGem::Application.routes.draw do
   #match '/index' => "linkedin#index"
   match '/Linkedin_oauth_account' => "linkedin#Linkedin_oauth_account"
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url'
+  resources :circles
   #match 'users/sign_out' => "user/sessions#destroy"
   #get "/log_out" => "linkedin#logout", :as => "logout"
   #root :to => 'linkedin#index'
   #get "/users/sign_out"
    #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
    devise_scope :user do
-    root :to => 'user/registrations#myAccount'
+
+    #root :to => 'profiles#myAccount'
+    #root :to => 'user/registrations#myAccount'
     #get 'user/registrations/myAccount'
     get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
     get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo"
