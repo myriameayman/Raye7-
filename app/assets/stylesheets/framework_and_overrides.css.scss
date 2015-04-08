@@ -222,7 +222,7 @@ $input-color-placeholder: #eeeeee; // Placeholder text color
 $input-border-focus: #66afe9; // Border color for inputs on focus
 $input-bg-disabled: #dddddd; // <input disabled> background color
 // -> Input sizes
-$input-height-base: 38px; // Default .form-control height
+$input-height-base: 50px; // Default .form-control height
 $input-height-large: 46px; // Large .form-control height
 $input-height-small: 28px; // Small .form-control height
 // -> Legend
@@ -392,6 +392,7 @@ img{
 .field_with_errors{
   .form-control{
     border: 1px solid $brand-danger;
+    
   }
   label{
     color: $brand-danger;

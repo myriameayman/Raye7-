@@ -1,8 +1,10 @@
+
+var map;
+var output; 
+var output2; 
  $(window).load(function() {
   loadScript();
 });
-
-var map;
 
 function initialize() {
   var mapOptions = {
@@ -90,14 +92,10 @@ function codeAddress(geocoding){
           map: map,
           position: results[0].geometry.location
         })
-         var output = results[0].geometry.location.lat();
+          output = results[0].geometry.location.lat();
 
-         var output2 = results[0].geometry.location.lng();
-        
-               
+          output2 = results[0].geometry.location.lng();
                var node = document.getElementById('node-id');
-         
-            alert("hello");
           
          
         }else{
