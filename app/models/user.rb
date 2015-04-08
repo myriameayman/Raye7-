@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-      attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, :name, :screen_name, :url, :profile_image_url, :location, :description 
+
+      attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, :name, :screen_name, :url, :profile_image_url, :location, :description, :login 
   # attr_accessible :title, :body
       validates :username,
       :presence => true,
@@ -35,20 +36,25 @@ class User < ActiveRecord::Base
       validates :firstName, presence: true
       validates :lastName, presence: true
 
+      devise :database_authenticatable, :registerable,
+        :validatable, :authentication_keys => [:login]
+
+        def login=(login)
+          @login =login
+        end
+        def login
+          @login || self.username || self.email
+        end
+
+
+
       def self.find_for_database_authentication(warden_conditions)
-          conditions = warden_conditions.dup
-          if login = conditions.delete(:login)
-            where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
-          else
-            where(conditions.to_h).first
-          end
-      end
-      def self.find_first_by_auth_conditions(warden_conditions)
         conditions = warden_conditions.dup
-        if email = conditions.delete(:email)
-          User.includes(:emails).where('user_emails.email = ?', email).first
+        if login =conditions.delete(:login)
+          where(conditions.to_h).where(["lower(username)= :value OR lower(email) =:value",{:value => login.downcase}]).first
         else
-          super(warden_conditions)
+          where(conditions.to_h).firstName
         end
       end
     end
+

@@ -1,0 +1,15 @@
+<h1>Account Info</h1>
+<h1> I am here in profiles</h1>
+<body>
+
+		<p>Your name is <%= @user.username%> <br>
+			<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add connections</a>
+		</p>
+
+		<% @circles.each do |c| %>
+			 <%= link_to c.name, controller: "circles", action: "show", id: c.id %> <br>
+			 
+		<% end %>
+		
+	
+</body>
