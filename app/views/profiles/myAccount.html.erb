@@ -6,10 +6,91 @@
 			<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add connections</a>
 		</p>
 
+<<<<<<< HEAD
 		
 		<% @circles.each do |c| %>
 			 <%= link_to c.name, controller: "circles", action: "show", id: c.id %> <br>
 		<% end %>
+=======
+  <div class="row">
+    <div class="col-md-3" style="padding-left:40px">
+    <div class="image-frame">
+        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage%>')"></div>
+    </div>
+    </div>
+  <div class="col-md-8" style="padding-top:40px">
+    <div class= "panel panel-default"  id="b1">
+     <div class="panel-heading" style="background-color: #337AB7">
+      <h3 class="panel-title"   >Profile Info</h3>
+     </div>
+     <div class="panel-body">
+       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
+       <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
+     </div>
+      
+    </div>
+  </div>
+  </div>
+   
+  <div class="row" style="padding-top:40px">
+    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+    
+    <!--
+    <div class="list-group">
+        <span href="#" class="list-group-item active" style="background-color: #337AB7; color:white">
+            Menu
+        </span>
+        <a href="#" class="list-group-item">
+           My Places
+        </a>
+        <a href="/ConnectTo.html.erb" class="list-group-item">
+           Add Connections
+        </a>
+        <a href="#" class="list-group-item">
+           My Circles
+           <ul id="navlist">
+           	<li>ehh b2aa</li>
+           	<li>ehhh b2aaaaaaaa</li>
+           </ul>
+        </a>
+        <a href="#" class="list-group-item">
+           Current Trips
+        </a>
+       
+    </div>
+    --> 
+    <div id='cssmenu'>
+		<ul  style="border-top-right-radius:8px;border-bottom-right-radius:8px">
+		   <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
+		   <li><a href='#'><span>Home</span></a></li>
+		   <li class='active has-sub'><a href='#'><span>My Circles</span></a>
+		      <ul>
+		         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+		         </li>
+		         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+		         </li>
+		      </ul>
+		   </li>
+		   <li><a href="/ConnectTo.html.erb"><span>Add Connections</span></a></li>
+		   <li class='last' style="border-bottom:none;"><a href='#'><span>My Places</span></a></li>
+		</ul>
+</div>     
+  </div>
+  <div class="col-md-8">
+    <div class= "panel panel-default" style="border-top-left-radius: 4px">
+     <div class="panel-heading">
+      <h3 class="panel-title"> News Feed</h3>
+     </div>
+      <div class="panel-body">
+       <h6 style="font-style:normal;font-size:15px"> insha'allah hena hyb2a feh news feed </h6>
+       <hr>
+       <h6 style="font-style:normal;font-size:15px"> sorem ehh </h6>
+      </div>
+    </div>
+  </div>
+
+</div> 
+>>>>>>> d2d8d1c0bb38029d59d4f2bb94662ff363d5ae75
 
 		
 

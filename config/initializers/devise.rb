@@ -206,6 +206,9 @@ config.sign_out_via = Rails.env.test? ? :get : :delete
   
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = Rails.env.test? ? :get : :delete
+  require "omniauth-facebook"
+config.omniauth :facebook, FACEBOOK_CONFIG['716016431848330'], FACEBOOK_CONFIG['2ca26a95b3eaf85141826fba125d365e']
+ {:scope => 'user_friends, email, public_profile' , :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
      #config.authentication_keys = [ :login ]
       #config.scoped_views = true
   # ==> OmniAuth
