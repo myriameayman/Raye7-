@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div style= "position:absolute;right:500px;width:100%;">
+
+    <div class="google-map-filter col-xs-12 col-sm-4  pull-right"  style="width: 60%" >
+    <div class="form-group">
+
+<%= form_tag(controller: "requests", action: "create") do |f| %> 
+<%= f.radio_button :smoking, 'one can smoke in my car', :checked => true %> 
+<%= f.radio_button :air_conditioner, 'i have air air_conditioner in my car', :checked => true %> 
+<%= f.text_area :car_color, "ur car color", :size => "44x6" %>
+<%= f.text_area :car_model, "ur car type", :size => "44x6" %>
+<%= f.text_area :car_number, "ur car number", :size => "44x6" %>
+<%= f.text_area :seats, "available seats in your car", :size => "44x6" %>
+<%= datetime_field(:trip_time) %>
+<%= f.submit "Create" %>
+<%end%>
+    </div> 
+    </div>
+    </div>
+</div>    
