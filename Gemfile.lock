@@ -62,7 +62,6 @@ GEM
     extlib (0.9.16)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-
     font-awesome-sass (4.0.3.2)
       sass (~> 3.2)
     gmaps4rails (2.1.2)
@@ -224,10 +223,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.1.0)
   coffee-rails (~> 3.2.1)
   devise (~> 2.1.2)
-<<<<<<< HEAD
-=======
   font-awesome-sass (~> 4.0.2)
->>>>>>> 8e47e9f2ba0b035974cca487c8a96f543807acd9
   gmaps4rails
   google-api-client
   jquery-rails

@@ -52,7 +52,7 @@ RsgLinkedinGem::Application.routes.draw do
   #root :to => 'welcome#index'
 
   #root :to => 'requests#new'
-  root :to => 'requests#new'
+  root :to => 'places#show'
   get "/requests/new", to: "requests#new", as: "new"
   get "/home", to: "requests#home", as: "home"
   get "/geocoding", to: "requests#geocoding", as: "geocoding"

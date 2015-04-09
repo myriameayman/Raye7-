@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(:version => 20150407004535) do
     t.datetime "updated_at", :null => false
   end
 
-
   create_table "maps", :force => true do |t|
     t.decimal  "long"
     t.decimal  "lat"
