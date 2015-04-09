@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
 
-  def create  	
+  def create 	
   	super
   end
 
@@ -18,14 +18,7 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
-
-#=end
-
-
-
   def myAccount  
-
-       # @user=User.find(session[:user_id])  
       if(current_user != nil)      
           @sessUserEmail = current_user.username
           session[:user_id]  = current_user.id
@@ -41,7 +34,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def newLinkedin
-  	new
   end
 
 

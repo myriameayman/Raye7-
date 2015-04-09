@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ee8616d3e321fe640c56ced20af84c3ec1304c8
       attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, :name, :screen_name, :url, :profile_image_url, :location, :description, :login 
   # attr_accessible :title, :body
       validates :username,
@@ -34,6 +38,18 @@ class User < ActiveRecord::Base
 
       validates :firstName, presence: true
       validates :lastName, presence: true
+      devise :database_authenticatable, :registerable,
+        :validatable, :authentication_keys => [:login]
+
+        def login=(login)
+          @login =login
+        end
+        def login
+          @login || self.username || self.email
+        end
+
+
+
       devise :database_authenticatable, :registerable,
         :validatable, :authentication_keys => [:login]
 

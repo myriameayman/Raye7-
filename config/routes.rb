@@ -11,7 +11,10 @@ RsgLinkedinGem::Application.routes.draw do
   get 'signout', to: 'facebook#destroy', as: 'signout'
   
   root :to => 'profiles#myAccount'
+<<<<<<< HEAD
   #root :to => 'facebook#home'
+=======
+>>>>>>> 4ee8616d3e321fe640c56ced20af84c3ec1304c8
   
   get "profiles/new"
 
@@ -38,7 +41,10 @@ RsgLinkedinGem::Application.routes.draw do
   resources :circles
   resources :profiles
   get '/show' => "circles#show"
+<<<<<<< HEAD
   #get '/home' => "facebook#home"
+=======
+>>>>>>> 4ee8616d3e321fe640c56ced20af84c3ec1304c8
   resources :twitter
   match '/twitter_profile' => "twitter#twitter_profile"
   match '/oauth_account' => "twitter#oauth_account"

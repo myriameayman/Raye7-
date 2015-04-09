@@ -32,8 +32,10 @@ gem 'sinatra'
 gem 'gmaps4rails'
 gem 'google-api-client'
 gem 'omniauth-facebook', '~> 1.4.1'
+
 gem 'fb_graph'
 gem "koala", "~> 2.0"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
