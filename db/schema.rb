@@ -165,12 +165,12 @@ ActiveRecord::Schema.define(:version => 20150404201619) do
     t.string   "nickname"
     t.string   "gmail"
     t.integer  "budget"
-
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "faceboook_profileimage"
+  end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
