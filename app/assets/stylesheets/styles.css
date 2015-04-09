@@ -3,9 +3,11 @@
 @charset "UTF-8";
 /* Starter CSS for Flyout Menu */
 #cssmenu {
+
   padding: 0;
   margin: 0;
   border: 0;
+  
 }
 #cssmenu ul,
 #cssmenu ul li,
@@ -95,10 +97,10 @@
   padding: 15px 20px;
   color: #ffffff;
   text-decoration: none;
-  text-transform: normal;
+  text-transform: uppercase;
 }
 #cssmenu > ul {
-  width: 248px;
+  width: 250px;
 }
 #cssmenu ul ul {
   width: 250px;
@@ -164,7 +166,7 @@
 }
 #cssmenu.align-right > ul > li > a {
   border-left: 4px solid #1b9bff;
-  border-right: 1px;
+  border-right: none;
   border-radius: 8px;
 }
 #cssmenu.align-right {

@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20150408214723) do
-=======
-ActiveRecord::Schema.define(:version => 20150404201619) do
->>>>>>> 4ee8616d3e321fe640c56ced20af84c3ec1304c8
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
