@@ -11,18 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-<<<<<<< HEAD
-//= require twitter/bootstrap
-//= require turbolinks
-//= require bootstrap
-//= require map/gmap
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
-=======
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
->>>>>>> 28d50e35182299a87ed325df3b2f194b3f0987ce

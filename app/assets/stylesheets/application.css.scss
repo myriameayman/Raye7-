@@ -1,6 +1,4 @@
 @import "bootstrap";
-@import "framework_and_overrides";
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,11 +8,7 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
-*
- *= require_self
- *= require_tree .
- */
- /*
+ 
  *= require bootstrap.min
  *= require_self
  *= require_tree .
@@ -1066,9 +1060,7 @@ pre code {
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
-.col-md-56 {
-    width: 80%;
-}
+
 /* line 825, ../../libraries/bootstrap/stylesheets/bootstrap/_mixins.scss */
 .col-xs-1 {
   width: 8.33333%;
@@ -2451,7 +2443,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 50px;
+  height: 34px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857;
@@ -2581,7 +2573,7 @@ input[type="checkbox"],
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
-  height: 50px;
+  height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -14292,3 +14284,5 @@ div.directory-carousel-wrapper > div > div > div.bx-viewport {
   
 
     
+
+
