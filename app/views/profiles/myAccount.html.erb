@@ -1,16 +1,3 @@
-
-<body>
-
-		<p>
-			<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add connections</a>
-		</p>
-
-
-	
-</body>
-
-<!-- new hna bta3 ismail merge later for now -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -152,22 +139,15 @@
 		   <li class='active has-sub'><a href='#'><span>Update circles</span></a>
 		      <ul>
 			      		<li>
-			      		<div class="col-lg-4">
-							<div class="round-button" style="width:80px;float:left">
-							    <div id="round-button-circle-1">
-									    <a href="#" class="round-button">facebook</a>
+			      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
+				      		<div class="col-lg-4">
+								<div class="round-button" style="width:80px;float:left">
+								    <div id="round-button-circle-1">
+										    <a href="#" class="round-button">facebook</a>
+									</div>
 								</div>
 							</div>
-						</div>
-
-			      		<% if(@user.circles.exists?(:name => "twitter")&&Circle.exists?(:name => "googlePlus")) %>
-			      		<a href="#"><span>No more circles to connect</span></a>
-
-			      		<% else %>
-				      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
-
-				      			<% unless(@user.circles.exists?(:name => "twitter")) %>
-						      		
+							<% if(@user.circles.exists?(:name => "twitter")) %>
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:80px;float:left">
 									        <div id="round-button-circle">
@@ -175,8 +155,8 @@
 									        </div>
 									    </div>
 									  </div>
-								<% end %>
-								<% unless(@user.circles.exists?(:name => "googlePlus")) %>
+							<% end %>
+							<% if(@user.circles.exists?(:name => "googlePlus")) %>
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:80px;float:left;">
 									        <div id="round-button-circle-2">
@@ -184,14 +164,9 @@
 									        </div>
 									    </div>
 									  </div>
-
-
-								<% end %>
-							</div>
-						<% end %>
-
+							<% end %>
+						</div>
 					    </li>
-
 		      </ul>
 		   </li>
 		   
