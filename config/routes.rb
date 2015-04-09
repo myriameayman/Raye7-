@@ -1,4 +1,30 @@
 RsgLinkedinGem::Application.routes.draw do
+ 
+  
+
+  
+
+  get 'auth/:provider/callback', to: 'facebook#create'
+
+  get 'auth/failure', to: redirect('/')
+
+  get 'signout', to: 'facebook#destroy', as: 'signout'
+  
+  root :to => 'profiles#myAccount'
+  #root :to => 'facebook#home'
+  
+  get "profiles/new"
+
+  get "profiles/create"
+
+  get "profiles/show"
+
+  get "profiles/delete"
+
+  get "profiles/index"
+
+  get "profiles/edit"
+
   get "welcome/index"
   #root :to => 'welcome#index'
 
@@ -9,6 +35,10 @@ RsgLinkedinGem::Application.routes.draw do
 
   #root :to => 'user/registrations#myAccount'
 
+  resources :circles
+  resources :profiles
+  get '/show' => "circles#show"
+  #get '/home' => "facebook#home"
   resources :twitter
   match '/twitter_profile' => "twitter#twitter_profile"
   match '/oauth_account' => "twitter#oauth_account"
@@ -20,12 +50,14 @@ RsgLinkedinGem::Application.routes.draw do
   #match '/index' => "linkedin#index"
   match '/Linkedin_oauth_account' => "linkedin#Linkedin_oauth_account"
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url'
+  resources :circles
   #match 'users/sign_out' => "user/sessions#destroy"
   #get "/log_out" => "linkedin#logout", :as => "logout"
   #root :to => 'linkedin#index'
   #get "/users/sign_out"
    #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
    devise_scope :user do
+    #root :to => 'profiles#myAccount'
     root :to => 'user/registrations#myAccount'
     #get 'user/registrations/myAccount'
     get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"

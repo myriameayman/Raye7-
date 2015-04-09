@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  #protect_from_forgery with: :exception
+  #helper_method :current_user
+
+  #def current_user
+   # @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  #end
 =begin
   def after_sign_in_path_for(resource_or_scope)
 	  if resource_or_scope.is_a?(User)
@@ -11,8 +16,8 @@ class ApplicationController < ActionController::Base
   end
 =end
 
-  def after_sign_up_path_for(resource_or_scope)
-  	redirect_to "registrations/myAccount"  and return
+  #def after_sign_up_path_for(resource_or_scope)
+  	#redirect_to "profiles/myAccount"  and return
 =begin
 	  if resource_or_scope.is_a?(User)
 	  	@user=current_user
@@ -22,8 +27,19 @@ class ApplicationController < ActionController::Base
 	  end
 =end
 
-  end
+  #end
+#def after_sign_in_path_for(resource_or_scope)
+  	#redirect_to "profiles/myAccount"  and return
+=begin
+	  if resource_or_scope.is_a?(User)
+	  	@user=current_user
+	    redirect_to "registrations/myAccount"  and return
+	  else
+	    super
+	  end
+=end
 
+ # end
 
   	def signout                                             
 	  	if something_is_not_kosher

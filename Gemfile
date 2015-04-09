@@ -19,16 +19,21 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
- gem 'twitter'
+gem 'twitter'
 gem 'devise', '~> 2.1.2'
 gem 'linkedin'
 gem 'twitter-bootstrap-rails'
 gem 'sinatra'
 gem 'gmaps4rails'
 gem 'google-api-client'
+gem 'omniauth-facebook', '~> 1.4.1'
+gem 'fb_graph'
+gem "koala", "~> 2.0"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
