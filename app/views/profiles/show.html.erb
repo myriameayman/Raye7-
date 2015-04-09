@@ -1,3 +1,17 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
-<h3>your are in  profile : </h3> <%= @user.name %><br>
+<p>
+  <strong>Trip name:</strong>
+  <%= @request.name %>
+  <strong>AC</strong>
+  <%= @request.air_conditioner %>
+  <strong>car model</strong>
+  <%= @request.car_model%>
+  <strong>To :</strong>
+  <%= @request.destination %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<%= link_to 'Edit Article', edit_article_path(@article) %> 
+<%= link_to 'Back to Articles', articles_path %>

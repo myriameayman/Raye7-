@@ -1,14 +1,27 @@
-<h1>Account Info</h1>
-<h1> I am here in profiles</h1>
-<body>
+<h3>Account Info</h3>
+<h3> I am here in profiles</h3>
+<h3>Articles Search</h3>
+	<%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
+	      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+	      <%= submit_tag "Search", :name => nil %> 
+	      <%= link_to_function "Clear", "$('search_field').clear()" %>
+	<% end %> 
+<ul>
+	  <% @requests.each do |grant| %>
+		<li><%= link_to grant.destination, :controller =>'requests',
+	  :action => 'show', id: grant.id  %></li>
+	<% end %>
+</ul>
 
-		<p>Your name is <%= @user.username%> <br>
+
+
+<body>
+	  <p>Your name is <%= @user.username%> <br>
 			<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add connections</a>
 		</p>
 
 		<% @circles.each do |c| %>
 			 <%= link_to c.name, controller: "circles", action: "show", id: c.id %> <br>
-			 
 		<% end %>
 		
 	
