@@ -28,6 +28,14 @@ RsgLinkedinGem::Application.routes.draw do
   get "welcome/index"
   #root :to => 'welcome#index'
 
+
+  #root :to => 'requests#new'
+  root :to => 'places#show'
+  get "/requests/new", to: "requests#new", as: "new"
+  get "/home", to: "requests#home", as: "home"
+  get "/geocoding", to: "requests#geocoding", as: "geocoding"
+  get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding"
+
   #devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations"}
  # match '/newLinkedin' => "registrations#newLinkedin"
