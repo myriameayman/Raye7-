@@ -48,6 +48,12 @@ RsgLinkedinGem::Application.routes.draw do
   get "welcome/index"
   #root :to => 'welcome#index'
 
+  get "profiles/search"
+  get "profiles/show1"
+  get "requests/show"
+  get "trips/new"
+
+
 
   #root :to => 'requests#new'
   root :to => 'places#show'
@@ -61,6 +67,10 @@ RsgLinkedinGem::Application.routes.draw do
   get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
   get "/requests/create_ride_info" ,to: "requests#create_ride_info", as: "create_form" 
   #devise_for :users
+
+  get 'request/:id' => 'profiles#show'
+  match '/request/:id' => 'trips#create', :via => :post
+
   devise_for :users, :controllers => {:registrations => "registrations"}
  # match '/newLinkedin' => "registrations#newLinkedin"
   #get 'registrations/newLinkedin'
@@ -68,6 +78,7 @@ RsgLinkedinGem::Application.routes.draw do
   #root :to => 'user/registrations#myAccount'
 
   resources :circles
+  resources :requests
   resources :profiles
   get '/show' => "circles#show"
   #get '/home' => "facebook#home"
@@ -89,20 +100,20 @@ RsgLinkedinGem::Application.routes.draw do
   #get "/users/sign_out"
    #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
    devise_scope :user do
-    #root :to => 'profiles#myAccount'
-    root :to => 'user/registrations#myAccount'
-    #get 'user/registrations/myAccount'
-    get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
-    get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo"
-    #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
-    #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
+      #root :to => 'profiles#myAccount'
+      root :to => 'user/registrations#myAccount'
+      #get 'user/registrations/myAccount'
+      get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
+      get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo"
+      #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
+      #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin"
 
-    #get 'signin' => 'devise/sessions#new', :as => :new_user_session
-    #get 'newLinkedin' => 'registrations#new'. as: :
-    #match '/newLinkedin' => "registrations#newLinkedin"
-     get 'users/sign_out', to: 'devise/sessions#destroy', as: :signout
-   # get '/users/signout', to: 'user/sessions#destroy', as: :signout
-  end
+      #get 'signin' => 'devise/sessions#new', :as => :new_user_session
+      #get 'newLinkedin' => 'registrations#new'. as: :
+      #match '/newLinkedin' => "registrations#newLinkedin"
+       get 'users/sign_out', to: 'devise/sessions#destroy', as: :signout
+      #get '/users/signout', to: 'user/sessions#destroy', as: :signout
+    end
   
 
   # The priority is based upon order of cr eation:
@@ -161,4 +172,52 @@ RsgLinkedinGem::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
+# The priority is based upon order of cr eation:
+# first created -> highest priority.
+# Sample of regular route:
+# match 'products/:id' => 'catalog#view'
+# Keep in mind you can assign values other than :controller and :action
+# Sample of named route:
+# match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+# This route can be invoked with purchase_url(:id => product.id)
+# Sample resource route (maps HTTP verbs to controller actions automatically):
+# resources :products
+# Sample resource route with options:
+# resources :products do
+# member do
+# get 'short'
+# post 'toggle'
+# end
+#
+# collection do
+# get 'sold'
+# end
+# end
+# Sample resource route with sub-resources:
+# resources :products do
+# resources :comments, :sales
+# resource :seller
+# end
+# Sample resource route with more complex sub-resources
+# resources :products do
+# resources :comments
+# resources :sales do
+# get 'recent', :on => :collection
+# end
+# end
+# Sample resource route within a namespace:
+# namespace :admin do
+# # Directs /admin/products/* to Admin::ProductsController
+# # (app/controllers/admin/products_controller.rb)
+# resources :products
+# end
+# You can have the root of your site routed with "root"
+# just remember to delete public/index.html.
+# root :to => 'welcome#index'
+# See how all your routes lay out with "rake routes"
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+# match ':controller(/:action(/:id))(.:format)'
 end

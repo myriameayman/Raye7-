@@ -1,45 +1,60 @@
 class RequestsController < ApplicationController
-  @@request = Request.new
-  def index
+
+  
+  def search
+   @requests = Request.search(params[:search])
   end
+  
+  def show
+        @user = current_user
+        @id = params[:id]
+    if (Request.exists?(@id))
+      @request = Request.find(@id)
+
+    else
+      redirect_to "/"
+    end
+    
+  end
+
+  def index 
+    unless(params[:search==nil])
+    @requests = Request.search(params[:search])
+    end
+  end
+   
 
   def new
     @@i = 0 
     redirect_to "/home"
   end
+  
   def home 
     @@i = @@i + 1 
-    end 
-  def show
-    if @@i == 1
-    @latitude = params[:latitude]
-    @longitude = params[:longitude]
-    @@request.lat_curr = @latitude 
-    @@request.long_curr= @longitude
-    redirect_to "/home"
-  else 
-    @latitude = params[:latitude]
-    @longitude = params[:longitude]
-    @@request.lat_destination = @latitude 
-    @@request.long_destination= @longitude
-    redirect_to "/requests/create"
   end
-end 
+
+
+
   def geocoding
     respond_to do |format|               
       format.js
     end
   end
+
   def create
-    
-  end 
+  end
+
+  
+
   def reverse_geocoding
     respond_to do |format|               
       format.js
     end
   end
+  
   def update
   end
+  
   def create_ride_info
     @color = params[:car_color]
     @model = params[:car_model]
@@ -56,9 +71,11 @@ end
     @@request.save
     redirect_to "/home"
   end 
+  
   def edit
   end
 
   def delete
   end
+
 end

@@ -8,12 +8,19 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @request = Request.find(params[:request_id])
   end
+
+  def search
+    @requests = Request.search params[:search]
+  end
+  
 
   def delete
   end
 
-  def index
+  def index 
+    @requests = Request.search(params[:search])
   end
 
   def edit
@@ -24,6 +31,9 @@ class ProfilesController < ApplicationController
           @user = current_user
           if(@user.uid==nil)
             redirect_to "/auth/facebook" and return
+          end
+          unless(params[:search==nil])
+            @requests = Request.search params[:search]
           end
           @circles = @user.circles
           session[:user_id]  = current_user.id

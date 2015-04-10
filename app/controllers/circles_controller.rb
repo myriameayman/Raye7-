@@ -10,6 +10,7 @@ class CirclesController < ApplicationController
   		unless(@user.circles.exists?(@circle))
   			redirect_to "/"
   		end
+
   	else
   		redirect_to "/"
   	end
