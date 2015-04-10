@@ -1,9 +1,29 @@
 RsgLinkedinGem::Application.routes.draw do
  
-  
+   get "requests/index"
 
-  
+  get "requests/new"
 
+  get "requests/create"
+
+  get "requests/update"
+
+  get "requests/edit"
+
+  get "requests/delete"
+
+  get "request/index"
+
+  get "request/new"
+
+  get "request/create"
+
+  get "request/update"
+
+  get "request/edit"
+
+  get "request/delete"
+  
   get 'auth/:provider/callback', to: 'facebook#create'
 
   get 'auth/failure', to: redirect('/')
@@ -35,7 +55,11 @@ RsgLinkedinGem::Application.routes.draw do
   get "/home", to: "requests#home", as: "home"
   get "/geocoding", to: "requests#geocoding", as: "geocoding"
   get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding"
-
+  #devise_for :users
+  get "/requests/home/:latitude/:longitude" ,to: "requests#show", as: "create_form"
+  get "/requests/create_curr_location/:latitude/:longitude" ,to: "requests#show", as: "create_form"
+  get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
+  get "/requests/create_ride_info" ,to: "requests#create_ride_info", as: "create_form" 
   #devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations"}
  # match '/newLinkedin' => "registrations#newLinkedin"
