@@ -9,7 +9,7 @@ class FacebookController < ApplicationController
     profile = @graph.get_object("me")
 
     friends = @graph.get_connections("me", "friends")
-    @user.name = friends.count
+    @user.name = env["omniauth.auth"].info.name
     @user.provider = env["omniauth.auth"].provider
     @user.uid = env["omniauth.auth"].uid
     @user.fb_email = env["omniauth.auth"].info.email
