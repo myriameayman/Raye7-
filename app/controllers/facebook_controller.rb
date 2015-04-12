@@ -16,15 +16,16 @@ class FacebookController < ApplicationController
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
     
-    unless(Circle.exists?(:name => "facebook"))
-      fbCircle = Circle.new 
-      fbCircle.user_id = current_user.id 
-      fbCircle.name = "facebook"
-      fbCircle.save
+    unless(@user.circles.exists?(:name => "facebook"))
+    fbCircle = Circle.new 
+    fbCircle.user_id = current_user.id 
+    fbCircle.name = "facebook"
+    fbCircle.save
     else
-      fbCircle =  Circle.find_by name: 'facebook'
+    fbCircle = @user.circles.where("name = 'facebook'")
     end
 
+    
     friends.each do |f| 
         fbFriend = Friend.new 
         fbFriend.circle_id = fbCircle.id   
