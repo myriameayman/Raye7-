@@ -13,7 +13,6 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/delete" 
 
-  
   get 'auth/:provider/callback', to: 'facebook#create' 
 
   get 'auth/failure', to: redirect('/') 
@@ -21,7 +20,6 @@ RsgLinkedinGem::Application.routes.draw do
   get 'signout', to: 'facebook#destroy', as: 'signout' 
   
   root :to => 'profiles#myAccount' 
-  #root :to => 'facebook#home' 
   
   get "profiles/new" 
 
@@ -36,67 +34,71 @@ RsgLinkedinGem::Application.routes.draw do
   get "profiles/edit" 
 
   get "welcome/index" 
-  #root :to => 'welcome#index' 
-  #get "requests/create" 
+  
   get "profiles/search" 
+  
   get "profiles/show1" 
-  #get "requests/show" 
+  
   get "trips/new" 
+  
   get "requests/create" 
+  
   get "requests/create_curr_location" 
-
   #root :to => 'requests#new' 
-  #root :to => 'places#show' 
   get "/requests/new", to: "requests#new", as: "new" 
+  
   get "/home", to: "requests#home", as: "home" 
+  
   get "/geocoding", to: "requests#geocoding", as: "geocoding" 
+  
   get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding" 
   #devise_for :users 
   get "/requests/home/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
+  
   get "/requests/create_curr_location/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
+  
   get "/requests/create_curr_location/:latitude/:longitude" => "requests#update" 
+  
   get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
+  
   get "/requests/create_ride_info" ,to: "requests#create_ride_info", as: "create_form" 
+  
   get "requests/form", to: "requests#form" 
-  #devise_for :users 
-#get "/requests/home/:latitude/:longitude" ,to: "requests#show", as: "create_form" 
-#get "/requests/create_curr_location/:latitude/:longitude" ,to: "requests#show", as: "create_form" 
-#get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
-#get "/requests/create_ride_info" ,to: "requests#create_ride_info", as: "create_form" 
-
 
   get 'request/:id' => 'profiles#show' 
+  
   match '/request/:id' => 'trips#create', :via => :post 
 
   devise_for :users, :controllers => {:registrations => "registrations"} 
- # match '/newLinkedin' => "registrations#newLinkedin" 
-  #get 'registrations/newLinkedin' 
-
-  #root :to => 'user/registrations#myAccount' 
 
   resources :circles 
+  
   resources :requests 
+  
   resources :profiles 
+  
   get '/show' => "circles#show" 
-  #get '/home' => "facebook#home" 
+  
   resources :twitter 
+  
   match '/twitter_profile' => "twitter#twitter_profile" 
+  
   match '/oauth_account' => "twitter#oauth_account" 
+  
   match '/twitter_oauth_url' => 'twitter#generate_twitter_oauth_url' 
   
   resources :linkedin 
+  
   get 'linkedin/index' 
+  
   match '/linkedin_profile' => "linkedin#linkedin_profile" 
   #match '/index' => "linkedin#index" 
   match '/Linkedin_oauth_account' => "linkedin#Linkedin_oauth_account" 
+  
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
+  
   resources :circles 
-  #match 'users/sign_out' => "user/sessions#destroy" 
-  #get "/log_out" => "linkedin#logout", :as => "logout" 
-  #root :to => 'linkedin#index' 
-  #get "/users/sign_out" 
-   #match "users/my_account" => "users/registrations#my_account", :as => "my_account" 
-   devise_scope :user do 
+  devise_scope :user do 
       #root :to => 'profiles#myAccount' 
       root :to => 'user/registrations#myAccount' 
       #get 'user/registrations/myAccount' 

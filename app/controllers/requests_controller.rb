@@ -1,60 +1,64 @@
 class RequestsController < ApplicationController 
-before_filter :authenticate_user! 
+  before_filter :authenticate_user! 
   @@request = Request.new 
   
   def search 
    @requests = Request.search(params[:search]) 
   end 
   
- #def show 
-  #      @user = current_user 
-   #     @id = params[:id] 
-    #if (Request.exists?(@id)) 
-     # @request = Request.find(@id) 
+ def show 
+    @user = current_user 
+    @id = params[:id] 
+    if (Request.exists?(@id)) 
+      @request = Request.find(@id) 
 
-    #else 
-     # redirect_to "/" 
-    #end 
+    else 
+      redirect_to "/" 
+    end 
     
-  #end 
+  end 
+  
   def update 
     if @@i == 1 
-    @latitude = params[:latitude] 
-    @longitude = params[:longitude] 
-    @@request.lat_curr = @latitude 
-    @@request.long_curr= @longitude 
-    redirect_to "/home" 
+      @latitude = params[:latitude] 
+      @longitude = params[:longitude] 
+      @@request.lat_curr = @latitude 
+      @@request.long_curr= @longitude 
+      redirect_to "/home" 
   else 
-    @latitude = params[:latitude] 
-    @longitude = params[:longitude] 
-    @@request.lat_destination = @latitude 
-    @@request.long_destination= @longitude 
-    redirect_to "/requests/create" 
+      @latitude = params[:latitude] 
+      @longitude = params[:longitude] 
+      @@request.lat_destination = @latitude 
+      @@request.long_destination= @longitude 
+      redirect_to "/requests/create" 
+    end 
   end 
-  end 
+  
   def create_curr_location 
     if @@i == 1 
-    @latitude = params[:latitude] 
-    @longitude = params[:longitude] 
-    @@request.lat_curr = @latitude 
-    @@request.long_curr= @longitude 
-    redirect_to "/home" 
-  else 
-    @latitude = params[:latitude] 
-    @longitude = params[:longitude] 
-    @@request.lat_destination = @latitude 
-    @@request.long_destination= @longitude 
-    redirect_to "/requests/create" 
+      @latitude = params[:latitude] 
+      @longitude = params[:longitude] 
+      @@request.lat_curr = @latitude 
+      @@request.long_curr= @longitude 
+      redirect_to "/home" 
+    else 
+      @latitude = params[:latitude] 
+      @longitude = params[:longitude] 
+      @@request.lat_destination = @latitude 
+      @@request.long_destination= @longitude 
+      redirect_to "/requests/create" 
+    end 
   end 
-  end 
+  
   def index 
     unless(params[:search==nil]) 
-    @requests = Request.search(params[:search]) 
+      @requests = Request.search(params[:search]) 
     end 
   end 
    
   def create 
   end 
+  
   def new 
     @@i = 0 
     redirect_to "/home" 
@@ -63,8 +67,6 @@ before_filter :authenticate_user!
   def home 
     @@i = @@i + 1 
   end 
-
-
 
   def geocoding 
     respond_to do |format|               
