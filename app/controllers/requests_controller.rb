@@ -33,6 +33,9 @@ class RequestsController < ApplicationController
   # choose one stage from the offer 
   # @@i = 1 indicates stage 1 of the form
   def create_curr_location 
+    if @@i == nil 
+      redirect_to "/profiles/myAccount"  
+    end
     if @@i == 1 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
@@ -69,6 +72,9 @@ class RequestsController < ApplicationController
   
   # moving from stage of creating a request's form to the next stage 
   def home 
+    if @@i == nil 
+      redirect_to "/profiles/myAccount"  
+    end
     @@i = @@i + 1 
   end 
 
