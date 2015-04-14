@@ -1,4 +1,6 @@
 RsgLinkedinGem::Application.routes.draw do
+  get "place/place"
+
   get "welcome/index"
   #root :to => 'welcome#index'
 
@@ -25,8 +27,10 @@ RsgLinkedinGem::Application.routes.draw do
   #root :to => 'linkedin#index'
   #get "/users/sign_out"
    #match "users/my_account" => "users/registrations#my_account", :as => "my_account"
+   root :to => 'place#place'
    devise_scope :user do
-    root :to => 'user/registrations#myAccount'
+    #root :to => 'user/registrations#myAccount'
+    
     #get 'user/registrations/myAccount'
     get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount"
     get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo"
