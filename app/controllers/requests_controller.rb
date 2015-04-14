@@ -1,12 +1,18 @@
 class RequestsController < ApplicationController 
+  # make sure there is a currently logged in user 
   before_filter :authenticate_user! 
+  
+  # @@request the request to be createad using new request 
   @@request = Request.new 
+  
   
   def search 
    @requests = Request.search(params[:search]) 
   end 
   
- def show 
+ 
+
+  def show 
     @user = current_user 
     @id = params[:id] 
     if (Request.exists?(@id)) 
@@ -18,22 +24,14 @@ class RequestsController < ApplicationController
     
   end 
   
-  def update 
-    if @@i == 1 
-      @latitude = params[:latitude] 
-      @longitude = params[:longitude] 
-      @@request.lat_curr = @latitude 
-      @@request.long_curr= @longitude 
-      redirect_to "/home" 
-  else 
-      @latitude = params[:latitude] 
-      @longitude = params[:longitude] 
-      @@request.lat_destination = @latitude 
-      @@request.long_destination= @longitude 
-      redirect_to "/requests/create" 
-    end 
+  
+
+  def update  
   end 
   
+
+  # choose one stage from the offer 
+  # @@i = 1 indicates stage 1 of the form
   def create_curr_location 
     if @@i == 1 
       @latitude = params[:latitude] 
@@ -50,6 +48,8 @@ class RequestsController < ApplicationController
     end 
   end 
   
+  
+
   def index 
     unless(params[:search==nil]) 
       @requests = Request.search(params[:search]) 
@@ -59,14 +59,20 @@ class RequestsController < ApplicationController
   def create 
   end 
   
+  
+  # create new request  
   def new 
     @@i = 0 
     redirect_to "/home" 
   end 
   
+  
+  # moving from stage of creating a request's form to the next stage 
   def home 
     @@i = @@i + 1 
   end 
+
+  
 
   def geocoding 
     respond_to do |format|               
@@ -75,6 +81,7 @@ class RequestsController < ApplicationController
   end 
 
 
+ 
   def reverse_geocoding 
     respond_to do |format|               
       format.js 
@@ -82,6 +89,8 @@ class RequestsController < ApplicationController
   end 
   
   
+ 
+  # saves the info in stage 3 of the form in the db 
   def create_ride_info 
     @color = params[:car_color] 
     @model = params[:car_model] 
@@ -99,8 +108,12 @@ class RequestsController < ApplicationController
     redirect_to "/profiles/myAccount" 
   end 
   
+
+
   def edit 
   end 
+
+
 
   def delete 
   end 
