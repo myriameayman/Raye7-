@@ -1,6 +1,6 @@
 class FacebookController < ApplicationController
 	before_filter :authenticate_user!
-
+  
   def create
   	@user = current_user
    
