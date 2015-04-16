@@ -12,7 +12,10 @@ class ProfilesController < ApplicationController
   end
 
   def search
-    @requests = Request.search params[:search]
+    unless(params[:search==nil])
+    @requests = Request.search params[:search] 
+  end
+
   end
   
 
@@ -21,6 +24,7 @@ class ProfilesController < ApplicationController
 
   def index 
     @requests = Request.search(params[:search])
+
   end
 
   def edit

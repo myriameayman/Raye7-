@@ -188,11 +188,8 @@
      </div>
       <div class="panel-body">
        <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
-       			<h4> from </h4>
+       			<h4> Trip destination </h4>
 		      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-		      <br>
-		      <h4> to </h4>
-		      <%= text_field_tag :search1, params[:search1], :id => 'search1_field' %>
 		      <br>
 		      <%= submit_tag "Search", :name => nil %> 
 		<% end %> 
