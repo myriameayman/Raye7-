@@ -19,7 +19,7 @@ RsgLinkedinGem::Application.routes.draw do
 
   get 'signout', to: 'facebook#destroy', as: 'signout' 
   
-  root :to => 'profiles#myAccount' 
+  #root :to => 'profiles#myAccount' 
   
   get "profiles/new" 
 
@@ -44,7 +44,7 @@ RsgLinkedinGem::Application.routes.draw do
   get "requests/create" 
   
   get "requests/create_curr_location" 
-  #root :to => 'requests#new' 
+  root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
   
   get "/home", to: "requests#home", as: "home" 

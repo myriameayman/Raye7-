@@ -1,11 +1,9 @@
+@@i = nil 
+@@request = nil
 class RequestsController < ApplicationController 
   # make sure there is a currently logged in user 
-  before_filter :authenticate_user! 
-  
-  # @@request the request to be createad using new request 
-  @@request = Request.new 
-  
-  
+  #before_filter :authenticate_user! 
+
   def search 
    @requests = Request.search(params[:search]) 
   end 
@@ -32,6 +30,8 @@ class RequestsController < ApplicationController
 
   # choose one stage from the offer 
   # @@i = 1 indicates stage 1 of the form
+  #/home is redirected to home view 
+  #/requests/create is redireted to the create view in requests folder
   def create_curr_location 
     if @@i == nil 
       redirect_to "/profiles/myAccount"  
@@ -62,9 +62,12 @@ class RequestsController < ApplicationController
   def create 
   end 
   
-  
+    
+
+  # @@request the request to be createad using new request 
   # create new request  
   def new 
+    @@request = Request.new 
     @@i = 0 
     redirect_to "/home" 
   end 
@@ -73,7 +76,7 @@ class RequestsController < ApplicationController
   # moving from stage of creating a request's form to the next stage 
   def home 
     if @@i == nil 
-      redirect_to "/profiles/myAccount"  
+      redirect_to "/profiles/myAccount"  and return 
     end
     @@i = @@i + 1 
   end 
@@ -97,6 +100,7 @@ class RequestsController < ApplicationController
   
  
   # saves the info in stage 3 of the form in the db 
+  # profiles/myAccount redirectes to the user's profile page 
   def create_ride_info 
     @color = params[:car_color] 
     @model = params[:car_model] 
@@ -110,6 +114,16 @@ class RequestsController < ApplicationController
     @@request.seats= @seats 
     @@request.smoking= @smoking 
     @@request.air_conditioner= @air_conditioner 
+    #@str = "<div>
+     #         <ul>
+      #        <% @@request.errors.each_with_index do |msg, i| %>
+      #           <li><%= msg[1] %></li>
+      #        <% end %>
+      #        </ul>
+      #      </div>".html_safe
+    #if @@request.errors.any? 
+     #  redirect_to "/requests/create_ride_info" 
+    #end           
     @@request.save 
     redirect_to "/profiles/myAccount" 
   end 
