@@ -110,13 +110,17 @@ class RequestsController < ApplicationController
     @number = params[:car_number] 
     @seats = params[:seats] 
     @smoking = params[:smoking] 
-    @air_conditioner = params[:air_conditioner] 
+    @air_conditioner = params[:air_conditioner]
+    @trunk = params[:trunk] 
+    @name = params[:name] 
     @@request.car_color = @color 
     @@request.car_model= @model 
     @@request.car_number= @number 
     @@request.seats= @seats 
     @@request.smoking= @smoking 
-    @@request.air_conditioner= @air_conditioner 
+    @@request.air_conditioner= @air_conditioner
+    @@request.trunk= @trunk 
+    @@request.name= @name 
     #@str = "<div>
      #         <ul>
       #        <% @@request.errors.each_with_index do |msg, i| %>
@@ -128,7 +132,7 @@ class RequestsController < ApplicationController
      #  redirect_to "/requests/create_ride_info" 
     #end           
     @@request.save 
-    redirect_to "/profiles/myAccount" 
+    redirect_to root_path 
   end 
   
 
