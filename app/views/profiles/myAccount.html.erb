@@ -1,4 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
 
+</head>
+
+<link rel="stylesheet" type="text/css" href="assets/button.css">
+<link rel="stylesheet" href="assets/styles.css">
+
+<style type="text/css">
+ /*added Code */
+
+
+
+/*end of Added code */
+  .mini-submenu{
+    display:none;  
+    background-color: rgba(0, 0, 0, 0);  
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 9px;  
+    /*position: relative;*/
+    width: 42px;
+  }
+
+  .mini-submenu:hover{
+    cursor: pointer;
+  }
+
+  .mini-submenu .icon-bar {
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    width: 22px;
+    margin-top: 3px;
+  }
+
+  .mini-submenu .icon-bar {
+    background-color: #000;
+  }
+
+  #slide-submenu{
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+.panel.panel-default{
+  	border-radius:60px;
+}
+#navlist{
+	display: none;
+}
+#navlist:hover{
+	display: block;
+}
+
+
+</style>
 <body>
 
 
@@ -22,8 +83,6 @@
     </div>
   </div>
   </div>
-
-  
    
   <div class="row" style="padding-top:40px">
     <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
@@ -43,7 +102,7 @@
 		      <ul>
 			      		<li>
 
-			      		<% if(@user.circles.exists?(:name => "twitter")&&@user.circles.exists?(:name => "googlePlus")) %>
+			      		<% if(@user.circles.exists?(:name => "twitter")&&Circle.exists?(:name => "googlePlus")) %>
 			      		<a href="#"><span>No more circles to connect</span></a>
 
 			      		<% else %>
@@ -113,36 +172,11 @@
 		   
 
 
-		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
+		   <li><a href='#'><span>About</span></a></li>
 		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
 		</ul>
 </div>     
   </div>
-
-
-  <div class="col-md-8">
-    <div class= "panel panel-default" style="border-top-left-radius: 4px">
-     <div class="panel-heading">
-      <h3 class="panel-title"> Search for a trip</h3>
-     </div>
-      <div class="panel-body">
-       <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
-		      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-		      <%= submit_tag "Search", :name => nil %> 
-		      <%= link_to_function "Clear", "$('search_field').clear()" %>
-		<% end %> 
-       <hr>
-       <ul>
-		  <% @requests.each do |grant| %>
-			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',
-		  	:action => 'show', id: grant.id  %></li></h6>
-		  <% end %>
-		</ul>
-       
-      </div>
-    </div>
-  </div>
-
   <div class="col-md-8">
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
@@ -155,7 +189,6 @@
       </div>
     </div>
   </div>
-
 
 </div> 
 
