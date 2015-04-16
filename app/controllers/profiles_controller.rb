@@ -41,7 +41,7 @@ end
           @circles = @user.circles
           session[:user_id]  = current_user.id
       else
-        redirect_to new_user_session_path
+          redirect_to new_user_session_path
       end
   end
   
