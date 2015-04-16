@@ -2,7 +2,7 @@
 @@request = nil
 class RequestsController < ApplicationController 
   # make sure there is a currently logged in user 
-  #before_filter :authenticate_user! 
+ #before_filter :authenticate_user! 
 
   def search 
    @requests = Request.search(params[:search]) 
@@ -45,8 +45,10 @@ class RequestsController < ApplicationController
     else 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
+      @loc = params[:loc]
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
+      @@request.destination= @loc
       redirect_to "/requests/create" 
     end 
   end 
@@ -67,8 +69,7 @@ class RequestsController < ApplicationController
   # @@request the request to be createad using new request 
   # create new request  
   def new 
-    @@request = Request.new 
-    @@request.user_id = current_user.id 
+    @@request = Request.new
     @@i = 0 
     redirect_to "/home" 
   end 
@@ -79,6 +80,7 @@ class RequestsController < ApplicationController
     if @@i == nil 
       redirect_to "/profiles/myAccount"  and return 
     end
+    @@request.user_id = current_user.id 
     @@i = @@i + 1 
   end 
 

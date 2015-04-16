@@ -19,7 +19,7 @@ RsgLinkedinGem::Application.routes.draw do
 
   get 'signout', to: 'facebook#destroy', as: 'signout' 
   
-  #root :to => 'profiles#myAccount' 
+  root :to => 'profiles#myAccount' 
   
   get "profiles/new" 
 
@@ -44,7 +44,7 @@ RsgLinkedinGem::Application.routes.draw do
   get "requests/create" 
   
   get "requests/create_curr_location" 
-  root :to => 'requests#new' 
+  #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
   
   get "/home", to: "requests#home", as: "home" 
@@ -55,9 +55,9 @@ RsgLinkedinGem::Application.routes.draw do
   #devise_for :users 
   get "/requests/home/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
   
-  get "/requests/create_curr_location/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
+  get "/requests/create_curr_location/:latitude/:longitude/:loc" ,to: "requests#update", as: "create_form" 
   
-  get "/requests/create_curr_location/:latitude/:longitude" => "requests#update" 
+  get "/requests/create_curr_location/:latitude/:longitude/:loc" => "requests#update" 
   
   get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
   

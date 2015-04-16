@@ -45,8 +45,9 @@
 <script>
 
 function get_curr_location() {
+    var loc = document.getElementById("search_box_geocoding").value;
     // redirected to requests/update
-    window.location.replace('/requests/create_curr_location?latitude='+output2+'&longitude='+output);
+    window.location.replace('/requests/create_curr_location?latitude='+output2+'&longitude='+output+'&loc='+loc);
 }
 </script>
 <a class="submit_button" href='#' onClick="get_curr_location();">
