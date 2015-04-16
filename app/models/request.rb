@@ -1,9 +1,11 @@
 class Request < ActiveRecord::Base
 	  belongs_to :user
 	  has_many :trip
-	  attr_accessible :air_conditioner, :car_color, :car_model, :car_number, :lat_curr, :lat_destination, :long_curr, :long_destination, :seats, :smoking, :trunk
+	  attr_accessible :air_conditioner, :car_color, :car_model, :car_number, :lat_curr,
+	   :lat_destination, :long_curr, :long_destination, :seats, :smoking, :trunk, :user_id
 	  validates :air_conditioner, presence: true, presence: { message: "can't leave any blank fields" }
-	  validates :car_color, presence: true, presence: { message: "can't leave any blank fields" }
+	  validates :user_id, presence: true, presence: { message: "can't leave any blank fields" }
+	  validates :car_color, presence: true
 	  validates :car_model, presence: true, presence: { message: "can't leave any blank fields" }
 	  validates :car_number, presence: true , presence: { message: "can't leave any blank fields" }
 	  validates :lat_curr, presence: true, presence: { message: "can't leave any blank fields" }

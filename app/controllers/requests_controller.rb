@@ -68,6 +68,7 @@ class RequestsController < ApplicationController
   # create new request  
   def new 
     @@request = Request.new 
+    @@request.user_id = current_user.id 
     @@i = 0 
     redirect_to "/home" 
   end 

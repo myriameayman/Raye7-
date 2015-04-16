@@ -2,9 +2,12 @@ require 'test_helper'
 
 class RequestsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
-  
 
   test "should get create" do
+    @user = User.new(:email => 'test@example.com',:username => 'ebrahim', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
     get :create
     assert :success 
   end
@@ -26,7 +29,8 @@ class RequestsControllerTest < ActionController::TestCase
   
   test "check requests validations integers only" do
     request = Request.new :seats => "a", :car_color => "rouge", :long_destination => 5,:lat_destination => 5, 
-    :long_curr => 4,:lat_curr => 4, :car_number => "28-2180", :air_conditioner => 1, :smoking => 1, :trunk => 0   
+    :long_curr => 4,:lat_curr => 4, :car_number => "28-2180", :air_conditioner => 1, :smoking => 1, :trunk => 0,
+    :user_id => 1   
     assert !request.valid?
   end
   
@@ -39,9 +43,13 @@ class RequestsControllerTest < ActionController::TestCase
   
   
   test "should get home" do
-    get :new 
-    String url = "http://test.host/home"
-    assert_redirected_to url 
+   @user = User.new(:email => 'test@example.com',:username => 'ebrahim', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+   @user.save
+   sign_in @user
+   get :new 
+   String url = "http://test.host/home"
+   assert_redirected_to url 
   end
   
   
