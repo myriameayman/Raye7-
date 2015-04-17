@@ -197,3 +197,1642 @@ Connecting to database specified by database.yml
   [1m[35m (133.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150329182023')
   [1m[36m (122.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150329175516')[0m
   [1m[35m (123.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150320172034')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-17 20:05:37 +0200
+Processing by ProfilesController#myAccount as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 LIMIT 1[0m
+Completed 401 Unauthorized in 77ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-04-17 20:05:38 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.2ms)
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/07b665c7bdce9363c02b0777a91f2730c6996ebe/application.css.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/24edfa7e065f174dab11e8fccfc1300d6419cb3e/bootstrap.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/bootstrap.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_variables.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_mixins.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_reset.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_scaffolding.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_grid.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_layouts.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_type.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_code.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_forms.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_tables.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_sprites.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_dropdowns.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_wells.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_component-animations.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_close.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_buttons.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_button-groups.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_alerts.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_navs.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_navbar.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_breadcrumbs.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_pagination.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_pager.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_modals.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_tooltip.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_popovers.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_thumbnails.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_media.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_labels-badges.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_progress-bars.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_accordion.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_carousel.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_hero-unit.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Warning. Error encountered while saving cache /home/ebrahim/SE/Sprint1/issue_38/Raye7-/tmp/cache/sass/8263922b4db098dc0c27e51ab15a7dc8bdd85398/_utilities.scssc: can't dump anonymous class #<Class:0x00000002451008>
+
+Compiled application.css  (13670ms)  (pid 6396)
+Completed 200 OK in 15308ms (Views: 15290.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-17 20:05:54 +0200
+Processing by ProfilesController#myAccount as HTML
+  [1m[35mUser Load (81.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 LIMIT 1
+Completed 401 Unauthorized in 83ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-04-17 20:05:55 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/libraries/rangeSlider/css/ion.rangeSlider.css" for 127.0.0.1 at 2015-04-17 20:05:58 +0200
+Served asset /libraries/rangeSlider/css/ion.rangeSlider.css - 404 Not Found (66ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/rangeSlider/css/ion.rangeSlider.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/libraries/rangeSlider/css/ion.rangeSlider.skinNice.css" for 127.0.0.1 at 2015-04-17 20:05:58 +0200
+Served asset /libraries/rangeSlider/css/ion.rangeSlider.skinNice.css - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/rangeSlider/css/ion.rangeSlider.skinNice.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/assets/css/variants/directory.css?20142206" for 127.0.0.1 at 2015-04-17 20:05:58 +0200
+Served asset /css/variants/directory.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/css/variants/directory.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css" for 127.0.0.1 at 2015-04-17 20:05:58 +0200
+Served asset /libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/font-awesome/css/font-awesome.min.css" for 127.0.0.1 at 2015-04-17 20:05:59 +0200
+Served asset /libraries/font-awesome/css/font-awesome.min.css - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/font-awesome/css/font-awesome.min.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/libraries/chosen/chosen.min.css" for 127.0.0.1 at 2015-04-17 20:05:59 +0200
+Served asset /libraries/chosen/chosen.min.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/chosen/chosen.min.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-17 20:06:00 +0200
+Served asset /application.css - 200 OK (179ms)
+
+
+Started GET "/assets/libraries/chosen/chosen.jquery.min.js" for 127.0.0.1 at 2015-04-17 20:06:00 +0200
+Served asset /libraries/chosen/chosen.jquery.min.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/chosen/chosen.jquery.min.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-17 20:06:00 +0200
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.canvas.js" for 127.0.0.1 at 2015-04-17 20:06:00 +0200
+Served asset /libraries/flot/jquery.flot.canvas.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.canvas.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.js" for 127.0.0.1 at 2015-04-17 20:06:00 +0200
+Served asset /libraries/flot/jquery.flot.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js" for 127.0.0.1 at 2015-04-17 20:06:00 +0200
+Served asset /libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.resize.js" for 127.0.0.1 at 2015-04-17 20:06:01 +0200
+Served asset /libraries/flot/jquery.flot.resize.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.resize.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.time.js" for 127.0.0.1 at 2015-04-17 20:06:01 +0200
+Served asset /libraries/flot/jquery.flot.time.js - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.time.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/gmap3.clusterer.js" for 127.0.0.1 at 2015-04-17 20:06:01 +0200
+Served asset /libraries/gmap3.clusterer.js - 304 Not Modified (117ms)
+
+
+Started GET "/assets/libraries/jquery.js" for 127.0.0.1 at 2015-04-17 20:06:01 +0200
+Served asset /libraries/jquery.js - 304 Not Modified (662ms)
+
+
+Started GET "/assets/libraries/gmap3.infobox.js" for 127.0.0.1 at 2015-04-17 20:06:01 +0200
+Served asset /libraries/gmap3.infobox.js - 304 Not Modified (106ms)
+
+
+Started GET "/assets/libraries/bxslider/jquery.bxslider.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/bxslider/jquery.bxslider.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bxslider/jquery.bxslider.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/isotope/jquery.isotope.min.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/isotope/jquery.isotope.min.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/isotope/jquery.isotope.min.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/carousel.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/carousel.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/carousel.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/dropdown.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/dropdown.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/dropdown.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/transition.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/transition.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/transition.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/tab.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/tab.js - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/tab.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/collapse.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/collapse.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/collapse.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/graph.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /graph.js - 304 Not Modified (474ms)
+
+
+Started GET "/assets/director.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /director.js - 304 Not Modified (133ms)
+
+
+Started GET "/assets/map.js" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /map.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/logo-directory.png" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /logo-directory.png - 200 OK (87ms)
+
+
+Started GET "/assets/tree.png" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /tree.png - 304 Not Modified (32ms)
+
+
+Started GET "/assets/factory.png" for 127.0.0.1 at 2015-04-17 20:06:02 +0200
+Served asset /factory.png - 304 Not Modified (211ms)
+
+
+Started GET "/assets/pants.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /pants.png - 304 Not Modified (291ms)
+
+
+Started GET "/assets/hamburger.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /hamburger.png - 304 Not Modified (93ms)
+
+
+Started GET "/assets/condominium.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /condominium.png - 304 Not Modified (210ms)
+
+
+Started GET "/assets/snowflake.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /snowflake.png - 304 Not Modified (49ms)
+
+
+Started GET "/assets/markers/ship.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /markers/ship.png - 304 Not Modified (19ms)
+
+
+Started GET "/assets/camping.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /camping.png - 304 Not Modified (60ms)
+
+
+Started GET "/assets/play.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /play.png - 304 Not Modified (56ms)
+
+
+Started GET "/assets/wifi.png" for 127.0.0.1 at 2015-04-17 20:06:03 +0200
+Served asset /wifi.png - 304 Not Modified (33ms)
+
+
+Started GET "/assets/apartment.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /apartment.png - 304 Not Modified (21ms)
+
+
+Started GET "/assets/truck.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /truck.png - 304 Not Modified (24ms)
+
+
+Started GET "/assets/pushchair.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /pushchair.png - 304 Not Modified (57ms)
+
+
+Started GET "/assets/forest.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /forest.png - 304 Not Modified (16ms)
+
+
+Started GET "/assets/cart.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /cart.png - 304 Not Modified (28ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /pencil.png - 304 Not Modified (63ms)
+
+
+Started GET "/assets/globe.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /globe.png - 304 Not Modified (6ms)
+
+
+Started GET "/assets/speaker.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /speaker.png - 304 Not Modified (23ms)
+
+
+Started GET "/assets/single-house.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /single-house.png - 304 Not Modified (39ms)
+
+
+Started GET "/assets/heart.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /heart.png - 304 Not Modified (26ms)
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /divider.png - 304 Not Modified (87ms)
+
+
+Started GET "/assets/house.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /house.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/information.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /information.png - 304 Not Modified (23ms)
+
+
+Started GET "/assets/eye.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /eye.png - 304 Not Modified (49ms)
+
+
+Started GET "/assets/printer.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /printer.png - 304 Not Modified (45ms)
+
+
+Started GET "/assets/lcd.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /lcd.png - 304 Not Modified (208ms)
+
+
+Started GET "/assets/cluster-transparent.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /cluster-transparent.png - 304 Not Modified (71ms)
+
+
+Started GET "/users/assets/cluster-transparent.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users/assets/cluster-transparent.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/zoo.png" for 127.0.0.1 at 2015-04-17 20:06:04 +0200
+Served asset /zoo.png - 304 Not Modified (148ms)
+
+
+Started GET "/assets/key.png" for 127.0.0.1 at 2015-04-17 20:06:05 +0200
+Served asset /key.png - 304 Not Modified (217ms)
+
+
+Started GET "/assets/male.png" for 127.0.0.1 at 2015-04-17 20:06:05 +0200
+Served asset /male.png - 304 Not Modified (217ms)
+
+
+Started GET "/assets/steak.png" for 127.0.0.1 at 2015-04-17 20:06:05 +0200
+Served asset /steak.png - 304 Not Modified (492ms)
+
+
+Started GET "/assets/cocktail.png" for 127.0.0.1 at 2015-04-17 20:06:06 +0200
+Served asset /cocktail.png - 304 Not Modified (52ms)
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2015-04-17 20:06:07 +0200
+Served asset /images/favicon.ico - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/libraries/chosen/chosen.min.css" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/chosen/chosen.min.css - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/chosen/chosen.min.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/libraries/rangeSlider/css/ion.rangeSlider.css" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/rangeSlider/css/ion.rangeSlider.css - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/rangeSlider/css/ion.rangeSlider.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/rangeSlider/css/ion.rangeSlider.skinNice.css" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/rangeSlider/css/ion.rangeSlider.skinNice.css - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/rangeSlider/css/ion.rangeSlider.skinNice.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/css/variants/directory.css?20142206" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /css/variants/directory.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/css/variants/directory.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/assets/libraries/font-awesome/css/font-awesome.min.css" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/font-awesome/css/font-awesome.min.css - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/font-awesome/css/font-awesome.min.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/chosen/chosen.jquery.min.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/chosen/chosen.jquery.min.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/chosen/chosen.jquery.min.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.canvas.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/flot/jquery.flot.canvas.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.canvas.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/flot/jquery.flot.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.time.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/flot/jquery.flot.time.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.time.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/libraries/jquery.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libraries/gmap3.clusterer.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/gmap3.clusterer.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libraries/gmap3.infobox.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/gmap3.infobox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libraries/bxslider/jquery.bxslider.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bxslider/jquery.bxslider.js - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bxslider/jquery.bxslider.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/flot/jquery.flot.resize.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/flot/jquery.flot.resize.js - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/flot/jquery.flot.resize.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/isotope/jquery.isotope.min.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/isotope/jquery.isotope.min.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/isotope/jquery.isotope.min.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/carousel.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/carousel.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/carousel.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/collapse.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/collapse.js - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/collapse.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/dropdown.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/dropdown.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/dropdown.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/tab.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/tab.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/tab.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/libraries/bootstrap/javascripts/bootstrap/transition.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /libraries/bootstrap/javascripts/bootstrap/transition.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootstrap/javascripts/bootstrap/transition.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/map.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/graph.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /graph.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/director.js" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /director.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tree.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /tree.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pants.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /pants.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/condominium.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /condominium.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/snowflake.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /snowflake.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/camping.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /camping.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wifi.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /wifi.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/apartment.png" for 127.0.0.1 at 2015-04-17 20:07:10 +0200
+Served asset /apartment.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/truck.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /truck.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pushchair.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /pushchair.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cart.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /cart.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/speaker.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /speaker.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /divider.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/house.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /house.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/information.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /information.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steak.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /steak.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/zoo.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /zoo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/key.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /key.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/male.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /male.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/factory.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /factory.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hamburger.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /hamburger.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/markers/ship.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /markers/ship.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/play.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /play.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/forest.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /forest.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/globe.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /globe.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/single-house.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /single-house.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/heart.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /heart.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/eye.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /eye.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/printer.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /printer.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lcd.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /lcd.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cocktail.png" for 127.0.0.1 at 2015-04-17 20:07:11 +0200
+Served asset /cocktail.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cluster-transparent.png" for 127.0.0.1 at 2015-04-17 20:07:16 +0200
+Served asset /cluster-transparent.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/assets/cluster-transparent.png" for 127.0.0.1 at 2015-04-17 20:07:16 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users/assets/cluster-transparent.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ebrahim/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-04-17 20:08:52 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fUTQgKDAmgrNztKsF/sBa8laTaVeVHYdkc/DADCyv8I=", "user"=>{"username"=>"ebrahim", "email"=>"ebrahim.el.gaml@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "firstName"=>"Ebrahim", "lastName"=>"ELgaml"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'ebrahim.el.gaml@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('ebrahim') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'ebrahim.el.gaml@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (131.1ms)[0m  [1mINSERT INTO "users" ("budget", "created_at", "current_sign_in_at", "current_sign_in_ip", "description", "email", "encrypted_password", "fb_email", "firstName", "gmail", "lastName", "last_sign_in_at", "last_sign_in_ip", "location", "name", "nickname", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "screen_name", "sign_in_count", "updated_at", "url", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["budget", nil], ["created_at", Fri, 17 Apr 2015 18:08:53 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["description", nil], ["email", "ebrahim.el.gaml@gmail.com"], ["encrypted_password", "$2a$10$YoRPbz7KQagr5zEd/qyDP.1xRS6jZEkKFMHIoKtXnKUK9sRGW0HnG"], ["fb_email", nil], ["firstName", "Ebrahim"], ["gmail", nil], ["lastName", "ELgaml"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["location", nil], ["name", nil], ["nickname", nil], ["profile_image_url", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["screen_name", nil], ["sign_in_count", 0], ["updated_at", Fri, 17 Apr 2015 18:08:53 UTC +00:00], ["url", nil], ["username", "ebrahim"]]
+  [1m[35m (120.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2015-04-17 18:08:53.599121', "current_sign_in_at" = '2015-04-17 18:08:53.599121', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2015-04-17 18:08:53.601361' WHERE "users"."id" = 1
+  [1m[36m (147.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1133ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-17 20:08:53 +0200
+Processing by ProfilesController#myAccount as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE (destination LIKE NULL )[0m
+  Rendered profiles/myAccount.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 83ms
+
+ActionView::Template::Error (undefined method `faceboook_profileimage' for #<User:0x007f4b4224f718>):
+    66:   <div class="row">
+    67:     <div class="col-md-3" style="padding-left:40px">
+    68:     <div class="image-frame">
+    69:         <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') "></div>
+    70: 
+    71:     </div>
+    72:     </div>
+  app/views/profiles/myAccount.html.erb:69:in `_app_views_profiles_my_ccount_html_erb__1650599692277809234_69980604660800'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20121017155125)
+Migrating to CreateLinkedinOauthSettings (20121020082005)
+Migrating to CreateBasicProfiles (20121020084444)
+Migrating to CreateFullProfiles (20121020160553)
+Migrating to CreateEducations (20121020160651)
+Migrating to CreatePositions (20121020160732)
+Migrating to CreateEmails (20150311232149)
+Migrating to AddUsernameToUsers (20150311233939)
+Migrating to AddFieldsToUserModel (20150318085532)
+Migrating to CreateTwitterOauthSettings (20150318090021)
+Migrating to CreateCircles (20150320172034)
+Migrating to CreateFriends (20150320172108)
+Migrating to CreateRequests (20150329175214)
+Migrating to CreatePlaces (20150329175316)
+Migrating to CreateRatings (20150329175516)
+Migrating to CreateBlockeds (20150329180224)
+Migrating to AddFbEmailToUsers (20150329181908)
+Migrating to AddNicknameToUsers (20150329182023)
+Migrating to AddGmailToUsers (20150329182422)
+Migrating to AddBudgetToUsers (20150329184252)
+Migrating to CreateVisits (20150329191022)
+Migrating to AddDestinationToRequest (20150406205841)
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("basic_profiles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("blockeds")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("circles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("educations")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emails")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("friends")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("full_profiles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("linkedin_oauth_settings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("places")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("positions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("ratings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("twitter_oauth_settings")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("visits")
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-17 20:16:55 +0200
+Processing by ProfilesController#myAccount as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE (destination LIKE NULL )
+  Rendered profiles/myAccount.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 125ms
+
+ActionView::Template::Error (undefined method `faceboook_profileimage' for #<User:0x007fc1545db728>):
+    66:   <div class="row">
+    67:     <div class="col-md-3" style="padding-left:40px">
+    68:     <div class="image-frame">
+    69:         <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') "></div>
+    70: 
+    71:     </div>
+    72:     </div>
+  app/views/profiles/myAccount.html.erb:69:in `_app_views_profiles_my_ccount_html_erb___2024175232525296532_70234161993260'
+
+
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/ebrahim/.rvm/gems/ruby-2.1.5/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.0ms)
