@@ -15,7 +15,7 @@ class RequestsControllerTest < ActionController::TestCase
   
   test "should get userProfile" do
     get :create_ride_info
-    String url = "http://test.host/profiles/myAccount"
+    String url = "http://test.host/"
     assert_redirected_to url 
   end
 
