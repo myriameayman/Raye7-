@@ -30,19 +30,19 @@ end
   def edit
   end
 # Getting the current login user to retrieve all the info in the profile page  
-  def myAccount  
-      unless(current_user == nil)
+    def myAccount
+      unless(current_user == nil)      
+          @user = current_user
+          if(@user.uid==nil)
+            redirect_to "/auth/facebook" and return
+          end
           unless(params[:search==nil])
             @requests = Request.search params[:search]
-
           end
-          #@requests = Request.search params[:search]      
-          @user = current_user
           @circles = @user.circles
           session[:user_id]  = current_user.id
       else
-          redirect_to new_user_session_path
+        redirect_to new_user_session_path
       end
   end
-  
 end
