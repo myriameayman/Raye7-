@@ -44,6 +44,19 @@ class RegistrationsController < Devise::RegistrationsController
       end
   end
 
+ def user_profile_image
+   
+  @user_profile_image = User.find(params[:id]).profile_image_url
+ end
+
+
+ def my_rating
+
+ @rating = Rating.find(params[:user_id]).stars
+ end
+
+
+
   def newLinkedin
   	new
   end

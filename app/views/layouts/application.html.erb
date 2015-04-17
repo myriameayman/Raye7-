@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+   <!-----   <%= stylesheet_link_tag :all %> -->
+   <%= stylesheet_link_tag    "bootstrap.min", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag    "styles", media: "all", "data-turbolinks-track" => true %>
 
-                            <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,600italic,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,600italic,700">
             
     <link rel="stylesheet" type="text/css" href="/assets/libraries/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/libraries/chosen/chosen.min.css">
@@ -14,6 +17,10 @@
     <link rel="stylesheet" type="text/css" href="/assets/libraries/rangeSlider/css/ion.rangeSlider.skinNice.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/variants/directory.css?20142206">
     <link rel="stylesheet" type="text/css" href="/assets/libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
+     
+     <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="stylesheets/myAccount.css">
 
     <title><%= content_for?(:title) ? yield(:title) : "Raye7" %></title>
     <%= csrf_meta_tags %>
@@ -49,8 +56,10 @@
                 <nav class="navbar navbar-default">
                     <div class="header-secondary">
                         <div class="container clearfix">
-                           Welcome at Raye7
-                            
+                         
+                         Welcome at Raye7 
+                          </div>
+                         
                             <ul class="header-submenu pull-right">
                             <% if user_signed_in? %>
                               Logged in as <strong><%= current_user.email %></strong>
@@ -100,14 +109,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
-<script type="text/javascript" src="../assets/libraries/jquery.js"></script>
+<!-- <script type="text/javascript" src="../assets/libraries/jquery.js"></script> -->
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="../assets/libraries/gmap3.clusterer.js"></script>
 <script type="text/javascript" src="../assets/libraries/gmap3.infobox.js"></script>
 
 <script type="text/javascript" src="../assets/libraries/bxslider/jquery.bxslider.js"></script>
-<script type="text/javascript" src="../assets/libraries/chosen/chosen.jquery.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/libraries/chosen/chosen.jquery.min.js"></script> -->
 <script type="text/javascript" src="../assets/libraries/isotope/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
 
