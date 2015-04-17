@@ -5,10 +5,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
 
-  def create
+
+  def create  	
   	super
   end
-  
+
+
   def edit
   	super
   end
