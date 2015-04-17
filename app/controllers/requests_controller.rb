@@ -1,4 +1,6 @@
+# step of the offering ride form 
 @@i = nil 
+# request to be created in the offering ride form 
 @@request = nil
 class RequestsController < ApplicationController 
   # make sure there is a currently logged in user 
