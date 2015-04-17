@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
 	before_filter :authenticate_user!
 	
 	# show the places of the current user 
-	def show 
+	def create 
 		@places = [] 
 		@visits = Visit.find(:all, :conditions => ['user_id LIKE ?' , current_user.id])
 		@visits.each do |v| 
@@ -13,4 +13,13 @@ class PlacesController < ApplicationController
 			end  
 		end 	 	
     end
+    def show
+   	 	@id = params[:id] 
+    	if (Place.exists?(@id)) 
+      		@place = Place.find(@id) 
+
+    	else 
+      		redirect_to "/" 
+    	end 
+    end 	
 end

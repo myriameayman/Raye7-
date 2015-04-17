@@ -2,7 +2,7 @@
 @@request = nil
 class RequestsController < ApplicationController 
   # make sure there is a currently logged in user 
- #before_filter :authenticate_user! 
+  before_filter :authenticate_user! 
 
   def search 
    @requests = Request.search(params[:search]) 

@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<title>
+Raye7 | View My Places
+</title>
+</head>
+<body class="footer-top-dark">
+<div id="page">
+<div id="header-wrapper">
+<div id="header">
+<div id="header-inner">
+<nav class="navbar navbar-default">
+<div class="container">
+<div class="collapse navbar-collapse" id="navbar-main">
+<ul class="nav navbar-nav navbar-right">
+<li class="menuparent hidden-sm">
+<a href="#">My Profile</a>
+</li>
+<li class="menuparent">
+<a href="#">Home Page</a>
+</li>
+<li class="menuparent">
+<a href="#">SignOut</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<div class="container" style="">
+<div class="block-content">
+<div class="block-content-inner">
+<div class="page-header center">
+<h3> My Places </h3>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6 col-md-3">
+<div class="thumbnail" id="place_name">
+</div>
+</div>
+<div class="col-xs-6 col-md-3">
+<div class="thumbnail" id="place_name">
+</div>
+</div>
+</div>
+<div> 
+ <% @places.each do |grant| %>
+      <h6 style="font-style:normal;font-size:15px"> <li><%= link_to grant.name, :controller =>'places',
+        :action => 'show', id: grant.id  %></li></h6>
+      <% end %>
+    </body>
+</html>
