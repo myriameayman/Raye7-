@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
       has_many :circles
       has_many :requests
       has_many :ratings
+      has_many :trips
 
       has_many :visits
       has_many :places, through: :visits
@@ -43,8 +44,6 @@ class User < ActiveRecord::Base
         def login
           @login || self.username || self.email
         end
-
-
 
       def self.find_for_database_authentication(warden_conditions)
         conditions = warden_conditions.dup

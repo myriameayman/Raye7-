@@ -5,7 +5,6 @@ class CirclesController < ApplicationController
 
   def show
   	@user = current_user
-
   	if (Circle.exists?(params[:id]))
   		@circle = Circle.find(params[:id])
   		unless(@user.circles.exists?(@circle))

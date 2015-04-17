@@ -2,6 +2,7 @@ class FacebookController < ApplicationController
   before_filter :authenticate_user!
 
   def create
+
     @user = current_user
    
     @fb_friends = FbGraph::User.me(env["omniauth.auth"].credentials.token).friends
@@ -25,7 +26,6 @@ class FacebookController < ApplicationController
     fbCircle = @user.circles.where("name = 'facebook'")
     end
 
-    
     friends.each do |f| 
         fbFriend = Friend.new 
         fbFriend.circle_id = fbCircle.id   

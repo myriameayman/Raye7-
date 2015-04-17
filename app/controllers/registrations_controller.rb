@@ -5,10 +5,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
 
-  def create
+
+  def create  	
   	super
   end
-  
+
+
   def edit
   	super
   end
@@ -29,15 +31,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def newLinkedin
   end
-  protected
-    #def after_sign_up_path_for(resource)
-     # redirect_to "/auth/facebook" and return
-      #signed_in_root_path(resource)
-    #end
-
-   # def after_update_path_for(resource)
-    #  signed_in_root_path(resource)
-    #end
 
 
 
