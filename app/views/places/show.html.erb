@@ -1,18 +1,22 @@
+<!-- the place to be shown --> 
 <%= @place.name %>
+
 <div id='map-canvas'>
-</div>
+</div> <!-- closing of map-canvas --> 
  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
  <script>
  var i = 0; 
-function initialize() {
-  //alert("hee");
 
+ //initialize map 
+function initialize() {
+  // long of the place to be shown 
   var log = <%= @place.long.to_json.html_safe %>;
+  // lat of the place to be shown
   var lat = <%= @place.lat.to_json.html_safe %>; 
   var myLatlng = new google.maps.LatLng(log,lat);
+  // name of the place to be shown 
   var placeName = <%= @place.name.to_json.html_safe %>;
   var map;
-  //alert("hee");
   var mapOptions = {
     zoom: 8,
     center: new google.maps.LatLng(log,lat),

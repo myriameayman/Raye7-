@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 	before_filter :authenticate_user!
 	
 	# show the places of the current user 
+	#@places is an arrayList that contain all places of the current_user 
 	def create 
 		@places = [] 
 		@visits = Visit.find(:all, :conditions => ['user_id LIKE ?' , current_user.id])
@@ -13,6 +14,10 @@ class PlacesController < ApplicationController
 			end  
 		end 	 	
     end
+
+
+    #show a specific place of the user 
+    #@id is the id of the place to be shown 
     def show
    	 	@id = params[:id] 
     	if (Place.exists?(@id)) 
