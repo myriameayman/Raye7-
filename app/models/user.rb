@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
       has_many :ratings
       has_many :trips
 
+
       has_many :visits
       has_many :places, through: :visits
       has_one :linkedin_oauth_setting
@@ -37,6 +38,13 @@ class User < ActiveRecord::Base
       validates :lastName, presence: true
       devise :database_authenticatable, :registerable,
         :validatable, :authentication_keys => [:login]
+
+      validates :fb_email ,:presence => true,:uniqueness => {:case_sensitive => false}
+      validates :uid ,:presence => true,:uniqueness => {:case_sensitive => false}
+      validates :oauth_token ,:presence => true,:uniqueness => {:case_sensitive => false}
+      validates :faceboook_profileimage ,:presence => true,:uniqueness => {:case_sensitive => false}
+       
+ 
 
         def login=(login)
           @login =login
