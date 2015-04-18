@@ -1,10 +1,8 @@
 class RequestsController < ApplicationController
 
   
-  def search
-   @requests = Request.search(params[:search])
-  end
-  
+# Show shows a specific requests with a certain id.
+# If it doesn't found it it will redirect it to home page again.
   def show
         @user = current_user
         @id = params[:id]
@@ -16,6 +14,7 @@ class RequestsController < ApplicationController
     end
     
   end
+
 
   def index 
     unless(params[:search==nil])

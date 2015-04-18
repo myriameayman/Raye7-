@@ -19,7 +19,7 @@ def create
 		  @@trip.user_id = @id 
 		  @@trip.request_id= params[:id]
 		  unless(params[:id] == nil)
-		  @request=Request.find(params[:id])
+		    @request=Request.find(params[:id])
 		  	
 		  	if(@request.seats>0)
 		  	 @request.seats=@request.seats - 1
@@ -31,11 +31,12 @@ def create
 	end
 end
 
+
 # The def index finds all trips of a specific request.
 # The variables :@trips :@trips is list of all available trips of a request.
 def index 
 	unless(params[:id==nil])
-  @trips = Trip.find(params[:id])
+     @trips = Trip.find(params[:id])
     end
 end
 
