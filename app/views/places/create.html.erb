@@ -42,20 +42,13 @@
 					</div> <!-- closing of page-header center -->
 				</div> <!-- closing of block-content-inner -->
 			</div> <!-- closing of block-content -->
-		</div> <!-- closing of container -->
-		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="thumbnail" id="place_name">
-				</div> <!-- closing of place_name -->
-			</div> <!-- closing of col-xs-6 col-md-3 -->
-		<div class="col-xs-6 col-md-3">
-			<div class="thumbnail" id="place_name">
-			</div> <!-- closing of place-name -->
-		</div> <!-- closing of col-xs-6 col-md-3 -->
-</div> <!-- page -->
+		</div> <!-- closing of page -->
+
+<div class="form-group">
  <% @places.each do |grant| %> <!-- prints the name of all the places of the user --> 
       <h6 style="font-style:normal;font-size:15px"> <li><%= link_to grant.name, :controller =>'places',
         :action => 'show', id: grant.id  %></li></h6> 
       <% end %>
+</div>      
     </body> 
 </html>
