@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-	# to make sure that the user has logged in before reaching this line 
+	# To make sure that the user has logged in before reaching this line. 
 	before_filter :authenticate_user!
 	
 	# Show the places of the current user. 
