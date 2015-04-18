@@ -1,7 +1,7 @@
 class FacebookController < ApplicationController
 
 
-# Checks that there is a currently authunticated user 
+# Checks that there is a currently authunticated user. 
   before_filter :authenticate_user!
 
 
