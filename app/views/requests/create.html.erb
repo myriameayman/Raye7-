@@ -70,7 +70,7 @@
 <br>
 <br>
 <script>
-// fumction to be called on click on the submit button 
+// Function to be called on click on the submit button. 
 function create_ride_info() {
 	var txt_color = document.getElementsByName('car_color')[0].value;
 	var txt_model = document.getElementsByName('car_model')[0].value;
@@ -92,7 +92,7 @@ function create_ride_info() {
   		txt_trunk = 1;
 	else 
 		txt_trunk = 0;
-	//redirected to create_ride_info in request controller 
+	// Redirected to create_ride_info in request controller. 
 	window.location.replace('/requests/create_ride_info?car_color='+txt_color+'&car_model='+txt_model+'&car_number='+txt_number+'&seats='+txt_seats+'&smoking='+txt_smoking+'&air_conditioner='+txt_air_conditioner+'&trunk='+txt_trunk
 		+'&name='+txt_name);
 

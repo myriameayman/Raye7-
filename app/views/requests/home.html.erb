@@ -41,10 +41,10 @@
 
                   </div> <!-- closing of reverse_geocoding_fields -->
 <script>
-// method to be called when click on continue 
+// Method to be called when click on continue. 
 function get_curr_location() {
     var loc = document.getElementById("search_box_geocoding").value;
-    // redirected to requests/update
+    // Redirected to requests/update.
     window.location.replace('/requests/create_curr_location?latitude='+output2+'&longitude='+output+'&loc='+loc);
 }
 </script> 
