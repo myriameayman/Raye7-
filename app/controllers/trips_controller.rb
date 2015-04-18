@@ -5,7 +5,7 @@ class TripsController < ApplicationController
 @@trip = Trip.new
 
 
-# The method create assigns user id who requested to join this trip with the id of the trip.
+# The def create assigns user id who requested to join this trip with the id of the trip.
 # It will not let the user join the trip unless no of seats is greater than 0.
 # After joining trip it redirected the user back to the home page.
 # TODO : printing confirmation msg after joining a trip.
@@ -31,11 +31,13 @@ def create
 	end
 end
 
+# The def index finds all trips of a specific request.
+# The variables :@trips :@trips is list of all available trips of a request.
 def index 
 	unless(params[:id==nil])
   @trips = Trip.find(params[:id])
+    end
 end
- end
 
 
 
