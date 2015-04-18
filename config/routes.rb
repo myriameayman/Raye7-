@@ -1,6 +1,8 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
+  get "activities/index"
+
   get "requests/index" 
 
   get "requests/new" 
@@ -98,6 +100,7 @@ RsgLinkedinGem::Application.routes.draw do
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
   resources :circles 
+  resources :activities
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
       root :to => 'user/registrations#myAccount' 
