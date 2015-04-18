@@ -1,14 +1,17 @@
 class FacebookController < ApplicationController
+
+
+# Checks that there is a currently authunticated user 
   before_filter :authenticate_user!
 
-  def create
+
+# Add Facebook attributes to a user who is signing up to RAYE7
+   def create
 
     @user = current_user
-   
     @fb_friends = FbGraph::User.me(env["omniauth.auth"].credentials.token).friends
     @graph = Koala::Facebook::API.new(env["omniauth.auth"].credentials.token)
     profile = @graph.get_object("me")
-
     friends = @graph.get_connections("me", "friends")
     @user.name = env["omniauth.auth"].info.name
     @user.provider = env["omniauth.auth"].provider
@@ -34,10 +37,8 @@ class FacebookController < ApplicationController
         fbFriend.fb_id = f["id"] 
         fbFriend.save  
     end       
-
-   
+    
     Koala.config.api_version = "v2.0"
-
     @user.save!
     redirect_to root_path
   end
