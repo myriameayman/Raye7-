@@ -46,5 +46,25 @@ class FacebookControllerTest < ActionController::TestCase
     assert !user.valid?
   end
 
+  test "check validations facebookOauth-token is unique" do
+    user = User.new :faceboook_profileimage => nil,:email => 'test@example.com',:username => 'testusername', :password => 'testpassword',
+    :password_confirmation => 'testpassword', :firstName => 'test', :lastName => 'test',:fb_email=> "ahmedadelana@hotmail.com",:name=> 'Ahmed Adel',:oauth_token => 'CAAKLNpES24oBAC6o6tE59Q0nHW54a6uyWPxZBmvfS1uvlpZA8qv9XJeUSa5usSAjv6TRlDwHo1sp5j1xZAAh1WjFt3Vai2EQULiyMcEZBS3k1VHBmfXcVVJ6Hd44
+    zYTkPZA0psl8spoqwKQxzEBZAbyGWxlzONLlJFJeAu0GBGrgCRkUkC8xMPmjS6ByfoZBCIptst9ZBnlfZANKQZAgEZCoBcc'
+    
+    assert !user.valid?
+  end
+
+  test "check validations facebook-uid is unique" do
+    user = User.new :faceboook_profileimage => nil,:email => 'test@example.com',:username => 'testusername', :password => 'testpassword',
+    :password_confirmation => 'testpassword', :firstName => 'test', :lastName => 'test',:fb_email=> "ahmedadelana@hotmail.com",:name=> 'Ahmed Adel',
+    :oauth_token => nil , :uid => '816246471757866'
+    
+    assert !user.valid?
+  end
+
+
+
+
+
 
 end
