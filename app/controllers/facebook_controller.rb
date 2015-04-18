@@ -9,7 +9,9 @@ class FacebookController < ApplicationController
 # The variables : @user => current user , @fb_friends => get tokens of user facebook friends.  
                 # @graph => token of the user profile , profile => current user profile.
                 # friends => list of the user facebook friends , @user.name => facebook name of the user.
-                # @user.provider => "facebook" , @user.id => facebook user id.                
+                # @user.provider => "facebook" , @user.id => facebook user id.
+                # @user.fb_email => user's facebook email , @user.facebook_profileimage => url for user's facebook profile image.
+                # @user.oauth_token => the user's facebook oauthuntication token                 
    def create
 
     @user = current_user
