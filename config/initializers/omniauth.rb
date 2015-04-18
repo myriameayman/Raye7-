@@ -1,3 +1,5 @@
+# Raye7 facebook application id and secret key and the data taken from facebook.
+
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
