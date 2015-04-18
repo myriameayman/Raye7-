@@ -190,7 +190,7 @@
 	      <h3 class="panel-title"> Search for a trip</h3>
 	     </div> <!-- end div panel-heading -->
 	      <div class="panel-body">
-	       <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
+	       <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %><!-- searching form -->
 			      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
 			      <%= submit_tag "Search", :name => nil %> 
 			      <%= link_to_function "Clear", "$('search_field').clear()" %>
