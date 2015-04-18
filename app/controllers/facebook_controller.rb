@@ -58,7 +58,7 @@ class FacebookController < ApplicationController
   end
 
   
-
+# Destroy a session opened
   def destroy
     session[:user_id] = nil
     redirect_to root_path
