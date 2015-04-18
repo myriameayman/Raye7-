@@ -11,8 +11,8 @@ class FacebookController < ApplicationController
                 # friends => list of the user facebook friends , @user.name => facebook name of the user.
                 # @user.provider => "facebook" , @user.id => facebook user id.
                 # @user.fb_email => user's facebook email , @user.facebook_profileimage => url for user's facebook profile image.
-                # @user.oauth_token => the user's facebook oauthuntication token.                
-   
+                # @user.oauth_token => the user's facebook oauthuntication token.
+                
    def create
 
     @user = current_user
@@ -28,7 +28,9 @@ class FacebookController < ApplicationController
     @user.oauth_token = env["omniauth.auth"].credentials.token
     #@user.oauth_expires_at = Time.at(auth.credentials.expires_at)
     
-
+    # Check that circles if the facebook circles already exists and if not create a new one
+    # The variables :fbCircle => facebook circle ,                 
+   
     unless(@user.circles.exists?(:name => "facebook"))
     fbCircle = Circle.new 
     fbCircle.user_id = current_user.id 
@@ -38,13 +40,17 @@ class FacebookController < ApplicationController
     fbCircle = @user.circles.where("name = 'facebook'")
     end
 
+# Insert a list of friends in the facebook circles
+# The variables : fbFriend
     friends.each do |f| 
         fbFriend = Friend.new 
         fbFriend.circle_id = fbCircle.id   
         fbFriend.name = f["name"]
         fbFriend.fb_id = f["id"] 
         fbFriend.save  
-    end       
+    end   
+
+    # Save the user info in the database    
     
     Koala.config.api_version = "v2.0"
     @user.save!
