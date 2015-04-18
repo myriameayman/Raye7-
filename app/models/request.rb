@@ -7,7 +7,7 @@ class Request < ActiveRecord::Base
 
 # The def search searches for requests that satisfies conditions of search passed parameter.
  def self.search(search)
- find(:all, :conditions => ['destination LIKE ?', search])
+  find(:all, :conditions => ['destination LIKE ?', search])
  end
 
 

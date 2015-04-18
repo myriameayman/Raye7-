@@ -18,7 +18,7 @@ class RequestsController < ApplicationController
 # Index return a list of all available requests.
   def index 
     unless(params[:search==nil])
-    @requests = Request.search(params[:search])
+     @requests = Request.search(params[:search])
     end
   end
    
