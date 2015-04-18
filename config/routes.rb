@@ -53,7 +53,7 @@ RsgLinkedinGem::Application.routes.draw do
   get "requests/show"
   get "trips/new"
 
-
+  match ':controller(/:action(/:id))', :via => :get
 
   #root :to => 'requests#new'
   root :to => 'places#show'

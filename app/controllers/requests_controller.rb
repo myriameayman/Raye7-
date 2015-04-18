@@ -87,4 +87,5 @@ class RequestsController < ApplicationController
       @user = User.find(@user_id)
       t.destroy
   end
+ end 
 end
