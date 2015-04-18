@@ -39,5 +39,12 @@ class FacebookControllerTest < ActionController::TestCase
     assert !user.valid?
   end
 
+  test "check validations facebookMail is unique" do
+    user = User.new :faceboook_profileimage => nil,:email => 'test@example.com',:username => 'testusername', :password => 'testpassword',
+    :password_confirmation => 'testpassword', :firstName => 'test', :lastName => 'test',:fb_email=> "ahmedadelana@hotmail.com",:name=> 'Ahmed Adel'
+    
+    assert !user.valid?
+  end
+
 
 end
