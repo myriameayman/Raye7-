@@ -5,7 +5,11 @@ class FacebookController < ApplicationController
   before_filter :authenticate_user!
 
 
-# Add Facebook attributes to a user who is signing up to RAYE7
+# Add Facebook attributes to a user who is signing up to RAYE7 after redirecting him to facebook auth page.
+# The variables : @user => current user , @fb_friends => get tokens of user facebook friends.  
+                # @graph => token of the user profile , profile => current user profile.
+                # friends => list of the user facebook friends , @user.name => facebook name of the user.
+                # @user.provider => "facebook" , @user.id => facebook user id.                
    def create
 
     @user = current_user
