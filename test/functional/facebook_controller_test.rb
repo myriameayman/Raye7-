@@ -25,7 +25,13 @@ class FacebookControllerTest < ActionController::TestCase
     assert !user.valid?
   end
 
-  
+  test "check validations uid not blank" do
+    user = User.new :faceboook_profileimage => nil,:email => 'test@example.com',:username => 'testusername', :password => 'testpassword',
+    :password_confirmation => 'testpassword', :firstName => 'test', :lastName => 'test',:fb_email=> nil,:name=> 'Ahmed Adel',:uid=>nil
+    
+    assert !user.valid?
+  end
+
 
 
 end
