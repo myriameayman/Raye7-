@@ -1,6 +1,6 @@
 class FacebookController < ApplicationController
 	before_filter :authenticate_user!
-# Getting facebook friends then creating a circle then saving them 
+# Getting facebook friends then creating a circle then saving them.
   def create
   	@user = current_user
    
