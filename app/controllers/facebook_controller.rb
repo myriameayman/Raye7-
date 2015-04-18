@@ -12,7 +12,6 @@ class FacebookController < ApplicationController
                 # @user.provider => "facebook" , @user.id => facebook user id.
                 # @user.fb_email => user's facebook email , @user.facebook_profileimage => url for user's facebook profile image.
                 # @user.oauth_token => the user's facebook oauthuntication token.
-                
    def create
 
     @user = current_user
@@ -26,18 +25,19 @@ class FacebookController < ApplicationController
     @user.fb_email = env["omniauth.auth"].info.email
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
-    
-
+ 
     # Check that circles if the facebook circles already exists and if not create a new one.
     # The variables :fbCircle => facebook circle.              
    
     unless(@user.circles.exists?(:name => "facebook"))
-    fbCircle = Circle.new 
-    fbCircle.user_id = current_user.id 
-    fbCircle.name = "facebook"
-    fbCircle.save
+ 
+          fbCircle = Circle.new 
+          fbCircle.user_id = current_user.id 
+          fbCircle.name = "facebook"
+          fbCircle.save
+ 
     else
-    fbCircle = @user.circles.where("name = 'facebook'")
+          fbCircle = @user.circles.where("name = 'facebook'")
     end
 
 # Insert a list of friends in the facebook circles.
