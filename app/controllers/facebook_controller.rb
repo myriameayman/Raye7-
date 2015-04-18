@@ -16,7 +16,7 @@ class FacebookController < ApplicationController
     @user.fb_email = env["omniauth.auth"].info.email
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
-    @user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+    #@user.oauth_expires_at = Time.at(auth.credentials.expires_at)
     
     unless(@user.circles.exists?(:name => "facebook"))
     fbCircle = Circle.new 
