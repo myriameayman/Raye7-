@@ -9,12 +9,17 @@ def create
 	@@trip.save
 	redirect_to "/"
 	end
-end
+	end
 def index 
 	unless(params[:id==nil])
-  @trips = Trip.search(params[:id])
-end
- end
-
+     @trips = Trip.search(params[:id])
+	end
+    end
+def delete 
+	  @trip=Trip.find_by_user_id(current_user.id)
+	end
+def destroy 
+	@trip.destroy
+     end
 
 end

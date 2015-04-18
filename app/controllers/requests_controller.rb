@@ -74,18 +74,4 @@ class RequestsController < ApplicationController
   
   def edit
   end
-
-
-  def delete
-    @request = Request.find(params[:id])
-    @trips = Trip.find_by_request_id(params[:id])
-  end
-
-  def destroy
-    @trips.all.each do |t|
-      @user_id = t.user_id
-      @user = User.find(@user_id)
-      t.destroy
-  end
- end 
 end
