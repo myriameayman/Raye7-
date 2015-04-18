@@ -1,5 +1,5 @@
 # Step of the offering ride form. 
-@@i = nil 
+@@form_step = nil 
 # Request to be created in the offering ride form. 
 @@request = nil
 class RequestsController < ApplicationController 
@@ -35,15 +35,16 @@ class RequestsController < ApplicationController
   # /home is redirected to home view. 
   # /requests/create is redireted to the create view in requests folder.
   def create_curr_location 
-    if @@i == nil 
-      redirect_to "/profiles/myAccount"  
+    if @@form_step == nil 
+      redirect_to root_path  
     end
-    if @@i == 1 
+    if @@form_step == 1 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
       @@request.lat_curr = @latitude 
       @@request.long_curr= @longitude 
-      redirect_to "/home" 
+      #redirect_to "/home" 
+      redirect_to url_for(:controller => "requests", :action => "home")
     else 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
@@ -51,7 +52,8 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @loc
-      redirect_to "/requests/create" 
+      #redirect_to "/requests/create" 
+      redirect_to url_for(:controller => "requests", :action => "create")  
     end 
   end 
   
@@ -72,22 +74,23 @@ class RequestsController < ApplicationController
   # Create new request.  
   def new 
     @@request = Request.new
-    @@i = 0 
-    redirect_to "/home" 
+    @@form_step = 0 
+    #redirect_to "/home" 
+    redirect_to url_for(:controller => "requests", :action => "home")
   end 
   
   
   # Moving from stage of creating a request's form to the next stage. 
   def home 
-    if @@i == nil 
-      redirect_to "/profiles/myAccount"  and return 
+    if @@form_step == nil 
+      redirect_to root_path  and return 
     end
     @@request.user_id = current_user.id 
-    @@i = @@i + 1 
+    @@form_step = @@form_step + 1 
   end 
 
   
-
+# Responding on clicking on geocoding link in home. 
   def geocoding 
     respond_to do |format|               
       format.js 
@@ -95,7 +98,7 @@ class RequestsController < ApplicationController
   end 
 
 
- 
+# Responding on clicking on reverse_geocoding link in home.
   def reverse_geocoding 
     respond_to do |format|               
       format.js 
@@ -123,16 +126,6 @@ class RequestsController < ApplicationController
     @@request.air_conditioner= @air_conditioner
     @@request.trunk= @trunk 
     @@request.name= @name 
-    #@str = "<div>
-     #         <ul>
-      #        <% @@request.errors.each_with_index do |msg, i| %>
-      #           <li><%= msg[1] %></li>
-      #        <% end %>
-      #        </ul>
-      #      </div>".html_safe
-    #if @@request.errors.any? 
-     #  redirect_to "/requests/create_ride_info" 
-    #end           
     @@request.save 
     redirect_to root_path 
   end 

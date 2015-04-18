@@ -13,6 +13,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/delete" 
 
+  #get "requests/home"
+  
   get 'auth/:provider/callback', to: 'facebook#create' 
 
   get 'auth/failure', to: redirect('/') 
