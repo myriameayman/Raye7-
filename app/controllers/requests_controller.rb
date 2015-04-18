@@ -12,10 +12,10 @@ class RequestsController < ApplicationController
     else
       redirect_to "/"
     end
-    
   end
 
 
+# Index return a list of all available requests.
   def index 
     unless(params[:search==nil])
     @requests = Request.search(params[:search])
