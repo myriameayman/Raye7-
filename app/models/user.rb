@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-      attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, :name, :screen_name, :url, :profile_image_url, :location, :description, :login ,:faceboook_profileimage,:fb_email,:uid,:provider,:oauth_token 
+      attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, 
+                      :name, :screen_name, :url, :profile_image_url, :location, :description, 
+                      :login ,:faceboook_profileimage,:fb_email,:uid,:provider,:oauth_token 
   # attr_accessible :title, :body
       validates :username,
       :presence => true,
