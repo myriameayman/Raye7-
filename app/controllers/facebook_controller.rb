@@ -27,6 +27,7 @@ class FacebookController < ApplicationController
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
     
+
     # Check that circles if the facebook circles already exists and if not create a new one.
     # The variables :fbCircle => facebook circle.              
    
@@ -57,7 +58,7 @@ class FacebookController < ApplicationController
   end
 
   
-# Destroy a session opened
+# Destroy a session opened.
   def destroy
     session[:user_id] = nil
     redirect_to root_path
