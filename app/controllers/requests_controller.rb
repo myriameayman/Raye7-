@@ -23,6 +23,7 @@ class RequestsController < ApplicationController
   end
    
 
+
   def new
     @@i = 0 
     redirect_to "/home"
