@@ -78,6 +78,7 @@ class RequestsControllerTest < ActionController::TestCase
     get :create_curr_location
     String url = "http://test.host/home"
     assert_redirected_to url 
+
   end
   
   
@@ -93,4 +94,15 @@ class RequestsControllerTest < ActionController::TestCase
     assert_redirected_to url 
   end
 
+  test "should show request" do
+    @user =User.new(:email =>'test2@example.com',:username => 'adel', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
+    @myrequest=Request.new(:seats=>1)
+    @myrequest.save
+    get :show, :id => @myrequest.id
+    assert_response :success
+
+  end
 end
