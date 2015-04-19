@@ -43,7 +43,6 @@ class RequestsController < ApplicationController
       @longitude = params[:longitude] 
       @@request.lat_curr = @latitude 
       @@request.long_curr= @longitude 
-      #redirect_to "/home" 
       redirect_to url_for(:controller => "requests", :action => "home")
     else 
       @latitude = params[:latitude] 
@@ -52,7 +51,6 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @loc
-      #redirect_to "/requests/create" 
       redirect_to url_for(:controller => "requests", :action => "create")  
     end 
   end 
@@ -74,8 +72,7 @@ class RequestsController < ApplicationController
   # Create new request.  
   def new 
     @@request = Request.new
-    @@form_step = 0 
-    #redirect_to "/home" 
+    @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
   end 
   
