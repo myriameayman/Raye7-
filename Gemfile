@@ -18,6 +18,12 @@ group :assets do
 end
 
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+gem 'factory_girl'
+gem 'factory_girl_rails'
+
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'

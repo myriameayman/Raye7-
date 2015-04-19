@@ -1,4 +1,6 @@
-
+<!DOCTYPE html>
+<html>
+<body>
 <ul>
 	  <% @requests.each do |grant| %>
 		<li><%= link_to grant.destination, 
@@ -6,11 +8,14 @@
 	<% end %>
 </ul>
  <strong>Trip name:</strong>
-  <%= #@request.name %>
+  <%= @request.name %>
   <strong>AC</strong>
-  <%= #@request.air_conditioner %>
+  <%= @request.air_conditioner %>
   <strong>car model</strong>
-  <%= #@request.car_model%>
+  <%= @request.car_model%>
   <strong>To :</strong>
-  <%= #@request.destination %>
+  <%= @request.destination %>
+
+ </body>
+ </html> 
 

@@ -4,8 +4,7 @@ class CreateFriends < ActiveRecord::Migration
       t.string :name
       t.integer :fb_id
       t.integer :circle_id
-
-      t.timestamps
+	  t.timestamps
     end
   end
 end

@@ -64,29 +64,34 @@
 
 
   <div class="row">
-    <div class="col-md-3" style="padding-left:40px">
-    <div class="image-frame">
-        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') "></div>
 
-    </div>
-    </div>
-  <div class="col-md-8" style="padding-top:40px">
-    <div class= "panel panel-default"  id="b1">
-     <div class="panel-heading" style="background-color: #337AB7">
-      <h3 class="panel-title"   >Profile Info </h3>
-     </div>
-     <div class="panel-body">
-       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
-       <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
-     </div>
-      
-    </div>
-  </div>
-  </div>
+	    <div class="col-md-3" style="padding-left:40px">
+		    <div class="image-frame">
+		        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
+		        </div><!-- close div if profile image-->
+
+		    </div><!-- close tdi of image frame -->
+	    </div><!-- close div of col-dm-3 -->
+
+	    <div class="col-md-8" style="padding-top:40px">
+		    <div class= "panel panel-default"  id="b1">
+			     <div class="panel-heading" style="background-color: #337AB7">
+			      <h3 class="panel-title"   >Profile Info </h3>
+			     </div><!-- div panel-heading -->
+			     <div class="panel-body">
+			       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
+			       <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
+			     </div><!-- div panel-body -->
+		      
+		    </div><!-- div  panel-default -->
+		</div><!-- div col-md-3 -->
+  </div><!-- div row -->
+
 
   
    
   <div class="row" style="padding-top:40px">
+
     <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
     <div id='cssmenu'>
 		<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
@@ -185,12 +190,13 @@
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
       <h3 class="panel-title"> Search for a trip</h3>
-     </div>
+     </div> <!--/#panel-heading -->
       <div class="panel-body">
        <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
+       			<h4> Trip destination </h4>
 		      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-		      <%= submit_tag "Search", :name => nil %> 
-		      <%= link_to_function "Clear", "$('search_field').clear()" %>
+		      <br>
+		      <%= submit_tag "Search", :name => nil %>
 		<% end %> 
        <hr>
        <ul>
@@ -198,24 +204,24 @@
 			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',
 		  	:action => 'show', id: grant.id  %></li></h6>
 		  <% end %>
-		</ul>
+		</ul><!--/#unsorted list -->
        
-      </div>
-    </div>
-  </div>
+      </div><!--/#class panel-body-->
+    </div><!--/#class panel-heading-->
+  </div><!--/#class col-md-8-->
 
   <div class="col-md-8">
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
       <h3 class="panel-title"> News Feed</h3>
-     </div>
+     </div><!--/#class panel heading-->
       <div class="panel-body">
        <h6 style="font-style:normal;font-size:15px"> insha'allah hena hyb2a feh news feed </h6>
        <hr>
        <h6 style="font-style:normal;font-size:15px"> sorem ehh </h6>
-      </div>
-    </div>
-  </div>
+      </div><!--/#class panel-body -->
+    </div><!--/#class panel panel default-->
+  </div><!--/#class col-md-->
 
 
 </div> 
@@ -223,4 +229,141 @@
   
 </body>
 
+</html>
+	    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+		    <div id='cssmenu'>
+				<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
+				   <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span>
+				   </li>
+				   <li><a href='#'><span>Home</span></a></li>
+				   <li class='active has-sub'><a href='#'><span>MyCircles</span></a>
+				      <ul>
+				      		<% @circles.each do |c| %> <!-- circles of the current user -->
+					 			<li class='has-sub'><%= link_to c.name, controller: "circles", action: "show", id: c.id %></li>
+					 			
+							<% end %><!-- end of the loop -->
+				      </ul>
+				   </li>
+				   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a>
+				      <ul>
+					      		<li>
+
+						      		<% if(@user.circles.exists?(:name => "twitter")&&@user.circles.exists?(:name => "googlePlus")) %><!-- @user is the current user -->
+						      		<a href="#"><span>No more circles to connect</span></a>
+
+						      		<% else %>
+							      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
+
+							      			<% unless(@user.circles.exists?(:name => "twitter")) %>
+									      		
+												  <div class="col-lg-4">
+												    <div class="round-button" style="width:80px;float:left">
+												        <div id="round-button-circle">
+												          <a href="/twitter_oauth_url" class="round-button">Twitter</a>
+												        </div><!-- div round-button-circle -->
+												    </div><!-- div round-button  -->
+												  </div><!-- div col-lg-4  -->
+											<% end %><!-- end of the unless -->
+
+											<% unless(@user.circles.exists?(:name => "googlePlus")) %>
+												  <div class="col-lg-4">
+												    <div class="round-button" style="width:80px;float:left;">
+												        <div id="round-button-circle-2">
+												          <a href="http://localhost:4567" class="round-button">Google+</a>
+												        </div><!-- div round-button-circle -->
+												    </div><!-- div round-button  -->
+												  </div><!-- div col-lg-4  -->
+											<% end %><!-- end of the unless -->
+										</div><!-- end div class row -->
+									<% end %><!-- end if-else -->
+
+							    </li>
+
+				      </ul>
+				   </li>
+				   <li class='active has-sub'><a href='#'><span>Update circles</span></a>
+				      <ul>
+					      		<li>
+						      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
+							      		<div class="col-lg-4">
+											<div class="round-button" style="width:80px;float:left">
+											    <div id="round-button-circle-1">
+													    <a href="#" class="round-button">facebook</a>
+												</div><!-- end div round-button-circle -->
+											</div><!-- end div round-button -->
+										</div><!-- end div col-lg-4 -->
+										<% if(@user.circles.exists?(:name => "twitter")) %><!-- @user is current_user -->
+												  <div class="col-lg-4">
+												    <div class="round-button" style="width:80px;float:left">
+												        <div id="round-button-circle">
+												          <a href="/#" class="round-button">Twitter</a>
+												        </div><!-- end div round-button-circle -->
+												    </div><!-- end div round-button -->
+												  </div><!-- end div col-lg-4 -->
+										<% end %><!-- end if -->
+										<% if(@user.circles.exists?(:name => "googlePlus")) %>
+												  <div class="col-lg-4">
+												    <div class="round-button" style="width:80px;float:left;">
+												        <div id="round-button-circle-2">
+												          <a href="#" class="round-button">Google+</a>
+												        </div><!-- end div round-button-circle -->
+												    </div><!-- end div round-button -->
+												  </div><!-- end div col-lg-4 -->
+										<% end %><!-- end if -->
+									</div>
+							    </li>
+				      </ul>
+				   </li>
+				   
+
+
+				   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
+				   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
+				</ul>
+			</div><!-- end div cssmenu' --> 
+	    </div><!-- end div col-sm-4 col-md-3 sidebar -->
+
+
+
+	  <div class="col-md-8">
+	    <div class= "panel panel-default" style="border-top-left-radius: 4px">
+	     <div class="panel-heading">
+	      <h3 class="panel-title"> Search for a trip</h3>
+	     </div> <!-- end div panel-heading -->
+	      <div class="panel-body">
+	       <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %><!-- searching form -->
+			      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+			      <%= submit_tag "Search", :name => nil %> 
+			      <%= link_to_function "Clear", "$('search_field').clear()" %>
+			<% end %> <!-- end of the form -->
+	       <hr>
+	       <ul>
+			  <% @requests.each do |grant| %> <!-- search in all requests -->
+				<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',
+			  	:action => 'show', id: grant.id  %></li></h6>
+			  <% end %><!-- end of the loop -->
+			</ul>
+	       
+	      </div><!--  end div panel-body -->
+	    </div><!--  end div panel panel-default -->
+	  </div><!--  end div col-md-8 -->
+
+	  <div class="col-md-8">
+	    <div class= "panel panel-default" style="border-top-left-radius: 4px">
+	     <div class="panel-heading">
+	      <h3 class="panel-title"> News Feed</h3>
+	     </div><!-- end div panel-heading -->
+	      <div class="panel-body">
+	       <h6 style="font-style:normal;font-size:15px"> insha'allah hena hyb2a feh news feed </h6>
+	       <hr>
+	       <h6 style="font-style:normal;font-size:15px"> sorem ehh </h6>
+	      </div><!--  end div panel-body -->
+	    </div><!--  end div panel panel-default -->
+	  </div><!--  end div col-md-8 -->
+
+
+  </div><!-- end div row -->
+
+  
+</body><!-- close the main body tag -->
 </html>

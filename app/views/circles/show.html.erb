@@ -3,28 +3,28 @@
 <h3>your are in circle : </h3> Circle name :<%= @circle.name %><br>
 <h4> Friends in the circle :- </h4><br>
 		<% @circle.friends.each do |c| %>
-			<%= c.name %><br>
+			<%= c.name %><br> <!--/# name of a specific circle  -->
 			<% if(@circle.name=='facebook') %>
 				<% if User.exists?(:fb_email=> c.name)  %>
 					<%= ' I am checking ' %>
 					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
 					<% next %>
-				<% end %>
-			<% end %>
+				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
+			<% end %><!--/#  end of the if checking the circle name  -->
 			<% if(@circle.name=='twitter') %>
 				<% if  User.exists?(:screen_name => c.name) %>
 					<%= ' I am checking ' %>
 					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
 					<% next %>
-				<% end %>
-			<% end %>
+				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
+			<% end %><!--/#  end of the if checking the circle name  -->
 			<% if(@circle.name=='gmail') %>
 				<% if User.exists?(:gmail => c.name) %>
 					<%= ' I am checking ' %>
 					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
 					<% next %>
-				<% end %>
-			<% end %>
-			<%= c.name %><br>
-		<% end %>
+				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
+			<% end %><!--/#  end of the if checking the circle name  -->
+			
+		<% end %><!--end of the loop -->
 

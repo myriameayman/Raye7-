@@ -1,6 +1,10 @@
 class FacebookController < ApplicationController
 	before_filter :authenticate_user!
 
+
+
+# Getting facebook friends then creating a circle then saving them.
+
   def create
   	@user = current_user
    
@@ -17,12 +21,13 @@ class FacebookController < ApplicationController
     @user.oauth_token = env["omniauth.auth"].credentials.token
     
     unless(@user.circles.exists?(:name => "facebook"))
-      fbCircle = Circle.new
-      fbCircle.user_id = current_user.id
+
+      fbCircle = Circle.new 
+      fbCircle.user_id = current_user.id 
       fbCircle.name = "facebook"
       fbCircle.save
     else
-      fbCircle = @user.circles.where("name = 'facebook'")
+      fbCircle =  @user.circles.where("name = 'facebook'")
     end
 
     friends.each do |f| 
