@@ -1,8 +1,6 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
-  get "activities/index"
-
   get "requests/index" 
 
   get "requests/new" 
@@ -57,9 +55,9 @@ RsgLinkedinGem::Application.routes.draw do
   #devise_for :users 
   get "/requests/home/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
   
-  get "/requests/create_curr_location/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
+  get "/requests/create_curr_location/:latitude/:longitude/:loc" ,to: "requests#update", as: "create_form" 
   
-  get "/requests/create_curr_location/:latitude/:longitude" => "requests#update" 
+  get "/requests/create_curr_location/:latitude/:longitude/:loc" => "requests#update" 
   
   get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
   
@@ -100,7 +98,6 @@ RsgLinkedinGem::Application.routes.draw do
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
   resources :circles 
-  resources :activities
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
       root :to => 'user/registrations#myAccount' 

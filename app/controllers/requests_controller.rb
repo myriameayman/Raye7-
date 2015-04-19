@@ -82,7 +82,7 @@ class RequestsController < ApplicationController
     if @@i == nil 
       redirect_to "/profiles/myAccount"  and return 
     end
-    @@request.user_id = current_user.id 
+    @@request.user_id = current_user.id
     @@i = @@i + 1 
   end 
 
