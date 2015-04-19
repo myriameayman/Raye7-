@@ -3,11 +3,8 @@
 # Request to be created in the offering ride form. 
 @@request = nil
 class RequestsController < ApplicationController 
-<<<<<<< HEAD
-  # make sure there is a currently logged in user 
-=======
-  # Make sure there is a currently logged in user. 
->>>>>>> 55b8cc5ccd899386c19e01986c7b3a61652b562d
+
+# Make sure there is a currently logged in user. 
   before_filter :authenticate_user! 
 
   def search 
