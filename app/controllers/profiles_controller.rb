@@ -29,7 +29,8 @@ end
 
   def edit
   end
-# Getting the current login user to retrieve all the info in the profile page. 
+
+# Getting the current login user to retrieve all the info in the profile page  
     def myAccount
       unless(current_user == nil)      
           @user = current_user

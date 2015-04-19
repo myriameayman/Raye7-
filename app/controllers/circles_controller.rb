@@ -2,7 +2,8 @@ class CirclesController < ApplicationController
 	before_filter :authenticate_user!
   def index
   end
-# Having an id of a circle find it and save it to a variable @circle.
+
+# Having an id of a circle find it and save it to a variable @circle 
   def show
   	@user = current_user
 
