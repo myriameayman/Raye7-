@@ -14,6 +14,10 @@ class RequestsControllerTest < ActionController::TestCase
   
   
   test "should get userProfile" do
+    @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
     get :create_ride_info
     String url = "http://test.host/"
     assert_redirected_to url 
@@ -43,17 +47,21 @@ class RequestsControllerTest < ActionController::TestCase
   
   
   test "should get home" do
-   #@user = User.new(:email => 'test@example.com',:username => 'ebrahim', :password => 'password',
-    #:password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
-   #@user.save
-   #sign_in @user
-   #get :new 
-   #String url = "http://test.host/home"
-   #assert_redirected_to url 
+   @user = User.new(:email => 'renad@example.com',:username => 'renad', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+   @user.save
+   sign_in @user
+   get :new 
+   String url = "http://test.host/home"
+   assert_redirected_to url 
   end
   
   
   test "should get myProfile" do
+    @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
     @@i = nil 
     get :home 
     String url = "http://test.host/profiles/myAccount"
@@ -62,14 +70,23 @@ class RequestsControllerTest < ActionController::TestCase
   
   
   test "should get home2" do
+    @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
     @@i = 1 
     get :create_curr_location
     String url = "http://test.host/home"
     assert_redirected_to url 
+
   end
   
   
   test "should get create2" do
+    @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
     @@i = 2 
     @@request = Request.new
     get :create_curr_location
@@ -77,4 +94,15 @@ class RequestsControllerTest < ActionController::TestCase
     assert_redirected_to url 
   end
 
+  test "should show request" do
+    @user =User.new(:email =>'test2@example.com',:username => 'adel', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
+    @myrequest=Request.new(:seats=>1)
+    @myrequest.save
+    get :show, :id => @myrequest.id
+    assert_response :success
+
+  end
 end

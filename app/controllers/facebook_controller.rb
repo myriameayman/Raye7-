@@ -30,7 +30,6 @@ class FacebookController < ApplicationController
     # The variables :fbCircle => facebook circle.              
    
     unless(@user.circles.exists?(:name => "facebook"))
- 
           fbCircle = Circle.new 
           fbCircle.user_id = current_user.id 
           fbCircle.name = "facebook"

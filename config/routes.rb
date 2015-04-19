@@ -11,8 +11,12 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/edit" 
 
+  get "places/show"
+  
   get "requests/delete" 
 
+  #get "requests/home"
+  
   get 'auth/:provider/callback', to: 'facebook#create' 
 
   get 'auth/failure', to: redirect('/') 
@@ -42,10 +46,14 @@ RsgLinkedinGem::Application.routes.draw do
   get "trips/new" 
   
   get "requests/create" 
-  
+  get "/places/create"  
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
+  
+  get "/places/show", to: "places#show", as: "show" 
+
+  get "/places/create", to: "places#create", as: "create"
   
   get "/home", to: "requests#home", as: "home" 
   
