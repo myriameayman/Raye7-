@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
       has_many :circles
       has_many :requests
       has_many :ratings
+      has_many :trips
+      has_many :notifications
 
       has_many :visits
       has_many :places, through: :visits
