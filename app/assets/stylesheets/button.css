@@ -14,7 +14,7 @@
     box-shadow: 0 0 3px gray;
 }*/
 #round-button-circle {
-	width: 110%;
+	width: 118%;
 	height:0;
 	padding-bottom: 100%;
     border-radius: 50%;
@@ -25,7 +25,7 @@
     box-shadow: 0 0 3px gray;
 }
 #round-button-circle-1 {
-	width: 110%;
+	width: 118%;
 	height:0;
 	padding-bottom: 100%;
     border-radius: 50%;
@@ -36,7 +36,7 @@
     box-shadow: 0 0 3px gray;
 }
 #round-button-circle-2 {
-	width: 110%;
+	width: 118%;
 	height:0;
 	padding-bottom: 100%;
     border-radius: 50%;
@@ -80,7 +80,6 @@
     padding-bottom:50%;
 	line-height:1em;
 	margin-top:-0.5em;
-    
 	text-align:center;
 	color:#e2eaf3;
     font-family:Verdana;
@@ -90,7 +89,9 @@
 }
 
 .round-button a:hover{
-	color:transparent;
+	color:white;
+	display: none;
+	background: transparent;
 }
 
 .image-frame{
