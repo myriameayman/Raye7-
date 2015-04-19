@@ -41,9 +41,9 @@ class User < ActiveRecord::Base
       devise :database_authenticatable, :registerable,
         :validatable, :authentication_keys => [:login]
 
-      validates :fb_email ,:presence => true,:uniqueness => {:case_sensitive => false}
-      validates :uid ,:presence => true,:uniqueness => {:case_sensitive => false}
-      validates :oauth_token ,:presence => true,:uniqueness => {:case_sensitive => false}
+      #validates :fb_email ,:presence => true,:uniqueness => {:case_sensitive => false}
+      #validates :uid ,:presence => true,:uniqueness => {:case_sensitive => false}
+      #validates :oauth_token ,:presence => true,:uniqueness => {:case_sensitive => false}
       
        
  

@@ -3,19 +3,14 @@
 # Request to be created in the offering ride form. 
 @@request = nil
 class RequestsController < ApplicationController 
-<<<<<<< HEAD
-  # make sure there is a currently logged in user 
-=======
-  # Make sure there is a currently logged in user. 
->>>>>>> 55b8cc5ccd899386c19e01986c7b3a61652b562d
+
+# Make sure there is a currently logged in user. 
   before_filter :authenticate_user! 
 
-  def search 
-   @requests = Request.search(params[:search]) 
-  end 
-  
  
-
+ 
+# Show shows a specific requests with a certain id.
+# If it doesn't found it it will redirect it to home page again.
   def show 
     @user = current_user 
     @id = params[:id] 
@@ -60,7 +55,7 @@ class RequestsController < ApplicationController
   end 
   
   
-
+# Index return a list of all available requests.
   def index 
     unless(params[:search==nil]) 
       @requests = Request.search(params[:search]) 
@@ -107,7 +102,6 @@ class RequestsController < ApplicationController
   end 
   
   
- 
   # Saves the info in stage 3 of the form in the db. 
   # Profiles/myAccount redirectes to the user's profile page. 
   def create_ride_info 
@@ -132,15 +126,11 @@ class RequestsController < ApplicationController
   end 
   
 
-
   def edit 
   end 
-
 
 
   def delete 
   end 
  
-end 
-
-
+end
