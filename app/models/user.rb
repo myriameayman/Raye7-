@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-      attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, :name, :screen_name, :url, :profile_image_url, :location, :description, :login 
+      attr_accessible :username, :email, :password, :password_confirmation, :firstName, :lastName,:remember_me, 
+                      :name, :screen_name, :url, :profile_image_url, :location, :description, 
+                      :login ,:faceboook_profileimage,:fb_email,:uid,:provider,:oauth_token 
   # attr_accessible :title, :body
       validates :username,
       :presence => true,
@@ -29,6 +31,7 @@ class User < ActiveRecord::Base
       has_many :ratings
       has_many :trips
 
+
       has_many :visits
       has_many :places, through: :visits
       has_one :linkedin_oauth_setting
@@ -37,6 +40,13 @@ class User < ActiveRecord::Base
       validates :lastName, presence: true
       devise :database_authenticatable, :registerable,
         :validatable, :authentication_keys => [:login]
+
+      validates :fb_email ,:presence => true,:uniqueness => {:case_sensitive => false}
+      validates :uid ,:presence => true,:uniqueness => {:case_sensitive => false}
+      validates :oauth_token ,:presence => true,:uniqueness => {:case_sensitive => false}
+      
+       
+ 
 
         def login=(login)
           @login =login
