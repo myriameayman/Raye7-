@@ -22,38 +22,39 @@
 <div class="container">
     <div style= "position:absolute;right:500px;width:100%;">
 
-    <div class="google-map-filter col-xs-12 col-sm-4  pull-right"  style="width: 60%">
-<h1>ENTER CURR LOCATION 
- <%= @i %>
-</h1><br>
+        <div class="google-map-filter col-xs-12 col-sm-4  pull-right"  style="width: 60%">
+          <h1>ENTER LOCATION </h1><br>
 
-<div id="search_options" class="form-group">
-  <%= link_to "Geocding search", geocoding_path, remote: true, id: "geocoding"%>
-  <%= link_to "Reverse geocding search", reverse_geocoding_path, remote: true, id: "reverse_geocoding"%>
-</div>
-<div id="map-container" class="form-group">
-  <div id="map-canvas" class="form-group"></div>
-  <div id="geocoding_fields" class="form-group">
-    <%= text_field_tag :search, params[:search], placeholder: "Enter a place", :id => 'search_box_geocoding', class: 'search_box' %>
-    <%= button_tag "Search", id: "submit_button_geocoding", data: { disable_with: "Please wait..." }, class: "submit_button" %> 
-  </div>
-  <div id="reverse_geocoding_fields"class="form-group">
-    <%= text_field_tag :search, params[:search], placeholder: "Enter a point (latitude, longitude)", :id => 'search_box_reverse', class: 'search_box' %>
-    <%= button_tag "Search", id: "submit_button_reverse", data: { disable_with: "Please wait..." }, class: "submit_button" %>
+              <div id="search_options" class="form-group">
+                  <%= link_to "Geocding search", geocoding_path, remote: true, id: "geocoding"%>
+                  <%= link_to "Reverse geocding search", reverse_geocoding_path, remote: true, id: "reverse_geocoding"%>
+              </div> <!-- closing of search_options --> 
+              <div id="map-container" class="form-group">
+                  <div id="map-canvas" class="form-group"></div>
+                  <div id="geocoding_fields" class="form-group">
+                       <%= text_field_tag :search, params[:search], placeholder: "Enter a place", :id => 'search_box_geocoding', class: 'search_box' %>
+                       <%= button_tag "Search", id: "submit_button_geocoding", data: { disable_with: "Please wait..." }, class: "submit_button" %> 
+                  </div> <!-- closing of geocoding_fields --> 
+                  <div id="reverse_geocoding_fields"class="form-group">
+                       <%= text_field_tag :search, params[:search], placeholder: "Enter a point (latitude, longitude)", :id => 'search_box_reverse', class: 'search_box' %>
+                       <%= button_tag "Search", id: "submit_button_reverse", data: { disable_with: "Please wait..." }, class: "submit_button" %>
 
-  </div>
+                  </div> <!-- closing of reverse_geocoding_fields -->
 <script>
+// method to be called when click on continue 
 function get_curr_location() {
-    window.location.replace('/requests/create_curr_location?latitude='+output2+'&longitude='+output);
+    var loc = document.getElementById("search_box_geocoding").value;
+    // redirected to requests/update
+    window.location.replace('/requests/create_curr_location?latitude='+output2+'&longitude='+output+'&loc='+loc);
 }
-</script>
+</script> 
 <a class="submit_button" href='#' onClick="get_curr_location();">
  Continue 
  </a>
-</div>
-</div>
-</div> 
-</div>
+            </div> <!-- closing of map-container --> 
+        </div> <!-- closing of google-map-filter col-xs-12 col-sm-4  pull-right --> 
+    </div> <!-- closing of style --> 
+</div> <!-- closing of container --> 
 
      
   

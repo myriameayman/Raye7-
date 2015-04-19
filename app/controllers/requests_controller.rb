@@ -1,11 +1,11 @@
+# Step of the offering ride form. 
+@@i = nil 
+# Request to be created in the offering ride form. 
+@@request = nil
 class RequestsController < ApplicationController 
-  # make sure there is a currently logged in user 
+  # Make sure there is a currently logged in user. 
   before_filter :authenticate_user! 
-  
-  # @@request the request to be createad using new request 
-  @@request = Request.new 
-  
-  
+
   def search 
    @requests = Request.search(params[:search]) 
   end 
@@ -30,8 +30,10 @@ class RequestsController < ApplicationController
   end 
   
 
-  # choose one stage from the offer 
-  # @@i = 1 indicates stage 1 of the form
+  # Choose one stage from the offer. 
+  # @@i = 1 indicates stage 1 of the form.
+  # /home is redirected to home view. 
+  # /requests/create is redireted to the create view in requests folder.
   def create_curr_location 
     if @@i == nil 
       redirect_to "/profiles/myAccount"  
@@ -45,8 +47,10 @@ class RequestsController < ApplicationController
     else 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
+      @loc = params[:loc]
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
+      @@request.destination= @loc
       redirect_to "/requests/create" 
     end 
   end 
@@ -62,19 +66,23 @@ class RequestsController < ApplicationController
   def create 
   end 
   
-  
-  # create new request  
+    
+
+  # @@request the request to be createad using new request. 
+  # Create new request.  
   def new 
+    @@request = Request.new
     @@i = 0 
     redirect_to "/home" 
   end 
   
   
-  # moving from stage of creating a request's form to the next stage 
+  # Moving from stage of creating a request's form to the next stage. 
   def home 
     if @@i == nil 
-      redirect_to "/profiles/myAccount"  
+      redirect_to "/profiles/myAccount"  and return 
     end
+    @@request.user_id = current_user.id 
     @@i = @@i + 1 
   end 
 
@@ -96,22 +104,37 @@ class RequestsController < ApplicationController
   
   
  
-  # saves the info in stage 3 of the form in the db 
+  # Saves the info in stage 3 of the form in the db. 
+  # Profiles/myAccount redirectes to the user's profile page. 
   def create_ride_info 
     @color = params[:car_color] 
     @model = params[:car_model] 
     @number = params[:car_number] 
     @seats = params[:seats] 
     @smoking = params[:smoking] 
-    @air_conditioner = params[:air_conditioner] 
+    @air_conditioner = params[:air_conditioner]
+    @trunk = params[:trunk] 
+    @name = params[:name] 
     @@request.car_color = @color 
     @@request.car_model= @model 
     @@request.car_number= @number 
     @@request.seats= @seats 
     @@request.smoking= @smoking 
-    @@request.air_conditioner= @air_conditioner 
+    @@request.air_conditioner= @air_conditioner
+    @@request.trunk= @trunk 
+    @@request.name= @name 
+    #@str = "<div>
+     #         <ul>
+      #        <% @@request.errors.each_with_index do |msg, i| %>
+      #           <li><%= msg[1] %></li>
+      #        <% end %>
+      #        </ul>
+      #      </div>".html_safe
+    #if @@request.errors.any? 
+     #  redirect_to "/requests/create_ride_info" 
+    #end           
     @@request.save 
-    redirect_to "/profiles/myAccount" 
+    redirect_to root_path 
   end 
   
 
