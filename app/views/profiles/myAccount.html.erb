@@ -206,9 +206,9 @@
      <div class="panel-heading"> <!-- Container header -->
       <h3 class="panel-title"> News Feed</h3>
      </div> <!-- end of header -->
-      <div class="panel-body">
+      <div class="panel-body"> <!-- loop on activities -->
       	<h6 style="font-style:normal;font-size:15px">What's going on</h6>
-		<% if(@activities.present?) %> 
+		<% if(@activities.present?) %> <!-- if any activities available -->
 			<% @activities.each do |activity| %>
 				<% if activity.owner.present? %>
 					<hr>
