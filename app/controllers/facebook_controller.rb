@@ -21,6 +21,7 @@ class FacebookController < ApplicationController
     @user.oauth_token = env["omniauth.auth"].credentials.token
     
     unless(@user.circles.exists?(:name => "facebook"))
+
       fbCircle = Circle.new 
       fbCircle.user_id = current_user.id 
       fbCircle.name = "facebook"

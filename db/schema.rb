@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20150412192754) do
     t.integer  "circle_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "fb_id"
   end
 
   create_table "full_profiles", :force => true do |t|
@@ -133,6 +132,8 @@ ActiveRecord::Schema.define(:version => 20150412192754) do
     t.datetime "updated_at",       :null => false
     t.string   "destination"
     t.string   "name"
+
+    t.string   "user_id"
     t.string   "currentLoc"
   end
 

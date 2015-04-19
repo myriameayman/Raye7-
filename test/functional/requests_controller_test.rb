@@ -78,6 +78,7 @@ class RequestsControllerTest < ActionController::TestCase
     get :create_curr_location
     String url = "http://test.host/home"
     assert_redirected_to url 
+
   end
   
   
@@ -102,5 +103,6 @@ class RequestsControllerTest < ActionController::TestCase
     @myrequest.save
     get :show, :id => @myrequest.id
     assert_response :success
+
   end
 end

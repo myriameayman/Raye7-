@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class CirclesControllerTest < ActionController::TestCase
+
   include Devise::TestHelpers
   test "should get show circle" do
     @user = User.new(:email => 'test@example.com',:username => 'test', 
