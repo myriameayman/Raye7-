@@ -10,8 +10,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-
 ActiveRecord::Schema.define(:version => 20150412192754) do
+
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20150412192754) do
     t.integer  "circle_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "fb_id"
   end
 
   create_table "full_profiles", :force => true do |t|

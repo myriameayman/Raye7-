@@ -1,9 +1,10 @@
 class RequestsController < ApplicationController
 
   
+
 # Show shows a specific requests with a certain id.
 # If it doesn't found it it will redirect it to home page again.
-  def show
+ def show
         @user = current_user
         @id = params[:id]
     if (Request.exists?(@id))
@@ -12,6 +13,7 @@ class RequestsController < ApplicationController
     else
       redirect_to "/"
     end
+
   end
 
 
@@ -21,7 +23,6 @@ class RequestsController < ApplicationController
      @requests = Request.search(params[:search])
     end
   end
-   
 
 
   def new
@@ -77,5 +78,6 @@ class RequestsController < ApplicationController
 
   def delete
   end
+
 end
 

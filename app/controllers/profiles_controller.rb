@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   def create
   end
 
+
   def show
     @user = User.find(params[:id])
     @request = Request.find(params[:request_id])
@@ -22,15 +23,17 @@ class ProfilesController < ApplicationController
   def delete
   end
 
+
   def index 
     @requests = Request.search(params[:search])
-
   end
 
   def edit
   end
 
+
   def myAccount
+# Getting the current login user to retrieve all the info in the profile page  
       unless(current_user == nil)      
           @user = current_user
           if(@user.uid==nil)
@@ -45,5 +48,4 @@ class ProfilesController < ApplicationController
         redirect_to new_user_session_path
       end
   end
-  
 end

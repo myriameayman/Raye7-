@@ -27,8 +27,4 @@ class TripsControllerTest < ActionController::TestCase
     get :create
     assert :failure 
     end
-
-
-  
-
 end

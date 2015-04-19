@@ -103,7 +103,4 @@ class RequestsControllerTest < ActionController::TestCase
     get :show, :id => @myrequest.id
     assert_response :success
   end
-
-
-
 end
