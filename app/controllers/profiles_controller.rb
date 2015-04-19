@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
             #PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 10).reverse
          
             @activities = PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 5)
-            #@activities = PublicActivity::Activity.order("created_at desc",:limit =>4 )#.where(owner_id: current_user.friend_ids, owner_type: "User")
+
           end
       else
         redirect_to new_user_session_path
