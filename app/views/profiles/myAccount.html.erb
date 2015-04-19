@@ -63,31 +63,29 @@
 <body>
 
 
-  <div class="row">
+  <div class="row"> <!-- row for the profile picture and the profile info -->
     <div class="col-md-3" style="padding-left:40px">
-    <div class="image-frame">
-        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') "></div>
-
+	    <div class="image-frame"> <!-- image frame tag -->
+	        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') "></div>
+	    </div> <!-- end of image tag -->
     </div>
-    </div>
-  <div class="col-md-8" style="padding-top:40px">
-    <div class= "panel panel-default"  id="b1">
-     <div class="panel-heading" style="background-color: #337AB7">
-      <h3 class="panel-title"   >Profile Info </h3>
-     </div>
-     <div class="panel-body">
-       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
-       <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
-     </div>
-      
-    </div>
-  </div>
-  </div>
+	<div class="col-md-8" style="padding-top:40px"> 
+		<div class= "panel panel-default"  id="b1"> <!-- profile info -->
+		 <div class="panel-heading" style="background-color: #337AB7">
+		  <h3 class="panel-title"   >Profile Info </h3>
+		 </div>
+		 <div class="panel-body">
+		   <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
+		   <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
+		 </div>
+		</div> <!-- end profile info tag -->
+	</div>
+  </div> <!-- end of profile picture and info tag -->
 
   
    
-  <div class="row" style="padding-top:40px">
-    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+  <div class="row" style="padding-top:40px"> 
+    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px"> <!-- side menu tag -->
     <div id='cssmenu'>
 		<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
 		   <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
@@ -96,11 +94,10 @@
 		      <ul>
 		      		<% @circles.each do |c| %>
 			 			<li class='has-sub'><%= link_to c.name, controller: "circles", action: "show", id: c.id %></li>
-			 			
 					<% end %>
 		      </ul>
 		   </li>
-		   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a>
+		   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a> <!-- connect to Circles  -->
 		      <ul>
 			      		<li>
 
@@ -137,7 +134,7 @@
 					    </li>
 
 		      </ul>
-		   </li>
+		   </li> <!-- end of connecting to circles -->
 		   <li class='active has-sub'><a href='#'><span>Update circles</span></a>
 		      <ul>
 			      		<li>
@@ -178,10 +175,10 @@
 		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
 		</ul>
 </div>     
-  </div>
+  </div> <!-- end of side menu tag -->
 
 
-  <div class="col-md-8">
+  <div class="col-md-8"> <!-- container search for an offered ride -->
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
       <h3 class="panel-title"> Search for a trip</h3>
@@ -195,23 +192,23 @@
        <hr>
        <ul>
 		  <% @requests.each do |grant| %>
-			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',
+			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, 	:controller =>'requests',
 		  	:action => 'show', id: grant.id  %></li></h6>
 		  <% end %>
 		</ul>
        
       </div>
     </div>
-  </div>
+  </div> <!-- end of search for an offered ride -->
 
   <div class="col-md-8">
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
-     <div class="panel-heading">
+     <div class="panel-heading"> 
       <h3 class="panel-title"> News Feed</h3>
-     </div>
+     </div> 
       <div class="panel-body">
       	<h6 style="font-style:normal;font-size:15px">What's going on</h6>
-		<% if(@activities.present?) %>
+		<% if(@activities.present?) %> 
 			<% @activities.each do |activity| %>
 				<% if activity.owner.present? %>
 					<hr>
@@ -219,7 +216,7 @@
 				 	<%= render_activity activity %>
 			 	<%end%>
 			<%end%>
-		<% else %>
+		<% else %> 
 			<h6 style="font-style:normal;font-size:12px">No news</h6>
 		<% end %>
 		
