@@ -1,8 +1,5 @@
 
-<<<<<<< HEAD
 
-=======
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 RsgLinkedinGem::Application.routes.draw do 
  
   get "requests/index" 
