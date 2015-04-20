@@ -1,5 +1,8 @@
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 RsgLinkedinGem::Application.routes.draw do 
  
   get "requests/index" 
@@ -12,7 +15,12 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/edit" 
 
+  get "places/show"
+  
   get "requests/delete" 
+
+  #get "requests/home"
+  
 
   get 'auth/:provider/callback', to: 'facebook#create' 
 
@@ -43,11 +51,22 @@ RsgLinkedinGem::Application.routes.draw do
   get "trips/new" 
   
   get "requests/create" 
+<<<<<<< HEAD
   
+=======
+  get "/places/create"  
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
   
+<<<<<<< HEAD
+=======
+  get "/places/show", to: "places#show", as: "show" 
+
+  get "/places/create", to: "places#create", as: "create"
+  
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
   get "/home", to: "requests#home", as: "home" 
   
   get "/geocoding", to: "requests#geocoding", as: "geocoding" 
@@ -105,7 +124,10 @@ RsgLinkedinGem::Application.routes.draw do
       #get 'user/registrations/myAccount' 
       get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount" 
       get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo" 
+<<<<<<< HEAD
        get "/requests/id" => "requests#delete_request" , :as => "delete_request"
+=======
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
 
@@ -221,5 +243,9 @@ RsgLinkedinGem::Application.routes.draw do
 # This is a legacy wild controller route that's not recommended for RESTful applications. 
 # Note: This route will make all actions in every controller accessible via GET requests. 
 # match ':controller(/:action(/:id))(.:format)' 
+<<<<<<< HEAD
 end 
 >>>>>>> 010a95d... Now,a user can delete his request #41
+=======
+end 
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709

@@ -12,7 +12,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 
-ActiveRecord::Schema.define(:version => 20150419150357) do
+ActiveRecord::Schema.define(:version => 20150416155247) do
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20150419150357) do
 
   create_table "friends", :force => true do |t|
     t.string   "name"
+    t.integer  "fb_id"
     t.integer  "circle_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -137,6 +138,17 @@ ActiveRecord::Schema.define(:version => 20150419150357) do
     t.boolean  "trunk"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "destination"
+    t.string   "name"
+    t.string   "currentLoc"
+    t.string   "user_id"
+  end
+
+  create_table "trips", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.integer  "request_id"
   end
 
   create_table "twitter_oauth_settings", :force => true do |t|
@@ -173,6 +185,11 @@ ActiveRecord::Schema.define(:version => 20150419150357) do
     t.string   "nickname"
     t.string   "gmail"
     t.integer  "budget"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "faceboook_profileimage"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

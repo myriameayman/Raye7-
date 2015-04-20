@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>
+		Raye7 | View My Places
+	</title> <!-- closing of title -->
+</head> <!-- closing of head -->
+<body class="footer-top-dark">
+	<div id="page">
+		
+		<div class="container" style="">
+			<div class="block-content">
+				<div class="block-content-inner">
+					<div class="page-header center">
+						<h3> My Places </h3>
+					</div> <!-- closing of page-header center -->
+				</div> <!-- closing of block-content-inner -->
+			</div> <!-- closing of block-content -->
+		</div> <!-- closing of page -->
+
+<div class="form-group">
+ <% @places.each do |grant| %> <!-- prints the name of all the places of the user --> 
+      <h6 style="font-style:normal;font-size:15px"> <li><%= link_to grant.name, :controller =>'places',
+        :action => 'show', id: grant.id  %></li></h6> 
+      <% end %>
+</div>      
+</body> 
+</html>
