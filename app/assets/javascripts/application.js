@@ -10,7 +10,20 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+<<<<<<< HEAD
 	
+=======
+
+
+//= require jquery
+//= require jquery_ujs
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 //= require twitter/bootstrap
 //= require bootstrap-sprockets
+//= require turbolinks
+//= require bootstrap
+//= require map/gmap
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
+

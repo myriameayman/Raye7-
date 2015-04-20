@@ -4,15 +4,20 @@
 </head>
 
 <h1>Account Info</h1>
+<h1> I am here in devise</h1>
 <body>
+<<<<<<< HEAD
 
 		
 
 <p>Your name is <%= @sessUserName %> <br>
+=======
+		<p>Your name is <%= @user.username%> <br>
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 		<a href="/ConnectTo.html.erb" class="btn btn-primary btn-larg">Add more accounts zawed tawsilatak :D</a>
-	
 		</p>
 
+<<<<<<< HEAD
 
 <div id="jRate"></div>
 
@@ -79,5 +84,12 @@ $(document).ready(function () {
 	});
 </script>
 
+=======
+		
+		<% @circles.each do |c| %>
+			<a href="circles/<%c.id%>"><%= c.name %></a><br>
+		<% end %>
+		
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 	
 </body>

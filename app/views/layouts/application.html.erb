@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+ 
+ <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -22,7 +23,9 @@
 <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="stylesheets/myAccount.css">
 
+
     <title><%= content_for?(:title) ? yield(:title) : "Raye7" %></title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -92,23 +95,22 @@
                         </div><!-- /.container -->
                     </div><!-- /.header-secondary -->
 
-                    <div class="container">
+                    <div class="container" style="background-color: #337AB7;">
+
                         <div class="navbar-header">
                             
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="#">
                                 <span class="logo-styled">
-                                    <span class="logo-title">
-                                        <img src="../assets/logo-directory.png" alt=""> Raye7
+                                    <span class="logo-title" style="color: white;">
+                                       <!-- <img src="../assets/logo-directory.png" alt=""> --> Raye7
                                     </span><!-- /.logo-title -->
                                     <span class="logo-subtitle hidden-sm"><br/> </span>
                                 </span><!-- /.logo-styled -->
                             </a>
                         </div>
-
                         <div class="collapse navbar-collapse" id="navbar-main">
-                            <ul class="nav navbar-nav navbar-right">
-   
-</ul><!-- /.nav -->                        </div><!-- /.navbar-collapse -->
+                            <ul class="nav navbar-nav navbar-right"> </ul><!-- /.nav -->   
+                     </div><!-- /.navbar-collapse -->
                     </div>
                 </nav>
             </div><!-- /#header-inner -->
@@ -124,14 +126,58 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+
     <%= javascript_include_tag "application" %>
 
+<<<<<<< HEAD
 <!-- <script type="text/javascript" src="../assets/libraries/jquery.js"></script> -->
+=======
+      <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" >
+    </script>
+    <script type="text/javascript"  src="javascripts/jquery.min.js" ></script>
+    <script type="text/javascript"  src="javascripts/bootstrap.min.js" ></script>
+    <script type="text/javascript"  src="javascripts/jquery.js" ></script>   
+    <script type="text/javascript"  src="javascripts/jquery_ujs.js" ></script>   
+    <script type="text/javascript"  src="javascripts/map/gmap.js" ></script>
+  
+
+          
+    <footer>
+    <!--
+  <div class="container">
+    Rails Girls 2015
+  </div>
+  -->
+
+</footer>
+
+
+
+
+<script type="text/javascript" src="../../assets/libraries/bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../../assets/libraries/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/libraries/isotope/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="../../assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.js"></script>
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.canvas.js"></script>
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.resize.js"></script>
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.time.js"></script>
+
+<script type="text/javascript" src="../../assets/js/map.js"></script>
+<script type="text/javascript" src="../../assets/js/graph.js"></script>
+<script type="text/javascript" src="../../assets/js/director.js"></script>
+
+
+
+<script type="text/javascript" src="../assets/libraries/jquery.js"></script>
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="../assets/libraries/gmap3.clusterer.js"></script>
 <script type="text/javascript" src="../assets/libraries/gmap3.infobox.js"></script>
 
+<<<<<<< HEAD
 <script type="text/javascript" src="../assets/libraries/bxslider/jquery.bxslider.js"></script>
 <!-- <script type="text/javascript" src="../assets/libraries/chosen/chosen.jquery.min.js"></script> -->
 <script type="text/javascript" src="../assets/libraries/isotope/jquery.isotope.min.js"></script>
@@ -141,6 +187,8 @@
 <script type="text/javascript" src="../assets/libraries/flot/jquery.flot.canvas.js"></script>
 <script type="text/javascript" src="../assets/libraries/flot/jquery.flot.resize.js"></script>
 <script type="text/javascript" src="../assets/libraries/flot/jquery.flot.time.js"></script>
+=======
+>>>>>>> c276b045cd32c5897a2360346cc3d56199269709
 
 <script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/carousel.js"></script>
 <script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/collapse.js"></script>

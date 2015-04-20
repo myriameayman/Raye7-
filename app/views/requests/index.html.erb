@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul>
+	  <% @requests.each do |grant| %>
+		<li><%= link_to grant.destination, 
+	  :action => 'show', :id => grant.id  %></li>
+	<% end %>
+</ul>
+ <strong>Trip name:</strong>
+  <%= @request.name %>
+  <strong>AC</strong>
+  <%= @request.air_conditioner %>
+  <strong>car model</strong>
+  <%= @request.car_model%>
+  <strong>To :</strong>
+  <%= @request.destination %>
+
+ </body>
+ </html> 
+
