@@ -135,14 +135,14 @@ $("#continue").click(function () {
        	//url = r+'&'; 
 
   }
-  alert(url);
+  //alert(url);
   for(i=1; i<counter; i++) {
   	address = $('#textbox' + i).val(); 
     submit2(address,i);
-    url = url +'&'; 
-    alert(url);
-        
+    //url = url +'&'; 
+    alert(url);    
   }
+  url = url+'nameX=myriame'
   //var x = counter - 1; 
   //address = $('#textbox' + x).val();
    //var result2 = submit2(address,url,x);
@@ -162,7 +162,7 @@ $("#continue").click(function () {
       if(status == google.maps.GeocoderStatus.OK){
             var output = results[0].geometry.location.lat();     
             var output2 = results[0].geometry.location.lng();
-            url = url+'name'+i+'='+address+'&'+'long'+i+'='+output2+'&lat'+i+'='+output;
+            url = url+'name'+i+'='+address+'&'+'long'+i+'='+output2+'&lat'+i+'='+output+'&';
          //alert(url);
          //return r; 
         // 
