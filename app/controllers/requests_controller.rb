@@ -2,6 +2,7 @@
 @@form_step = nil 
 # Request to be created in the offering ride form. 
 @@request = nil
+@@checkpoint = nil   
 class RequestsController < ApplicationController 
 
 # Make sure there is a currently logged in user. 
@@ -65,8 +66,52 @@ class RequestsController < ApplicationController
   end 
    
   def create 
+    @name1 = params[:name1]
+    @name2 = params[:name2]
+    @name3 = params[:name3]
+    @name4 = params[:name4]
+    @name5 = params[:name5]
+    @name6 = params[:name6]
+
+    @long1 = params[:long1]
+    @long2 = params[:long2]
+    @long3 = params[:long3]
+    @long4 = params[:long4]
+    @long5 = params[:long5]
+    @long6 = params[:long6]
+    
+    @lat1 = params[:lat1]
+    @lat2 = params[:lat2]
+    @lat3 = params[:lat3]
+    @lat4 = params[:lat4]
+    @lat5 = params[:lat5]
+    @lat6 = params[:lat6]
+    
+    unless(@name1 == nil) 
+      places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+        lat LIKE ?' , @name1, @long1 , @lat1])
+      unless (places.any?)
+        p = Place.new 
+        p.name = @name1 
+        p.lat = @lat1 
+        p.long = @long1 
+        p.save  
+        @@checkpoint << p 
+      end 
+    end
+        unless(@name2 == nil) 
+        places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+        lat LIKE ?' , @name2, @long2 , @lat2])
+      unless (places.any?)
+        p = Place.new 
+        p.name = @name2 
+        p.lat = @lat2 
+        p.long = @long2 
+        p.save 
+        @@checkpoint << p
+      end 
+    end  
   end 
-  
   def create_route 
     @curLoc = @@request.currentLoc 
     @destination = @@request.destination 
@@ -80,6 +125,7 @@ class RequestsController < ApplicationController
   # Create new request.  
   def new 
     @@request = Request.new
+    @@checkpoint = []  
     @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
   end 
@@ -130,7 +176,13 @@ class RequestsController < ApplicationController
     @@request.air_conditioner= @air_conditioner
     @@request.trunk= @trunk 
     @@request.name= @name 
-    @@request.save 
+    @@request.save  
+    @@checkpoint.each do |x| 
+      c = Checkpoint.new 
+      c.place_id = x.id 
+      c.request_id = @@request.id 
+      c.save 
+    end 
     redirect_to root_path 
   end 
   
