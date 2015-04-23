@@ -12,7 +12,7 @@ class FacebookController < ApplicationController
                 # @user.provider => "facebook" , @user.id => facebook user id.
                 # @user.fb_email => user's facebook email , @user.facebook_profileimage => url for user's facebook profile image.
                 # @user.oauth_token => the user's facebook oauthuntication token.
-                
+                # @user.gender => the user's facebook gender[ male or femal ].
    def create
 
     @user = current_user
