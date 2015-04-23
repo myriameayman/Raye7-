@@ -120,7 +120,15 @@ $(document).ready(function(){
      });
   });
 </script>
-</head><body>
+</head>
+<body>
+<script type="text/javascript">
+	  function create_ride_info() {
+  // Redirected to create_ride_info in request controller. 
+  window.location.replace('/requests/create');
+
+}
+</script>
 <style type="text/css">
       #map {
         width: 500px;
@@ -137,6 +145,8 @@ $(document).ready(function(){
 <input type='button' value='Add Button' id='addButton'>
 <input type='button' value='Remove Button' id='removeButton'>
 <input type='button' value='Get TextBox Value' id='getButtonValue'>
- 
+ <a class="submit_button" href='#' onClick="create_ride_info();">
+ continue
+ </a>
 </body>
 </html>
