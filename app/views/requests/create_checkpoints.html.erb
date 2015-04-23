@@ -38,15 +38,22 @@
 <h1>jQuery add / remove textbox example</h1>
  
 <script type="text/javascript">
- 
+    var counter = 2;
+ 	var msg = '';
+ 	var waypts = [];
+ 	var map;
+ 	var url = '';
+ 	var output;
+ 	var output2;
+ 	//var r = '';
+ 	var geocoding; 
 $(document).ready(function(){
  
-    var counter = 2;
- 
+  
     $("#addButton").click(function () {
  
-  if(counter>10){
-            alert("Only 10 textboxes allow");
+  if(counter>6){
+            alert("Only 6 checkpoints are allowed");
             return false;
   }   
  
@@ -79,7 +86,6 @@ $(document).ready(function(){
        
        var directionsDisplay = new google.maps.DirectionsRenderer();
        var directionsService = new google.maps.DirectionsService();
-       var map;
        var mapOptions = {
           center: new google.maps.LatLng(30.055487, 31.279766),
           zoom: 8,
@@ -93,8 +99,8 @@ $(document).ready(function(){
        directionsDisplay.setMap(map);
        var from = <%= @curLoc.to_json.html_safe %>;
        var to = <%= @destination.to_json.html_safe %>;
-       var waypts = [];
-       var msg = '';
+        waypts = [];
+        msg = '';
     for(i=1; i<counter; i++){
       //alert("hena");
       var address = $('#textbox' + i).val();
@@ -118,17 +124,64 @@ $(document).ready(function(){
         });
         alert(msg);
      });
-  });
-</script>
-</head>
-<body>
-<script type="text/javascript">
-	  function create_ride_info() {
-  // Redirected to create_ride_info in request controller. 
-  window.location.replace('/requests/create');
+$("#continue").click(function () {
+	var address;
+	for(i=1; i<counter; i++){
+		
+		address = $('#textbox' + i).val(); 
+        submit2(address,i);
+        
+        //alert(r);
+       	//url = r+'&'; 
 
+  }
+  alert(url);
+  for(i=1; i<counter; i++) {
+  	address = $('#textbox' + i).val(); 
+    submit2(address,i);
+    url = url +'&'; 
+    alert(url);
+        
+  }
+  //var x = counter - 1; 
+  //address = $('#textbox' + x).val();
+   //var result2 = submit2(address,url,x);
+  //alert(result2);
+  //url = url+'name'+x+'='+address+'&'+'long'+x+'='+output2+'&lat'+x+'='+output;
+  window.location.replace('/requests/create?'+url);
+
+}); 	
+  });
+	function submit2(address,i){
+	//var address = 'cairo';
+	//var r = '';	
+	if(address.length > 0){
+      //alert("hena");
+      geocoding  = new google.maps.Geocoder();
+      geocoding.geocode({'address': address},function(results, status){
+      if(status == google.maps.GeocoderStatus.OK){
+            var output = results[0].geometry.location.lat();     
+            var output2 = results[0].geometry.location.lng();
+            url = url+'name'+i+'='+address+'&'+'long'+i+'='+output2+'&lat'+i+'='+output;
+         //alert(url);
+         //return r; 
+        // 
+        //r = url;
+       // alert(r);
+        }else{
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }else{
+    alert("Search field can't be blank");
+  }
+
+  //return r; 
 }
 </script>
+
+</head>
+<body>
 <style type="text/css">
       #map {
         width: 500px;
@@ -145,8 +198,9 @@ $(document).ready(function(){
 <input type='button' value='Add Button' id='addButton'>
 <input type='button' value='Remove Button' id='removeButton'>
 <input type='button' value='Get TextBox Value' id='getButtonValue'>
- <a class="submit_button" href='#' onClick="create_ride_info();">
- continue
+<input type='button' value='Continue' id='continue'>
+<a class="submit_button" href='#' onClick="submit();">
+ Submit
  </a>
 </body>
 </html>
