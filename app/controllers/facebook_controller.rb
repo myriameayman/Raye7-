@@ -23,6 +23,7 @@ class FacebookController < ApplicationController
     @user.provider = env["omniauth.auth"].provider
     @user.uid = env["omniauth.auth"].uid
     @user.fb_email = env["omniauth.auth"].info.email
+    #@user.name = env["omniauth.auth"].extra.raw_info.gender
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
  
