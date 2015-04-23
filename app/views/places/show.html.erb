@@ -1,121 +1,36 @@
+<!-- The place to be shown --> 
+<%= @place.name %>
 
-           <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <title>
-           Raye7 | View My Places
-    </title>
-  </head>
-
-    <body class="footer-top-dark">
-        <div id="page">
-        <div id="header-wrapper">
-                <div id="header">
-                    <div id="header-inner">
-                        <nav class="navbar navbar-default">
-                            <div class="container">
-
-
-                             <div class="collapse navbar-collapse" id="navbar-main">
-                                <ul class="nav navbar-nav navbar-right">
-                                                            
-                                    <li class="menuparent hidden-sm">
-                                        <a href="#">My Profile</a>
-                                    </li>
-
-                                     <li class="menuparent">
-                                        <a href="#">Home Page</a>
-                                    </li>
-
-                                    <li class="menuparent">
-                                        <a href="#">SignOut</a>
-                                    </li>
-
-                                </ul> 
-
-                            </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-        </div>
-                                
-
-
-
-
-
-
-        <div class="container" style="">   
-                            <div class="block-content">
-                                <div class="block-content-inner">
-                                    <div class="page-header center">
-                                        <h3> My Places </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <div class="thumbnail" id="place_name">
-    </div>
-  </div>
-  <div class="col-xs-6 col-md-3">
-    <div class="thumbnail" id="place_name">
-    </div>
-  </div>
-  
-  
-</div>
-                        <% @places.each do |p| %>
-
-                            <%= p.name %>
-                            <div id='map-canvas'> 
-                                <%= javascript_tag do %>
-                                var long = <%= p.long.to_json.html_safe %>
-                                var lat = <%= p.lat.to_json.html_safe %>
-                                loadScript(log,lat)
-                            <% end %>
-                            </div>
-    <br/>
-    <% end %>
-    </div>
-<script type="text/javascript">
+<div id='map-canvas'>
+</div> <!-- closing of map-canvas --> 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+ // Initialize map. 
+  function initialize() {
+    // Long of the place to be shown. 
+    var log = <%= @place.long.to_json.html_safe %>;
+    // Lat of the place to be shown.
+    var lat = <%= @place.lat.to_json.html_safe %>;
+    // The long and lat of the place to be marked.  
+    var myLatlng = new google.maps.LatLng(log,lat);
+    // Name of the place to be shown. 
+    var placeName = <%= @place.name.to_json.html_safe %>;
     var map;
-    function loadScript(log,lat) {
-        console.log("map loading ...");
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
-        '&libraries=drawing'+
-        '&callback=initialize('+log+','+lat+')' ;
-        document.body.appendChild(script);
-    }
-    function initialize(log,lat) {
-        
-        var mapOptions = {
-          center: new google.maps.LatLng(log, lat),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.NORMAL,
-          panControl: true,
-          scaleControl: false,
-          streetViewControl: true,
-          overviewMapControl: true
-        };
-        // initializing map
-        map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-        alert("hello");
-   // geocoding 
-        var geocoding  = new google.maps.Geocoder();
-      
-}
+    var mapOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(log,lat),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    // Creating the map and putting it in the map-canvas part in the page.
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+       mapOptions);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: placeName
+     });
+
+  } // Closing of initialize function.  
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
-</body>
-</html>
-
- 

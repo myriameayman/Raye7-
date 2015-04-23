@@ -17,8 +17,10 @@ class Request < ActiveRecord::Base
 	  #validates :trunk, presence: true
 	  validates :seats, numericality: { only_integer: true }
 	  validates_format_of :car_color, :with => /^[-a-z]+$/
+
 	  include PublicActivity::Model
 		tracked owner: -> (controller, model) {controller && controller.current_user}
+
 	  #validate :my_string_is_valid
 	  def self.search(search)
 		find(:all, :conditions => ['destination LIKE ?', search])
