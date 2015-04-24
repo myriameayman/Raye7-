@@ -49,6 +49,16 @@
 					<%= label :trunk, 'i have a trunk in a truk', :value => 'i have a trunk in my car' %>
 				</div> <!-- closing label -->
 <br>
+				<input name="girls-only" type="radio" value="girls-only"/>    
+				<div class="label"> 
+					<%= label :girlsOnly, 'only girls can join this trip', :value => 'only girls can join this trip' %>
+				</div> <!-- closing label -->
+<br>
+				<input name="gentlemen-only" type="radio" value="gentlemen-only"/>    
+				<div class="label"> 
+					<%= label :gentlemenOnly, 'only gentlemen can join this trip', :value => 'only gentlemen can join this trip' %>
+				</div> <!-- closing label -->
+<br>
 <br>
 <script>
 // Function to be called on click on the submit button. 
@@ -61,6 +71,8 @@ function create_ride_info() {
 	var txt_smoking;
 	var txt_air_conditioner;
 	var txt_trunk;
+	var girls; 
+	var gentlemen; 
 	if (document.getElementsByName('smoking')[0].checked) 
   		txt_smoking = 1;
 	else 
@@ -73,9 +85,17 @@ function create_ride_info() {
   		txt_trunk = 1;
 	else 
 		txt_trunk = 0;
+	if (document.getElementsByName('girls-only')[0].checked) 
+  		girls = 1;
+	else 
+		girls = 0;
+	if (document.getElementsByName('gentlemen-only')[0].checked) 
+  		gentlemen = 1;
+	else 
+		gentlemen = 0;
 	// Redirected to create_ride_info in request controller. 
 	window.location.replace('/requests/create_ride_info?car_color='+txt_color+'&car_model='+txt_model+'&car_number='+txt_number+'&seats='+txt_seats+'&smoking='+txt_smoking+'&air_conditioner='+txt_air_conditioner+'&trunk='+txt_trunk
-		+'&name='+txt_name);
+		+'&name='+txt_name+'&girls='+girls+'&gentlemen='+gentlemen);
 
 }
 </script>

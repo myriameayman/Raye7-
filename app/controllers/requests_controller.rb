@@ -40,8 +40,10 @@ class RequestsController < ApplicationController
     if @@form_step == 1 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
+      @loc = params[:loc]
       @@request.lat_curr = @latitude 
       @@request.long_curr= @longitude 
+      @@request.currentLoc = @loc
       redirect_to url_for(:controller => "requests", :action => "home")
     else 
       @latitude = params[:latitude] 
@@ -113,6 +115,8 @@ class RequestsController < ApplicationController
     @air_conditioner = params[:air_conditioner]
     @trunk = params[:trunk] 
     @name = params[:name] 
+    @girls = params[:girls]
+    @gentlemen = params[:gentlemen] 
     @@request.car_color = @color 
     @@request.car_model= @model 
     @@request.car_number= @number 
@@ -121,6 +125,8 @@ class RequestsController < ApplicationController
     @@request.air_conditioner= @air_conditioner
     @@request.trunk= @trunk 
     @@request.name= @name 
+    @@request.girls_only = @girls 
+    @@request.gentlemen_only = @gentlemen 
     @@request.save 
     redirect_to root_path 
   end 
