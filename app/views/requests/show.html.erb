@@ -28,3 +28,10 @@
 	      <button> join <%=@request.name %></button><!--/# Join the user to this Request -->. 
 	      
 	<% end %> 
+
+  <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
+            <h4> Trip destination </h4>
+          <%= text_field_tag :tagList, params[:tagList], :id => 'tagList_field' %>
+          <br>
+          <%= submit_tag "tag", :name => nil %>
+    <% end %> 
