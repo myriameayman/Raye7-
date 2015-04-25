@@ -1,6 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Friends</title>
+</head>
+<body>
 <h1>Circles#show</h1>
+
+
 <p>Find me in app/views/circles/show.html.erb</p>
-<h3>your are in circle : </h3> Circle name :<%= @circle.name %><br>
+<h3>you are in circle : </h3> Circle name :<%= @circle.name %><br>
 <h4> Friends in the circle :- </h4><br>
 		<% @circle.friends.each do |c| %>
 			<%= c.name %><br> <!--/# name of a specific circle  -->
@@ -27,4 +35,7 @@
 			<% end %><!--/#  end of the if checking the circle name  -->
 			
 		<% end %><!--end of the loop -->
+
+</body>
+</html>
 
