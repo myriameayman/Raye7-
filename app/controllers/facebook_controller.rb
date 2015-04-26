@@ -14,6 +14,9 @@ class FacebookController < ApplicationController
                 # @user.oauth_token => the user's facebook oauthuntication token.
    def create
 
+ #   if(env["omniauth.auth"].provider == 'google_oauth2')
+  #    redirect_to url_for(:controller => "google", :action =>"create") and return 
+   # end 
     @user = current_user
     @fb_friends = FbGraph::User.me(env["omniauth.auth"].credentials.token).friends
     @graph = Koala::Facebook::API.new(env["omniauth.auth"].credentials.token)

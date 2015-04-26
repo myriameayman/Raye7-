@@ -1,6 +1,7 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
+  
   get "requests/index" 
 
   get "requests/new" 
@@ -17,13 +18,21 @@ RsgLinkedinGem::Application.routes.draw do
 
   #get "requests/home"
   
-  get 'auth/:provider/callback', to: 'facebook#create' 
+  
+  get 'auth//callback', to: 'facebook#create' 
 
   get 'auth/failure', to: redirect('/') 
 
   get 'signout', to: 'facebook#destroy', as: 'signout' 
   
   root :to => 'profiles#myAccount' 
+
+  get 'auth/google_oauth2/callback', to: 'google#create' 
+
+  get 'auth/failure', to: redirect('/') 
+
+  get 'signout', to: 'google#destroy', as: 'signout' 
+  
   
   get "profiles/new" 
 

@@ -76,7 +76,7 @@
 	    <div class="col-md-8" style="padding-top:40px">
 		    <div class= "panel panel-default"  id="b1">
 			     <div class="panel-heading" style="background-color: #337AB7">
-			      <h3 class="panel-title"   >Profile Info </h3>
+			      <h3 class="panel-title"   >Profile Info </h3> <%= @x %>
 			     </div><!-- div panel-heading -->
 			     <div class="panel-body">
 			       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
@@ -129,7 +129,8 @@
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:80px;float:left;">
 									        <div id="round-button-circle-2">
-									          <a href="http://localhost:4567" class="round-button">Google+</a>
+									        <%= link_to "a", "/auth/google_oauth2", id: "sign_in" ,:class => 'round-button'%>
+									         
 									        </div>
 									    </div>
 									  </div>

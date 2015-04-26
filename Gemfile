@@ -39,6 +39,7 @@ gem 'fb_graph'
 gem "koala", "~> 2.0"
 gem 'rails_layout', '~> 0.5.11'
 gem 'font-awesome-sass', '~> 4.0.2'
+gem "omniauth-google-oauth2"
 
 
 # Gems used only for assets and not required
