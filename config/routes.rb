@@ -31,6 +31,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "profiles/show" 
 
+  get "places/friend_places"
+  
   get "profiles/delete" 
 
   get "profiles/index" 
@@ -45,7 +47,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "trips/new" 
   
-  get "/profiles/friend_profile"
+  get "profiles/friend_profile"
 
   get "requests/create" 
   
@@ -59,7 +61,7 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "/places/show", to: "places#show", as: "show" 
 
-  get "/places/friend_places", to: "places#create", as: "show_places" 
+  get "/places/friend_places/:id", to: "places#create", as: "show_places" 
 
   get "/places/create", to: "places#create", as: "create"
   

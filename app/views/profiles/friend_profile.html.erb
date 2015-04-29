@@ -97,7 +97,7 @@
     <ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
        <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
        <li><a href='#'><span>Home</span></a></li>
-       <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
+       <li><%= link_to "view all my places", controller: "places", action: "friend_places", id: @user.id %></li>
     </ul>
 </div>     
   </div>

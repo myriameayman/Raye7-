@@ -32,7 +32,6 @@ class PlacesController < ApplicationController
    	 	@id = params[:id] 
     	if (Place.exists?(@id)) 
       		@place = Place.find(@id) 
-
     	else 
       		redirect_to "/" 
     	end 
