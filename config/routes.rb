@@ -45,13 +45,21 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "trips/new" 
   
+  get "/profiles/friend_profile"
+
   get "requests/create" 
+  
   get "/places/create"  
+  
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
   
+  get "/profiles/friend_profile",to: "profiles#friend_profile", as: "friend_profile"
+
   get "/places/show", to: "places#show", as: "show" 
+
+  get "/places/friend_places", to: "places#create", as: "show_places" 
 
   get "/places/create", to: "places#create", as: "create"
   

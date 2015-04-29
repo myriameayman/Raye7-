@@ -15,7 +15,17 @@ class PlacesController < ApplicationController
 		end 	 	
     end
 
-
+    def friend_places 
+    	@user = User.find(params[:id])
+    	@places = [] 
+		@visits = Visit.find(:all, :conditions => ['user_id LIKE ?' , @user.id])
+		@visits.each do |v| 
+			place = Place.find(:all, :conditions => ['id LIKE ?' , v.place_id])
+			place.each do |p|
+				@places << p 
+			end  
+		end 	
+    end	
     # Show a specific place of the user. 
     # @id is the id of the place to be shown. 
     def show

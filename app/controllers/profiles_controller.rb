@@ -7,9 +7,9 @@ class ProfilesController < ApplicationController
   end
 
 
-  def show
+  def friend_profile
     @user = User.find(params[:id])
-    @request = Request.find(params[:request_id])
+    #@request = Request.find(params[:request_id])
   end
 
   def search
