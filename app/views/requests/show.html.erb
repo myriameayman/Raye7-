@@ -18,10 +18,7 @@
   <strong>To:</strong>
   <%= @request.destination %>
 <% end %>
-
- </p>
- 
-
+</p>
  <%= form_tag :controller => 'trips', :action => 'create', :method => 'post',id: @request.id do %>
 
 
@@ -29,9 +26,10 @@
 	      
 	<% end %> 
 
-  <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
-            <h4> Trip destination </h4>
+
+  <%= form_tag :controller => 'tags', :action => 'create', :method => 'post' ,id:@request.id  do %>
+          <h4> Tag ur friend ;)</h4>
           <%= text_field_tag :tagList, params[:tagList], :id => 'tagList_field' %>
           <br>
           <%= submit_tag "tag", :name => nil %>
-    <% end %> 
+  <% end %>

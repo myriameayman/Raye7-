@@ -1,4 +1,3 @@
-
 RsgLinkedinGem::Application.routes.draw do 
  
   get "requests/index" 
@@ -14,7 +13,9 @@ RsgLinkedinGem::Application.routes.draw do
   get "places/show"
   
   get "requests/delete" 
-
+  get "raquests/create"
+  post "tags/create"
+  #get "tags/show"
   #get "requests/home"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
@@ -44,6 +45,7 @@ RsgLinkedinGem::Application.routes.draw do
   get "profiles/show1" 
   
   get "trips/new" 
+  get "tags/create"
   
   get "requests/create" 
   get "/places/create"  
@@ -52,6 +54,9 @@ RsgLinkedinGem::Application.routes.draw do
   get "/requests/new", to: "requests#new", as: "new" 
   
   get "/places/show", to: "places#show", as: "show" 
+
+  
+
 
   get "/places/create", to: "places#create", as: "create"
   
@@ -77,9 +82,12 @@ RsgLinkedinGem::Application.routes.draw do
   
   match '/request/:id' => 'trips#create', :via => :post 
 
+
   devise_for :users, :controllers => {:registrations => "registrations"} 
 
   resources :circles 
+
+  resources :tags
   
   resources :requests 
   
