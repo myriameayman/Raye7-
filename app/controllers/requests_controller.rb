@@ -169,6 +169,8 @@ class RequestsController < ApplicationController
     @destination = @@request.destination 
   end  
 
+# @myriame 
+# Creates checkpoints between current location and destination. 
   def create_checkpoints 
     @curLoc = @@request.currentLoc 
     @destination = @@request.destination     
