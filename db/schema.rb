@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150430022826) do
+ActiveRecord::Schema.define(:version => 20150430025248) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -112,6 +112,17 @@ ActiveRecord::Schema.define(:version => 20150430022826) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "messages", :force => true do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "messages", ["conversation_id"], :name => "index_messages_on_conversation_id"
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "places", :force => true do |t|
     t.decimal  "long"
