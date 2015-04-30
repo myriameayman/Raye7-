@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
       has_many :ratings
       has_many :trips
 
-
+      has_many :conversations, :foreign_key => :sender_id
       has_many :visits
       has_many :places, through: :visits
       has_one :linkedin_oauth_setting
