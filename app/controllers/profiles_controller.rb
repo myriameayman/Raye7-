@@ -44,6 +44,12 @@ class ProfilesController < ApplicationController
           end
           @circles = @user.circles
           session[:user_id]  = current_user.id
+          if   current_user.present?
+            #PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 10).reverse
+         
+            @activities = PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 5)
+
+          end
       else
         redirect_to new_user_session_path
       end

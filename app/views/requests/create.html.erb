@@ -10,25 +10,33 @@
 				</div> <!-- closing input-group -->   
 <br>
 
+
 				<div class="input-group">
   					<span class="input-group-addon" id="car_color_span">@</span>
  					 <input type="text" class="form-control" placeholder="car_color" name="car_color" id="car_color" style="height:50px">
+
 				</div> <!-- closing input-group -->   
 <br>
 
 				<div class="input-group">
+
   					<span class="input-group-addon" id="car_model_span">@</span>
   					<input type="text" class="form-control" placeholder="car_model" name="car_model" id="car_moodel" style="height:50px">
+
 				</div> <!-- closing input-group -->   
 <br>
 
 				<div class="input-group">
+
   					<span class="input-group-addon" id="car_number_span">@</span>
   					<input type="text" class="form-control" placeholder="car_number" id="car_number" name="car_number" style="height:50px">
+
 				</div> <!-- closing input-group -->   
 <br>
 
 				<div class="input-group">
+
+
   					<span class="input-group-addon" id="seats_span">@</span>
   					<input type="text" class="form-control" placeholder="seats" id="seats" name="seats" style="height:50px">
 				</div> <!-- closing input-group -->   
@@ -39,6 +47,7 @@
 					<%= label :smoking_label, 'one can smoke in my car', :value => 'one can smoke in my car' %>
 				</div> <!-- closing label -->
 <br>
+
 				<input name="air_conditioner" type="radio" value="air_conditioner"/>    
 				<div class="label"> 
 					<%= label :air_conditioner, 'i have air air_conditioner in my car', :value => 'i have air air_conditioner in my car' %>
@@ -51,7 +60,9 @@
 <br>
 <br>
 <script>
+
 // Function to be called on click on the submit button. 
+
 function create_ride_info() {
 	var txt_color = document.getElementsByName('car_color')[0].value;
 	var txt_model = document.getElementsByName('car_model')[0].value;
@@ -73,7 +84,9 @@ function create_ride_info() {
   		txt_trunk = 1;
 	else 
 		txt_trunk = 0;
+
 	// Redirected to create_ride_info in request controller. 
+
 	window.location.replace('/requests/create_ride_info?car_color='+txt_color+'&car_model='+txt_model+'&car_number='+txt_number+'&seats='+txt_seats+'&smoking='+txt_smoking+'&air_conditioner='+txt_air_conditioner+'&trunk='+txt_trunk
 		+'&name='+txt_name);
 
