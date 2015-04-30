@@ -81,7 +81,7 @@ class RequestsControllerTest < ActionController::TestCase
   end
   
   
-  test "should get create2" do
+  test "should draw route" do
     @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
     @user.save
@@ -89,7 +89,7 @@ class RequestsControllerTest < ActionController::TestCase
     @@form_step = 2 
     @@request = Request.new
     get :create_curr_location
-    String url = "http://test.host/requests/create"
+    String url = "http://test.host/requests/create_route"
     assert_redirected_to url 
   end
   test "should show request" do
