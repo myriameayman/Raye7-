@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
     before_filter :authenticate_user!
   def new
+    flash[:notice] = "Verification message has sent to your email"
   end
 
   def create
@@ -31,6 +32,17 @@ class ProfilesController < ApplicationController
   def edit
   end
 
+  def unverified
+    flash[:notice] = "Verification message has sent to your email"
+
+  end
+
+  def verifyMe
+    @user = current_user
+    @user.verification = true    
+    redirect_to url_for(:controller => "profile", :action => "myAccount") and return
+  end
+
 
   def myAccount
 # Getting the current login user to retrieve all the info in the profile page  
@@ -41,6 +53,9 @@ class ProfilesController < ApplicationController
             flash[:notice] = "Confirmation message has sent to your email"
            # MyMailer.sample_email(@user).deliver
             redirect_to "/auth/facebook" and return
+          end
+          if(@user.verification == false )
+            redirect_to url_for(:controller => "profiles", :action => "new")
           end
           unless(params[:search==nil])
             @requests = Request.search params[:search]
