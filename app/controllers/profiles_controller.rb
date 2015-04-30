@@ -37,11 +37,16 @@ class ProfilesController < ApplicationController
       unless(current_user == nil)      
           @user = current_user
           if(@user.uid==nil)
+            MyMailer.gmail_email(@user).deliver
+            flash[:notice] = "Confirmation message has sent to your email"
+           # MyMailer.sample_email(@user).deliver
             redirect_to "/auth/facebook" and return
           end
           unless(params[:search==nil])
             @requests = Request.search params[:search]
           end
+          
+          #MyMailer.sample_email(@user).deliver
           @circles = @user.circles
           session[:user_id]  = current_user.id
           if   current_user.present?
