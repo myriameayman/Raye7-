@@ -67,6 +67,8 @@ class RequestsController < ApplicationController
   def create 
   end 
   
+  # @myriame 
+  # create a point between currLoc and destination 
   def create_route 
     @curLoc = @@request.currentLoc 
     @destination = @@request.destination
