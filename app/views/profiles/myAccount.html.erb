@@ -61,29 +61,12 @@
 
 </style>
 <body>
-<div id="friends">
-  	<a href="#" id="invite_fb_friends" onClick="ss();">Invite your friends</a>
-  	<div id= "fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script type="text/javascript">
-function ss(){
-	FB.init({
-        appId: '716016431848330',
-        status: true,
-        cookie: false,
-        // xfbml: true
-        });
-	FB.ui({
-method: 'send',
-message: '<%=current_user.name %> has invite you to a party for>',
-link: 'http://raye7.com/'});
 
-}
-</script>
+  	  	
 
 
 
-</div>
+
 
   <div class="row">
 
@@ -205,7 +188,8 @@ link: 'http://raye7.com/'});
 
 		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
 		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
-		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
+		   <li class='last' style="border-bottom:none;"><a href="#" id="invite_fb_friends" onClick="inviteFriends();"><span>Invite your facebook friends
+</span></a></li>
 		</ul>
 </div>     
   </div>
@@ -251,7 +235,22 @@ link: 'http://raye7.com/'});
 
 </div> 
 
-  
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+function inviteFriends(){
+	FB.init({
+        appId: '716016431848330',
+        status: true,
+        cookie: false,
+        // xfbml: true
+        });
+	FB.ui({
+method: 'send',
+message: '<%=current_user.name %> has invite you to a party for>',
+link: 'http://raye7.com/'});
+
+}
+</script>
 </body>
 
 </html>
