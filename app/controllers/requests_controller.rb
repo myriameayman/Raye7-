@@ -131,6 +131,6 @@ class RequestsController < ApplicationController
 
 
   def delete 
-  end 
- 
+  end
+
 end

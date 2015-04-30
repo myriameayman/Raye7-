@@ -14,7 +14,8 @@ class PlacesController < ApplicationController
 			end  
 		end 	 	
     end
-
+    # @myriame 
+    # Find places of a specific friend. 
     def friend_places 
     	@user = User.find(params[:id])
     	@places = [] 

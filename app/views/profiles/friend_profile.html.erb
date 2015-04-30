@@ -48,15 +48,16 @@
     border-radius: 4px;
     cursor: pointer;
   }
-.panel.panel-default{
-    border-radius:60px;
-}
-#navlist{
-  display: none;
-}
-#navlist:hover{
-  display: block;
-}
+  .panel.panel-default{
+      border-radius:60px;
+  }
+  #navlist{
+    display: none;
+  }
+  #navlist:hover{
+    display: block;
+  }
+
 
 
 </style>
@@ -69,7 +70,6 @@
         <div class="image-frame">
             <div class="img-circular" style="background-image: url('<%= @user.faceboook_profileimage+'&width=160&height=160'%>') ">
             </div><!-- close div if profile image-->
-
         </div><!-- close tdi of image frame -->
       </div><!-- close div of col-dm-3 -->
 
@@ -94,24 +94,21 @@
 
     <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
     <div id='cssmenu'>
-    <ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
-       <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
-       <li><a href='#'><span>Home</span></a></li>
-       <li><%= link_to "view all my places", controller: "places", action: "friend_places", id: @user.id %></li>
-    </ul>
-</div>     
+        <ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
+           <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
+           <li><a href='#'><span>Home</span></a></li>
+           <li><%= link_to "view all my places", controller: "places", action: "friend_places", id: @user.id %></li>
+       
+        </ul>
+    </div>     
   </div>
 
+  f f
   <div class="col-md-8">
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
-     <div class="panel-heading">
-      <h3 class="panel-title"> Search for a trip</h3>
+    <div class="panel-heading">
+      <h3 class="panel-title"   >Ay 7aga </h3>
      </div> <!--/#panel-heading -->
-    </div><!--/#class panel-heading-->
-  </div><!--/#class col-md-8-->
-
-  <div class="col-md-8">
-    <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-body">
        <h6 style="font-style:normal;font-size:15px"> insha'allah hena hyb2a feh news feed </h6>
        <hr>

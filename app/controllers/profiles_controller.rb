@@ -6,10 +6,10 @@ class ProfilesController < ApplicationController
   def create
   end
 
-
+ # @myriame 
+ # Load a profile of a specific friend.
   def friend_profile
     @user = User.find(params[:id])
-    #@request = Request.find(params[:request_id])
   end
 
   def search
