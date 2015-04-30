@@ -107,6 +107,9 @@ RsgLinkedinGem::Application.routes.draw do
   
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
+  resources :conversations do
+    resources :messages
+  end
   resources :circles 
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
