@@ -17,6 +17,7 @@
 //= require twitter/bootstrap
 //= require bootstrap-sprockets
 //= require chat
+//= require private_pub
 //= require turbolinks
 //= require bootstrap
 //= require map/gmap
