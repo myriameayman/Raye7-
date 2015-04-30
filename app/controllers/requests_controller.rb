@@ -2,6 +2,7 @@
 @@form_step = nil 
 # Request to be created in the offering ride form. 
 @@request = nil
+# Liist of all checkpoints created by the user.
 @@checkpoint = nil   
 class RequestsController < ApplicationController 
 
@@ -65,6 +66,8 @@ class RequestsController < ApplicationController
     end 
   end 
    
+# @myriame 
+# Create max checkpoints for the user.     
   def create 
     @name1 = params[:name1]
     @name2 = params[:name2]
@@ -90,7 +93,6 @@ class RequestsController < ApplicationController
     unless(@name1 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name1, @long1 , @lat1])
-      #Movie.where("rating = ? OR rating = ?", 'R', 'PG')
       unless (places.empty?)
         p = Place.new 
         p.name = @name1 
@@ -101,66 +103,67 @@ class RequestsController < ApplicationController
       end 
     end
         unless(@name2 == nil) 
-        places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
-        lat LIKE ?' , @name2, @long2 , @lat2])
-        unless (places.empty?)
-        p = Place.new 
-        p.name = @name2 
-        p.lat = @lat2 
-        p.long = @long2 
-        p.save 
-        @@checkpoint << p
-      end 
-    end
+          places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+          lat LIKE ?' , @name2, @long2 , @lat2])
+          unless (places.empty?)
+            p = Place.new 
+            p.name = @name2 
+            p.lat = @lat2 
+            p.long = @long2 
+            p.save 
+            @@checkpoint << p
+          end 
+        end
         unless(@name3 == nil) 
-        places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
-        lat LIKE ?' , @name3, @long3 , @lat3])
-        unless (places.empty?)
-        p = Place.new 
-        p.name = @name3 
-        p.lat = @lat3 
-        p.long = @long3 
-        p.save 
-        @@checkpoint << p
-      end
-    end  
+          places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+           lat LIKE ?' , @name3, @long3 , @lat3])
+          unless (places.empty?)
+            p = Place.new 
+            p.name = @name3 
+            p.lat = @lat3 
+            p.long = @long3 
+            p.save 
+            @@checkpoint << p
+          end
+        end  
         unless(@name4 == nil) 
-        places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
-        lat LIKE ?' , @name4, @long4 , @lat4])
-        unless (places.empty?)
-        p = Place.new 
-        p.name = @name4 
-        p.lat = @lat4 
-        p.long = @long4 
-        p.save 
-        @@checkpoint << p
-      end 
-    end  
+          places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+           lat LIKE ?' , @name4, @long4 , @lat4])
+          unless (places.empty?)
+            p = Place.new 
+            p.name = @name4 
+            p.lat = @lat4 
+            p.long = @long4 
+            p.save 
+            @@checkpoint << p
+          end 
+        end  
         unless(@name5 == nil) 
-        places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
-        lat LIKE ?' , @name5, @long5 , @lat5])
-        unless (places.empty?)
-        p = Place.new 
-        p.name = @name5 
-        p.lat = @lat5 
-        p.long = @long5 
-        p.save 
-        @@checkpoint << p
-      end 
-    end 
+          places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+           lat LIKE ?' , @name5, @long5 , @lat5])
+          unless (places.empty?)
+            p = Place.new 
+            p.name = @name5 
+            p.lat = @lat5 
+            p.long = @long5 
+            p.save 
+            @@checkpoint << p
+          end 
+        end 
         unless(@name6 == nil) 
-        places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
-        lat LIKE ?' , @name6, @long6 , @lat6])
-        unless (places.empty?)
-        p = Place.new 
-        p.name = @name6 
-        p.lat = @lat6 
-        p.long = @long6 
-        p.save 
-        @@checkpoint << p
-      end 
-    end 
+          places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
+           lat LIKE ?' , @name6, @long6 , @lat6])
+          unless (places.empty?)
+            p = Place.new 
+            p.name = @name6 
+            p.lat = @lat6 
+            p.long = @long6 
+            p.save 
+            @@checkpoint << p
+          end 
+        end 
   end 
+  
   def create_route 
     @curLoc = @@request.currentLoc 
     @destination = @@request.destination 
