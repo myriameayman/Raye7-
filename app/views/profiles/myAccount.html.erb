@@ -57,8 +57,9 @@
 #navlist:hover{
 	display: block;
 }
-
-
+.cont {
+	display: block; width: 500px; max-height: 1000px; border:1px solid gray; border-radius: 20px; box-shadow: 0 1px 2px #888; } .cont .header{ background-color: #337AB7; box-shadow: 0 1px 2px #888; padding-top: 10px; border-top-right-radius:20px; border-top-left-radius:20px; border-bottom: 1px solid gray; } .cont .header h1{ padding-left: 10px; margin: 5px; font-size: 30px; font-weight: normal; text-shadow: 0 1px 2px white; color: white; text-align:left; } .cont .body{ margin: 15px; padding-top: 0px; } .cont .body label{ font-size: 18px; font-family: times; font-style: normal; } .cont .body h1{ padding-left: 10px; margin: 5px; font-size: 16px; font-weight: normal; color: black; text-align:left; }
+}
 </style>
 <body>
 
@@ -66,6 +67,7 @@
   <div class="row">
 
 	    <div class="col-md-3" style="padding-left:40px">
+
 		    <div class="image-frame">
 		        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
 		        </div><!-- close div if profile image-->
