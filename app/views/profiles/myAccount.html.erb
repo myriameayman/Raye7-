@@ -61,9 +61,33 @@
 
 </style>
 <body>
+<div id="friends">
+  	<a href="#" id="invite_fb_friends" onClick="ss();">Invite your friends</a>
+  	<div id= "fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+function ss(){
+	FB.init({
+        appId: '716016431848330',
+        status: true,
+        cookie: false,
+        // xfbml: true
+        });
+	FB.ui({
+method: 'send',
+message: '<%=current_user.name %> has invite you to a party for>',
+link: 'http://raye7.com/'});
 
+}
+</script>
+
+
+
+</div>
 
   <div class="row">
+
+
 
 	    <div class="col-md-3" style="padding-left:40px">
 		    <div class="image-frame">
@@ -120,7 +144,7 @@
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:80px;float:left">
 									        <div id="round-button-circle">
-									          <a href="/twitter_oauth_url" class="round-button">Twitter</a>
+									          <a href="/linkedin_oauth_url" class="round-button">Twitter</a>
 									        </div>
 									    </div>
 									  </div>

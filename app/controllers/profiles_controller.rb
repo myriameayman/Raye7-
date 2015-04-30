@@ -6,6 +6,9 @@ class ProfilesController < ApplicationController
   def create
   end
 
+  def authorize
+  end 
+
 
   def show
     @user = User.find(params[:id])

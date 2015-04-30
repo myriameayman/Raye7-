@@ -43,7 +43,9 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "profiles/show1" 
   
-  get "trips/new" 
+  get "trips/new"
+
+  post "profiles/authorize" 
   
   get "requests/create" 
   get "/places/create"  
