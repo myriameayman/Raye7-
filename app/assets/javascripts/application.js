@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-sprockets
+//= require chat
 //= require turbolinks
 //= require bootstrap
 //= require map/gmap
