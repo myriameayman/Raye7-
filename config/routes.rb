@@ -93,6 +93,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :profiles 
   
+  resources :notifications 
   get '/show' => "circles#show" 
   
   resources :twitter 
