@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
 
 
@@ -20,7 +22,8 @@
 
 
     <title><%= content_for?(:title) ? yield(:title) : "Raye7" %></title>
-
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -126,7 +129,7 @@
 
 
 
-
+<audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
 <script type="text/javascript" src="../../assets/libraries/bxslider/jquery.bxslider.js"></script>
 <script type="text/javascript" src="../../assets/libraries/chosen/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/libraries/isotope/jquery.isotope.min.js"></script>
