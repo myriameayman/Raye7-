@@ -15,18 +15,7 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "emails/add_email"
 
-  get "index/delete"
-
-  get "index/create"
-
-  get "index/show"
-
-  get "index/update"
-
-  get "index/new"
-
-  get "index/add_email"
-
+ 
   get "requests/index" 
 
   get "requests/new" 
@@ -130,6 +119,8 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :profiles 
   
+  resources :emails 
+ 
   get '/show' => "circles#show" 
   
   resources :twitter 

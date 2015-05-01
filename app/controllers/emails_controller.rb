@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+  before_filter :authenticate_user!
   def index
   end
 
@@ -6,6 +7,7 @@ class EmailsController < ApplicationController
   end
 
   def create
+    @array_emails = params[:array].split(',') 
   end
 
   def show
