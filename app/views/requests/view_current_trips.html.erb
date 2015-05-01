@@ -7,7 +7,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
    
-   function drawRoute() {
+   function viewTrips() {
      var directionsService = new google.maps.DirectionsService();
      var directionsDisplay = new google.maps.DirectionsRenderer();
      var trips = <%= @trips.to_json.html_safe %>; 
@@ -40,25 +40,50 @@
       console.log(trips[i].destination);
       console.log(trips[i].currentLoc);
 
+      
+
+
+
+
+
       var request = {
       origin: trips[i].currentLoc,
       destination: trips[i].destination,
       travelMode: google.maps.DirectionsTravelMode.DRIVING
     };
+ 
+route[i]=request;
+assign();
 
      
-       var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+//        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+//        directionsDisplay.setMap(map);
+
+//         directionsService.route(request, function(result, status) {
+//         console.log(result);
+
+// if (status == google.maps.DirectionsStatus.OK) {
+//     directionsDisplay.setDirections(result);
+// }})}
+
+ }
+ function assign(){
+for (var i = 0; i < route.length; i++) {
+ var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
        directionsDisplay.setMap(map);
 
-        directionsService.route(request, function(result, status) {
+        directionsService.route(route[i], function(result, status) {
         console.log(result);
 
 if (status == google.maps.DirectionsStatus.OK) {
     directionsDisplay.setDirections(result);
-}})};  
-    
+}})}    
+};
+
+
+
  }
-  google.maps.event.addDomListener(window, 'load', drawRoute);
+  google.maps.event.addDomListener(window, 'load', viewTrips);
 </script>
 <style type="text/css">
   #map {
