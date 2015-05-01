@@ -8,12 +8,9 @@
 <link rel="stylesheet" type="text/css" href="assets/button.css">
 <link rel="stylesheet" href="assets/styles.css">
 
-<style type="text/css">
- /*added Code */
 
-
-</style>
 <body>
+
 
 
   <div class="row">
@@ -45,7 +42,9 @@
   <div class="row" style="padding-top:40px">
 
     <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+
     <div id='cssmenu'>
+
         <ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
            <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
            <li><a href='#'><span>Home</span></a></li>
@@ -135,8 +134,8 @@
            <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
            <li class='last' style="border-bottom:none;"><%= link_to "My Friends", controller:"friends",action:"index" %></li>
         </ul>
-</div>     
-  </div>
+
+  </div> <!-- end of side menu tag -->
 
 
   <div class="col-md-8">
@@ -163,24 +162,39 @@
     
   </div><!--/#class col-md-8-->
 
-  <div class="col-md-8">
-    <div class= "panel panel-default" style="border-top-left-radius: 4px;margin-top:30px;">
-     <div class="panel-heading">
+ 
+ 
+
+  <div class="col-md-8"> <!-- News feed container -->
+    <div class= "panel panel-default" style="border-top-left-radius: 4px">
+     <div class="panel-heading"> <!-- Container header -->
+
       <h3 class="panel-title"> News Feed</h3>
-     </div><!--/#class panel heading-->
-      <div class="panel-body">
-       <h6 style="font-style:normal;font-size:15px"> insha'allah hena hyb2a feh news feed </h6>
-       <hr>
-       <h6 style="font-style:normal;font-size:15px"> sorem ehh </h6>
-      </div><!--/#class panel-body -->
-    </div><!--/#class panel panel default-->
-  </div><!--/#class col-md-->
+
+     </div> <!-- end of header -->
+      <div class="panel-body"> <!-- loop on activities -->
+      	<h6 style="font-style:normal;font-size:15px">What's going on</h6>
+		<% if(@activities.present?) %> <!-- if any activities available -->
+			<% @activities.each do |activity| %>
+				<% if activity.owner.present? %>
+					<hr>
+				 	<%= link_to activity.owner.username if activity.owner %>
+				 	<%= render_activity activity %>
+			 	<%end%>
+			<%end%>
+		<% else %> <!-- end of loop -->
+			<h6 style="font-style:normal;font-size:12px">No news</h6>
+		<% end %> <!-- end of activities tag -->
+		
+
+      </div>
+    </div>
+  </div> <!-- end of news feed container -->
 
 
-</div> 
 
+</div>
   
 </body>
 
 </html>
-       
