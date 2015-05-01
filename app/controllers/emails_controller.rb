@@ -31,7 +31,7 @@ class EmailsController < ApplicationController
     @email.email = @add_email
     @email.save
     if(@divisons == 'facebook' or @divisons =='gmail' or @divisons == 'twitter')
-      return
+      redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
     end
     unless(@user.circles.exists?(:name => @divisons))
       @circle = Circle.new
