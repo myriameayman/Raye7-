@@ -26,6 +26,6 @@
  <% @places.each do |grant| %> <!-- prints the name of all the places of the user --> 
       <h6 style="font-style:normal;font-size:15px"> <li><%= link_to grant.name, :controller =>'places',:action => 'show', id: grant.id  %></li></h6> 
       <% end %>
-</div>      
+</div>   <!-- closing of form-group -->   
 </body> 
 </html>
