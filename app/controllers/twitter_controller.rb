@@ -59,8 +59,9 @@ end
       if (@SCircle == nil)
       	 # @friends = get_client.friends_ids.screen_name
       
-         @friends = get_client.friends_ids(screen_name,profile_image_url)
-         @followers = get_client.followers_ids(screen_name,profile_image_url)
+     
+         @friends = get_client.friends
+         @followers = get_client.followers
            begin
               @followers.to_a
                  rescue Twitter::Error::TooManyRequests => error
