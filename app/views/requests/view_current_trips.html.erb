@@ -40,11 +40,6 @@
       console.log(trips[i].destination);
       console.log(trips[i].currentLoc);
 
-      
-
-
-
-
 
       var request = {
       origin: trips[i].currentLoc,
@@ -53,8 +48,8 @@
     };
  
 route[i]=request;
+console.log(route.length);
 assign();
-
      
 //        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 //        directionsDisplay.setMap(map);
@@ -67,8 +62,13 @@ assign();
 // }})}
 
  }
+ function call(){
+assign();
+
+ }
  function assign(){
-for (var i = 0; i < route.length; i++) {
+
+//for (var i = 0; i < route.length; i++) {
  var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
        directionsDisplay.setMap(map);
 
@@ -82,7 +82,7 @@ if (status == google.maps.DirectionsStatus.OK) {
 
 
 
- }
+ 
   google.maps.event.addDomListener(window, 'load', viewTrips);
 </script>
 <style type="text/css">
