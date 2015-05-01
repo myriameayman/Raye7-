@@ -59,7 +59,8 @@ class LinkedinController < ApplicationController
     if bprofile.nil?
       client = get_client
       profile = client.profile(:fields => ["first-name", "last-name", "maiden-name", "formatted-name" ,:headline, :location, :industry, :summary, :specialties, "picture-url", "public-profile-url"])
-
+      #client.company.name
+      #basic_profile[:location] = client.company.name
       basic_profile = profile.to_hash
       basic_profile[:location] = basic_profile["location"]["name"]
       new_basic_profile = BasicProfile.new(basic_profile)
