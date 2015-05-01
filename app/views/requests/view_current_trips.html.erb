@@ -43,47 +43,21 @@
       origin: trips[i].currentLoc,
       destination: trips[i].destination,
       travelMode: google.maps.DirectionsTravelMode.DRIVING
-    };   
+    };
 
-       route[i]=request;
-       var object = route[i];
+     
+       var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+       directionsDisplay.setMap(map);
 
+        directionsService.route(request, function(result, status) {
+        console.log(result);
 
-      $.each(route,
-        function(i,object){//<--anonymous function
-        
-        var request = {
-                origin: route[i].origin,
-                destination: route[i].destination,
-                travelMode: google.maps.TravelMode.DRIVING
-              },
-            
-            directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
-            directionsService.route(request, function(result, status) {
-    
-              if (status == google.maps.DirectionsStatus.OK) {
-                  directionsDisplay.setDirections(result);
-              }
-            });  
-      
-        });
-       
-
-  };  
+if (status == google.maps.DirectionsStatus.OK) {
+    directionsDisplay.setDirections(result);
+}})};  
     
  }
   google.maps.event.addDomListener(window, 'load', drawRoute);
-
-//     function assign(){
-//        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
-//        directionsDisplay.setMap(map);
-
-//         directionsService.route(route[i], function(result, status) {
-//         console.log(result);
-
-// if (status == google.maps.DirectionsStatus.OK) {
-//     directionsDisplay.setDirections(result);
-// }}
 </script>
 <style type="text/css">
   #map {
