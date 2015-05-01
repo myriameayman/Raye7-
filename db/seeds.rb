@@ -11,3 +11,9 @@ Product.create! id: 1, name: "15 Points", price: 15, active: true
 Product.create! id: 2, name: "30 Points", price: 30, active: true
 Product.create! id: 3, name: "50 Points", price: 50, active: true
 
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"
+
