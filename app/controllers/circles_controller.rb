@@ -24,22 +24,30 @@ class CirclesController < ApplicationController
 
   def delete
   end
+
+
+# @mariamTalaat 
+#  def Block_Circle
+
+
+
   
 def Block_Circle 
-  
+
  unless(params[:id==nil])
-  @circlee = Circle.find (params[:id])
-  @Circlee = BlockedCircle.new
-  @Circlee.id = @circlee.id
+  @circlee = Circle.find (params[:id]) # Searching for the Circle with id gotten from URL
+  @Circlee = BlockedCircle.new         # Adding this Cicrle to the The Blocked Table   
+  @Circlee.id = @circlee.id           
   @Circlee.user_id = @circlee.user_id
-  @Circlee.save
-  @friends = Friend.find where(:circle_id => @circlee.id).all
+  @Circlee.save                        # Saving it after setting its values 
+  @friends = Friend.find where(:circle_id => @circlee.id).all   # Finding Friends related to that Circle
     @friends.each do |f|
-      @blocked = Blocked.new 
+      @blocked = Blocked.new                                    #Adding it to table blocked
       @blocked.friend_id = f.id
       @blocked.circle_id=@circlee.id
       @blocked.save 
-      Friend.where(:id => f.id).
+      Friend.where(:id => f.id).destroy                        # Deleting both Friends and Circles  
+                                                               #   from circles and Friends Models 
      end
      Circle.where(:id => @circlee.id).destroy
  end
