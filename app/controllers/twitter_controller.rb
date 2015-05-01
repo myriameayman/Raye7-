@@ -38,36 +38,118 @@ class TwitterController < ApplicationController
   config.access_token_secret = TwitterOauthSetting.find_by_user_id(current_user.id).asecret
 end
 	end
+
  def twitter_profile
   	
-        #@home_timeline = get_client.home_timeline
+  	#Trip.where(request_id: params[:id])
+    #@home_timeline = get_client.home_timeline
     #@user_following = get_client.user_following
     #client = get_client 
-   # @user_timeline = client.user_timeline
-    @friends = get_client.friends
-    @followers = get_client.followers
-    user_twitter_profile = get_client.user
-	  current_user.update_attributes({
-	    screen_name: user_twitter_profile.screen_name, 
-	    url: user_twitter_profile.url, 
-	    profile_image_url: user_twitter_profile.profile_image_url, 
-	    location: user_twitter_profile.location, 
-	    description: user_twitter_profile.description
-	  })
-	 tCircle = Circle.new 
-	 tCircle.user_id = current_user.id 
-	 tCircle.name = "twitter"
-	 tCircle.save 
-	 @friends.each do |f| 
-        tFriend = Friend.new 
-        tFriend.circle_id = tCircle.id   
-        tFriend.name = f.screen_name 
-        tFriend.save  
-        end       
+    #@user_timeline = client.user_timeline
+    #@friends = get_client.friends.each_slice(50)
+    #@followers = get_client.followers.each_slice (50)
+    @Twitter = Circle.where(user_id:current_user.id).all
+      @Twitter.each do |t|
+      	if (t.name == "twitter")
+      		@SCircle = t.name 
+      		@SavedFriends = Friend.where(circle_id:t.id).all
+        end    
+        
+      end
+      if (@SCircle == nil)
+      	 # @friends = get_client.friends_ids.screen_name
+      
+         @friends = get_client.friends_ids(screen_name,profile_image_url)
+         @followers = get_client.followers_ids(screen_name,profile_image_url)
+           begin
+              @followers.to_a
+                 rescue Twitter::Error::TooManyRequests => error
+                    sleep error.rate_limit.reset_in + 1
+                  retry
+
+           end
+           begin
+              @friends.to_a
+                 rescue Twitter::Error::TooManyRequests => error
+                   sleep error.rate_limit.reset_in + 1
+                   retry
+
+            end
+
+    tCircle = Circle.new 
+	tCircle.user_id = current_user.id 
+	tCircle.name = "twitter"
+	tCircle.save 
+	     @friends.each do |f|  
+	  	   @followers.each do |fo| 
+              if(f.screen_name == fo.screen_name)
+              	tFriend = Friend.new 
+                tFriend.circle_id = tCircle.id   
+                tFriend.name = f.screen_name
+                tFriend.image = f.profile_image_url 
+                tFriend.save
+              end  
+           end  
+         end
+
+        user_twitter_profile = get_client.user
+	   # current_user.update_attributes({
+	    @Sscreen_name = user_twitter_profile.screen_name 
+	    @Surl = user_twitter_profile.url
+	    @Sprofile_image_url = user_twitter_profile.profile_image_url 
+	    @Slocation = user_twitter_profile.location 
+	    @Sdescription = user_twitter_profile.description
+	  #})
+        @SavedFriends = Friend.where(id:current_user.id ,circle_id: params[:id]).all
+	    @SavedUser = User.find_by_id(current_user.id)
+        @SavedUser.screen_name = @Sscreen_name
+        @SavedUser.url = @Surl
+        @SavedUser.profile_image_url = @Sprofile_image_url
+        @SavedUser.location = @Slocation
+        @SavedUser.description= @Sdescription
+        @SavedUser.save
+
+      end 	     
   end
 	private
 
-	
+    def get_Friends
+
+       @friends = get_client.friends
+       @followers = get_client.followers
+         begin
+           @followers.to_a
+             rescue Twitter::Error::TooManyRequests => error
+                sleep error.rate_limit.reset_in + 1
+                 retry
+
+         end
+         begin
+            @friends.to_a
+             rescue Twitter::Error::TooManyRequests => error
+               sleep error.rate_limit.reset_in + 1
+                  retry
+
+                end
+
+      tCircle = Circle.new 
+	tCircle.user_id = current_user.id 
+	tCircle.name = "twitter"
+	tCircle.save 
+	     @friends.each do |f|  
+	  	   @followers.each do |fo| 
+              if(f.screen_name == fo.screen_name)
+              	tFriend = Friend.new 
+                tFriend.circle_id = tCircle.id   
+                tFriend.name = f.screen_name 
+                tFriend.save
+              end  
+           end  
+         end
+
+
+
+    end
 	def update_user_account
 	  user_twitter_profile = get_client.user
 	  current_user.update_attributes({

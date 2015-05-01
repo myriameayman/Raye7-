@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span4">
     <div class="thumbnail">
-      <img src="<%= current_user.profile_image_url %>" style="float: left;margin: 5px;">
+      <img src= <%= current_user.profile_image_url %> style="float: left;margin: 5px;">
       <h3><%= current_user.name %></h3>
       <h4><%= current_user.location %></h4>
       <br>
@@ -30,21 +30,18 @@
   <h1>Twitter Friends</h1>
     <table class="table table-striped">
      
-        <% @followers.each do |t| %>
+        <% @SavedFriends.each do |t| %>
        <tr> 
-            <% @friends.each do |f| %>
-               <% if (f.screen_name == t.screen_name) %>  
-                 <th><%= t.screen_name %></th>
+             
+                 <th><%= t.name %></th>
+         </tr>
+         <tr>        
+                 <th> <img src = <%= t.image %>  /> </th>
               
        </tr>
 
-       <tr>
-         <th> <img src=" <%= t.profile_image_url %>" /> 
-       </tr>
-      <%  end %> 
-
-      <% end %>
-        
+       
+    
       <% end %>
   </table>
   </div>
