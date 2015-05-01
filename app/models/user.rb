@@ -23,6 +23,25 @@ class User < ActiveRecord::Base
       :uniqueness => {
       :case_sensitive => false
       }
+
+      validates :fb_email,
+      :uniqueness => {
+      :case_sensitive => false
+      }
+
+      validates :gmail,
+      :uniqueness => {
+      :case_sensitive => false
+      }
+      validates :screen_name,
+      :uniqueness => {
+      :case_sensitive => false
+      }
+
+      validates_uniqueness_of :fb_email
+      validates_uniqueness_of :screen_name
+      validates_uniqueness_of :gmail
+      validates_uniqueness_of :uid
       
       has_one :basic_profile
       has_one :full_profile

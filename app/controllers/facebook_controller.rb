@@ -49,7 +49,7 @@ class FacebookController < ApplicationController
         fbFriend.name = f["name"]
         fbFriend.fb_id = f["id"] 
         fbFriend.save  
-    end   
+    end
 
     # Save the user info in the database.    
     
