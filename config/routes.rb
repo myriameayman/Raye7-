@@ -27,11 +27,14 @@ RsgLinkedinGem::Application.routes.draw do
   root :to => 'profiles#myAccount' 
   
   get "profiles/new" 
+  get "profiles/verifyMe" 
 
   get "profiles/create" 
 
   get "profiles/show" 
 
+  get "places/friend_places"
+  
   get "profiles/delete" 
 
   get "profiles/index" 
@@ -44,15 +47,25 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "profiles/show1" 
   
-  get "trips/new" 
+  get "trips/new"
+
+  post "profiles/authorize" 
   
+  get "profiles/friend_profile"
+
   get "requests/create" 
+  
   get "/places/create"  
+  
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
   
+  get "/profiles/friend_profile",to: "profiles#friend_profile", as: "friend_profile"
+
   get "/places/show", to: "places#show", as: "show" 
+
+  get "/places/friend_places/:id", to: "places#create", as: "show_places" 
 
   get "/places/create", to: "places#create", as: "create"
   
@@ -60,6 +73,9 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "/requests/create_route", to: "requests#create_route", as: "create_route" 
   
+
+  get "/requests/create_checkpoints", to: "requests#create_checkpoints", as: "create_checkpoints" 
+ 
   get "/geocoding", to: "requests#geocoding", as: "geocoding" 
   
   get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding" 
