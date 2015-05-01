@@ -47,7 +47,13 @@ class FacebookController < ApplicationController
         fbFriend = Friend.new 
         fbFriend.circle_id = fbCircle.id   
         fbFriend.name = f["name"]
-        fbFriend.fb_id = f["id"] 
+        friendUser = User.find(:all, :conditions => ['uid LIKE ?' , f["id"]])
+        #fUser = nil
+        friendUser.each do |u|
+          fbFriend.app_id = u.id
+        end
+        #fbFriend.app_id = fUser.user_id
+        fbFriend.fb_id = f["id"]
         fbFriend.save  
     end
 
