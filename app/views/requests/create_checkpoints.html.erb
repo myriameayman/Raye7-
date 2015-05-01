@@ -31,106 +31,106 @@ padding:8px;
 <body>
 
 <script type="text/javascript">
-var counter = 2;
-var msg = '';
-var waypts = [];
-var map;
-var url = '';
-var output;
-var output2;
-var geocoding;
-$(document).ready(function(){
-$("#addButton").click(function () {
-if(counter>6){
-alert("Only 6 checkpoints are allowed");
-return false;
-}
-var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
-newTextBoxDiv.after().html('<label style="font-size:20px">Textbox #'+ counter + ' : </label>' +
-'<input type="text" name="textbox' + counter +
-'" id="textbox' + counter + '" value="" >');
-newTextBoxDiv.appendTo("#TextBoxesGroup");
-counter++;
-});
-$("#removeButton").click(function () {
-if(counter==1){
-alert("No more textbox to remove");
-return false;
-}
-counter--;
-$("#TextBoxDiv" + counter).remove();
-});
-$("#getButtonValue").click(function () {
-var directionsDisplay = new google.maps.DirectionsRenderer();
-var directionsService = new google.maps.DirectionsService();
-var mapOptions = {
-center: new google.maps.LatLng(30.055487, 31.279766),
-zoom: 8,
-mapTypeId: google.maps.MapTypeId.NORMAL,
-panControl: true,
-scaleControl: false,
-streetViewControl: true,
-overviewMapControl: true
-}
-map = new google.maps.Map(document.getElementById('map'), mapOptions);
-directionsDisplay.setMap(map);
-var from = <%= @curLoc.to_json.html_safe %>;
-var to = <%= @destination.to_json.html_safe %>;
-waypts = [];
-msg = '';
-for(i=1; i<counter; i++){
-var address = $('#textbox' + i).val();
-msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
-waypts.push({
-location:address,
-stopover:true});
-}
-var request = {
-origin: from,
-destination: to,
-waypoints: waypts,
-optimizeWaypoints: true,
-travelMode: google.maps.TravelMode.DRIVING
-};
-directionsService.route(request, function(response, status) {
-if (status == google.maps.DirectionsStatus.OK) {
-directionsDisplay.setDirections(response);
-var route = response.routes[0];
-}
-});
-alert(msg);
-});
-$("#continue").click(function () {
-var address;
-for(i=1; i<counter; i++){
-address = $('#textbox' + i).val();
-submit2(address,i);
-alert("loading ur route");
-}
-for(i=1; i<counter; i++) {
-address = $('#textbox' + i).val();
-submit2(address,i);
-alert("this will be a checkpoint: " + address);
-}
-window.location.replace('/requests/create?'+url);
-});
-});
-function submit2(address,i){
-if(address.length > 0){
-geocoding = new google.maps.Geocoder();
-geocoding.geocode({'address': address},function(results, status){
-if(status == google.maps.GeocoderStatus.OK){
-output = results[0].geometry.location.lat();
-output2 = results[0].geometry.location.lng();
-url = url+'name'+i+'='+address+'&'+'long'+i+'='+output2+'&lat'+i+'='+output+'&';
-}else{
-alert("Geocode was not successful for the following reason: " + status);
-}
-});
-}else{
-alert("Search field can't be blank");
-}
-}
+	var counter = 2;
+	var msg = '';
+	var waypts = [];
+	var map;
+	var url = '';
+	var output;
+	var output2;
+	var geocoding;
+	$(document).ready(function(){
+		$("#addButton").click(function () {
+		if(counter>6){
+		alert("Only 6 checkpoints are allowed");
+		return false;
+		}
+		var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
+		newTextBoxDiv.after().html('<label style="font-size:20px">Textbox #'+ counter + ' : </label>' +
+		'<input type="text" name="textbox' + counter +
+		'" id="textbox' + counter + '" value="" >');
+		newTextBoxDiv.appendTo("#TextBoxesGroup");
+		counter++;
+	});
+	$("#removeButton").click(function () {
+		if(counter==1){
+		alert("No more textbox to remove");
+		return false;
+		}
+		counter--;
+	$("#TextBoxDiv" + counter).remove();
+	});
+	$("#getButtonValue").click(function () {
+		var directionsDisplay = new google.maps.DirectionsRenderer();
+		var directionsService = new google.maps.DirectionsService();
+		var mapOptions = {
+		center: new google.maps.LatLng(30.055487, 31.279766),
+		zoom: 8,
+		mapTypeId: google.maps.MapTypeId.NORMAL,
+		panControl: true,
+		scaleControl: false,
+		streetViewControl: true,
+		overviewMapControl: true
+	}
+	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	directionsDisplay.setMap(map);
+	var from = <%= @curLoc.to_json.html_safe %>;
+	var to = <%= @destination.to_json.html_safe %>;
+	waypts = [];
+	msg = '';
+	for(i=1; i<counter; i++){
+	var address = $('#textbox' + i).val();
+	msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+	waypts.push({
+	location:address,
+	stopover:true});
+	}
+	var request = {
+	origin: from,
+	destination: to,
+	waypoints: waypts,
+	optimizeWaypoints: true,
+	travelMode: google.maps.TravelMode.DRIVING
+	};
+	directionsService.route(request, function(response, status) {
+	if (status == google.maps.DirectionsStatus.OK) {
+	directionsDisplay.setDirections(response);
+	var route = response.routes[0];
+	}
+	});
+	alert(msg);
+	});
+	$("#continue").click(function () {
+		var address;
+		for(i=1; i<counter; i++){
+		address = $('#textbox' + i).val();
+		submit2(address,i);
+		alert("loading ur route");
+		}
+		for(i=1; i<counter; i++) {
+		address = $('#textbox' + i).val();
+		submit2(address,i);
+		alert("this will be a checkpoint: " + address);
+		}
+		window.location.replace('/requests/create?'+url);
+		});
+	});
+	function submit2(address,i){
+		if(address.length > 0){
+		geocoding = new google.maps.Geocoder();
+		geocoding.geocode({'address': address},function(results, status){
+		if(status == google.maps.GeocoderStatus.OK){
+		output = results[0].geometry.location.lat();
+		output2 = results[0].geometry.location.lng();
+		url = url+'name'+i+'='+address+'&'+'long'+i+'='+output2+'&lat'+i+'='+output+'&';
+		}else{
+		alert("Geocode was not successful for the following reason: " + status);
+		}
+		});
+		}else{
+		alert("Search field can't be blank");
+		}
+	}
 </script>
 </head>
 <body>
@@ -173,12 +173,14 @@ margin-top: 10px;
 
 	    <div class="col-md-3" >
 		    
-             <div id="map" class="form-group" style="width: 170%;border-radius:20px;border:1px solid grey;"></div>
+             <div id="map" class="form-group" style="width: 170%;border-radius:20px;border:1px solid grey;">
+             	
+             </div> <!-- closing of map --> 
 
 		</div><!-- div col-md-3 -->
   </div><!-- div row -->
 
-</div>
+</div> <!-- closing of cont -->
 
 
 </body>
