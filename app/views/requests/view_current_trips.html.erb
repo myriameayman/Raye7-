@@ -14,12 +14,12 @@
      var trips = <%= @trips.to_json.html_safe %>; 
      var route = [] ;
      var line;
-
+     var lines = [];
      
 
     var mapOptions = {
       center: new google.maps.LatLng(30.055487, 31.279766),
-      zoom: 12,
+      zoom: 7,
       mapTypeId: google.maps.MapTypeId.NORMAL,
       panControl: true,
       scaleControl: false,
@@ -51,11 +51,14 @@
       destination: trips[i].destination,
       travelMode: google.maps.DirectionsTravelMode.DRIVING
     };
+   
+   lines[i]=line;
+    
  
 route[i]=request;
 console.log(route.length);
 assign();
-     
+//animateCircle();     
 //        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 //        directionsDisplay.setMap(map);
 
@@ -71,7 +74,35 @@ assign();
 assign();
 
  }
+ function animateCircle() {
+    var count = 0;
+    window.setInterval(function() {
+      count = (count + 1) % 200;
+      
+      var icons = line.get('icons');
+      icons[0].offset = (count / 2) + '%';
+      line.set('icons', icons);
+  }, 20);
+}
  function assign(){
+     var lineCoordinates = [
+    new google.maps.LatLng(trips[i].long_curr,trips[i].lat_curr),
+    new google.maps.LatLng(trips[i].long_destination,trips[i].lat_destination)
+  ];
+  var lineSymbol = {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 8,
+    strokeColor: '#393'
+  };
+   line = new google.maps.Polyline({
+    path: lineCoordinates,
+    icons: [{
+      icon: lineSymbol,
+      offset: '100%'
+    }],
+    map: map
+  });
+animateCircle();
 
 //for (var i = 0; i < route.length; i++) {
  var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
