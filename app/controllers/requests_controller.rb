@@ -21,16 +21,13 @@ class RequestsController < ApplicationController
       redirect_to "/" 
     end 
     
-  end 
-
-  def calculate_value(x,y)
-    x + y
   end
 
+ # this method calculates the estimated distance between two places in kilometers
+ # given their longitude and latitude
   def distance(long1, lat1, long2, lat2)
     rad_per_deg = Math::PI/180  # PI / 180
     rkm = 6371                  # Earth radius in kilometers
-    rm = rkm * 1000             # Radius in meters
 
     dlat_rad = (lat2-lat1) * rad_per_deg  # Delta, converted to rad
     dlon_rad = (long2-long1) * rad_per_deg
@@ -45,7 +42,7 @@ class RequestsController < ApplicationController
     a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon_rad/2)**2
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
 
-    rkm * c # Delta in meters
+    rkm * c # Delta in kilometers
   end
   
   
