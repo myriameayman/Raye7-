@@ -237,19 +237,19 @@
 
   <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript">
-function inviteFriends(){
-	FB.init({
-        appId: '716016431848330',
-        status: true,
-        cookie: false,
-        // xfbml: true
-        });
-	FB.ui({
-method: 'send',
-message: '<%=current_user.name %> has invite you to a party for>',
-link: 'http://raye7.com/'});
+	function inviteFriends(){
+		FB.init({
+	        appId: '716016431848330',
+	        status: true,
+	        cookie: false,
+	        // xfbml: true
+	        });
+		FB.ui({
+	method: 'send',
+	message: '<%=current_user.name %> has invite you to a party for>',
+	link: 'http://raye7.com/'});
 
-}
+	}
 </script>
 </body>
 
