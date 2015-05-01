@@ -13,10 +13,13 @@
      var directionsDisplay = new google.maps.DirectionsRenderer();
      var trips = <%= @trips.to_json.html_safe %>; 
      var route = [] ;
+     var line;
+
+     
 
     var mapOptions = {
       center: new google.maps.LatLng(30.055487, 31.279766),
-      zoom: 8,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.NORMAL,
       panControl: true,
       scaleControl: false,
@@ -28,8 +31,8 @@
 
             preserveViewport: true,
                 map:map,
-                polylineOptions:{strokeColor:'#000000',
-                                 strokeWeight: 10},        
+                polylineOptions:{strokeColor:'#008EE0',
+                                 strokeWeight: 4},        
                 suppressMarkers:true,
                 routeIndex:i };
      
