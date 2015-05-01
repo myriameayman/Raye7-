@@ -7,7 +7,12 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @array_emails = params[:array].split(',') 
+    @user = current_user
+    @array_emails = params[:array].split(',')
+    @array_emails.each do |grant|
+      MyMailer.add_email(@user,grant).deliver  
+    end
+    redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
   def show

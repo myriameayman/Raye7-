@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body><!--Body of the email that will ber sent @ebrahim-elgaml -->
+    <h1>Hi <%= @myUser.username %></h1>
+
+    <h3>
+      You have requested to add this email <h2><%= @grant %></h2> to your email 
+    </h3>
+    <h4>Notice : By adding that you will have a circle with all users subscribed to the same group </h4>
+    
+    <a href = "http://localhost:3000/profiles/verifyMe" class="btn btn-primary btn-larg"> Accecpt </a><br>
+    <a href = "http://localhost:3000/profiles/verifyMe" class="btn btn-primary btn-larg"> reject </a><br>
+
+
+  </body>
+</html>

@@ -8,12 +8,14 @@ class MyMailer < ActionMailer::Base
     mail(from:'ebrahim.el.gaml@gmail.com',to: @myUser.email, subject: 'Confirmation Email')
   end
 
+
+  def add_email(user,mail)
+    @myUser = user
+    @grant = mail
+    mail(from:'ebrahim.el.gaml@gmail.com',to: grant, subject: 'Confirmation to add Email [Raye7]')
+  end
+
   def sample_email(user)
-    #subject   ' my Email'
-    #recipients  'ebrahim.el.gaml@gmail.com'
-    #from 		'ebrahim.el.gaml@gmail.com'
-    #sent_on		Time.now
-    #@user = user
     mail(to:'ebrahim.el.gaml@gmail.com', subject: 'Confirmation Email')
   end
 end
