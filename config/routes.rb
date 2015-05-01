@@ -1,6 +1,32 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
+  get "emails/index"
+
+  get "emails/delete"
+
+  get "emails/create"
+
+  get "emails/show"
+
+  get "emails/update"
+
+  get "emails/new"
+
+  get "emails/add_email"
+
+  get "index/delete"
+
+  get "index/create"
+
+  get "index/show"
+
+  get "index/update"
+
+  get "index/new"
+
+  get "index/add_email"
+
   get "requests/index" 
 
   get "requests/new" 
