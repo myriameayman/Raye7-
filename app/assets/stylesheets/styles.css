@@ -155,7 +155,9 @@
   border-radius: 5px;
 }
 #cssmenu ul ul a:hover {
-  color: #ffffff;
+  color: black;
+  background-color:transparent;
+  /*color: #ffffff;*/
   border-bottom: none;
 }
 
