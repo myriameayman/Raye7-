@@ -22,7 +22,7 @@ class PlacesControllerTest < ActionController::TestCase
     @visit.save   
     get :create
     assert :success 
-  end
+   end
 
    test "should get show" do
    	@user = User.new 
@@ -45,7 +45,7 @@ class PlacesControllerTest < ActionController::TestCase
     @visit.save   
     get(:show, {'id' => "1"})
     assert :success 
-  end
+   end
 
    test "should not get show" do
    	@user = User.new 
@@ -68,7 +68,7 @@ class PlacesControllerTest < ActionController::TestCase
     @visit.save   
     get(:show, {'id' => "1"})
     assert_redirected_to "http://test.host/"
-  end
+   end
 
 
    test "should get friend Places" do
@@ -83,7 +83,7 @@ class PlacesControllerTest < ActionController::TestCase
     @user.save
     sign_in @user
     get(:friend_places, {'id' => "1"})
-  end
+   end
 
 
 end
