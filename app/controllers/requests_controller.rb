@@ -56,10 +56,9 @@ class RequestsController < ApplicationController
       @@request.destination= @destination
       redirect_to url_for(:controller => "requests", :action => "create_route")  
 
-    end 
   end 
   
-  
+end  
 # Index return a list of all available requests.
   def index 
     unless(params[:search==nil]) 
@@ -165,9 +164,13 @@ class RequestsController < ApplicationController
     end 
   end 
   
+
+  # @myriame 
+  # Create a route between currLoc and destination. 
   def create_route 
     @curLoc = @@request.currentLoc 
-    @destination = @@request.destination 
+    @destination = @@request.destination
+
   end  
 
 # @myriame 

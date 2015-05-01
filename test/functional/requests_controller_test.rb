@@ -81,7 +81,8 @@ class RequestsControllerTest < ActionController::TestCase
   end
   
   
-  test "should create routes" do
+  test "should draw route" do
+
     @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
     @user.save
