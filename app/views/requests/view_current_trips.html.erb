@@ -56,9 +56,9 @@
    console.log(lines[i]);
     
  
-route[i]=request;
-console.log(route.length);
-assign();
+   route[i]=request;
+   console.log(route.length);
+   assign();
 //animateCircle();     
 //        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 //        directionsDisplay.setMap(map);
@@ -70,11 +70,11 @@ assign();
 //     directionsDisplay.setDirections(result);
 // }})}
 
- }
- function call(){
-assign();
+    }
+     function call(){
+     assign();
 
- }
+    }
  function animateCircle() {
     var count = 0;
     window.setInterval(function() {
@@ -103,7 +103,7 @@ assign();
     }],
     map: map
   });
-animateCircle();
+   animateCircle();
 
 //for (var i = 0; i < route.length; i++) {
  var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
@@ -115,11 +115,7 @@ animateCircle();
 if (status == google.maps.DirectionsStatus.OK) {
     directionsDisplay.setDirections(result);
 }})}    
-};
-
-
-
- 
+}; 
   google.maps.event.addDomListener(window, 'load', viewTrips);
 </script>
 <style type="text/css">
