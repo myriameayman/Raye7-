@@ -1,6 +1,8 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
+  get "products/index"
+
   get "requests/index" 
 
   get "requests/new" 
