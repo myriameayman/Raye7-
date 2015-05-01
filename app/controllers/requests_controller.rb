@@ -34,6 +34,7 @@ class RequestsController < ApplicationController
   # /home is redirected to home view. 
   # /requests/create is redireted to the create view in requests folder.
   def create_curr_location 
+    @id=current_user.id
     if @@form_step == nil 
       redirect_to root_path  
     end
@@ -57,6 +58,21 @@ class RequestsController < ApplicationController
        @place.lat=params[:latitude]
        @place.name=@loc
        @place.save
+
+       visits=Visit.find(:all,:conditions => ['place_id LIKE ? ',
+        @place.id])
+
+       visits.each do |x|
+        if(x.noVisited>1)
+          @notification=Notification.new
+          @notification.notifying=@id
+          @notification.notified=x.user_id
+          @notification.text= "there is an ongoing trip to " + @place.name
+          @notification.save
+        end
+       
+       end
+       
       
  
 

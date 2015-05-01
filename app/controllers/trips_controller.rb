@@ -42,11 +42,6 @@ def create
 			
 			@visit_id=x.id	
 			end
-
-
-
-			
-
 			unless(@visits==nil)
 				@visits=Visit.find(@visit_id)
 				@visits.noVisited=@visits.noVisited+1
