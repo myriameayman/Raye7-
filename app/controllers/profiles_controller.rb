@@ -8,17 +8,16 @@ class ProfilesController < ApplicationController
   def create
   end
 
-<<<<<<< HEAD
+
   def authorize
   end 
 
 
   def show
-=======
+  end
  # @myriame 
  # Load a profile of a specific friend.
   def friend_profile
->>>>>>> 6958810cf638f038745c01fe15992410be997b43
     @user = User.find(params[:id])
   end
 
