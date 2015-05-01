@@ -52,7 +52,9 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @loc
+
       redirect_to url_for(:controller => "requests", :action => "create")  
+
     end 
   end 
   
@@ -73,18 +75,22 @@ class RequestsController < ApplicationController
   # Create new request.  
   def new 
     @@request = Request.new
+
     @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
+
   end 
   
   
   # Moving from stage of creating a request's form to the next stage. 
   def home 
+
     if @@form_step == nil 
       redirect_to root_path  and return 
     end
     @@request.user_id = current_user.id 
     @@form_step = @@form_step + 1 
+
   end 
 
   
@@ -102,8 +108,7 @@ class RequestsController < ApplicationController
       format.js 
     end 
   end 
-  
-  
+
   # Saves the info in stage 3 of the form in the db. 
   # Profiles/myAccount redirectes to the user's profile page. 
   def create_ride_info 
@@ -137,6 +142,8 @@ class RequestsController < ApplicationController
 
 
   def delete 
+
   end 
  
 end
+
