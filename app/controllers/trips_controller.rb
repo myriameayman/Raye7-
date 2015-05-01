@@ -20,10 +20,15 @@ def create
 		  @@trip.request_id= params[:id]
 		  unless(params[:id] == nil)
 		    @request=Request.find(params[:id])
-		  	
+		    @owner = User.find(@request.user_id)
+		    @owner.budget = @owner.budget + 50
+		    @user = current_user
+		    @user.budget = @user.budget - 50
 		  	if(@request.seats>0)
 		  	 @request.seats=@request.seats - 1
 		  	 @request.save
+		  	 @owner.save
+		  	 @user.save
 		 	 @@trip.save
 			end
 		  end
