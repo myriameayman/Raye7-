@@ -1,7 +1,6 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
-get "products/index"
 
 
   get "order_items/create"
