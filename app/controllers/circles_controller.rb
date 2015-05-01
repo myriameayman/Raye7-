@@ -17,12 +17,18 @@ class CirclesController < ApplicationController
   	end
 
   end
+  # @myriame 
+  # Block a specific circle.
     def block
     @circle = Circle.find(params[:id])
     @circle.blocked = true 
     @circle.save
     redirect_to root_pathy
   end  
+
+
+  # @myriame 
+  # Unblock a specific circle.
     def unblock
     @circle = Circle.find(params[:id])
     @circle.blocked = false

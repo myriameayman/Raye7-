@@ -61,28 +61,6 @@
 </style>
 <body>
 
-<script type="text/javascript">
-	function create_blocked_unblocked() {
-		var blocked = <%= @blocked.to_json.html_safe %>;
-		var unblock = <%= @unblocked.to_json.html_safe %>;
-		var bSize = <%= @bSize.to_json.html_safe %>;
-		var uSize = <%= @uSize.to_json.html_safe %>;
-		for(i = 0; i < bSize; i++) {
-			var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
-    		newTextBoxDiv.after().html('<label style="font-size:20px">Textbox #'+ counter + ' : </label>' +
-    '<input type="text" name="textbox' + counter +
-    '" id="textbox' + counter + '" value="" >');
-    newTextBoxDiv.appendTo("#TextBoxesGroup");
-		}
-		
-	}
-</script>	  	
-
-
-
-
-
-
   <div class="row">
 
 
