@@ -3,7 +3,7 @@ class GoogleController < ApplicationController
 
   def create
   	@user = current_user
-  	@user.provider = env["omniauth.auth"].provider
+  	@user.provide1 = env["omniauth.auth"].provide1
     
   	@user.gmail=env["omniauth.auth"].info.email
     

@@ -19,7 +19,7 @@ RsgLinkedinGem::Application.routes.draw do
   #get "requests/home"
   
   
-  get 'auth//callback', to: 'facebook#create' 
+  get 'auth/facebook/callback', to: 'facebook#create' 
 
   get 'auth/failure', to: redirect('/') 
 
