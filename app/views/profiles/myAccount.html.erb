@@ -61,7 +61,22 @@
 </style>
 <body>
 
-  	  	
+<script type="text/javascript">
+	function create_blocked_unblocked() {
+		var blocked = <%= @blocked.to_json.html_safe %>;
+		var unblock = <%= @unblocked.to_json.html_safe %>;
+		var bSize = <%= @bSize.to_json.html_safe %>;
+		var uSize = <%= @uSize.to_json.html_safe %>;
+		for(i = 0; i < bSize; i++) {
+			var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
+    		newTextBoxDiv.after().html('<label style="font-size:20px">Textbox #'+ counter + ' : </label>' +
+    '<input type="text" name="textbox' + counter +
+    '" id="textbox' + counter + '" value="" >');
+    newTextBoxDiv.appendTo("#TextBoxesGroup");
+		}
+		
+	}
+</script>	  	
 
 
 
@@ -113,6 +128,18 @@
 					<% end %>
 		      </ul>
 		   </li>
+		   	<li class='active has-sub'><a href='#'><span>block or unlock circle</span></a>
+		      <ul>
+		      		<% @blocked.each do |c| %>
+			 			<li class='has-sub' style="background-color:red"><%= link_to c.name, controller: "circles", action: "unblock", id: c.id %></li>
+					<% end %>
+		      </ul>
+		      <ul>
+		      		<% @unblocked.each do |c| %>
+			 			<li class='has-sub'><%= link_to c.name, controller: "circles", action: "block", id: c.id %></li>
+					<% end %>
+		      </ul>
+		   </li>
 		   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a> <!-- connect to Circles  -->
 		      <ul>
 			      		<li>
@@ -128,11 +155,8 @@
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:110px;float:left">
 									        <div id="round-button-circle">
-<<<<<<< HEAD
-									          <a href="/linkedin_oauth_url" class="round-button">Twitter</a>
-=======
+
 									          <a href="/twitter_oauth_url" style="padding-top:50px;height:200px;">Twitter</a>
->>>>>>> origin/master
 									        </div>
 									    </div>
 									  </div>
@@ -155,6 +179,7 @@
 
 		      </ul>
 		   </li> <!-- end of connecting to circles -->
+		
 		   <li class='active has-sub'><a href='#'><span>Update circles</span></a>
 		      <ul>
 			      		<li>

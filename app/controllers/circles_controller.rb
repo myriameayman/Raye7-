@@ -17,7 +17,18 @@ class CirclesController < ApplicationController
   	end
 
   end
-
+    def block
+    @circle = Circle.find(params[:id])
+    @circle.blocked = true 
+    @circle.save
+    redirect_to root_pathy
+  end  
+    def unblock
+    @circle = Circle.find(params[:id])
+    @circle.blocked = false
+    @circle.save 
+    redirect_to root_path  
+  end  
   def create
   end
 

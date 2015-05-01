@@ -83,5 +83,19 @@ class ProfilesController < ApplicationController
       else
         redirect_to new_user_session_path
       end
+      @blocked = []
+      @unblocked = [] 
+      #@bSize = 0
+      #@uSize = 0
+      @circles.each do |c| 
+        if (c.blocked == true)
+          @blocked << c
+          #@bSize = @bSize + 1  
+        else 
+          @unblocked << c
+          #@uSize = @uSize + 1 
+        end           
+      end    
   end
+
 end

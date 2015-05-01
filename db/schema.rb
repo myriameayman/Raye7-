@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150430220118) do
+ActiveRecord::Schema.define(:version => 20150501161237) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -63,8 +63,9 @@ ActiveRecord::Schema.define(:version => 20150430220118) do
   create_table "circles", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "blocked",    :default => false
   end
 
   create_table "educations", :force => true do |t|

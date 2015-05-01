@@ -15,6 +15,10 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "requests/delete" 
 
+  get "circles/block"
+
+  get "circles/unblock"
+   
   get "requests/create_route"
   #get "requests/home"
   
@@ -64,7 +68,8 @@ RsgLinkedinGem::Application.routes.draw do
   get "/profiles/friend_profile",to: "profiles#friend_profile", as: "friend_profile"
 
   get "/places/show", to: "places#show", as: "show" 
-
+  get "/circles/block", to: "circles#block", as: "block"
+  get "/circles/unblock", to: "circles#unblock", as: "unblock" 
   get "/places/friend_places/:id", to: "places#create", as: "show_places" 
 
   get "/places/create", to: "places#create", as: "create"

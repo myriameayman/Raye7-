@@ -1,4 +1,4 @@
-class LinkedinController < ApplicationController
+iclass LinkedinController < ApplicationController
   before_filter :authenticate_user!
   
   @@config = { 
