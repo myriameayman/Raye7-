@@ -23,39 +23,55 @@ def create
 		  	@longD=@request.long_destination
 		  	@latD=@request.lat_destination
 		 	
-			places=Place.find(:all,:conditions => ['long 
+			@place=Place.find(:all,:conditions => ['long 
 			LIKE ? AND  lat LIKE  ?',@longD, @latD ])
 
-	        
-			
-	 		#@place=Place.where(long=@request.long_destination AND lat=lat_destination)
-			places.each do|x|
-			 @place_id=x.id	
-			end
+		   
+		   @place_id=@place[0].id
 
-			visits=Visit.find(:all,:conditions => ['place_id LIKE ? AND user_id LIKE ?',
-				@place_id ,@id])
+		   @visits=Visit.find(:all,:conditions => ['place_id LIKE ? AND  user_id LIKE ?',@place_id,@id])
+		   @v = @visits[0]
 
-		    visits.each do|x|
-			 @visit_id=x.id	
-			end
-
-			@visit=Visit.find(@visit_id)
-
-			unless(@visit==nil)
-				@visit.noVisited=@visit.noVisited+1
-				@visit.save
-			else
-				@visit1=Visit.new
-				@visit1.user_id=@id
-				@visit1.place_id=@place_id
-				@visit1.noVisited=1
-				@visit1.save
-			end
-
+		   unless(@visits[0]==nil)
+		   	@v.noVisited=@v.noVisited+1
+		   	@v.save
+		   else
+		   	@visit=Visit.new
+		   	@visit.place_id=@place_id
+		   	@visit.user_id=@id
+		   	@visit.noVisited=1
+		   	@visit.save
+		   end
+		   
 		   @trip.save
 		   @request.save
-		
+
+			#places.each do|x|
+			 #@place_id=x.id	
+			#end
+
+			#visits=Visit.find(:all,:conditions => ['place_id LIKE ? AND user_id LIKE ?',
+			#	@place_id ,@id])
+
+		    #visits.each do|x|
+			 #@visit_id=x.id	
+			#end
+
+			
+
+			#unless(@visits.blank?)
+			#	@visit=Visit.find(@visit_id)
+			#	@visit.noVisited=@visit.noVisited+1
+			#	@visit.save
+			#else
+			#	@visit1=Visit.new
+			#	@visit1.user_id=@id
+			#	@visit1.place_id=@place_id
+			#	@visit1.noVisited=1
+			#	@visit1.save
+			#end
+
+		   
 		end
 	end
 		   

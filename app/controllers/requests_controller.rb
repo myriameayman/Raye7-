@@ -51,28 +51,33 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @loc
-
+       
+       @place=Place.find(:all,:conditions =>['lat LIKE ? AND  long LIKE ?',@longitude,@latitude])
     
        @place=Place.new
        @place.long=params[:longitude]
        @place.lat=params[:latitude]
        @place.name=@loc
-       @place.save
+       
+       p = Place.find(:all,:conditions =>['lat LIKE ? AND  long LIKE ?',@place.lat,@place.long])
+       @pl=p[0]
 
-       visits=Visit.find(:all,:conditions => ['place_id LIKE ? ',
-        @place.id])
+       # visits=Visit.find(:all,:conditions => ['place_id LIKE ? ',
+       #  @place.id])
+       visits=Visit.find(@pl.place_id)
 
-       @notification=Notification.new
+
+      @notification=Notification.new
        visits.each do |x|
         if(x.noVisited>2)
           @notification.notifying=@id
           @notification.notified=x.user_id
           @notification.text= "there is an ongoing trip to " + @place.name  
+          @notification.save
         end
-        
-       
        end
-       @notification.save
+       @place.save
+       
       redirect_to url_for(:controller => "requests", :action => "create")  
 
     end 
@@ -97,7 +102,6 @@ class RequestsController < ApplicationController
 
     @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
-
   end 
   
   
