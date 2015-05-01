@@ -28,8 +28,61 @@ class ProfilesControllerTest < ActionController::TestCase
     sign_in @user
     get :myAccount
     assert :success
+  end
 
-    
+  test "should not save two same facebook emails" do
+    @user1 = User.new(:email => 'test@example.com',:username => 'test', 
+      :password => 'password', :password_confirmation => 'password', :firstName => 'test',
+       :lastName => 'test')
+    @user1.uid = 1
+    @user1.fb_email = "hima_2014@hotmail.com"
+    @user1.faceboook_profileimage = ""
+    @user1.verification = false 
+    @user1.save
+    @user2 = User.new(:email => 'test2@example.com',:username => 'test2', 
+      :password => 'password', :password_confirmation => 'password', :firstName => 'test',
+       :lastName => 'test')
+    @user2.uid = 1
+    @user2.fb_email = "hima_2014@hotmail.com"
+    @user2.faceboook_profileimage = ""
+    @user2.verification = false 
+    assert !@user2.save
+  end
+  test "should not save two same gmail" do
+    @user1 = User.new(:email => 'test@example.com',:username => 'test', 
+      :password => 'password', :password_confirmation => 'password', :firstName => 'test',
+       :lastName => 'test')
+    @user1.uid = 1
+    @user1.gmail = "hima_2014@hotmail.com"
+    @user1.faceboook_profileimage = ""
+    @user1.verification = false 
+    @user1.save
+    @user2 = User.new(:email => 'test2@example.com',:username => 'test2', 
+      :password => 'password', :password_confirmation => 'password', :firstName => 'test',
+       :lastName => 'test')
+    @user2.uid = 1
+    @user2.gmail = "hima_2014@hotmail.com"
+    @user2.faceboook_profileimage = ""
+    @user2.verification = false 
+    assert !@user2.save
+  end
+    test "should not save two same screen_names" do
+    @user1 = User.new(:email => 'test@example.com',:username => 'test', 
+      :password => 'password', :password_confirmation => 'password', :firstName => 'test',
+       :lastName => 'test')
+    @user1.uid = 1
+    @user1.screen_name = "hima_2014@hotmail.com"
+    @user1.faceboook_profileimage = ""
+    @user1.verification = false 
+    @user1.save
+    @user2 = User.new(:email => 'test2@example.com',:username => 'test2', 
+      :password => 'password', :password_confirmation => 'password', :firstName => 'test',
+       :lastName => 'test')
+    @user2.uid = 1
+    @user2.screen_name = "hima_2014@hotmail.com"
+    @user2.faceboook_profileimage = ""
+    @user2.verification = false 
+    assert !@user2.save
   end
   
  # test "should get new" do
@@ -47,6 +100,16 @@ class ProfilesControllerTest < ActionController::TestCase
     @user.lastName = 'aaaaaaaaaaaa'
     @user.id = 1 
     @user.save
+    sign_in @user
+    @user2 = User.new 
+    @user2.email = 'test3@example.com'
+    @user2.username = 'myriame1'
+    @user2.password = 'password'
+    @user2.password_confirmation = 'password'
+    @user2.firstName = 'aaaaaaad'
+    @user2.lastName = 'aaaaaaaaaaaa'
+    @user2.id = 2
+    @user2.save
     sign_in @user
     @friend = User.new 
     @friend.email = 'test2@example.com'
