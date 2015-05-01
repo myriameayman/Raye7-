@@ -16,7 +16,21 @@ class EmailsController < ApplicationController
   end
   
   def verify 
-    @email = params[:email]
+    @user = current_user
+    @add_email = params[:email]
+    @divisons = @add_email.split('@')
+    @divisons = @divisons[1]
+    @divisons = @divisons.split('.')
+    if(@divisons[1]=='com')
+      @divisons = @divisons[0]
+    else
+      @divisons = @divisons[1]
+    end
+    @email = Email.new
+    @email.user_id = @user.id
+    @email.email = @add_email
+    @email.save
+
   end
 
   def show
