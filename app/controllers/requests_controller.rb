@@ -132,6 +132,9 @@ class RequestsController < ApplicationController
     redirect_to root_path 
   end 
 
+# AhmedAdelIbrahim
+# Method finctionality : retrieve all the requests (trip) info from the database.
+# The variables : @trips -> all info about trips , @count -> number of trips. 
   def view_current_trips
     @trips = Request.all
     @count = Request.count
