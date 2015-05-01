@@ -55,6 +55,7 @@ class RequestsController < ApplicationController
       @@request.long_destination= @longitude 
       @@request.destination= @destination
       redirect_to url_for(:controller => "requests", :action => "create_route")  
+
     end 
   end 
   
@@ -182,16 +183,19 @@ class RequestsController < ApplicationController
     @@checkpoint = []  
     @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
+
   end 
   
   
   # Moving from stage of creating a request's form to the next stage. 
   def home 
+
     if @@form_step == nil 
       redirect_to root_path  and return 
     end
     @@request.user_id = current_user.id 
     @@form_step = @@form_step + 1 
+
   end 
 
   
@@ -209,8 +213,7 @@ class RequestsController < ApplicationController
       format.js 
     end 
   end 
-  
-  
+
   # Saves the info in stage 3 of the form in the db. 
   # Profiles/myAccount redirectes to the user's profile page. 
   def create_ride_info 
@@ -222,6 +225,8 @@ class RequestsController < ApplicationController
     @air_conditioner = params[:air_conditioner]
     @trunk = params[:trunk] 
     @name = params[:name] 
+    @girls = params[:girls]
+    @gentlemen = params[:gentlemen] 
     @@request.car_color = @color 
     @@request.car_model= @model 
     @@request.car_number= @number 
@@ -246,6 +251,8 @@ class RequestsController < ApplicationController
 
 
   def delete 
+
   end 
  
 end
+

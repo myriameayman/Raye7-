@@ -11,9 +11,6 @@ class FacebookControllerTest < ActionController::TestCase
     #get :create
     #assert :success 
   #end
-   
-
-
 
 
 end
