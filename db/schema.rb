@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150501160008) do
+ActiveRecord::Schema.define(:version => 20150501160256) do
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -153,8 +153,8 @@ ActiveRecord::Schema.define(:version => 20150501160008) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",  :null => false
+    t.string   "encrypted_password",     :default => "",  :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -165,8 +165,8 @@ ActiveRecord::Schema.define(:version => 20150501160008) do
     t.string   "last_sign_in_ip"
     t.string   "firstName"
     t.string   "lastName"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "username"
     t.string   "name"
     t.string   "screen_name"
@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(:version => 20150501160008) do
     t.string   "fb_email"
     t.string   "nickname"
     t.string   "gmail"
-    t.integer  "budget"
+    t.integer  "budget",                 :default => 800
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"
