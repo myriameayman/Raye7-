@@ -1,19 +1,5 @@
 # Step of the offering ride form. 
-<<<<<<< HEAD
-@@i = nil 
-# Request to be created in the offering ride form. 
-@@request = nil
-class RequestsController < ApplicationController 
-  # Make sure there is a currently logged in user. 
-  before_filter :authenticate_user! 
 
-  def search 
-   @requests = Request.search(params[:search]) 
-  end 
-  
- 
-
-=======
 @@form_step = nil 
 # Request to be created in the offering ride form. 
 @@request = nil
@@ -26,7 +12,7 @@ class RequestsController < ApplicationController
  
 # Show shows a specific requests with a certain id.
 # If it doesn't found it it will redirect it to home page again.
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
+
   def show 
     @user = current_user 
     @id = params[:id] 
@@ -50,26 +36,18 @@ class RequestsController < ApplicationController
   # /home is redirected to home view. 
   # /requests/create is redireted to the create view in requests folder.
   def create_curr_location 
-<<<<<<< HEAD
-    if @@i == nil 
-      redirect_to "/profiles/myAccount"  
-    end
-    if @@i == 1 
-=======
+
     if @@form_step == nil 
       redirect_to root_path  
     end
     if @@form_step == 1 
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
       @@request.lat_curr = @latitude 
       @@request.long_curr= @longitude 
-<<<<<<< HEAD
-      redirect_to "/home" 
-=======
+
       redirect_to url_for(:controller => "requests", :action => "home")
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
+
     else 
       @latitude = params[:latitude] 
       @longitude = params[:longitude] 
@@ -77,20 +55,14 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @loc
-<<<<<<< HEAD
-      redirect_to "/requests/create" 
-=======
+
       redirect_to url_for(:controller => "requests", :action => "create")  
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
+
     end 
   end 
   
   
-<<<<<<< HEAD
 
-=======
-# Index return a list of all available requests.
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
   def index 
     unless(params[:search==nil]) 
       @requests = Request.search(params[:search]) 
@@ -106,19 +78,17 @@ class RequestsController < ApplicationController
   # Create new request.  
   def new 
     @@request = Request.new
-<<<<<<< HEAD
+
     @@i = 0 
     redirect_to "/home" 
-=======
     @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
   end 
   
   
   # Moving from stage of creating a request's form to the next stage. 
   def home 
-<<<<<<< HEAD
+
     if @@i == nil 
       redirect_to "/profiles/myAccount"  and return 
     end
@@ -128,7 +98,7 @@ class RequestsController < ApplicationController
 
   
 
-=======
+
     if @@form_step == nil 
       redirect_to root_path  and return 
     end
@@ -138,7 +108,6 @@ class RequestsController < ApplicationController
 
   
 # Responding on clicking on geocoding link in home. 
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
   def geocoding 
     respond_to do |format|               
       format.js 
@@ -146,11 +115,9 @@ class RequestsController < ApplicationController
   end 
 
 
-<<<<<<< HEAD
- 
-=======
+
 # Responding on clicking on reverse_geocoding link in home.
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
+
   def reverse_geocoding 
     respond_to do |format|               
       format.js 
@@ -178,7 +145,7 @@ class RequestsController < ApplicationController
     @@request.air_conditioner= @air_conditioner
     @@request.trunk= @trunk 
     @@request.name= @name 
-<<<<<<< HEAD
+
     #@str = "<div>
      #         <ul>
       #        <% @@request.errors.each_with_index do |msg, i| %>
@@ -189,13 +156,12 @@ class RequestsController < ApplicationController
     #if @@request.errors.any? 
      #  redirect_to "/requests/create_ride_info" 
     #end           
-=======
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
+
     @@request.save 
     redirect_to root_path 
   end 
   
-<<<<<<< HEAD
+
   def delete_request
      @Request = Request.find (params[:id])
    
@@ -210,25 +176,15 @@ class RequestsController < ApplicationController
        end 
      Request.find(params[:id]).destroy
      redirect_to"/"
-   end 
-=======
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
-
+   
   def edit 
   end 
 
 
-<<<<<<< HEAD
-
-  def delete 
-  end 
- 
-end 
 
 
-=======
+
   def delete 
   end 
  
 end
->>>>>>> c276b045cd32c5897a2360346cc3d56199269709
