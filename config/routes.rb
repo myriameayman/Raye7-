@@ -15,6 +15,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "requests/delete" 
 
+  get "requests/create_route"
   #get "requests/home"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
@@ -69,6 +70,10 @@ RsgLinkedinGem::Application.routes.draw do
   get "/places/create", to: "places#create", as: "create"
   
   get "/home", to: "requests#home", as: "home" 
+  
+  get "/requests/create_route", to: "requests#create_route", as: "create_route" 
+  
+  get "/requests/create_checkpoints", to: "requests#create_checkpoints", as: "create_checkpoints" 
   
   get "/geocoding", to: "requests#geocoding", as: "geocoding" 
   
