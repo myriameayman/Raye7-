@@ -8,6 +8,13 @@ class ProfilesController < ApplicationController
   def create
   end
 
+
+  def authorize
+  end 
+
+
+  def show
+  end
  # @myriame 
  # Load a profile of a specific friend.
   def friend_profile

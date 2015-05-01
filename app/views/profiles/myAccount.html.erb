@@ -62,9 +62,16 @@
 </style>
 <body>
 
+  	  	
+
+
+
+
 
 
   <div class="row">
+
+
 
 	    <div class="col-md-3" style="padding-left:40px">
 		    <div class="image-frame">
@@ -121,7 +128,11 @@
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:110px;float:left">
 									        <div id="round-button-circle">
+<<<<<<< HEAD
+									          <a href="/linkedin_oauth_url" class="round-button">Twitter</a>
+=======
 									          <a href="/twitter_oauth_url" style="padding-top:50px;height:200px;">Twitter</a>
+>>>>>>> origin/master
 									        </div>
 									    </div>
 									  </div>
@@ -182,7 +193,8 @@
 
 		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
 		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
-		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
+		   <li class='last' style="border-bottom:none;"><a href="#" id="invite_fb_friends" onClick="inviteFriends();"><span>Invite your facebook friends
+</span></a></li><!-- # A link to invite Facebook Friends @ebrahim-elgaml -->
 		</ul>
 </div>     
   </div> <!-- end of side menu tag -->
@@ -219,6 +231,7 @@
      <div class="panel-heading"> <!-- Container header -->
       <h3 class="panel-title"> News Feed</h3>
 
+
      </div> <!-- end of header -->
       <div class="panel-body"> <!-- loop on activities -->
       	<h6 style="font-style:normal;font-size:15px">What's going on</h6>
@@ -243,6 +256,24 @@
 
 </div>
   
+
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+	function inviteFriends(){
+		FB.init({
+	        appId: '716016431848330',
+	        status: true,
+	        cookie: false,
+	        // xfbml: true
+	        });
+		FB.ui({
+	method: 'send',
+	message: '<%=current_user.name %> has invite you to a party for>',
+	link: 'http://raye7.com/'});
+
+	}
+</script>
+
 </body>
 
 </html>
