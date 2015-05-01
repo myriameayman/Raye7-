@@ -51,11 +51,20 @@ class RequestsController < ApplicationController
       @@request.long_destination= @longitude 
       @@request.destination= @loc
 
+    
+       @place=Place.new
+       @place.long=params[:longitude]
+       @place.lat=params[:latitude]
+       @place.name=@loc
+       @place.save
+      
+ 
+
+
       redirect_to url_for(:controller => "requests", :action => "create")  
 
     end 
-  end 
-  
+  end
   
 # Index return a list of all available requests.
   def index 
