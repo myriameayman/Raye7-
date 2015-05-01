@@ -11,6 +11,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "emails/update"
 
+  get "emails/verify"
+
   get "emails/new"
 
   get "emails/add_email"

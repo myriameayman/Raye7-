@@ -12,7 +12,7 @@ class MyMailer < ActionMailer::Base
   def add_email(user,mail)
     @myUser = user
     @grant = mail
-    mail(from:'ebrahim.el.gaml@gmail.com',to: grant, subject: 'Confirmation to add Email [Raye7]')
+    mail(from:'ebrahim.el.gaml@gmail.com',to: @grant, subject: 'Confirmation to add Email [Raye7]')
   end
 
   def sample_email(user)

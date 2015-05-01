@@ -10,10 +10,11 @@
       You have requested to add this email <h2><%= @grant %></h2> to your email 
     </h3>
     <h4>Notice : By adding that you will have a circle with all users subscribed to the same group </h4>
-    
-    <a href = "http://localhost:3000/profiles/verifyMe" class="btn btn-primary btn-larg"> Accecpt </a><br>
-    <a href = "http://localhost:3000/profiles/verifyMe" class="btn btn-primary btn-larg"> reject </a><br>
+    <%= link_to "Accept", "http://localhost:3000/emails/verify?email=#{@grant}",:class => "btn btn-terciary btn-block" %>
+    <br>
+    <%= link_to "Reject", "http://localhost:3000/",:class => "btn btn-terciary btn-block" %>
 
+    
 
   </body>
 </html>

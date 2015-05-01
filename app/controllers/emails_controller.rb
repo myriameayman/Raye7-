@@ -14,6 +14,10 @@ class EmailsController < ApplicationController
     end
     redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
+  
+  def verify 
+    @email = params[:email]
+  end
 
   def show
   end
