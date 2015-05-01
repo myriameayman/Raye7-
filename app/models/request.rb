@@ -25,4 +25,8 @@ class Request < ActiveRecord::Base
         self.errors.add :base, 'My string can not be nil' if self.air_conditioner.nil?
         self.errors.add :base, 'My string can not be nil' if self.car_color.nil? 
 	  end
+
+	  def calc
+	    r = 2 * 3
+	  end
 end

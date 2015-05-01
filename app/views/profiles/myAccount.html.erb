@@ -12,53 +12,6 @@
  /*added Code */
 
 
-
-/*end of Added code */
-  .mini-submenu{
-    display:none;  
-    background-color: rgba(0, 0, 0, 0);  
-    border: 1px solid rgba(0, 0, 0, 0.9);
-    border-radius: 4px;
-    padding: 9px;  
-    /*position: relative;*/
-    width: 42px;
-  }
-
-  .mini-submenu:hover{
-    cursor: pointer;
-  }
-
-  .mini-submenu .icon-bar {
-    border-radius: 1px;
-    display: block;
-    height: 2px;
-    width: 22px;
-    margin-top: 3px;
-  }
-
-  .mini-submenu .icon-bar {
-    background-color: #000;
-  }
-
-  #slide-submenu{
-    background: rgba(0, 0, 0, 0.45);
-    display: none;
-    display: inline-block;
-    padding: 0 8px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-.panel.panel-default{
-    border-radius:60px;
-}
-#navlist{
-    display: none;
-}
-#navlist:hover{
-    display: block;
-}
-
-
 </style>
 <body>
 
@@ -201,7 +154,7 @@
                    <hr>
                    <ul>
                       <% @requests.each do |grant| %>
-                        <h6 style="font-style:normal;font-size:15px">   <li><%= link_to grant.destination, :controller =>'requests',
+                        <h6 style="font-style:normal;font-size:15px"><li><%= link_to grant.destination, :controller =>'requests',
                         :action => 'show', id: grant.id  %></li></h6>
                       <% end %>
                     </ul>
