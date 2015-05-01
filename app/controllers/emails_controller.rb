@@ -30,7 +30,48 @@ class EmailsController < ApplicationController
     @email.user_id = @user.id
     @email.email = @add_email
     @email.save
-
+    if(@divisons == 'facebook' or @divisons =='gmail' or @divisons == 'twitter')
+      return
+    end
+    unless(@user.circles.exists?(:name => @divisons))
+      @circle = Circle.new
+      @circle.user_id = @user.id
+      @circle.name = @divisons
+      @circle.save
+    end
+    @circle = nil
+    @user.circles.each do |c|
+      if(c.name == @divisons)
+        @circle = c
+        break
+      end
+    end
+    if(@circle == nil)
+      return
+    end
+    @x = User.all
+    @x.each do |u|
+      if(u.circles.exists?(:name => @divisons))
+        # Adding all users belonging to that circle to the user friends.
+        unless(u.id==@user.id)
+          friend = Friend.new 
+          friend.circle_id = @circle.id   
+          friend.name = u.name
+          friend.app_id = u.id
+          friend.save
+          # Now add the user to the friend circle. 
+          u.circles.each do |grant|
+            if(grant == @divisons)
+              friend_me = Friend.new
+              friend_me.circle_id = grant.id
+              friend_me.name = @user.name
+              friend_me.app_id = @user.id
+              friend_me.save
+            end
+          end 
+        end
+      end
+    end
   end
 
   def show
