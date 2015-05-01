@@ -36,6 +36,7 @@ class ProfilesController < ApplicationController
 # Getting the current login user to retrieve all the info in the profile page  
       unless(current_user == nil)      
           @user = current_user
+          @rating = @user.ratings
           if(@user.uid==nil)
             redirect_to "/auth/facebook" and return
           end
