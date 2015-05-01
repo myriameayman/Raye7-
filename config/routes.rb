@@ -26,6 +26,7 @@ RsgLinkedinGem::Application.routes.draw do
   root :to => 'profiles#myAccount' 
   
   get "profiles/new" 
+  get "profiles/verifyMe" 
 
   get "profiles/create" 
 

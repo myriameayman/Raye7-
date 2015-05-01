@@ -30,17 +30,20 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @user.verification = true
+    redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
-  def unverified
-    flash[:notice] = "Verification message has sent to your email"
 
-  end
 
   def verifyMe
+    #redirect_to url_for(:controller => "profiles", :action => "new")
+    #redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
     @user = current_user
-    @user.verification = true    
-    redirect_to url_for(:controller => "profile", :action => "myAccount") and return
+    @user.verification = true
+    @user.save
+    redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
 
@@ -55,8 +58,9 @@ class ProfilesController < ApplicationController
             redirect_to "/auth/facebook" and return
           end
           if(@user.verification == false )
-            redirect_to url_for(:controller => "profiles", :action => "new")
+            redirect_to url_for(:controller => "profiles", :action => "new") and return
           end
+
           unless(params[:search==nil])
             @requests = Request.search params[:search]
           end
