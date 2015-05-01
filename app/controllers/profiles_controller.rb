@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
     before_filter :authenticate_user!
+  # A new user will be redirected to that action waiting to verify his/her email @brahim-elgaml.
   def new
     flash[:notice] = "Verification message has sent to your email"
   end
@@ -30,13 +31,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @user.verification = true
-    redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
 
-
+  # The action that called from the verification mail sent to the user @ebrahim-elgaml.
+  # Change user.verification to true to enable user to enter my account page @ebrahim-elgaml.
   def verifyMe
     #redirect_to url_for(:controller => "profiles", :action => "new")
     #redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
@@ -46,9 +45,9 @@ class ProfilesController < ApplicationController
     redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
-
-  def myAccount
-# Getting the current login user to retrieve all the info in the profile page  
+  # Getting the current login user to retrieve all the info in the profile page 
+  # Checking if the user verified or not if not verified redirect to new vaction if verified redirect to myAccount page @ebrahim-elgaml.
+  def myAccount 
       unless(current_user == nil)      
           @user = current_user
           if(@user.uid==nil)
