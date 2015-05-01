@@ -29,29 +29,28 @@ def create
 	        
 			
 	 		#@place=Place.where(long=@request.long_destination AND lat=lat_destination)
-			 places.each do|x|
-			
-			@place_id=x.id	
+			places.each do|x|
+			 @place_id=x.id	
 			end
-			
 
 			visits=Visit.find(:all,:conditions => ['place_id LIKE ? AND user_id LIKE ?',
 				@place_id ,@id])
 
-		   visits.each do|x|
-			
-			@visit_id=x.id	
+		    visits.each do|x|
+			 @visit_id=x.id	
 			end
-			unless(@visits==nil)
-				@visits=Visit.find(@visit_id)
-				@visits.noVisited=@visits.noVisited+1
-				@visits.save
-			else
-				@visit=Visit.new
-				@visit.user_id=@id
-				@visit.place_id=@place_id
-				@visit.noVisited=1
+
+			@visit=Visit.find(@visit_id)
+
+			unless(@visit==nil)
+				@visit.noVisited=@visit.noVisited+1
 				@visit.save
+			else
+				@visit1=Visit.new
+				@visit1.user_id=@id
+				@visit1.place_id=@place_id
+				@visit1.noVisited=1
+				@visit1.save
 			end
 
 		   @trip.save

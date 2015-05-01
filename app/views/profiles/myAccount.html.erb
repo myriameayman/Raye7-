@@ -181,7 +181,8 @@
 
 
 		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
-		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
+		   <li><%= link_to "view all my places", controller: "places", action: "create"%></li>
+		   <li><%= link_to "notifications", :controller =>'notifications',:action => 'index' %></li>
 		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
 		</ul>
 </div>     
@@ -246,5 +247,3 @@
 </body>
 
 </html>
-<h6 style="font-style:normal;font-size:15px">	<li><%= link_to "notification", :controller =>'notifications',
-		  	:action => 'index' %></li></h6>

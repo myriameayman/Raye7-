@@ -62,21 +62,17 @@ class RequestsController < ApplicationController
        visits=Visit.find(:all,:conditions => ['place_id LIKE ? ',
         @place.id])
 
+       @notification=Notification.new
        visits.each do |x|
-        if(x.noVisited>1)
-          @notification=Notification.new
+        if(x.noVisited>2)
           @notification.notifying=@id
           @notification.notified=x.user_id
-          @notification.text= "there is an ongoing trip to " + @place.name
-          @notification.save
+          @notification.text= "there is an ongoing trip to " + @place.name  
         end
+        
        
        end
-       
-      
- 
-
-
+       @notification.save
       redirect_to url_for(:controller => "requests", :action => "create")  
 
     end 
