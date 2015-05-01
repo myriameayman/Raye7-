@@ -72,6 +72,7 @@ class EmailsController < ApplicationController
         end
       end
     end
+    redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
   def show
