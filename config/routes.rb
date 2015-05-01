@@ -43,14 +43,16 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "profiles/show1" 
   
-  get "trips/new" 
+  get "trips/new"
+  get "circles/Block_Circle" 
   
   get "requests/create" 
   get "/places/create"  
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
-  
+  get "circles/Block_Circle"
+  get "profiles/users/myAccount"
   get "/places/show", to: "places#show", as: "show" 
 
   get "/places/create", to: "places#create", as: "create"
@@ -74,12 +76,16 @@ RsgLinkedinGem::Application.routes.draw do
   get "requests/form", to: "requests#form" 
 
   get 'request/:id' => 'profiles#show' 
+  get 'circles/Block_Circle'
+  post 'circles/Block_Circle'
+  post 'auth/failure' => redirect('/') , :via => :post 
+
+
   
   match '/request/:id' => 'trips#create', :via => :post 
 
   devise_for :users, :controllers => {:registrations => "registrations"} 
 
-  resources :circles 
   
   resources :requests 
   
@@ -87,7 +93,9 @@ RsgLinkedinGem::Application.routes.draw do
   
   get '/show' => "circles#show" 
   
+
   resources :twitter 
+  resources :circles
   
   match '/twitter_profile' => "twitter#twitter_profile" 
   
@@ -97,7 +105,8 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :linkedin 
   
-  get 'linkedin/index' 
+  get 'linkedin/index'
+  get '/circles/show/id' => "circles#Block_Circle" , :as => "Block_Circle" 
   
   match '/linkedin_profile' => "linkedin#linkedin_profile" 
   #match '/index' => "linkedin#index" 
@@ -111,6 +120,7 @@ RsgLinkedinGem::Application.routes.draw do
       root :to => 'user/registrations#myAccount' 
       #get 'user/registrations/myAccount' 
       get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount" 
+    #  get "/profiles/users/myAccount/id" => "circles#Block_Circle" , :as => "Block_Circle"
       get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 

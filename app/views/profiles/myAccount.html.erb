@@ -60,6 +60,7 @@
 
 
 </style>
+
 <body>
 
 
@@ -101,7 +102,7 @@
 		      <ul>
 		      		<% @circles.each do |c| %>
 			 			<li class='has-sub'><%= link_to c.name, controller: "circles", action: "show", id: c.id %></li>
-			 			
+			 			<li>  
 					<% end %>
 		      </ul>
 		   </li>

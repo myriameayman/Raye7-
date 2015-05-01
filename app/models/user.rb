@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
       has_many :requests
       has_many :ratings
       has_many :trips
-
+      has_many :blockeds
+      has_many :blocked_circles
 
       has_many :visits
       has_many :places, through: :visits

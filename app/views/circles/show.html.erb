@@ -2,6 +2,7 @@
 <p>Find me in app/views/circles/show.html.erb</p>
 <h3>your are in circle : </h3> Circle name :<%= @circle.name %><br>
 <h4> Friends in the circle :- </h4><br>
+   
 		<% @circle.friends.each do |c| %>
 			<%= c.name %><br> <!--/# name of a specific circle  -->
 			<% if(@circle.name=='facebook') %>
@@ -10,6 +11,7 @@
 					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
 					<% next %>
 				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
+
 			<% end %><!--/#  end of the if checking the circle name  -->
 			<% if(@circle.name=='twitter') %>
 				<% if  User.exists?(:screen_name => c.name) %>
@@ -26,5 +28,8 @@
 				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
 			<% end %><!--/#  end of the if checking the circle name  -->
 			
+			
 		<% end %><!--end of the loop -->
 
+    
+   <%= link_to "block", controller: "circles", action: "Block_circle", id: @circle.id %>
