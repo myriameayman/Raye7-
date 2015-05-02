@@ -4,35 +4,50 @@
 <h4> Friends in the circle :- </h4><br>
    <h1><%= @circle.id %></h1>
 		<% @circle.friends.each do |c| %>
-			<%= c.name %><br> <!--/# name of a specific circle  -->
+  
+        <!--/# name of a friend in specific circle  --> 
 			<% if(@circle.name=='facebook') %>
-				<% if User.exists?(:fb_email=> c.name)  %>
-					<%= ' I am checking ' %>
-					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
+					<% app_user = User.find(:all, :conditions => ['uid LIKE ?' , c.fb_id]) %> 
+					<% app_user.each do |a| %>
+					    <h6 style="font-style:normal;font-size:15px"> <li><%= link_to a.name, :controller =>'profiles',:action => 'friend_profile', id: a.id  %></li>
+						</h6>
+        			<br> 
+					<%end%>  
+					<br>
 					<% next %>
-				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
+                   <!--/#  end of the if checking if the user has the circle in his/her connections  -->
+
 
 			<% end %><!--/#  end of the if checking the circle name  -->
+			
 			<% if(@circle.name=='twitter') %>
-				<% if  User.exists?(:screen_name => c.name) %>
-					<%= ' I am checking ' %>
-					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
+					<% app_user = User.find(:all, :conditions => ['screen_name LIKE ?' , c.screen_name]) %> 
+					<% app_user.each do |a| %>
+					    <h6 style="font-style:normal;font-size:15px"> <li><%= link_to a.name, :controller =>'profiles',:action => 'friend_profile', id: a.id  %></li>
+						</h6>
+        			<br> 
+					<%end%>  
+					<br>
 					<% next %>
-				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
 			<% end %><!--/#  end of the if checking the circle name  -->
 			<% if(@circle.name=='gmail') %>
-				<% if User.exists?(:gmail => c.name) %>
-					<%= ' I am checking ' %>
-					<%= link_to c.name, controller: "profiles", action: "show", id: c.id %> <br>
-					<% next %>
-				<% end %><!--/#  end of the if checking if the user has the circle in his/her connections  -->
-			<% end %><!--/#  end of the if checking the circle name  -->
+				<% app_user = User.find(:all, :conditions => ['gmail LIKE ?' , c.gmail]) %> 
+					<% app_user.each do |a| %>
+					    <h6 style="font-style:normal;font-size:15px"> <li><%= link_to a.name, :controller =>'profiles',:action => 'friend_profile', id: a.id  %></li>
+						</h6>
+        			<br> 
+					<%end%>  
+					<br>
+					<% next %>	<% end %><!--/#  end of the if checking the circle name  -->
 			
 			
 		<% end %><!--end of the loop -->
 
 
+<<<<<<< HEAD
 
 
 <%= link_to "Block",controller: "circles", action: "Block_Circle", id: @circle.id %>
   
+=======
+>>>>>>> 371119e80b5c4cb5b0360fe3db56236df2a8a9c8

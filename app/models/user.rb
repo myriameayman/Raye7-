@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       :uniqueness => {
       :case_sensitive => false
       }
+      
       has_one :basic_profile
       has_one :full_profile
       has_many :emails
