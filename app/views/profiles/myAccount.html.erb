@@ -60,14 +60,6 @@
 
 </style>
 <body>
-
-  	  	
-
-
-
-
-
-
   <div class="row">
 
 
@@ -128,11 +120,8 @@
 									  <div class="col-lg-4">
 									    <div class="round-button" style="width:110px;float:left">
 									        <div id="round-button-circle">
-<<<<<<< HEAD
-									          <a href="/linkedin_oauth_url" class="round-button">Twitter</a>
-=======
+
 									          <a href="/twitter_oauth_url" style="padding-top:50px;height:200px;">Twitter</a>
->>>>>>> origin/master
 									        </div>
 									    </div>
 									  </div>
@@ -193,8 +182,11 @@
 
 		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
 		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
+		   <li><%= link_to "add email", controller: "emails", action: "index" %></li>
+			<!-- # A link to add email @ebrahim-elgaml -->
 		   <li class='last' style="border-bottom:none;"><a href="#" id="invite_fb_friends" onClick="inviteFriends();"><span>Invite your facebook friends
 </span></a></li><!-- # A link to invite Facebook Friends @ebrahim-elgaml -->
+
 		</ul>
 </div>     
   </div> <!-- end of side menu tag -->
