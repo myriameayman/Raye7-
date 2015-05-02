@@ -38,8 +38,8 @@
     $("#addButton").click(function () {
     
     var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
-    newTextBoxDiv.after().html('<label style="font-size:20px">Textbox #'+ counter + ' : </label>' +
-    '<input type="text" name="Email' + counter +
+    newTextBoxDiv.after().html('<label style="font-size:20px">Email #'+ counter + ' : </label>' +
+    '<input type="text" name="Email"' + counter +
     '" id="textbox' + counter + '" value="" >');
     newTextBoxDiv.appendTo("#TextBoxesGroup");
     counter++;
