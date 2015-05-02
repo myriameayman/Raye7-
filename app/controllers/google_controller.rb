@@ -4,6 +4,7 @@ class GoogleController < ApplicationController
 before_filter :authenticate_user!
 
 # BY : AhmedAdelIbrahim
+# Add Google plus attributes to a user who want to add more circles to his RAYE7 account.
   def create
   	@user = current_user
   	@user.provide1 = env["omniauth.auth"].provide1
