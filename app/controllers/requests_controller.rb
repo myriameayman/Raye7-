@@ -168,14 +168,14 @@ class RequestsController < ApplicationController
       unless (Trip.where(request_id: params[:id])==nil)
         @trip = Trip.where(request_id: params[:id])
          @trip.each do |tri|
-     @Notification = Notification.new
-     @Notification.user_id  = tri.user_id 
-     @Notification.text = 'Sorry your trip is cancelled'
-     @Notification.save
+           @Notification = Notification.new
+           @Notification.user_id  = tri.user_id 
+           @Notification.text = 'Sorry your trip is cancelled'
+           @Notification.save
          end 
        end 
-     Request.find(params[:id]).destroy
-     redirect_to"/"
+        Request.find(params[:id]).destroy
+        redirect_to"/"
    
   def edit 
   end 
