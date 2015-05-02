@@ -2,7 +2,7 @@
 <p>Find me in app/views/circles/show.html.erb</p>
 <h3>your are in circle : </h3> Circle name :<%= @circle.name %><br>
 <h4> Friends in the circle :- </h4><br>
-   
+   <h1><%= @circle.id %></h1>
 		<% @circle.friends.each do |c| %>
 			<%= c.name %><br> <!--/# name of a specific circle  -->
 			<% if(@circle.name=='facebook') %>
@@ -31,5 +31,8 @@
 			
 		<% end %><!--end of the loop -->
 
-    
-   <%= link_to "block", controller: "circles", action: "Block_circle", id: @circle.id %>
+
+
+
+<%= link_to "Block",controller: "circles", action: "Block_Circle", id: @circle.id %>
+  

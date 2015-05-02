@@ -44,15 +44,15 @@ RsgLinkedinGem::Application.routes.draw do
   get "profiles/show1" 
   
   get "trips/new"
-  get "circles/Block_Circle" 
+ # get "circles/Block_Circle" 
   
   get "requests/create" 
   get "/places/create"  
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
-  get "circles/Block_Circle"
-  get "profiles/users/myAccount"
+  
+
   get "/places/show", to: "places#show", as: "show" 
 
   get "/places/create", to: "places#create", as: "create"
@@ -76,11 +76,10 @@ RsgLinkedinGem::Application.routes.draw do
   get "requests/form", to: "requests#form" 
 
   get 'request/:id' => 'profiles#show' 
-  get 'circles/Block_Circle'
-  post 'circles/Block_Circle'
-  post 'auth/failure' => redirect('/') , :via => :post 
+  
+  #get'/Block_Circle/circles'
 
-
+  get "circles/Block_Circle"
   
   match '/request/:id' => 'trips#create', :via => :post 
 
@@ -91,22 +90,26 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :profiles 
   
-  get '/show' => "circles#show" 
-  
+  get '/show' => "circles#show"
+
+  get'/Block_Circle/circles/:id' => "circles#Block_Circle" ,as: "Block_Circle"
+   
+  get 'circles/Block_Circle' => "circles#Block_Circle", as: "block" 
+  #get '/Block_Circle' => "circles#Block_Circle" 
 
   resources :twitter 
-  resources :circles
   
   match '/twitter_profile' => "twitter#twitter_profile" 
   
   match '/oauth_account' => "twitter#oauth_account" 
   
-  match '/twitter_oauth_url' => 'twitter#generate_twitter_oauth_url' 
+  match '/twitter_oauth_url' => 'twitter#sgenerate_twitter_oauth_url' 
   
   resources :linkedin 
   
   get 'linkedin/index'
-  get '/circles/show/id' => "circles#Block_Circle" , :as => "Block_Circle" 
+  #get "Block_Circle" => "circles#Block_Circle" ,
+  
   
   match '/linkedin_profile' => "linkedin#linkedin_profile" 
   #match '/index' => "linkedin#index" 
@@ -114,7 +117,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
-  resources :circles 
+  
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
       root :to => 'user/registrations#myAccount' 
@@ -124,7 +127,7 @@ RsgLinkedinGem::Application.routes.draw do
       get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
-
+     
       #get 'signin' => 'devise/sessions#new', :as => :new_user_session 
       #get 'newLinkedin' => 'registrations#new'. as: : 
       #match '/newLinkedin' => "registrations#newLinkedin" 
