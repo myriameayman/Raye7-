@@ -1,5 +1,7 @@
 class GoogleController < ApplicationController
-  before_filter :authenticate_user!
+
+# Checks that there is a currently authunticated user. 
+before_filter :authenticate_user!
 
   def create
   	@user = current_user
