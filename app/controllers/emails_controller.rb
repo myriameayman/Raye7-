@@ -5,7 +5,7 @@ class EmailsController < ApplicationController
 
   def delete
   end
-
+  # Send verficetion mail to add the email @ebrahim-elgaml.
   def create
     @user = current_user
     @array_emails = params[:array].split(',')
@@ -15,6 +15,11 @@ class EmailsController < ApplicationController
     redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
   
+  # Accept adding the email from the sent link to the email.
+  # Create circle if not exisits with the group of the email @ebrahim-elgaml.
+  # Mail convention (xx@circle.com)(xx@dept.circle.com)(xx@dpt.circle.edu.eg)(xx@circle.edu.eg) @ebrahim-elgaml.
+  # Or any region rather than (eg) or domain rather than (com,egm...) @ebrahim-elgaml
+  # Add all users belongs to that circle as friends @ebrahim-elgaml.
   def verify 
     @user = current_user
     @add_email = params[:email]
