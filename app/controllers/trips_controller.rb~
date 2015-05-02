@@ -32,8 +32,6 @@ def create
 end
 
 
-
-
 # The def index finds all trips of a specific request.
 # The variables :@trips :@trips is list of all available trips of a request.
 def index 
