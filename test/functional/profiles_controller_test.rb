@@ -98,27 +98,22 @@ class ProfilesControllerTest < ActionController::TestCase
     @user.password_confirmation = 'password'
     @user.firstName = 'aaaaaaad'
     @user.lastName = 'aaaaaaaaaaaa'
+    @user.uid = 1
+    @user.fb_email = "hima_2014@hotmail.com"
     @user.id = 1 
     @user.save
     sign_in @user
-    @user2 = User.new 
-    @user2.email = 'test3@example.com'
-    @user2.username = 'myriame1'
-    @user2.password = 'password'
-    @user2.password_confirmation = 'password'
-    @user2.firstName = 'aaaaaaad'
-    @user2.lastName = 'aaaaaaaaaaaa'
-    @user2.id = 2
-    @user2.save
     sign_in @user
-    @friend = User.new 
+    @friend = User.new
     @friend.email = 'test2@example.com'
     @friend.username = 'ebrahim'
     @friend.password = 'password'
     @friend.password_confirmation = 'password'
     @friend.firstName = 'ebrahim'
     @friend.lastName = 'elgaml'
+    @friend.fb_email = "hima2_2014@hotmail.com"
     @friend.id = 2
+    @friend.uid =2
     @friend.faceboook_profileimage = "http://graph.facebook.com/10205640819527369/picture?type=square&width=160&height=160"
     @friend.save
     String url = "http://test.host/profiles/friend_profile?id=2"

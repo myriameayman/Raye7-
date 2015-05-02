@@ -21,11 +21,26 @@ class EmailsController < ApplicationController
     @divisons = @add_email.split('@')
     @divisons = @divisons[1]
     @divisons = @divisons.split('.')
-    if(@divisons[1]=='com')
+    if(@divisons.count == 2)
       @divisons = @divisons[0]
     else
-      @divisons = @divisons[1]
+      if(@divisons.count == 3)
+        if(@divisons.last.length == 2)
+          @divisons = @divisons[0] # @circle.edu.eg @ebrahim-elgaml
+        else
+          @divisons = @divisons[1] # @dep.circle.com @ebrahim-elgaml
+        end
+      else
+        if(@divisons.count ==4)
+          if(@divisons.last.length == 2)
+            @divisons = @divisons[1] # @dep.circle.edu.eg @ebrahim-elgaml
+          else
+            @divisons = @divisons[2] # @rootdep.subdep.circle.com @ebrahim-elgaml
+          end
+        end
+      end
     end
+    
     @email = Email.new
     @email.user_id = @user.id
     @email.email = @add_email
