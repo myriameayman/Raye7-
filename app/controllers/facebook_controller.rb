@@ -4,7 +4,7 @@ class FacebookController < ApplicationController
 # Checks that there is a currently authunticated user. 
   before_filter :authenticate_user!
 
-
+# BY : AhmedAdelIbrahim
 # Add Facebook attributes to a user who is signing up to RAYE7 after redirecting him to facebook auth page.
 # The variables : @user => current user , @fb_friends => get tokens of user facebook friends.  
                 # @graph => token of the user profile , profile => current user profile.
