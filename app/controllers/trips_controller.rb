@@ -15,16 +15,18 @@ class TripsController < ApplicationController
 #              :@@trip.request_id assigns request id to trip.request_id.
 def create
 	unless(params[:id==nil])
+	      @user = current_user
 		  @id = current_user.id
 		  @@trip.user_id = @id 
 		  @@trip.request_id= params[:id]
 		  unless(params[:id] == nil)
 		    @request=Request.find(params[:id])
-		  	
 		  	if(@request.seats>0)
 		  	 @request.seats=@request.seats - 1
 		  	 @request.save
+		  	 
 		 	 @@trip.save
+		 	 
 			end
 		  end
 		  redirect_to "/"
@@ -44,3 +46,4 @@ end
 
 
 end
+	

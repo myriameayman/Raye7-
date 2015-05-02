@@ -20,7 +20,7 @@ class Request < ActiveRecord::Base
 
 	  include PublicActivity::Model
 		tracked owner: -> (controller, model) {controller && controller.current_user}
-
+		
 	  #validate :my_string_is_valid
 	  def self.search(search)
 		find(:all, :conditions => ['destination LIKE ?', search])
@@ -28,9 +28,5 @@ class Request < ActiveRecord::Base
 	  def my_string_is_valid
         self.errors.add :base, 'My string can not be nil' if self.air_conditioner.nil?
         self.errors.add :base, 'My string can not be nil' if self.car_color.nil? 
-	  end
-
-	  def calc
-	    r = 2 * 3
 	  end
 end
