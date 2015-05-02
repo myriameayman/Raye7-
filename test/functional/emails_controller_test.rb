@@ -3,6 +3,7 @@ require 'test_helper'
 class EmailsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   
+  # Test if the circle will be added after adding email @ebrahim-elgaml.  
   test "should get GUC circle" do
     @user = User.new 
     @user.email = 'test1@example.com'
@@ -81,6 +82,7 @@ class EmailsControllerTest < ActionController::TestCase
     assert @user2.emails.exists?(:email => "testguc@student.guc.edu.eg")
   end
 
+  # Test if the friend will be added to the circle @ebrahim-elgaml.
   test "should get GUC friend in a circle" do
     @user = User.new 
     @user.email = 'test1@example.com'
