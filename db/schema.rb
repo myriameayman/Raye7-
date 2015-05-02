@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(:version => 20150430025248) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "conversations", ["recipient_id"], :name => "index_conversations_on_recipient_id"
+  add_index "conversations", ["sender_id"], :name => "index_conversations_on_sender_id"
+
   create_table "educations", :force => true do |t|
     t.string   "school_name"
     t.string   "field_of_study"
@@ -217,7 +220,6 @@ ActiveRecord::Schema.define(:version => 20150430025248) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "faceboook_profileimage"
-    t.string   "gender"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

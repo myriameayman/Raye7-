@@ -62,7 +62,7 @@
 </style>
 <body>
 
-<% @users.each_with_index do |user, index| %>
+<% User.all.each_with_index do |user, index| %>
     <tr>
       <td><%= index +=1 %></td>
       <td><%= user.name %></td>
