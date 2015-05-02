@@ -39,7 +39,7 @@
     
     var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
     newTextBoxDiv.after().html('<label style="font-size:20px">Textbox #'+ counter + ' : </label>' +
-    '<input type="text" name="textbox' + counter +
+    '<input type="text" name="Email' + counter +
     '" id="textbox' + counter + '" value="" >');
     newTextBoxDiv.appendTo("#TextBoxesGroup");
     counter++;
@@ -86,11 +86,11 @@
             <div class="col-md-3" style="padding-left:40px; width:50%">
               <div id='TextBoxesGroup'>
                 <div id="TextBoxDiv1">
-                  <label style="font-size:20px">Textbox #1 : </label><input type='textbox' id='textbox1' >
+                  <label style="font-size:20px">Email #1 : </label><input type='textbox' id='textbox1' >
                 </div>
               </div>
-              <input type='button' value='Add checkpoint' id='addButton'>
-              <input type='button' value='Remove checkpoint' id='removeButton'>
+              <input type='button' value='Add Email' id='addButton'>
+              <input type='button' value='Remove Email' id='removeButton'>
               <input type='button' value='Continue' id='continue'>
             </div><!-- close div of col-dm-3 -->
           </div><!-- div row -->
