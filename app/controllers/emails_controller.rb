@@ -62,7 +62,7 @@ class EmailsController < ApplicationController
       end
     end
     if(@circle == nil)
-      return
+       redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
     end
     @x = User.all
     @x.each do |u|
@@ -76,7 +76,7 @@ class EmailsController < ApplicationController
           friend.save
           # Now add the user to the friend circle. 
           u.circles.each do |grant|
-            if(grant == @divisons)
+            if(grant.name == @divisons)
               friend_me = Friend.new
               friend_me.circle_id = grant.id
               friend_me.name = @user.name
