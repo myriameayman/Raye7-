@@ -3,6 +3,7 @@ class GoogleController < ApplicationController
 # Checks that there is a currently authunticated user. 
 before_filter :authenticate_user!
 
+# BY : AhmedAdelIbrahim
   def create
   	@user = current_user
   	@user.provide1 = env["omniauth.auth"].provide1
