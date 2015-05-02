@@ -258,19 +258,19 @@ end
   end 
   
 
-  def delete_request
-     @Request = Request.find (params[:id])
+  def delete_request                               # MariamTalaat
+     @Request = Request.find (params[:id])         # Finding user join offer
    
-      unless (Trip.where(request_id: params[:id])==nil)
+      unless (Trip.where(request_id: params[:id])==nil)  # Finding the trip made by the offer
         @trip = Trip.where(request_id: params[:id])
          @trip.each do |tri|
-           @Notification = Notification.new
+           @Notification = Notification.new              # Creating a notification to inform passengers
            @Notification.user_id  = tri.user_id 
            @Notification.text = 'Sorry your trip is cancelled'
            @Notification.save
          end 
        end 
-        Request.find(params[:id]).destroy
+        Request.find(params[:id]).destroy                 # Deleting the request
         redirect_to"/"
    
   def edit 
