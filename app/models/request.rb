@@ -5,16 +5,11 @@ class Request < ActiveRecord::Base
 	   :lat_destination, :long_curr, :long_destination, :seats, :smoking, :trunk, :user_id
 	  #validates :air_conditioner, presence: true
 	  validates :user_id, presence: true
-	  #validates :car_color, presence: true
-	  #validates :car_model, presence: true
-	  #validates :car_number, presence: true 
 	  validates :lat_curr, presence: true
 	  validates :lat_destination, presence: true
 	  validates :long_curr, presence: true
 	  validates :long_destination, presence: true
 	  validates :seats, presence: true
-	  #validates :smoking, presence: true
-	  #validates :trunk, presence: true
 	  validates :seats, numericality: { only_integer: true }
 	  validates_format_of :car_color, :with => /^[-a-z]+$/
 	  #validate :my_string_is_valid

@@ -25,6 +25,7 @@ def create
 		   end
 			  @tag.save
               @not.save
+              redirect_to '/'
 	     end
      end
  end
