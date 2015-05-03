@@ -17,6 +17,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "emails/add_email"
 
+  get"feedback/index"
+
  
   get "requests/index" 
 
