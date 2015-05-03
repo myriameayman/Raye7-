@@ -13,8 +13,8 @@ class RequestsController < ApplicationController
     @id = params[:id] 
     if (Request.exists?(@id)) 
       @request = Request.find(@id) 
-      @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
-      @request.save
+      # @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
+      # @request.save
     else 
       redirect_to "/" 
     end 
@@ -77,13 +77,13 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @loc
-
+      @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
       redirect_to url_for(:controller => "requests", :action => "create")  
 
     end 
   end 
   
-  
+
 # Index return a list of all available requests.
   def index 
     unless(params[:search==nil]) 

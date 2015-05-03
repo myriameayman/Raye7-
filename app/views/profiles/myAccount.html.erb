@@ -129,16 +129,15 @@
   </div>
 
   <div class="col-md-8">
-    <div class="cont" style="width:780px">
+    <div class="cont" style="width:780px"> <!-- cont div for the searching for a specific trip-->
       <div class="header">
         <h1 style="font-size:20px"> Search for a trip</h1>
       </div>
       <div class="body">
         <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
           <h4> Trip destination </h4>
-          <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-          <br>
-          <%= submit_tag "Search", :name => nil %>
+          <%= text_field_tag :search, params[:search], :id => 'search_field' ,:placeholder => "search for a trip", :style => "height:30px" %>
+          <%= submit_tag "Search",:class =>"myButton", :name => nil %>
         <% end %> 
         <hr>
         <ul>
