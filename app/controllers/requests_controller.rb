@@ -13,15 +13,13 @@ class RequestsController < ApplicationController
     @id = params[:id] 
     if (Request.exists?(@id)) 
       @request = Request.find(@id) 
-      # @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
-      # @request.save
     else 
       redirect_to "/" 
     end 
     
   end
 
-
+# calculate estimated distance given the longitude and latitude of the offered ride (request)
   def distance(long1, lat1, long2, lat2)
     theta = long1 - long2
     rad_per_deg = Math::PI/180  # PI / 180
@@ -31,23 +29,8 @@ class RequestsController < ApplicationController
     dist = (Math.sin(dlat1) * Math.sin(dlat2)) + (Math.cos(dlat1) * Math.cos(dlat2) * Math.cos(dlon_diff))
     dist_acos  = Math.acos(dist)
     dist_deg = dist_acos * (180 / Math::PI)
-    dist_deg * 69.09 * 1.6093 # in Kilometers
-    # rkm = 6371                  # Earth radius in kilometers
-
-    # dlat_rad = (lat2-lat1) * rad_per_deg  # Delta, converted to rad
-    # dlon_rad = (long2-long1) * rad_per_deg
-
-    # lat1_rad = lat1 * rad_per_deg
-    # long1_rad = long1 * rad_per_deg
-    # lat2_rad = lat2 * rad_per_deg
-    # long2_rad = long2 * rad_per_deg
-    # # lat1_rad, lon1_rad = loc1.map {|i| i * rad_per_deg }
-    # # lat2_rad, lon2_rad = loc2.map {|i| i * rad_per_deg }
-
-    # a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon_rad/2)**2
-    # c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
-
-    # rkm * c # Delta in kilometers
+    dist_deg * 69.09 * 1.6093 # to convert mile in Kilometers
+   
   end
   
   
