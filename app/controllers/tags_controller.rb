@@ -19,10 +19,11 @@ class TagsController < ApplicationController
 				   @not.text=grant +" has tagged you in" + @request.name
 				  end
 			  end
+			  @tag.save
+              @not.save
 	     end
      end
-@tag.save
-@not.save
+
 end
 
 def index 
