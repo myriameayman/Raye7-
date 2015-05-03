@@ -29,6 +29,8 @@ def create
      end
  end
 
+
+# Returns all tags done by Renad.
 def index 
 	@tags=Tag.all
 end
