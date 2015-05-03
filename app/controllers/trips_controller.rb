@@ -21,9 +21,11 @@ def create
 		  unless(params[:id] == nil)
 		    @request=Request.find(params[:id])
 		    @owner = User.find(@request.user_id)
-		    @owner.budget = @owner.budget + 50
 		    @user = current_user
-		    @user.budget = @user.budget - 50
+		    @points = calc(@request.distance)
+		    @owner.budget = @owner.budget + @points
+		    @user.budget = @user.budget - @points
+
 		  	if(@request.seats>0)
 		  	 @request.seats=@request.seats - 1
 		  	 @request.save
@@ -34,6 +36,12 @@ def create
 		  end
 		  redirect_to "/"
 	end
+end
+
+def calc(distance)
+	liters = distance/10
+	liter_price = liters * 3
+	liter_price.ceil / 5
 end
 
 
