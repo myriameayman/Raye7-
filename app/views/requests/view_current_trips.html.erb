@@ -44,7 +44,7 @@
               
       console.log(trips[i].destination);
       console.log(trips[i].currentLoc);
-
+      
 
       var request = {
       origin: trips[i].currentLoc,
@@ -54,12 +54,12 @@
    
    lines[i]=line;
    console.log(lines[i]);
-    
+
  
    route[i]=request;
    console.log(route.length);
    assign();
-//animateCircle();     
+   animateCircle();     
 //        var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 //        directionsDisplay.setMap(map);
 
@@ -103,7 +103,7 @@
     }],
     map: map
   });
-   animateCircle();
+   //animateCircle();
 
 //for (var i = 0; i < route.length; i++) {
  var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);

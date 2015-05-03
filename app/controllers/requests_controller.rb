@@ -141,7 +141,6 @@ class RequestsController < ApplicationController
     @trips.each do |trip|
       @curLoc = trip.currentLoc
       @destination = trip.destination
-
     end
   end
   
