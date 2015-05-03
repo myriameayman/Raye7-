@@ -5,7 +5,7 @@ gem 'sqlite3'
 gem 'private_pub'
 gem 'thin'
 
-
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +29,7 @@ gem 'factory_girl_rails'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'public_activity'
 gem 'autoprefixer-rails'
-gem 'jquery-rails'
+#gem 'jquery-rails'
 gem 'twitter'
 gem 'devise', '~> 2.1.2'
 gem 'linkedin'

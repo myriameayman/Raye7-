@@ -43,6 +43,7 @@ class ProfilesController < ApplicationController
             @requests = Request.search params[:search]
           end
           @circles = @user.circles
+          @conversations = Conversation.involving(current_user).order("created_at DESC")
           session[:user_id]  = current_user.id
           if   current_user.present?
             #PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 10).reverse

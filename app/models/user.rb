@@ -31,6 +31,11 @@ class User < ActiveRecord::Base
       has_many :ratings
       has_many :trips
 
+
+     after_create :create_default_conversation
+
+
+
       has_many :conversations, :foreign_key => :sender_id
       has_many :visits
       has_many :places, through: :visits
@@ -45,8 +50,6 @@ class User < ActiveRecord::Base
       #validates :uid ,:presence => true,:uniqueness => {:case_sensitive => false}
       #validates :oauth_token ,:presence => true,:uniqueness => {:case_sensitive => false}
       
-       
- 
 
         def login=(login)
           @login =login
@@ -63,5 +66,13 @@ class User < ActiveRecord::Base
           where(conditions.to_h).firstName
         end
       end
+        private
+
+  # for demo purposes
+
+  def create_default_conversation
+    Conversation.create(sender_id: 1, recipient_id: self.id) unless self.id == 1
+  end
+
     end
 

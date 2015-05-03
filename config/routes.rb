@@ -1,7 +1,16 @@
 
 RsgLinkedinGem::Application.routes.draw do 
+
+get "conversations/create"
+
  
   get "messages/create"
+
+  get "messages/show"
+
+  get "conversations/create"
+
+  get "conversations/show"
 
   get "requests/index" 
 
@@ -86,6 +95,11 @@ RsgLinkedinGem::Application.routes.draw do
   resources :requests 
   
   resources :profiles 
+
+    resources :conversations do
+    resources :messages
+  end
+
   
   get '/show' => "circles#show" 
   
