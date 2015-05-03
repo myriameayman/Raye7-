@@ -34,10 +34,6 @@ class TripsControllerTest < ActionController::TestCase
         @user1 =User.new(:email =>'test1@example.com',:username => 'adel', :password => 'password',
         :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
         @user1.save
-        @user2 =User.new(:email =>'test2@example.com',:username => 'renad', :password => 'password',
-        :password_confirmation => 'password', :firstName => 'addddaaa', :lastName => 'aasdasdsad')
-        @user2.save
-        sign_in @user1
         assert_equal 1000 ,@user1.budget,"values are not the same"
     end
 
