@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ 
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,600italic,700">
+            
+    <link rel="stylesheet" type="text/css" href="/assets/libraries/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libraries/chosen/chosen.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libraries/rangeSlider/css/ion.rangeSlider.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libraries/rangeSlider/css/ion.rangeSlider.skinNice.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/variants/directory.css?20142206">
+    <link rel="stylesheet" type="text/css" href="/assets/libraries/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
+
+
+    <title><%= content_for?(:title) ? yield(:title) : "Raye7" %></title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+  <body>
+  <!-- start here -->
+  <div id="page">
+    <div id="header-wrapper">
+        <div id="header">
+            <div id="header-inner">
+                <nav class="navbar navbar-default">
+                    <div class="header-secondary">
+                        <div class="container clearfix">
+                           Welcome at Raye7
+                            
+                            <ul class="header-submenu pull-right">
+                            <% if user_signed_in? %>
+                              Logged in as <strong><%= current_user.email %></strong>
+                              &nbsp &nbsp &nbsp
+                               <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'fa fa-users color-gray-dark' ,:class =>'hidden-xs'  %>
+            
+                            <% else %>
+                              <%= link_to "Login", new_user_session_path, :class => 'fa fa-users color-gray-dark' ,:class =>'hidden-xs' %> &nbsp &nbsp &nbsp
+                               <%= link_to "Sign up", new_user_registration_path, :class => 'fa fa-users color-gray-dark' ,:class =>'hidden-xs'  %> 
+
+                           <% end %>
+                            </ul>
+                        </div><!-- /.container -->
+                    </div><!-- /.header-secondary -->
+
+                    <div class="container" style="background-color: #337AB7;">
+
+                        <div class="navbar-header">
+                            
+                            <a class="navbar-brand" href="#">
+                                <span class="logo-styled">
+                                    <span class="logo-title" style="color: white;">
+                                       <!-- <img src="../assets/logo-directory.png" alt=""> --> Raye7
+                                    </span><!-- /.logo-title -->
+                                    <span class="logo-subtitle hidden-sm"><br/> </span>
+                                </span><!-- /.logo-styled -->
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-main">
+                            <ul class="nav navbar-nav navbar-right"> </ul><!-- /.nav -->   
+                     </div><!-- /.navbar-collapse -->
+                    </div>
+                </nav>
+            </div><!-- /#header-inner -->
+        </div><!-- /#header -->
+    </div><!-- /#header-wrapper -->
+  <!-- Last modified before here -->
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+
+  <%= yield %>
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <%= javascript_include_tag "application" %>
+
+      <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" >
+    </script>
+    <script type="text/javascript"  src="javascripts/jquery.min.js" ></script>
+    <script type="text/javascript"  src="javascripts/bootstrap.min.js" ></script>
+    <script type="text/javascript"  src="javascripts/jquery.js" ></script>   
+    <script type="text/javascript"  src="javascripts/jquery_ujs.js" ></script>   
+    <script type="text/javascript"  src="javascripts/map/gmap.js" ></script>
+  
+
+          
+    <footer>
+    <!--
+  <div class="container">
+    Rails Girls 2015
+  </div>
+  -->
+
+</footer>
+
+
+
+
+<script type="text/javascript" src="../../assets/libraries/bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../../assets/libraries/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/libraries/isotope/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="../../assets/libraries/rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.js"></script>
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.canvas.js"></script>
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.resize.js"></script>
+<script type="text/javascript" src="../../assets/libraries/flot/jquery.flot.time.js"></script>
+
+<script type="text/javascript" src="../../assets/js/map.js"></script>
+<script type="text/javascript" src="../../assets/js/graph.js"></script>
+<script type="text/javascript" src="../../assets/js/director.js"></script>
+
+
+
+<script type="text/javascript" src="../assets/libraries/jquery.js"></script>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="../assets/libraries/gmap3.clusterer.js"></script>
+<script type="text/javascript" src="../assets/libraries/gmap3.infobox.js"></script>
+
+
+<script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/carousel.js"></script>
+<script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/collapse.js"></script>
+<script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/dropdown.js"></script>
+<script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/tab.js"></script>
+<script type="text/javascript" src="../assets/libraries/bootstrap/javascripts/bootstrap/transition.js"></script>
+
+<script type="text/javascript" src="../assets/map.js"></script>
+<script type="text/javascript" src="../assets/graph.js"></script>
+<script type="text/javascript" src="../assets/director.js"></script>
+  </body>
+</html>
