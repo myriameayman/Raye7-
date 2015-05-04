@@ -3,9 +3,9 @@ class CirclesController < ApplicationController
   def index
   end
 
+# Having an id of a circle find it and save it to a variable @circle 
   def show
   	@user = current_user
-
   	if (Circle.exists?(params[:id]))
   		@circle = Circle.find(params[:id])
   		unless(@user.circles.exists?(@circle))
