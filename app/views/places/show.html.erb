@@ -1,0 +1,36 @@
+<!-- The place to be shown --> 
+<%= @place.name %>
+
+<div id='map-canvas'>
+</div> <!-- closing of map-canvas --> 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+ // Initialize map. 
+  function initialize() {
+    // Long of the place to be shown. 
+    var log = <%= @place.long.to_json.html_safe %>;
+    // Lat of the place to be shown.
+    var lat = <%= @place.lat.to_json.html_safe %>;
+    // The long and lat of the place to be marked.  
+    var myLatlng = new google.maps.LatLng(log,lat);
+    // Name of the place to be shown. 
+    var placeName = <%= @place.name.to_json.html_safe %>;
+    var map;
+    var mapOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(log,lat),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    // Creating the map and putting it in the map-canvas part in the page.
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+       mapOptions);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: placeName
+     });
+
+  } // Closing of initialize function.  
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
