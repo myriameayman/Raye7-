@@ -18,13 +18,21 @@
   <strong>To:</strong>
   <%= @request.destination %>
 <% end %>
+<<<<<<< HEAD
 </p>
+=======
+
+ </p>
+ 
+
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
  <%= form_tag :controller => 'trips', :action => 'create', :method => 'post',id: @request.id do %>
 
 
 	      <button> join <%=@request.name %></button><!--/# Join the user to this Request -->. 
 	      
 	<% end %> 
+<<<<<<< HEAD
 
 
   <%= form_tag :controller => 'tags', :action => 'create', :method => 'post' ,id:@request.id  do %>
@@ -33,3 +41,5 @@
           <br>
           <%= submit_tag "tag", :name => nil %>
   <% end %>
+=======
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c

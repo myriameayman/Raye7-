@@ -1,3 +1,4 @@
+
 # Step of the offering ride form. 
 @@form_step = nil 
 # Request to be created in the offering ride form. 
@@ -133,4 +134,3 @@ class RequestsController < ApplicationController
   def delete 
   end 
  
-end

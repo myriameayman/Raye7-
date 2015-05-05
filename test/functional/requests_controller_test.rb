@@ -81,17 +81,20 @@ class RequestsControllerTest < ActionController::TestCase
   end
   
   
-  test "should get create2" do
+
+  test "should get checkpoints" do
     @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
     @user.save
     sign_in @user
     @@form_step = 2 
     @@request = Request.new
-    get :create_curr_location
-    String url = "http://test.host/requests/create"
-    assert_redirected_to url 
+    get :create_checkpoints
+    assert :success 
+   
   end
+
+
   test "should show request" do
     @user =User.new(:email =>'test2@example.com',:username => 'adel', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')

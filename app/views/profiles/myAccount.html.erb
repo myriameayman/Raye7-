@@ -47,6 +47,7 @@
     padding: 0 8px;
     border-radius: 4px;
     cursor: pointer;
+<<<<<<< HEAD
   }
 .panel.panel-default{
   	border-radius:60px;
@@ -66,6 +67,27 @@
   <div class="row">
 
 	    <div class="col-md-3" style="padding-left:40px">
+=======
+  } 
+  .panel.panel-default{
+	border-radius:60px;
+	}
+  #navlist{
+	display: none;
+   }
+  #navlist:hover{
+     display: block;
+   }
+
+</style>
+<body>
+  <div class="row">
+
+
+
+	    <div class="col-md-3" style="padding-left:40px">
+
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 		    <div class="image-frame">
 		        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
 		        </div><!-- close div if profile image-->
@@ -93,10 +115,15 @@
   <div class="row" style="padding-top:40px">
 
     <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
     <div id='cssmenu'>
 		<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
 		   <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
 		   <li><a href='#'><span>Home</span></a></li>
+<<<<<<< HEAD
 		   <li class='active has-sub'><a href='#'><span>MyCircles</span></a>
 		      <ul>
 		      		<% @circles.each do |c| %>
@@ -106,6 +133,16 @@
 		      </ul>
 		   </li>
 		   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a>
+=======
+		   <li class='active has-sub'><a href='#'><span>My Circles</span></a>
+		      <ul>
+		      		<% @circles.each do |c| %>
+			 			<li class='has-sub'><%= link_to c.name, controller: "circles", action: "show", id: c.id %></li>
+					<% end %>
+		      </ul>
+		   </li>
+		   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a> <!-- connect to Circles  -->
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 		      <ul>
 			      		<li>
 
@@ -118,18 +155,31 @@
 				      			<% unless(@user.circles.exists?(:name => "twitter")) %>
 						      		
 									  <div class="col-lg-4">
+<<<<<<< HEAD
 									    <div class="round-button" style="width:80px;float:left">
 									        <div id="round-button-circle">
 									          <a href="/twitter_oauth_url" class="round-button">Twitter</a>
+=======
+									    <div class="round-button" style="width:110px;float:left">
+									        <div id="round-button-circle">
+
+									          <a href="/twitter_oauth_url" style="padding-top:50px;height:200px;">Twitter</a>
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 									        </div>
 									    </div>
 									  </div>
 								<% end %>
 								<% unless(@user.circles.exists?(:name => "googlePlus")) %>
 									  <div class="col-lg-4">
+<<<<<<< HEAD
 									    <div class="round-button" style="width:80px;float:left;">
 									        <div id="round-button-circle-2">
 									          <a href="http://localhost:4567" class="round-button">Google+</a>
+=======
+									    <div class="round-button" style="width:110px;float:left;margin-left:40px">
+									        <div id="round-button-circle-2">
+									          <a href="http://localhost:4567" style="padding-top:50px;height:200px;" class="round-button">Google+</a>
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 									        </div>
 									    </div>
 									  </div>
@@ -142,23 +192,39 @@
 					    </li>
 
 		      </ul>
+<<<<<<< HEAD
 		   </li>
+=======
+		   </li> <!-- end of connecting to circles -->
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 		   <li class='active has-sub'><a href='#'><span>Update circles</span></a>
 		      <ul>
 			      		<li>
 			      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
 				      		<div class="col-lg-4">
+<<<<<<< HEAD
 								<div class="round-button" style="width:80px;float:left">
 								    <div id="round-button-circle-1">
 										    <a href="#" class="round-button">facebook</a>
+=======
+								<div class="round-button" style="width:110px;float:left">
+								    <div id="round-button-circle-1">
+										    <a href="#" style="padding-top:50px;height:200px;" class="round-button">facebook</a>
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 									</div>
 								</div>
 							</div>
 							<% if(@user.circles.exists?(:name => "twitter")) %>
 									  <div class="col-lg-4">
+<<<<<<< HEAD
 									    <div class="round-button" style="width:80px;float:left">
 									        <div id="round-button-circle">
 									          <a href="/#" class="round-button">Twitter</a>
+=======
+									    <div class="round-button" style="width:110px;float:left;margin-left:40px">
+									        <div id="round-button-circle">
+									          <a href="/#" style="padding-top:50px;height:200px;" class="round-button">Twitter</a>
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 									        </div>
 									    </div>
 									  </div>
@@ -181,6 +247,7 @@
 
 		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
 		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
+<<<<<<< HEAD
 		   <li><%= link_to "notification", :controller =>'notifications',
 		  	:action => 'index' %></li>
 		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
@@ -190,6 +257,19 @@
 
 
   <div class="col-md-8">
+=======
+		   <li><%= link_to "add email", controller: "emails", action: "index" %></li>
+			<!-- # A link to add email @ebrahim-elgaml -->
+		   <li class='last' style="border-bottom:none;"><a href="#" id="invite_fb_friends" onClick="inviteFriends();"><span>Invite your facebook friends
+</span></a></li><!-- # A link to invite Facebook Friends @ebrahim-elgaml -->
+
+		</ul>
+</div>     
+  </div> <!-- end of side menu tag -->
+
+
+  <div class="col-md-8"> <!-- container search for an offered ride -->
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
       <h3 class="panel-title"> Search for a trip</h3>
@@ -204,15 +284,24 @@
        <hr>
        <ul>
 		  <% @requests.each do |grant| %>
+<<<<<<< HEAD
 			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',
+=======
+			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, 	:controller =>'requests',
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 		  	:action => 'show', id: grant.id  %></li></h6>
 		  <% end %>
 		</ul><!--/#unsorted list -->
        
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
       </div><!--/#class panel-body-->
     </div><!--/#class panel-heading-->
   </div><!--/#class col-md-8-->
 
+<<<<<<< HEAD
   <div class="col-md-8">
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
@@ -236,3 +325,58 @@
 
 </html>
 	   
+=======
+
+  <div class="col-md-8"> <!-- News feed container -->
+    <div class= "panel panel-default" style="border-top-left-radius: 4px">
+     <div class="panel-heading"> <!-- Container header -->
+      <h3 class="panel-title"> News Feed</h3>
+
+
+     </div> <!-- end of header -->
+      <div class="panel-body"> <!-- loop on activities -->
+      	<h6 style="font-style:normal;font-size:15px">What's going on</h6>
+		<% if(@activities.present?) %> <!-- if any activities available -->
+			<% @activities.each do |activity| %>
+				<% if activity.owner.present? %>
+					<hr>
+				 	<%= link_to activity.owner.username if activity.owner %>
+				 	<%= render_activity activity %>
+			 	<%end%>
+			<%end%>
+		<% else %> <!-- end of loop -->
+			<h6 style="font-style:normal;font-size:12px">No news</h6>
+		<% end %> <!-- end of activities tag -->
+		
+
+      </div>
+    </div>
+  </div> <!-- end of news feed container -->
+
+
+
+</div>
+  
+
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+	function inviteFriends(){
+		FB.init({
+	        appId: '716016431848330',
+	        status: true,
+	        cookie: false,
+	        // xfbml: true
+	        });
+		FB.ui({
+	method: 'send',
+	message: '<%=current_user.name %> has invite you to a party for>',
+	link: 'http://raye7.com/'});
+
+	}
+</script>
+
+</body>
+
+</html>
+	   
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c

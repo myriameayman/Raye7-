@@ -3,8 +3,6 @@ class FacebookController < ApplicationController
 
 # Checks that there is a currently authunticated user. 
   before_filter :authenticate_user!
-
-      
 # Add Facebook attributes to a user who is signing up to RAYE7 after redirecting him to facebook auth page.
 # The variables : @user => current user , @fb_friends => get tokens of user facebook friends.  
                 # @graph => token of the user profile , profile => current user profile.
@@ -12,6 +10,8 @@ class FacebookController < ApplicationController
                 # @user.provider => "facebook" , @user.id => facebook user id.
                 # @user.fb_email => user's facebook email , @user.facebook_profileimage => url for user's facebook profile image.
                 # @user.oauth_token => the user's facebook oauthuntication token.
+
+                # @user.gender => the user's facebook gender[ male or femal ].
    def create
 
     @user = current_user
@@ -23,6 +23,8 @@ class FacebookController < ApplicationController
     @user.provider = env["omniauth.auth"].provider
     @user.uid = env["omniauth.auth"].uid
     @user.fb_email = env["omniauth.auth"].info.email
+
+    @user.gender = env["omniauth.auth"].extra.raw_info.gender
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
  
@@ -48,6 +50,15 @@ class FacebookController < ApplicationController
         fbFriend.fb_id = f["id"] 
         fbFriend.save  
     end   
+        friendUser = User.find(:all, :conditions => ['uid LIKE ?' , f["id"]])
+        #fUser = nil
+        friendUser.each do |u|
+          fbFriend.app_id = u.id
+        end
+        #fbFriend.app_id = fUser.user_id
+        fbFriend.fb_id = f["id"]
+        fbFriend.save  
+    end
 
     # Save the user info in the database.    
     

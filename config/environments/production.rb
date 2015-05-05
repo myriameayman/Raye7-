@@ -60,6 +60,21 @@ RsgLinkedinGem::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+<<<<<<< HEAD
+=======
+  config.action_mailer.raise_delivery_errors = true
+ config.action_mailer.default_url_options = { :host => '0.0.0.0:3000' }
+  config.action_mailer.delivery_method = :smtp
+# SMTP settings for gmail
+config.action_mailer.smtp_settings = {
+ :address              => "smtp.gmail.com",
+ :port                 => 587,
+ :user_name            => ENV['gmail_username'],
+ :password             => ENV['gmail_password'],
+ :authentication       => "plain",
+:enable_starttls_auto => true
+}
+>>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
