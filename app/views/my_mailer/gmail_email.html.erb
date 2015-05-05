@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body><!--Body of the email that will ber sent @ebrahim-elgaml -->
+    <h1>Hi <%= @myUser.username %></h1>
+    <p>
+      You have already registered as a Raye7 member 
+  To verify your account  your account
+    </p>
+    <% @myUser.verification = true %>
+    <a href = "http://localhost:3000/profiles/verifyMe"> My Account </a>
+
+  </body>
+</html>
