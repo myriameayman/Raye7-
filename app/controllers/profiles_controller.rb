@@ -1,3 +1,4 @@
+
 class ProfilesController < ApplicationController
     before_filter :authenticate_user!
   # A new user will be redirected to that action waiting to verify his/her email @brahim-elgaml.

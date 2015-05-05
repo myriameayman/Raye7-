@@ -27,5 +27,7 @@ class Request < ActiveRecord::Base
       def my_string_is_valid
         self.errors.add :base, 'My string can not be nil' if self.air_conditioner.nil?
         self.errors.add :base, 'My string can not be nil' if self.car_color.nil? 
+
       end
+
 end

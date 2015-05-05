@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class RequestsControllerTest < ActionController::TestCase
+
   include Devise::TestHelpers
 
   test "should get create" do
@@ -133,3 +134,4 @@ class RequestsControllerTest < ActionController::TestCase
   
 
 end
+

@@ -8,9 +8,6 @@ class RequestsController < ApplicationController
 
 # Make sure there is a currently logged in user. 
   before_filter :authenticate_user! 
-
- 
- 
 # Show shows a specific requests with a certain id.
 # If it doesn't found it it will redirect it to home page again.
   def show 
@@ -18,12 +15,40 @@ class RequestsController < ApplicationController
     @id = params[:id] 
     if (Request.exists?(@id)) 
       @request = Request.find(@id) 
-
+      hi = 2
+      h = 3
+      @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
+      @request.save
     else 
       redirect_to "/" 
     end 
     
   end 
+
+  def calculate_value(x,y)
+    x + y
+  end
+
+  def distance(long1, lat1, long2, lat2)
+    rad_per_deg = Math::PI/180  # PI / 180
+    rkm = 6371                  # Earth radius in kilometers
+    rm = rkm * 1000             # Radius in meters
+
+    dlat_rad = (lat2-lat1) * rad_per_deg  # Delta, converted to rad
+    dlon_rad = (long2-long1) * rad_per_deg
+
+    lat1_rad = lat1 * rad_per_deg
+    long1_rad = long1 * rad_per_deg
+    lat2_rad = lat2 * rad_per_deg
+    long2_rad = long2 * rad_per_deg
+    # lat1_rad, lon1_rad = loc1.map {|i| i * rad_per_deg }
+    # lat2_rad, lon2_rad = loc2.map {|i| i * rad_per_deg }
+
+    a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon_rad/2)**2
+    c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
+
+    rkm * c # Delta in meters
+  end
   
   
 
@@ -261,10 +286,11 @@ end
       @destination = trip.destination
     end
   end
+
   
 
   def edit 
-  end 
+  end
 
 
   def delete 
