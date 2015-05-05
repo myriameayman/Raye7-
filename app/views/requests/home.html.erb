@@ -2,15 +2,16 @@
 
 
 <div class="container">
-<<<<<<< HEAD
+
     <div style= "position:absolute;padding-top:504px;float:center;right:500px;width:100%;">
 
         <div class="google-map-filter col-xs-12 col-sm-4  pull-right"  style="width: 60%">
-=======
+
+
+
     <div style= "position:absolute;padding-top:504px;float:center;right:500px;width:100%;padding-left:30%;">
 
         <div class="google-map-filter col-xs-12 col-sm-4  pull-right"  style="width:80%">
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
           <h1>ENTER LOCATION </h1><br>
 
               <div id="search_options" class="form-group">
@@ -29,20 +30,33 @@
 
                   </div> <!-- closing of reverse_geocoding_fields -->
 <script>
-<<<<<<< HEAD
-=======
 
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
+
+
 // Method to be called when click on continue. 
 function get_curr_location() {
     var loc = document.getElementById("search_box_geocoding").value;
     // Redirected to requests/update.
-<<<<<<< HEAD
-=======
 
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
     window.location.replace('/requests/create_curr_location?latitude='+output2+'&longitude='+output+'&loc='+loc);
 }
+/*function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+} */
 </script> 
 <a class="submit_button" href='#' onClick="get_curr_location();">
  Continue 

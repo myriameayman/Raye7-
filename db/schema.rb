@@ -10,10 +10,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20150430092515) do
-=======
 ActiveRecord::Schema.define(:version => 20150501061943) do
 
   create_table "activities", :force => true do |t|
@@ -32,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
   add_index "activities", ["owner_id", "owner_type"], :name => "index_activities_on_owner_id_and_owner_type"
   add_index "activities", ["recipient_id", "recipient_type"], :name => "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], :name => "index_activities_on_trackable_id_and_trackable_type"
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
 
   create_table "basic_profiles", :force => true do |t|
     t.string   "first_name"
@@ -57,8 +52,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "updated_at", :null => false
   end
 
-<<<<<<< HEAD
-=======
+
   create_table "checkpoints", :force => true do |t|
     t.integer  "request_id"
     t.integer  "place_id"
@@ -66,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "updated_at", :null => false
   end
 
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
+
   create_table "circles", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -100,10 +94,8 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.integer  "circle_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-<<<<<<< HEAD
-=======
     t.integer  "app_id"
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
+
   end
 
   create_table "full_profiles", :force => true do |t|
@@ -124,7 +116,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "updated_at", :null => false
   end
 
-<<<<<<< HEAD
+
   create_table "notifications", :force => true do |t|
     t.integer  "notifying"
     t.integer  "notified"
@@ -133,8 +125,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "updated_at", :null => false
   end
 
-=======
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
+
   create_table "places", :force => true do |t|
     t.decimal  "long"
     t.decimal  "lat"
@@ -180,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "name"
     t.string   "currentLoc"
     t.string   "user_id"
-<<<<<<< HEAD
+
   end
 
   create_table "tags", :force => true do |t|
@@ -189,10 +180,11 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.integer  "request_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-=======
+
+    t.integer  "distance"
     t.boolean  "girls_only"
     t.boolean  "gentlemen_only"
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
+
   end
 
   create_table "trips", :force => true do |t|
@@ -211,13 +203,9 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
   end
 
   create_table "users", :force => true do |t|
-<<<<<<< HEAD
+
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
-=======
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -228,13 +216,9 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "last_sign_in_ip"
     t.string   "firstName"
     t.string   "lastName"
-<<<<<<< HEAD
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-=======
+
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
     t.string   "username"
     t.string   "name"
     t.string   "screen_name"
@@ -251,11 +235,9 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "faceboook_profileimage"
-<<<<<<< HEAD
-=======
+
     t.string   "gender"
     t.boolean  "verification",           :default => false
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
