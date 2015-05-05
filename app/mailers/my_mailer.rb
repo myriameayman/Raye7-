@@ -18,13 +18,21 @@ class MyMailer < ActionMailer::Base
     mail(from:'raye7.egypt@gmail.com',to: @grant, subject: 'Confirmation to add Email [Raye7]')
   end
 
+  # Action to send  email on filling feedback form to the webmaster @ebrahim-elgaml.
+  # @myUser is the current user @ebrahim-elgaml.
+  # @title is the title of the feedback @ebrahim-elgaml.
+  # @body is the body of the feedback @ebrahim-elgaml.
   def send_feedback(user,title,message)
     @myUser = user
     @title = title
     @message = message
     mail(from:'raye7.egypt@gmail.com',to: 'ebrahim.el.gaml@gmail.com', subject: 'feedback')
-    #mail(from:'raye7.egypt@gmail.com',to: @myUser.email, subject: 'feedback')
   end
+
+  # Action to send  email on filling feedback form to the user @ebrahim-elgaml.
+  # @myUser is the current user @ebrahim-elgaml.
+  # @title is the title of the feedback @ebrahim-elgaml.
+  # @body is the body of the feedback @ebrahim-elgaml.
   def send_feedback_to_user(user,title,message)
     @myUser = user
     @title = title
@@ -36,4 +44,5 @@ class MyMailer < ActionMailer::Base
   def sample_email(user)
     mail(to:'raye7.egypt@gmail.com', subject: 'Confirmation Email')
   end
+  
 end
