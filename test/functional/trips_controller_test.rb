@@ -14,7 +14,7 @@ class TripsControllerTest < ActionController::TestCase
         @mytrip=Trip.new(:user_id => @user.id,:request_id=> @myrequest.id)
         @mytrip.save
         get :create
-        assert :success 
+        assert :failure 
     end 
 
     test "shouldnot join a trip with seats less than 1" do
