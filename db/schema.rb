@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "name"
     t.string   "currentLoc"
     t.string   "user_id"
+    t.integer  "distance"
     t.boolean  "girls_only"
     t.boolean  "gentlemen_only"
   end

@@ -8,9 +8,6 @@ class RequestsController < ApplicationController
 
 # Make sure there is a currently logged in user. 
   before_filter :authenticate_user! 
-
- 
- 
 # Show shows a specific requests with a certain id.
 # If it doesn't found it it will redirect it to home page again.
   def show 
@@ -18,12 +15,60 @@ class RequestsController < ApplicationController
     @id = params[:id] 
     if (Request.exists?(@id)) 
       @request = Request.find(@id) 
-
+<<<<<<< HEAD
+=======
+      hi = 2
+      h = 3
+      @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
+      @request.save
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
     else 
       redirect_to "/" 
     end 
     
+<<<<<<< HEAD
+  end
+
+# calculate estimated distance given the longitude and latitude of the offered ride (request)
+  def distance(long1, lat1, long2, lat2)
+    theta = long1 - long2
+    rad_per_deg = Math::PI/180  # PI / 180
+    dlat1 = lat1 * rad_per_deg
+    dlat2 = lat2 * rad_per_deg
+    dlon_diff = theta *rad_per_deg
+    dist = (Math.sin(dlat1) * Math.sin(dlat2)) + (Math.cos(dlat1) * Math.cos(dlat2) * Math.cos(dlon_diff))
+    dist_acos  = Math.acos(dist)
+    dist_deg = dist_acos * (180 / Math::PI)
+    dist_deg * 69.09 * 1.6093 # to convert mile in Kilometers
+   
+=======
   end 
+
+  def calculate_value(x,y)
+    x + y
+  end
+
+  def distance(long1, lat1, long2, lat2)
+    rad_per_deg = Math::PI/180  # PI / 180
+    rkm = 6371                  # Earth radius in kilometers
+    rm = rkm * 1000             # Radius in meters
+
+    dlat_rad = (lat2-lat1) * rad_per_deg  # Delta, converted to rad
+    dlon_rad = (long2-long1) * rad_per_deg
+
+    lat1_rad = lat1 * rad_per_deg
+    long1_rad = long1 * rad_per_deg
+    lat2_rad = lat2 * rad_per_deg
+    long2_rad = long2 * rad_per_deg
+    # lat1_rad, lon1_rad = loc1.map {|i| i * rad_per_deg }
+    # lat2_rad, lon2_rad = loc2.map {|i| i * rad_per_deg }
+
+    a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon_rad/2)**2
+    c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
+
+    rkm * c # Delta in meters
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
+  end
   
   
 
@@ -54,11 +99,14 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @destination
-      redirect_to url_for(:controller => "requests", :action => "create_route")  
+      unless (@@request.long_curr == nil)
+        @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
+    end
+      redirect_to url_for(:controller => "requests", :action => "create_route")   
 
+    end 
   end 
   
-end  
 # Index return a list of all available requests.
   def index 
     unless(params[:search==nil]) 
@@ -199,7 +247,7 @@ end
     @@request.user_id = current_user.id 
     @@form_step = @@form_step + 1 
 
-  end 
+  end
 
   
 # Responding on clicking on geocoding link in home. 
@@ -239,7 +287,7 @@ end
     @@request.trunk= @trunk 
     @@request.name= @name 
     @@request.girls_only = @girls
-    @@request.gentlemen_only = @gentlemen 
+    @@request.gentlemen_only = @gentlemen    
     @@request.save  
     @@checkpoint.each do |x| 
       c = Checkpoint.new 
@@ -250,6 +298,8 @@ end
     redirect_to root_path 
   end 
 
+<<<<<<< HEAD
+=======
 # By : AhmedAdelIbrahim
 # Method finctionality : retrieve all the requests (trip) info from the database.
 # The variables : @trips -> all info about trips , @count -> number of trips. 
@@ -261,10 +311,12 @@ end
       @destination = trip.destination
     end
   end
+
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
   
 
   def edit 
-  end 
+  end
 
 
   def delete 

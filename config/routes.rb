@@ -1,6 +1,9 @@
 
 RsgLinkedinGem::Application.routes.draw do 
  
+
+  get "friends/index"
+
   get "emails/index"
 
   get "emails/delete"
@@ -18,9 +21,11 @@ RsgLinkedinGem::Application.routes.draw do
   get "emails/add_email"
 
   get"feedback/index"
+
   post"feedback/create"
+  
   get "feedback/create"
- 
+
   get "requests/index" 
 
   get "requests/new" 
@@ -37,8 +42,6 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/create_route"
   #get "requests/home"
-
-  get "requests/view_current_trips"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
 
@@ -61,11 +64,13 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "profiles/index" 
 
-  get "profiles/edit" 
+  get "profiles/edit"
+  get "friends/index", to: "friends#index", as: "friends"
 
   get "welcome/index" 
   
   get "profiles/search" 
+
   
   get "profiles/show1" 
   
@@ -149,6 +154,7 @@ RsgLinkedinGem::Application.routes.draw do
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
   resources :circles 
+  resources :friends
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
       root :to => 'user/registrations#myAccount' 
