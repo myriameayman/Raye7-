@@ -4,7 +4,7 @@
   <title></title>
 </head>
 <body>
-<div class="cont" style="width:550px;margin-top:10px;height:280px;margin-left: auto;
+  <div class="cont" style="width:550px;margin-top:10px;height:280px;margin-left: auto;
     margin-right: auto;">
                 <div class="header">
                     <h1 style="font-size:20px">Join This Trip!</h1>
@@ -19,7 +19,7 @@
                         </div><!-- close div if profile image-->
                     </div><!-- close tdi of image frame -->
                   </div>
-                  <div  class="col-md-6" style="padding-top:10px">
+                  <div class="col-md-6" style="padding-top:10px">
                     <p>
                       <% unless (@request.name==nil) %> 
                         <strong>Trip name:</strong>
@@ -46,18 +46,13 @@
                         <%= @request.distance %>
                         Km
                       <% end %>
-                       </p>
-                       
-
+                       </p>                     
                        <%= form_tag :controller => 'trips', :action => 'create', :method => 'post',id: @request.id  do %>
                       <button class ="myButton"> Join <%=@request.name %></button><!--/# Join the user to this Request -->. 
                     <% end %> 
                     </div>
                 </div>              
      </div>
-     </div>
-
-  
-
+  </div>
 </body>
 </html>

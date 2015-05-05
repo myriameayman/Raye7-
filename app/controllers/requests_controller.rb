@@ -15,14 +15,33 @@ class RequestsController < ApplicationController
     @id = params[:id] 
     if (Request.exists?(@id)) 
       @request = Request.find(@id) 
+<<<<<<< HEAD
+=======
       hi = 2
       h = 3
       @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
       @request.save
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
     else 
       redirect_to "/" 
     end 
     
+<<<<<<< HEAD
+  end
+
+# calculate estimated distance given the longitude and latitude of the offered ride (request)
+  def distance(long1, lat1, long2, lat2)
+    theta = long1 - long2
+    rad_per_deg = Math::PI/180  # PI / 180
+    dlat1 = lat1 * rad_per_deg
+    dlat2 = lat2 * rad_per_deg
+    dlon_diff = theta *rad_per_deg
+    dist = (Math.sin(dlat1) * Math.sin(dlat2)) + (Math.cos(dlat1) * Math.cos(dlat2) * Math.cos(dlon_diff))
+    dist_acos  = Math.acos(dist)
+    dist_deg = dist_acos * (180 / Math::PI)
+    dist_deg * 69.09 * 1.6093 # to convert mile in Kilometers
+   
+=======
   end 
 
   def calculate_value(x,y)
@@ -48,6 +67,7 @@ class RequestsController < ApplicationController
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
 
     rkm * c # Delta in meters
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
   end
   
   
@@ -79,11 +99,14 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @destination
-      redirect_to url_for(:controller => "requests", :action => "create_route")  
+      unless (@@request.long_curr == nil)
+        @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
+    end
+      redirect_to url_for(:controller => "requests", :action => "create_route")   
 
+    end 
   end 
   
-end  
 # Index return a list of all available requests.
   def index 
     unless(params[:search==nil]) 
@@ -224,7 +247,7 @@ end
     @@request.user_id = current_user.id 
     @@form_step = @@form_step + 1 
 
-  end 
+  end
 
   
 # Responding on clicking on geocoding link in home. 
@@ -264,7 +287,7 @@ end
     @@request.trunk= @trunk 
     @@request.name= @name 
     @@request.girls_only = @girls
-    @@request.gentlemen_only = @gentlemen 
+    @@request.gentlemen_only = @gentlemen    
     @@request.save  
     @@checkpoint.each do |x| 
       c = Checkpoint.new 
@@ -275,6 +298,8 @@ end
     redirect_to root_path 
   end 
 
+<<<<<<< HEAD
+=======
 # By : AhmedAdelIbrahim
 # Method finctionality : retrieve all the requests (trip) info from the database.
 # The variables : @trips -> all info about trips , @count -> number of trips. 
@@ -287,6 +312,7 @@ end
     end
   end
 
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
   
 
   def edit 
