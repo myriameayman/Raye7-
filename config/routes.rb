@@ -15,6 +15,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "requests/delete" 
 
+  get "notifications/index"
   #get "requests/home"
   
   get 'auth/:provider/callback', to: 'facebook#create' 

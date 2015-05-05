@@ -10,9 +10,6 @@
 
 <style type="text/css">
  /*added Code */
-
-
-
 /*end of Added code */
   .mini-submenu{
     display:none;  
@@ -23,11 +20,9 @@
     /*position: relative;*/
     width: 42px;
   }
-
   .mini-submenu:hover{
     cursor: pointer;
   }
-
   .mini-submenu .icon-bar {
     border-radius: 1px;
     display: block;
@@ -35,11 +30,9 @@
     width: 22px;
     margin-top: 3px;
   }
-
   .mini-submenu .icon-bar {
     background-color: #000;
   }
-
   #slide-submenu{
     background: rgba(0, 0, 0, 0.45);
     display: none;
@@ -57,8 +50,6 @@
 #navlist:hover{
 	display: block;
 }
-
-
 </style>
 <body>
 
@@ -181,7 +172,8 @@
 
 
 		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
-		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
+		   <li><%= link_to "view all my places", controller: "places", action: "create"%></li>
+		   <li><%= link_to "notifications", :controller =>'notifications',:action => 'index' %></li>
 		   <li class='last' style="border-bottom:none;"><a href='#'><span>Contact</span></a></li>
 		</ul>
 </div>     
@@ -245,5 +237,3 @@
   
 </body>
 
-</html>
-	   

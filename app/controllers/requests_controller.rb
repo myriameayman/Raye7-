@@ -34,6 +34,7 @@ class RequestsController < ApplicationController
   # /home is redirected to home view. 
   # /requests/create is redireted to the create view in requests folder.
   def create_curr_location 
+    @id=current_user.id
     if @@form_step == nil 
       redirect_to root_path  
     end
@@ -51,11 +52,36 @@ class RequestsController < ApplicationController
       @@request.long_destination= @longitude 
       @@request.destination= @loc
 
+      @places=Place.find(:all,:conditions => ['long LIKE ? AND lat LIKE ?',@ongitude,@latitude])
+
+      if(@places.empty?)
+       @place=Place.new
+       @place.long=params[:longitude]
+       @place.lat=params[:latitude]
+       @place.name=@loc
+       @place_id=@place.id
+       @place.save
+      else
+       @place=@places[0]
+      end
+
+
+       @visits=Visit.all
+       @visits.each do |grant|
+        @visit_id=grant.id
+       # @visit=Visit.find(@visit_id)
+        if(grant.noVisited>2 )
+          @notification=Notification.new
+          @notification.notifying=@id
+          @notification.notified=grant.user_id
+          @notification.text=  "has offered a ride to " 
+          @notification.save
+        end
+       end
       redirect_to url_for(:controller => "requests", :action => "create")  
 
     end 
-  end 
-  
+  end
   
 # Index return a list of all available requests.
   def index 
