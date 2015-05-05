@@ -81,7 +81,8 @@ class RequestsControllerTest < ActionController::TestCase
   end
   
   
-  test "should get create2" do
+  test "should draw route" do
+
     @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
     @user.save
@@ -89,9 +90,22 @@ class RequestsControllerTest < ActionController::TestCase
     @@form_step = 2 
     @@request = Request.new
     get :create_curr_location
-    String url = "http://test.host/requests/create"
+    String url = "http://test.host/requests/create_route"
     assert_redirected_to url 
   end
+  
+  test "should get checkpoints" do
+    @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
+    @@form_step = 2 
+    @@request = Request.new
+    get :create_checkpoints
+    assert :success 
+   
+  end
+
   test "should show request" do
     @user =User.new(:email =>'test2@example.com',:username => 'adel', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
@@ -103,5 +117,19 @@ class RequestsControllerTest < ActionController::TestCase
     get :show, :id => @myrequest.id
     assert_response :success
   end
+
+
+  test "should draw all running trips" do
+    @user = User.new(:email => 'test@example.com',:username => 'Ahmed', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Ahmed', :lastName => 'Adel')
+    @user.save
+    sign_in @user
+    @@form_step = 2 
+    @@request = Request.new
+    get :view_current_trips
+    String url = "http://test.host/requests/view_current_trips"
+    assert_response :success
+  end
+  
 
 end

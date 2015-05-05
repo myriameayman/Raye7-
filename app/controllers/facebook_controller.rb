@@ -12,6 +12,7 @@ class FacebookController < ApplicationController
                 # @user.provider => "facebook" , @user.id => facebook user id.
                 # @user.fb_email => user's facebook email , @user.facebook_profileimage => url for user's facebook profile image.
                 # @user.oauth_token => the user's facebook oauthuntication token.
+                # @user.gender => the user's facebook gender[ male or femal ].
    def create
     @user = current_user
     @fb_friends = FbGraph::User.me(env["omniauth.auth"].credentials.token).friends
@@ -22,6 +23,7 @@ class FacebookController < ApplicationController
     @user.provider = env["omniauth.auth"].provider
     @user.uid = env["omniauth.auth"].uid
     @user.fb_email = env["omniauth.auth"].info.email
+    @user.gender = env["omniauth.auth"].extra.raw_info.gender
     @user.faceboook_profileimage=env["omniauth.auth"].info.image
     @user.oauth_token = env["omniauth.auth"].credentials.token
  
@@ -44,9 +46,15 @@ class FacebookController < ApplicationController
         fbFriend = Friend.new 
         fbFriend.circle_id = fbCircle.id   
         fbFriend.name = f["name"]
-        fbFriend.fb_id = f["id"] 
+        friendUser = User.find(:all, :conditions => ['uid LIKE ?' , f["id"]])
+        #fUser = nil
+        friendUser.each do |u|
+          fbFriend.app_id = u.id
+        end
+        #fbFriend.app_id = fUser.user_id
+        fbFriend.fb_id = f["id"]
         fbFriend.save  
-    end   
+    end
 
     # Save the user info in the database.    
     
