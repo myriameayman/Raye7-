@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class RequestsControllerTest < ActionController::TestCase
+
   include Devise::TestHelpers
 
   test "should get create" do
@@ -118,6 +119,7 @@ class RequestsControllerTest < ActionController::TestCase
     get :show, :id => @myrequest.id
     assert_response :success
   end
+<<<<<<< HEAD
 # testing the estimated distance for an added request
   test "should estimate distance" do
     @user = User.new(:email =>'test@example.com', :username =>'som3a', :password => 'password',
@@ -131,3 +133,22 @@ class RequestsControllerTest < ActionController::TestCase
     assert_response :success
   end
 end
+=======
+
+
+  test "should draw all running trips" do
+    @user = User.new(:email => 'test@example.com',:username => 'Ahmed', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Ahmed', :lastName => 'Adel')
+    @user.save
+    sign_in @user
+    @@form_step = 2 
+    @@request = Request.new
+    get :view_current_trips
+    String url = "http://test.host/requests/view_current_trips"
+    assert_response :success
+  end
+  
+
+end
+
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
