@@ -34,6 +34,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/create_route"
   #get "requests/home"
+
+  get "requests/view_current_trips"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
 

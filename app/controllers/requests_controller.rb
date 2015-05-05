@@ -249,6 +249,18 @@ end
     end 
     redirect_to root_path 
   end 
+
+# By : AhmedAdelIbrahim
+# Method finctionality : retrieve all the requests (trip) info from the database.
+# The variables : @trips -> all info about trips , @count -> number of trips. 
+  def view_current_trips
+    @trips = Request.all
+    @count = Request.count
+    @trips.each do |trip|
+      @curLoc = trip.currentLoc
+      @destination = trip.destination
+    end
+  end
   
 
   def edit 
