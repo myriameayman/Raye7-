@@ -37,6 +37,8 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "requests/create_route"
   #get "requests/home"
+
+  get "requests/view_current_trips"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
 
@@ -48,7 +50,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "profiles/new" 
   get "profiles/verifyMe" 
-
+  get "requests/create_checkpoints"
   get "profiles/create" 
 
   get "profiles/show" 
@@ -94,7 +96,7 @@ RsgLinkedinGem::Application.routes.draw do
   get "/requests/create_route", to: "requests#create_route", as: "create_route" 
   
 
-  get "/requests/create_checkpoints", to: "requests#create_checkpoints", as: "create_checkpoints" 
+  #get "/requests/create_checkpoints", to: "requests#create_checkpoints", as: "create_checkpoints" 
  
   get "/geocoding", to: "requests#geocoding", as: "geocoding" 
   

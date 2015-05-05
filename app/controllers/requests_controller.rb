@@ -93,74 +93,74 @@ end
     unless(@name1 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name1, @long1 , @lat1])
-      unless (places.empty?)
+      #unless (places.empty?)
         p = Place.new 
         p.name = @name1 
         p.lat = @lat1 
         p.long = @long1 
         p.save  
         @@checkpoint << p 
-      end 
+      #end 
     end
     unless(@name2 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name2, @long2 , @lat2])
-      unless (places.empty?)
+      #unless (places.empty?)
         p = Place.new 
         p.name = @name2 
         p.lat = @lat2 
         p.long = @long2 
         p.save 
         @@checkpoint << p
-        end 
+       # end 
     end
     unless(@name3 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name3, @long3 , @lat3])
-      unless (places.empty?)
+     # unless (places.empty?)
         p = Place.new 
         p.name = @name3 
         p.lat = @lat3 
         p.long = @long3 
         p.save 
         @@checkpoint << p
-      end
+      #end
     end  
     unless(@name4 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name4, @long4 , @lat4])
-      unless (places.empty?)
+      #unless (places.empty?)
         p = Place.new 
         p.name = @name4 
         p.lat = @lat4 
         p.long = @long4 
         p.save 
         @@checkpoint << p
-      end 
+      #end 
     end  
     unless(@name5 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name5, @long5 , @lat5])
-      unless (places.empty?)
+      #unless (places.empty?)
         p = Place.new 
         p.name = @name5 
         p.lat = @lat5 
         p.long = @long5 
         p.save 
         @@checkpoint << p
-      end 
+      #end 
     end 
     unless(@name6 == nil) 
       places = Place.find(:all, :conditions => ['name LIKE ? AND long LIKE ? AND 
         lat LIKE ?' , @name6, @long6 , @lat6])
-      unless (places.empty?)
+      #unless (places.empty?)
         p = Place.new 
         p.name = @name6 
         p.lat = @lat6 
         p.long = @long6 
         p.save 
         @@checkpoint << p
-      end 
+      #end 
     end 
   end 
   
@@ -238,6 +238,8 @@ end
     @@request.air_conditioner= @air_conditioner
     @@request.trunk= @trunk 
     @@request.name= @name 
+    @@request.girls_only = @girls
+    @@request.gentlemen_only = @gentlemen 
     @@request.save  
     @@checkpoint.each do |x| 
       c = Checkpoint.new 
@@ -247,6 +249,18 @@ end
     end 
     redirect_to root_path 
   end 
+
+# By : AhmedAdelIbrahim
+# Method finctionality : retrieve all the requests (trip) info from the database.
+# The variables : @trips -> all info about trips , @count -> number of trips. 
+  def view_current_trips
+    @trips = Request.all
+    @count = Request.count
+    @trips.each do |trip|
+      @curLoc = trip.currentLoc
+      @destination = trip.destination
+    end
+  end
   
 
   def edit 
