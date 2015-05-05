@@ -605,22 +605,26 @@ div.uploader input {
 <body>
 <article>
 <h1>Raye7 Feedback</h1>
-<form>
-	<ul>
+
+
+<%= form_tag :controller => 'feedback', :action => 'create', :method => 'post' do  %>
+  <ul>
+
         <li>
-        	<label for="name">Your Name:</label>
-            <input type="text" size="40" id="name" />
+          <%= label_tag :title %>
+           <input id="title" name="title" type="text" required = true />
+          
         </li>
         <li>
-        	<label for="message">Comment:</label>
-            <textarea cols="50" rows="5" id="message"></textarea>
-		</li>
-	</ul>
-    <p>
+          <%= label_tag :message %>
+          <textarea id="message" name="message"  cols="50" rows="5"></textarea>
+        </li>
+  </ul>
+  <p>
         <button type="submit" class="action">Submit</button>
-        <button type="reset" class="right">Reset</button>
-    </p>
-</form>
+  </p>
+<% end %>
+
 </article>
 </body>
 <script type="text/javascript">
