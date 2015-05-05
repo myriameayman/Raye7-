@@ -63,32 +63,8 @@
 </style>
 <body>
 
-<div class="col-md-12" style="padding-left:0px">
- <div id="page">
-    <div id="header-wrapper">
-        <div id="header">
-            <div id="header-inner">
-                <nav class="navbar navbar-default">
-                    <div class="header-secondary">
-                        <div class="container clearfix">
-                         <div class="col-xs-1 col-sm-1 col-md-1 "> 
-                           <div class="slideout-menu">
-              <h3>Menu <a href="#" class="slideout-menu-toggle">&times;</a></h3>
-               <ul>
-    <li><a href="#">visted Places <i class="fa fa-angle-right"></i></a></li>
-    <li><a href="#"> my Friends <i class="fa fa-angle-right"></i></a></li>
-    <li><a href="#">Offer a ride <i class="fa fa-angle-right"></i></a></li>
-    <li><a href="#"> <i class="fa fa-angle-right"></i></a></li>
-    <li><a href="#">News &amp; Events <i class="fa fa-angle-right"></i></a></li>
-  </ul>
-</div>
-<!--/.slideout-menu-->
 
-<div class="header">
-  <a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i></a>
-</div>          
-</div> 
-</div>
+
   <div class="row">
 
 	    <div class="col-md-3" style="padding-left:40px">
@@ -114,34 +90,29 @@
   </div><!-- div row -->
 
 <!-------------------- JS -------------------->
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  
-<div class = "row" class="col-md-3" style="padding-left:20px">
-  
-
-<script src = "assets/jRate.js"></script>
-<script type="text/javascript">
-
-	$(function () {
-		var that = this;
-     
-			$("#jRate").jRate({
-		    startColor: "cyan",
-            endColor: "blue",
-			rating: <%= @rating.to_json.html_safe %>,
-			strokeColor: 'black',
-			width: 22,
-			height: 22,
-			count: 5,
-			opacity: 0.8,
+   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  
+      <div class = "row" class="col-md-3" style="padding-left:20px">
+        <script src = "assets/jRate.js"></script>
+           <script type="text/javascript">
+              $(function () {
+		       var that = this;
+                 $("#jRate").jRate({
+		          startColor: "cyan",
+                  endColor: "blue",
+			      rating: <%= @rating.to_json.html_safe %>,
+			      strokeColor: 'black',
+			      width: 22,
+			      height: 22,
+			      count: 5,
+			      opacity: 0.8,
 			
-		}); 
+		                  }); 
 		
-	});
-</script>
+	                               });
+    
 
-	</div>
-
-</div>
+    </script>
+       </div>
 
 <script type="text/javascript">
  
