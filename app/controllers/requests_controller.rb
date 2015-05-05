@@ -65,7 +65,7 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @destination
-      @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
+      
       redirect_to url_for(:controller => "requests", :action => "create_route")  
 
   end 
@@ -182,7 +182,7 @@ end
   def create_route 
     @curLoc = @@request.currentLoc 
     @destination = @@request.destination
-
+    @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
   end  
 
 # @myriame 

@@ -70,7 +70,9 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "profiles/friend_profile"
 
-  get "requests/create" 
+  get "requests/create"
+
+  get "friends/index", to: "friends#index", as: "friends"
   
   get "/places/create"  
   
