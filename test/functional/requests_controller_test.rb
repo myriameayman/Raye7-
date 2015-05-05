@@ -1,4 +1,4 @@
-equire 'test_helper'
+require 'test_helper'
 
 class RequestsControllerTest < ActionController::TestCase
 include Devise::TestHelpers

@@ -133,7 +133,7 @@
 
            <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
            <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
-           <li class='last' style="border-bottom:none;"><%= link_to "My Friends", controller:"friends",action:"index" %></li>
+           <li class='last' style="border-bottom:none;"><%= link_to "My Friends",friends_path, controller:"friends",action:"index" %></li>
         </ul>
 </div>     
   </div>

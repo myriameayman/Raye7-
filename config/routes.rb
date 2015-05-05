@@ -37,7 +37,9 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "profiles/index" 
 
-  get "profiles/edit" 
+  get "profiles/edit"
+
+  get "friends/index", to: "friends#index", as: "friends"
 
   get "welcome/index" 
   
