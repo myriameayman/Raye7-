@@ -46,7 +46,6 @@ def create
 		   @trip.save
 		   @request.save
 
-		   
 		end
 	end
 		   

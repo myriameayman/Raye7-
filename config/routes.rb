@@ -2,7 +2,7 @@
 RsgLinkedinGem::Application.routes.draw do 
  
   get "requests/index" 
-
+  get "notifications/index"
   get "requests/new" 
 
   get "requests/create" 

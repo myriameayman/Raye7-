@@ -52,9 +52,10 @@ class RequestsController < ApplicationController
       @@request.long_destination= @longitude 
       @@request.destination= @loc
 
-      @places=Place.find(:all,:conditions => ['long LIKE ? AND lat LIKE ?',@ongitude,@latitude])
+      @places=Place.find(:all,:conditions => ['long LIKE ? AND lat LIKE ?',@longitude,@latitude])
 
       if(@places.empty?)
+       
        @place=Place.new
        @place.long=params[:longitude]
        @place.lat=params[:latitude]
@@ -78,6 +79,7 @@ class RequestsController < ApplicationController
           @notification.save
         end
        end
+       
       redirect_to url_for(:controller => "requests", :action => "create")  
 
     end 
@@ -102,7 +104,6 @@ class RequestsController < ApplicationController
 
     @@form_step = 0  
     redirect_to url_for(:controller => "requests", :action => "home")
-
   end 
   
   
