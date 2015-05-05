@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20150501061943) do
 
   create_table "activities", :force => true do |t|
@@ -205,7 +204,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "fb_email"
     t.string   "nickname"
     t.string   "gmail"
-    t.integer  "budget" 
+    t.integer  "budget"
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"

@@ -64,13 +64,14 @@ class RequestsController < ApplicationController
       @@request.lat_destination = @latitude 
       @@request.long_destination= @longitude 
       @@request.destination= @destination
-      @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
+      unless (@@request.long_curr == nil)
+        @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
+    end
       redirect_to url_for(:controller => "requests", :action => "create_route")   
 
     end 
   end 
   
-end  
 # Index return a list of all available requests.
   def index 
     unless(params[:search==nil]) 
@@ -195,13 +196,8 @@ end
   # Create new request.  
   def new 
     @@request = Request.new
-<<<<<<< HEAD
-
-    @@form_step = 0
-=======
     @@checkpoint = []  
     @@form_step = 0  
->>>>>>> 7908541f2c98384e40fba872788df0141ea2053c
     redirect_to url_for(:controller => "requests", :action => "home")
 
   end 
@@ -255,12 +251,8 @@ end
     @@request.air_conditioner= @air_conditioner
     @@request.trunk= @trunk 
     @@request.name= @name 
-<<<<<<< HEAD
-    @@request.save
-    
-=======
     @@request.girls_only = @girls
-    @@request.gentlemen_only = @gentlemen 
+    @@request.gentlemen_only = @gentlemen    
     @@request.save  
     @@checkpoint.each do |x| 
       c = Checkpoint.new 
@@ -268,7 +260,6 @@ end
       c.request_id = @@request.id 
       c.save 
     end 
->>>>>>> 7908541f2c98384e40fba872788df0141ea2053c
     redirect_to root_path 
   end 
 

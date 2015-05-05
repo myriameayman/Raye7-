@@ -6,7 +6,7 @@ class Request < ActiveRecord::Base
       has_many :places, through: :checkpoints
       attr_accessible :air_conditioner, :car_color, :car_model, :car_number, :lat_curr,
        :lat_destination, :long_curr, :long_destination, :seats, :smoking, :trunk, :user_id,
-       :girls_only, :gentlemen_only
+       :girls_only, :gentlemen_only, :distance
       #validates :air_conditioner, presence: true
       validates :user_id, presence: true
       #validates :car_color, presence: true
