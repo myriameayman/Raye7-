@@ -15,30 +15,30 @@
     }
 </style>
 <body>
-<br>
-<div class="cont" style="width:900px;left:0;right:0;margin:auto;height:500px">
-    <div class="header"><h1 style="text-align:center;padding-left: 0px;;">Friends</h1></div>
-        <div class="body">
-            <%= form_tag friends_path ,:controller => 'friends',:action => 'show',:method => 'get' do %>
-                <p>
-                <%= text_field_tag :search, params[:search],:placeholder => 'Search a friend' %>
-                <%= submit_tag "Search" , :name => nil %>
-                </p>
-                <hr>    
-            <% end %>
-            <div class="row">
-                <% if @friend.present? %>
-                    <% @friend.each do|friend| %>
-                        <div class="col-md-4">
-                            <p style="margin:5px"><%= link_to friend.name %></p>
-                            <br>
-                        </div>
+    <br>
+    <div class="cont" style="width:900px;left:0;right:0;margin:auto;height:500px"> <!-- class div for friends container -->
+        <div class="header"><h1 style="text-align:center;padding-left: 0px;;">Friends</h1></div>
+            <div class="body"> <!-- body of the container for the search form -->
+                <%= form_tag friends_path ,:controller => 'friends',:action => 'show',:method => 'get' do %>
+                    <p>
+                    <%= text_field_tag :search, params[:search],:placeholder => 'Search a friend' %>
+                    <%= submit_tag "Search" , :name => nil %>
+                    </p>
+                    <hr>    
+                <% end %>
+                <div class="row"> <!-- class row for showing the friends in a grid view -->
+                    <% if @friend.present? %>
+                        <% @friend.each do|friend| %>
+                            <div class="col-md-4"> <!-- div col -->
+                                <p style="margin:5px"><%= link_to friend.name %></p>
+                                <br>
+                            </div> <!-- end div col -->
+                        <%end%>
+                    <%else%>
+                        <p>No Results found</p>
                     <%end%>
-                <%else%>
-                    <p>No Results found</p>
-                <%end%>
-            </div>
-        </div>
-</div>
+                </div> <!-- end row div -->
+            </div> <!-- end of body -->
+    </div> <!-- end of cont div -->
 </body>
 </html>
