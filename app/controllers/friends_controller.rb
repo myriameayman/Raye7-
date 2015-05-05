@@ -1,6 +1,8 @@
 class FriendsController < ApplicationController
   def index
-  	@friend = Friend.all
+  	unless(params[:search==nil])
+      @friend = Friend.search(params[:search])
+    end
   end
   def show
   	unless(params[:search==nil])
