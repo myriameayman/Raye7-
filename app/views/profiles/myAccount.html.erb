@@ -10,38 +10,33 @@
 <body>
   <div class="row">
 
+        <div class="col-md-3" style="padding-left:40px;margin-top:20px">
+            <div class="image-frame">
+                <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
+                </div><!-- close div if profile image-->
 
+            </div><!-- close tdi of image frame -->
+        </div><!-- close div of col-dm-3 -->
 
-	    <div class="col-md-3" style="padding-left:40px">
-
-		    <div class="image-frame">
-		        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
-		        </div><!-- close div if profile image-->
-
-		    </div><!-- close tdi of image frame -->
-	    </div><!-- close div of col-dm-3 -->
-
-	    <div class="col-md-8" style="padding-top:40px">
-		    <div class= "panel panel-default"  id="b1">
-			     <div class="panel-heading" style="background-color: #337AB7">
-			      <h3 class="panel-title"   >Profile Info </h3>
-			     </div><!-- div panel-heading -->
-			     <div class="panel-body">
-			       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
-			       <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
-			     </div><!-- div panel-body -->
-		      
-		    </div><!-- div  panel-default -->
-		</div><!-- div col-md-3 -->
+        <div class="col-md-8" style="padding-top:40px">
+            <div class="cont" style="width:780px">
+                <div class="header">
+                    <h1 style="font-size:20px"> Profile Info </h1>
+                </div>
+                <div class="body">
+                    <h6><label style="font-size:20px">Name:  </label><%= current_user.username%></h6>
+                   <h6><label style="font-size:20px">E-mail: </label><%= current_user.email %></h6>
+                   <h6><label style="font-size:20px">Budget: </label><%= current_user.budget %></h6>
+                </div>
+            </div>
+        </div><!-- div col-md-3 -->
   </div><!-- div row -->
 
 
   
-   
-
   <div class="row" style="padding-top:40px">
 
-    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+    <div class="col-md-3" style="padding-left:40px">
 
     <div id='cssmenu'>
 		<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
@@ -141,10 +136,7 @@
 </div>     
   </div> <!-- end of side menu tag -->
 
-  </div>
-
-
-  <div class="col-md-8">
+  <div class="col-md-4">
     <div class="cont" style="width:780px"> <!-- cont div for the searching for a specific trip-->
       <div class="header">
         <h1 style="font-size:20px"> Search for a trip</h1>
@@ -166,15 +158,12 @@
     </div>
   </div><!--/#class col-md-8-->
 
-
-
-
-  <div class="col-md-8" style="padding-top:20px;"> <!-- News feed container -->
-    <div class= "panel panel-default" style="border-top-left-radius: 4px">
-      <div class="panel-heading"> <!-- Container header -->
-        <h3 class="panel-title"> News Feed</h3>
+  <div class="col-md-8" style="padding-top:25px;"> <!-- News feed container -->
+    <div class= "cont" style="width:780px" >
+      <div class="header"> <!-- Container header -->
+        <h1 style="font-size:20px"> News Feed</h1>
       </div> <!-- end of header -->
-      <div class="panel-body"> <!-- loop on activities -->
+      <div class="body"> <!-- loop on activities -->
         <h6 style="font-style:normal;font-size:15px">What's going on</h6>
         <% if(@activities.present?) %> <!-- if any activities available -->
           <% @activities.each do |activity| %>
@@ -192,6 +181,16 @@
       </div>
     </div>
   </div> <!-- end of news feed container -->
+
+  </div>
+
+  
+
+
+
+
+  
+
 </div>
   
 
