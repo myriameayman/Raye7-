@@ -7,126 +7,142 @@
 
 <link rel="stylesheet" type="text/css" href="assets/button.css">
 <link rel="stylesheet" href="assets/styles.css">
-
-
 <body>
   <div class="row">
 
-        <div class="col-md-3" style="padding-left:40px">
-            <div class="image-frame">
-                <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
-                </div><!-- close div if profile image-->
 
-            </div><!-- close tdi of image frame -->
-        </div><!-- close div of col-dm-3 -->
 
-        <div class="col-md-8" style="padding-top:40px">
-            <div class="cont" style="width:780px">
-                <div class="header">
-                    <h1 style="font-size:20px"> Profile Info </h1>
-                </div>
-                <div class="body">
-                    <h6><label style="font-size:20px">Name:  </label><%= current_user.username%></h6>
-                   <h6><label style="font-size:20px">E-mail: </label><%= current_user.email %></h6>
-                   <h6><label style="font-size:20px">Budget: </label><%= current_user.budget %></h6>
-                </div>
-            </div>
-        </div><!-- div col-md-3 -->
+	    <div class="col-md-3" style="padding-left:40px">
+
+		    <div class="image-frame">
+		        <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
+		        </div><!-- close div if profile image-->
+
+		    </div><!-- close tdi of image frame -->
+	    </div><!-- close div of col-dm-3 -->
+
+	    <div class="col-md-8" style="padding-top:40px">
+		    <div class= "panel panel-default"  id="b1">
+			     <div class="panel-heading" style="background-color: #337AB7">
+			      <h3 class="panel-title"   >Profile Info </h3>
+			     </div><!-- div panel-heading -->
+			     <div class="panel-body">
+			       <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
+			       <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
+			     </div><!-- div panel-body -->
+		      
+		    </div><!-- div  panel-default -->
+		</div><!-- div col-md-3 -->
   </div><!-- div row -->
 
 
   
    
-<div class="row" style="padding-top:40px">
 
-  <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+  <div class="row" style="padding-top:40px">
 
-      <div id='cssmenu'>
-        <ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
-          <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
-          <li><a href='#'><span>Home</span></a></li>
-          <li class='active has-sub'><a href='#'><span>My Circles</span></a>
-            <ul>
-            <% @circles.each do |c| %>
-            <li class='has-sub'><%= link_to c.name, controller: "circles", action: "show", id: c.id %></li>
-            <% end %>
-            </ul>
-          </li>
-          <li class='active has-sub'><a href='#'><span>Connect to circles</span></a>
-            <ul>
-              <li>
-                <% if(@user.circles.exists?(:name => "twitter")&&Circle.exists?(:name => "googlePlus")) %>
-                  <a href="#"><span>No more circles to connect</span></a>
+    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
 
-                <% else %>
-                  <div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
-                    <% unless(@user.circles.exists?(:name => "twitter")) %>
-                      <div class="col-lg-4">
-                        <div class="round-button" style="width:80px;float:left">
-                          <div id="round-button-circle">
-                            <a href="/twitter_oauth_url" class="round-button">Twitter</a>
-                          </div>
-                        </div>
-                      </div>
-                    <% end %>
-                    <% unless(@user.circles.exists?(:name => "googlePlus")) %>
-                      <div class="col-lg-4">
-                        <div class="round-button" style="width:80px;float:left;">
-                          <div id="round-button-circle-2">
-                            <a href="http://localhost:4567" class="round-button">Google+</a>
-                          </div>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                <% end %>
-              </li>
-            </ul>
-          </li>
-          <li class='active has-sub'><a href='#'><span>Update circles</span></a>
-            <ul>
-              <li>
-                <div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
-                  <div class="col-lg-4">
-                    <div class="round-button" style="width:80px;float:left">
-                      <div id="round-button-circle-1">
-                        <a href="#" class="round-button">facebook</a>
-                      </div>
-                    </div>
-                  </div>
-                  <% if(@user.circles.exists?(:name => "twitter")) %>
-                  <div class="col-lg-4">
-                    <div class="round-button" style="width:80px;float:left">
-                      <div id="round-button-circle">
-                        <a href="/#" class="round-button">Twitter</a>
-                      </div>
-                    </div>
-                  </div>
-                  <% end %>
-                  <% if(@user.circles.exists?(:name => "googlePlus")) %>
-                    <div class="col-lg-4">
-                      <div class="round-button" style="width:80px;float:left;">
-                        <div id="round-button-circle-2">
-                          <a href="#" class="round-button">Google+</a>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </li>
-            </ul>
-          </li>
+    <div id='cssmenu'>
+		<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
+		   <li style="padding-left:25px;padding:15px;background-color: #337AB7;border-top-left-radius:8px;border-top-right-radius:8px;color:white;"><span>Menu</span></li>
+		   <li><a href='#'><span>Home</span></a></li>
+		   <li class='active has-sub'><a href='#'><span>My Circles</span></a>
+		      <ul>
+		      		<% @circles.each do |c| %>
+			 			<li class='has-sub'><%= link_to c.name, controller: "circles", action: "show", id: c.id %></li>
+					<% end %>
+		      </ul>
+		   </li>
+		   <li class='active has-sub'><a href='#'><span>Connect to circles</span></a> <!-- connect to Circles  -->
+		      <ul>
+			      		<li>
+
+			      		<% if(@user.circles.exists?(:name => "twitter")&&Circle.exists?(:name => "googlePlus")) %>
+			      		<a href="#"><span>No more circles to connect</span></a>
+
+			      		<% else %>
+				      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
+
+				      			<% unless(@user.circles.exists?(:name => "twitter")) %>
+						      		
+									  <div class="col-lg-4">
+									    <div class="round-button" style="width:110px;float:left">
+									        <div id="round-button-circle">
+
+									          <a href="/twitter_oauth_url" style="padding-top:50px;height:200px;">Twitter</a>
+									        </div>
+									    </div>
+									  </div>
+								<% end %>
+								<% unless(@user.circles.exists?(:name => "googlePlus")) %>
+									  <div class="col-lg-4">
+									    <div class="round-button" style="width:110px;float:left;margin-left:40px">
+									        <div id="round-button-circle-2">
+									          <a href="http://localhost:4567" style="padding-top:50px;height:200px;" class="round-button">Google+</a>
+									        </div>
+									    </div>
+									  </div>
 
 
+								<% end %>
+							</div>
+						<% end %>
 
-          <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
-          <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
-          <li class='last' style="border-bottom:none;"><%= link_to "My Friends", controller:"friends",action:"index" %></li>
-        </ul>
+					    </li>
 
-      </div> <!-- end of side menu tag -->
+		      </ul>
+		   </li> <!-- end of connecting to circles -->
+		   <li class='active has-sub'><a href='#'><span>Update circles</span></a>
+		      <ul>
+			      		<li>
+			      		<div class="row" style="width:300px;margin-left: auto;margin-right: auto;">
+				      		<div class="col-lg-4">
+								<div class="round-button" style="width:110px;float:left">
+								    <div id="round-button-circle-1">
+										    <a href="#" style="padding-top:50px;height:200px;" class="round-button">facebook</a>
+									</div>
+								</div>
+							</div>
+							<% if(@user.circles.exists?(:name => "twitter")) %>
+									  <div class="col-lg-4">
+									    <div class="round-button" style="width:110px;float:left;margin-left:40px">
+									        <div id="round-button-circle">
+									          <a href="/#" style="padding-top:50px;height:200px;" class="round-button">Twitter</a>
+									        </div>
+									    </div>
+									  </div>
+							<% end %>
+							<% if(@user.circles.exists?(:name => "googlePlus")) %>
+									  <div class="col-lg-4">
+									    <div class="round-button" style="width:80px;float:left;">
+									        <div id="round-button-circle-2">
+									          <a href="#" class="round-button">Google+</a>
+									        </div>
+									    </div>
+									  </div>
+							<% end %>
+						</div>
+					    </li>
+		      </ul>
+		   </li>
+		   
+
+
+		   <li><%= link_to "New Request", controller: "requests", action: "new" %></li>
+		   <li><%= link_to "view all my places", controller: "places", action: "create" %></li>
+		   <li><%= link_to "add email", controller: "emails", action: "index" %></li>
+       <li><%= link_to "My Friends", controller:"friends",action:"index" %></li>
+			<!-- # A link to add email @ebrahim-elgaml -->
+		   <li class='last' style="border-bottom:none;"><a href="#" id="invite_fb_friends" onClick="inviteFriends();"><span>Invite your facebook friends
+</span></a></li><!-- # A link to invite Facebook Friends @ebrahim-elgaml -->
+
+		</ul>
+</div>     
+  </div> <!-- end of side menu tag -->
 
   </div>
+
 
   <div class="col-md-8">
     <div class="cont" style="width:780px"> <!-- cont div for the searching for a specific trip-->
@@ -178,6 +194,24 @@
   </div> <!-- end of news feed container -->
 </div>
   
+
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+	function inviteFriends(){
+		FB.init({
+	        appId: '716016431848330',
+	        status: true,
+	        cookie: false,
+	        // xfbml: true
+	        });
+		FB.ui({
+	method: 'send',
+	message: '<%=current_user.name %> has invite you to a party for>',
+	link: 'http://raye7.com/'});
+
+	}
+</script>
+
 </body>
 
 </html>

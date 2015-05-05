@@ -26,7 +26,7 @@ def create
 		    @owner.budget = @owner.budget + @points
 		    @user.budget = @user.budget - @points
 
-		  	if(@request.seats>0 && @user.budget>=@points)
+		  	if(@request.seats>0 and @user.budget>=@points)
 		  	 @request.seats=@request.seats - 1
 		  	 @request.save
 		  	 @owner.save
@@ -39,6 +39,7 @@ def create
 end
 
 # method calc to calculate points according to the distance estimated for the trip
+# added by: Ahmed Amr Ismail
 def calc(distance)
 	liters = distance/10
 	liter_price = liters * 3
