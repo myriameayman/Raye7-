@@ -26,7 +26,7 @@ def create
 		    @owner.budget = @owner.budget + @points
 		    @user.budget = @user.budget - @points
 
-		  	if(@request.seats>0 & @user.budget>=@points)
+		  	if(@request.seats>0 && @user.budget>=@points)
 		  	 @request.seats=@request.seats - 1
 		  	 @request.save
 		  	 @owner.save

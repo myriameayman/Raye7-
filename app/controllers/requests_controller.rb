@@ -23,7 +23,7 @@ class RequestsController < ApplicationController
 
 
   def distance(long1, lat1, long2, lat2)
-    theta = long1 - long2
+    theta = long1-long2
     rad_per_deg = Math::PI/180  # PI / 180
     dlat1 = lat1 * rad_per_deg
     dlat2 = lat2 * rad_per_deg
@@ -56,7 +56,7 @@ class RequestsController < ApplicationController
   end 
   
 
-  # Choose one stage from the offer. 
+    # Choose one stage from the offer. 
   # @@i = 1 indicates stage 1 of the form.
   # /home is redirected to home view. 
   # /requests/create is redireted to the create view in requests folder.
@@ -78,8 +78,7 @@ class RequestsController < ApplicationController
       @@request.long_destination= @longitude 
       @@request.destination= @loc
       @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
-      redirect_to url_for(:controller => "requests", :action => "create")  
-
+      redirect_to url_for(:controller => "requests", :action => "create")
     end 
   end 
   
