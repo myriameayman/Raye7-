@@ -1,64 +1,70 @@
+<style> 
+.cont {
+	display: block; width: 500px; max-height: 1000px; border:1px solid gray; border-radius: 20px; box-shadow: 0 1px 2px #888; }
+.cont .header{ 
+ 	background-color: #337AB7; box-shadow: 0 1px 2px #888; padding-top: 10px; border-top-right-radius:20px; border-top-left-radius:20px; border-bottom: 1px solid gray; } 
+.cont .header h1{ padding-left: 10px; margin: 5px; font-size: 30px; font-weight: normal; text-shadow: 0 1px 2px white; color: white; text-align:left; } 
+.cont .body{ margin: 15px; padding-top: 0px; } 
+.cont .body label{ font-size: 18px; font-family: times; font-style: normal; } 
+.cont .body h1{ padding-left: 10px; margin: 5px; font-size: 16px; font-weight: normal; color: black; text-align:left; }
+}
+</style>
+<div class="cont" style="width:90%">
+<div class="header">
+<h1 style="font-size:80px">Almost done !</h1>
+</div>
 
-<div class="container">
-    <div style= "position:absolute;padding-top:504px;right:500px;width:100%;">
-
-    	<div class="google-map-filter col-xs-12 col-sm-4  pull-right"  style="width: 60%" >
     		<div class="form-group">
-				<div class="input-group">
+				<div class="input-group" style="padding-left: 48px">
+  					<span class="input-group-addon" id="car_color_span" >@</span>
+  					<input type="text" class="form-control" placeholder="trip_name" name="trip_name" id="trip_name" style="height:70px">
+				</div> <!-- closing input-group -->   <br>
+
+				<div class="input-group" style="padding-left: 48px">
   					<span class="input-group-addon" id="car_color_span">@</span>
-  					<input type="text" class="form-control" placeholder="trip_name" name="trip_name" id="trip_name" style="height:50px">
-				</div> <!-- closing input-group -->   
-<br>
+ 					 <input type="text" class="form-control" placeholder="car_color" name="car_color" id="car_color" style="height:70px">
+				</div> <!-- closing input-group -->   <br>
 
-
-				<div class="input-group">
-  					<span class="input-group-addon" id="car_color_span">@</span>
- 					 <input type="text" class="form-control" placeholder="car_color" name="car_color" id="car_color" style="height:50px">
-
-				</div> <!-- closing input-group -->   
-<br>
-
-				<div class="input-group">
-
+				<div class="input-group" style="padding-left: 48px">
   					<span class="input-group-addon" id="car_model_span">@</span>
-  					<input type="text" class="form-control" placeholder="car_model" name="car_model" id="car_moodel" style="height:50px">
+  					<input type="text" class="form-control" placeholder="car_model" name="car_model" id="car_moodel" style="height:70px">
+				</div> <!-- closing input-group -->   <br>
 
-				</div> <!-- closing input-group -->   
-<br>
-
-				<div class="input-group">
-
+				<div class="input-group" style="padding-left: 48px">
   					<span class="input-group-addon" id="car_number_span">@</span>
-  					<input type="text" class="form-control" placeholder="car_number" id="car_number" name="car_number" style="height:50px">
+  					<input type="text" class="form-control" placeholder="car_number" id="car_number" name="car_number" style="height:70px">
+				</div> <!-- closing input-group -->   <br>
 
-				</div> <!-- closing input-group -->   
-<br>
-
-				<div class="input-group">
-
+				<div class="input-group" style="padding-left: 48px">
 
   					<span class="input-group-addon" id="seats_span">@</span>
-  					<input type="text" class="form-control" placeholder="seats" id="seats" name="seats" style="height:50px">
-				</div> <!-- closing input-group -->   
-<br>
+  					<input type="text" class="form-control" placeholder="seats" id="seats" name="seats" style="height:70px">
+				</div> <!-- closing input-group -->   <br>
+				<div style="padding-left: 48px"  style="height:70px;font-size:80px">
 
-				<input name="smoking" type="radio" value="smoking"/>    
-				<div class="label"> 
+				<input name="smoking" type="radio" value="smoking" />    
+				<div class="label" style="height:140px" > 
 					<%= label :smoking_label, 'one can smoke in my car', :value => 'one can smoke in my car' %>
-				</div> <!-- closing label -->
-<br>
+
+				</div> <!-- closing label --><br>
 
 				<input name="air_conditioner" type="radio" value="air_conditioner"/>    
 				<div class="label"> 
 					<%= label :air_conditioner, 'i have air air_conditioner in my car', :value => 'i have air air_conditioner in my car' %>
-				</div> <!-- closing label -->
-<br>
+				</div> <!-- closing label --><br>
 				<input name="trunk" type="radio" value="trunk"/>    
 				<div class="label"> 
 					<%= label :trunk, 'i have a trunk in a truk', :value => 'i have a trunk in my car' %>
-				</div> <!-- closing label -->
-<br>
-<br>
+				</div> <!-- closing label --><br>
+				<input name="girls-only" type="radio" value="girls-only"/>    
+				<div class="label"> 
+					<%= label :girlsOnly, 'only girls can join this trip', :value => 'only girls can join this trip' %>
+				</div> <!-- closing label --><br>
+				<input name="gentlemen-only" type="radio" value="gentlemen-only"/>    
+				<div class="label"> 
+					<%= label :gentlemenOnly, 'only gentlemen can join this trip', :value => 'only gentlemen can join this trip' %>
+				</div> <!-- closing label --><br><br>
+</div>
 <script>
 
 // Function to be called on click on the submit button. 
@@ -72,6 +78,8 @@ function create_ride_info() {
 	var txt_smoking;
 	var txt_air_conditioner;
 	var txt_trunk;
+	var girls; 
+	var gentlemen; 
 	if (document.getElementsByName('smoking')[0].checked) 
   		txt_smoking = 1;
 	else 
@@ -85,10 +93,19 @@ function create_ride_info() {
 	else 
 		txt_trunk = 0;
 
+	if (document.getElementsByName('girls-only')[0].checked) 
+  		girls = 1;
+	else 
+		girls = 0;
+	if (document.getElementsByName('gentlemen-only')[0].checked) 
+  		gentlemen = 1;
+	else 
+		gentlemen = 0;
+
 	// Redirected to create_ride_info in request controller. 
 
 	window.location.replace('/requests/create_ride_info?car_color='+txt_color+'&car_model='+txt_model+'&car_number='+txt_number+'&seats='+txt_seats+'&smoking='+txt_smoking+'&air_conditioner='+txt_air_conditioner+'&trunk='+txt_trunk
-		+'&name='+txt_name);
+		+'&name='+txt_name+'&girls='+girls+'&gentlemen='+gentlemen);
 
 }
 </script>
@@ -97,6 +114,4 @@ function create_ride_info() {
  Submit
  </a>
    		 	</div> <!-- closing of form-group -->
-    	</div> <!-- closing of google-map-filter col-xs-12 col-sm-4  pull-right --> 
-    </div> <!-- closing of style -->
-</div>  <!-- closing of container -->  
+    	</div>
