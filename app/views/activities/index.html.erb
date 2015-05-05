@@ -1,0 +1,10 @@
+<h1>Activities#index</h1>
+<% @activities.each do |activity| %>
+
+ <div class="activity">
+
+ 	<%= link_to activity.owner.username if activity.owner %>
+ 	offered a ride to <%= link_to activity.trackable.car_color %>
+ 	
+ </div>
+<% end %>
