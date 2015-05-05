@@ -7,15 +7,10 @@
 
 <link rel="stylesheet" type="text/css" href="assets/button.css">
 <link rel="stylesheet" href="assets/styles.css">
-
-<style type="text/css">
- /*added Code */
-
-</style>
 <body>
   <div class="row">
 
-        <div class="col-md-3" style="padding-left:40px">
+        <div class="col-md-3" style="padding-left:40px;margin-top:20px">
             <div class="image-frame">
                 <div class="img-circular" style="background-image: url('<%= current_user.faceboook_profileimage+'&width=160&height=160'%>') ">
                 </div><!-- close div if profile image-->
@@ -29,20 +24,19 @@
                     <h1 style="font-size:20px"> Profile Info </h1>
                 </div>
                 <div class="body">
-                    <h6><label style="font-size:20px">Name:  </label><%=  current_user.username%></h6>
-                   <label style="font-size:20px">E-mail: </label>  <strong><%= current_user.email %></strong>
+                    <h6><label style="font-size:20px">Name:  </label><%= current_user.username%></h6>
+                   <h6><label style="font-size:20px">E-mail: </label><%= current_user.email %></h6>
+                   <h6><label style="font-size:20px">Budget: </label><%= current_user.budget %></h6>
                 </div>
             </div>
         </div><!-- div col-md-3 -->
-
   </div><!-- div row -->
 
 
   
-   
   <div class="row" style="padding-top:40px">
 
-    <div class="col-sm-4 col-md-3 sidebar" style="padding-left:40px">
+    <div class="col-md-3" style="padding-left:40px">
 
     <div id='cssmenu'>
 		<ul  style="border-right:1px solid grey;border-top-right-radius:8px;border-bottom-right-radius:8px">
@@ -139,65 +133,63 @@
 </span></a></li><!-- # A link to invite Facebook Friends @ebrahim-elgaml -->
 
 		</ul>
-
 </div>     
   </div> <!-- end of side menu tag -->
 
-
-
-  <div class="col-md-8">
-     <div class="cont" style="width:780px">
-                <div class="header">
-                    <h1 style="font-size:20px"> Search for a trip</h1>
-                </div>
-                <div class="body">
-                   <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
-                          <h4> Trip destination </h4>
-                          <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-                          <br>
-                          <%= submit_tag "Search", :name => nil %>
-                    <% end %> 
-                   <hr>
-                   <ul>
-                      <% @requests.each do |grant| %>
-                        <h6 style="font-style:normal;font-size:15px"><li><%= link_to grant.destination, :controller =>'requests',
-                        :action => 'show', id: grant.id  %></li></h6>
-                      <% end %>
-                    </ul>
-                </div>
-     </div>
-    
+  <div class="col-md-4">
+    <div class="cont" style="width:780px"> <!-- cont div for the searching for a specific trip-->
+      <div class="header">
+        <h1 style="font-size:20px"> Search for a trip</h1>
+      </div>
+      <div class="body">
+        <%= form_tag :controller => 'profiles', :action => 'myAccount', :method => 'get' do %>
+          <h4> Trip destination </h4>
+          <%= text_field_tag :search, params[:search], :id => 'search_field' ,:placeholder => "search for a trip", :style => "height:30px" %>
+          <%= submit_tag "Search",:class =>"myButton", :name => nil %>
+        <% end %> 
+        <hr>
+        <ul>
+          <% @requests.each do |grant| %>
+            <h6 style="font-style:normal;font-size:15px"><li><%= link_to grant.destination, :controller =>'requests',
+            :action => 'show', id: grant.id  %></li></h6>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div><!--/#class col-md-8-->
 
-
-
-  <div class="col-md-8"> <!-- News feed container -->
-    <div class= "panel panel-default" style="border-top-left-radius: 4px">
-     <div class="panel-heading"> <!-- Container header -->
-      <h3 class="panel-title"> News Feed</h3>
-
-
-     </div> <!-- end of header -->
-      <div class="panel-body"> <!-- loop on activities -->
-      	<h6 style="font-style:normal;font-size:15px">What's going on</h6>
-		<% if(@activities.present?) %> <!-- if any activities available -->
-			<% @activities.each do |activity| %>
-				<% if activity.owner.present? %>
-					<hr>
-				 	<%= link_to activity.owner.username if activity.owner %>
-				 	<%= render_activity activity %>
-			 	<%end%>
-			<%end%>
-		<% else %> <!-- end of loop -->
-			<h6 style="font-style:normal;font-size:12px">No news</h6>
-		<% end %> <!-- end of activities tag -->
-		
-
+  <div class="col-md-8" style="padding-top:25px;"> <!-- News feed container -->
+    <div class= "cont" style="width:780px" >
+      <div class="header"> <!-- Container header -->
+        <h1 style="font-size:20px"> News Feed</h1>
+      </div> <!-- end of header -->
+      <div class="body"> <!-- loop on activities -->
+        <h6 style="font-style:normal;font-size:15px">What's going on</h6>
+        <% if(@activities.present?) %> <!-- if any activities available -->
+          <% @activities.each do |activity| %>
+            <% unless  activity.key == 'request.update' || activity.key == 'trip.update' %>
+              <% if activity.owner.present? %>
+                <hr>
+                <%= link_to activity.owner.username if activity.trackable%>
+                <%= render_activity activity %>
+              <% end %>
+            <%end%>
+          <%end%>
+        <% else %> <!-- end of loop -->
+        <h6 style="font-style:normal;font-size:12px">No news</h6>
+        <% end %> <!-- end of activities tag -->
       </div>
     </div>
   </div> <!-- end of news feed container -->
 
+  </div>
 
+  
+
+
+
+
+  
 
 </div>
   
