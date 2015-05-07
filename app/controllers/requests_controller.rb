@@ -15,18 +15,13 @@ class RequestsController < ApplicationController
     @id = params[:id] 
     if (Request.exists?(@id)) 
       @request = Request.find(@id) 
-<<<<<<< HEAD
-=======
       hi = 2
       h = 3
       @request.distance = distance(@request.long_curr,@request.lat_curr,@request.long_destination,@request.lat_destination)
       @request.save
->>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
     else 
       redirect_to "/" 
     end 
-    
-<<<<<<< HEAD
   end
 
 # calculate estimated distance given the longitude and latitude of the offered ride (request)
@@ -40,8 +35,6 @@ class RequestsController < ApplicationController
     dist_acos  = Math.acos(dist)
     dist_deg = dist_acos * (180 / Math::PI)
     dist_deg * 69.09 * 1.6093 # to convert mile in Kilometers
-   
-=======
   end 
 
   def calculate_value(x,y)
@@ -67,7 +60,6 @@ class RequestsController < ApplicationController
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
 
     rkm * c # Delta in meters
->>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
   end
   
   
@@ -298,8 +290,7 @@ class RequestsController < ApplicationController
     redirect_to root_path 
   end 
 
-<<<<<<< HEAD
-=======
+
 # By : AhmedAdelIbrahim
 # Method finctionality : retrieve all the requests (trip) info from the database.
 # The variables : @trips -> all info about trips , @count -> number of trips. 
@@ -311,8 +302,6 @@ class RequestsController < ApplicationController
       @destination = trip.destination
     end
   end
-
->>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
   
 
   def edit 
