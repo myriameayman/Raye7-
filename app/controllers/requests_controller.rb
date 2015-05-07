@@ -21,7 +21,20 @@ class RequestsController < ApplicationController
     else 
       redirect_to "/" 
     end 
-    
+  end
+
+# calculate estimated distance given the longitude and latitude of the offered ride (request)
+  def distance(long1, lat1, long2, lat2)
+    theta = long1 - long2
+    rad_per_deg = Math::PI/180  # PI / 180
+    dlat1 = lat1 * rad_per_deg
+    dlat2 = lat2 * rad_per_deg
+    dlon_diff = theta *rad_per_deg
+    dist = (Math.sin(dlat1) * Math.sin(dlat2)) + (Math.cos(dlat1) * Math.cos(dlat2) * Math.cos(dlon_diff))
+    dist_acos  = Math.acos(dist)
+    dist_deg = dist_acos * (180 / Math::PI)
+    dist_deg * 69.09 * 1.6093 # to convert mile in Kilometers
+   
   end 
 
   def calculate_value(x,y)
@@ -80,6 +93,15 @@ class RequestsController < ApplicationController
     end 
   end 
   
+
+      @@request.destination= @destination
+      unless (@@request.long_curr == nil)
+        @@request.distance = distance(@@request.long_curr,@@request.lat_curr,@@request.long_destination,@@request.lat_destination)
+    end
+      redirect_to url_for(:controller => "requests", :action => "create_route")   
+
+    end 
+  end 
   
 # Index return a list of all available requests.
   def index 
@@ -89,8 +111,6 @@ class RequestsController < ApplicationController
   end 
    
   def create 
-<<<<<<< HEAD
-=======
     @name1 = params[:name1]
     @name2 = params[:name2]
     @name3 = params[:name3]
@@ -204,7 +224,9 @@ class RequestsController < ApplicationController
     end
     @@request.user_id = current_user.id 
     @@form_step = @@form_step + 1 
+
   end 
+
 
   
 # Responding on clicking on geocoding link in home. 
@@ -243,7 +265,7 @@ class RequestsController < ApplicationController
     @@request.trunk= @trunk 
     @@request.name= @name 
     @@request.girls_only = @girls
-    @@request.gentlemen_only = @gentlemen 
+    @@request.gentlemen_only = @gentlemen    
     @@request.save  
     @@checkpoint.each do |x| 
       c = Checkpoint.new 
@@ -253,6 +275,7 @@ class RequestsController < ApplicationController
     end 
     redirect_to root_path 
   end 
+
 
 # By : AhmedAdelIbrahim
 # Method finctionality : retrieve all the requests (trip) info from the database.
