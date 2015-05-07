@@ -282,7 +282,6 @@
 
 
   <div class="col-md-8"> <!-- container search for an offered ride -->
->>>>>>> ca22393f3f5807724db84dcf9e82336c2933fb1c
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading">
       <h3 class="panel-title"> Search for a trip</h3>
@@ -298,11 +297,7 @@
        <ul>
 		  <% @requests.each do |grant| %>
 
-			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',
-
-			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, 	:controller =>'requests',
-
-		  	:action => 'show', id: grant.id  %></li></h6>
+			<h6 style="font-style:normal;font-size:15px">	<li><%= link_to grant.destination, :controller =>'requests',:action => 'show', id: grant.id  %></li></h6>
 		  <% end %>
 		</ul><!--/#unsorted list -->
        
@@ -310,32 +305,6 @@
       </div><!--/#class panel-body-->
     </div><!--/#class panel-heading-->
   </div><!--/#class col-md-8-->
-
-
-  <div class="col-md-8">
-    <div class= "panel panel-default" style="border-top-left-radius: 4px">
-     <div class="panel-heading">
-      <h3 class="panel-title"> News Feed</h3>
-     </div><!--/#class panel heading-->
-      <div class="panel-body">
-       <h6 style="font-style:normal;font-size:15px"> insha'allah hena hyb2a feh news feed </h6>
-       <hr>
-       <h6 style="font-style:normal;font-size:15px"> sorem ehh </h6>
-      </div><!--/#class panel-body -->
-    </div><!--/#class panel panel default-->
-  </div><!--/#class col-md-->
-
-
-</div> 
-
-
-
-  
-</body>
-
-</html>
-	   
-
   <div class="col-md-8"> <!-- News feed container -->
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading"> <!-- Container header -->
