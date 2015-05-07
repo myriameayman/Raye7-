@@ -61364,3 +61364,259 @@ ActionController::RoutingError (No route matches [GET] "/assets/libraries/bootst
 
 
   Rendered /home/renad/.rvm/gems/ruby-2.2.0/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (106.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (124.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20121017155125)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "firstName" varchar(255), "lastName" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121017155125')[0m
+  [1m[35m (253.4ms)[0m  commit transaction
+Migrating to CreateLinkedinOauthSettings (20121020082005)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "linkedin_oauth_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "atoken" varchar(255), "asecret" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121020082005')[0m
+  [1m[35m (109.0ms)[0m  commit transaction
+Migrating to CreateBasicProfiles (20121020084444)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "basic_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "maiden_name" varchar(255), "formatted_name" varchar(255), "headline" varchar(255), "location" varchar(255), "industry" varchar(255), "summary" varchar(255), "specialties" varchar(255), "picture_url" varchar(255), "public_profile_url" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121020084444')[0m
+  [1m[35m (118.7ms)[0m  commit transaction
+Migrating to CreateFullProfiles (20121020160553)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "full_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "associations" varchar(255), "honors" varchar(255), "interests" varchar(255), "following" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121020160553')[0m
+  [1m[35m (119.2ms)[0m  commit transaction
+Migrating to CreateEducations (20121020160651)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "educations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "school_name" varchar(255), "field_of_study" varchar(255), "start_date" date, "end_date" date, "degree" varchar(255), "activities" varchar(255), "notes" varchar(255), "full_profile_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121020160651')[0m
+  [1m[35m (119.1ms)[0m  commit transaction
+Migrating to CreatePositions (20121020160732)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "positions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "summary" varchar(255), "start_date" date, "end_date" date, "is_current" boolean, "company" varchar(255), "full_profile_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121020160732')[0m
+  [1m[35m (130.5ms)[0m  commit transaction
+Migrating to CreateEmails (20150311232149)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "emails" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150311232149')[0m
+  [1m[35m (154.9ms)[0m  commit transaction
+Migrating to AddUsernameToUsers (20150311233939)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD "username" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150311233939')[0m
+  [1m[35m (109.7ms)[0m  commit transaction
+Migrating to AddFieldsToUserModel (20150318085532)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD "name" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "screen_name" varchar(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "url" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "profile_image_url" varchar(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "location" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "description" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150318085532')
+  [1m[36m (117.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTwitterOauthSettings (20150318090021)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "twitter_oauth_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "atoken" varchar(255), "asecret" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150318090021')
+  [1m[36m (130.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCircles (20150320172034)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "circles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150320172034')
+  [1m[36m (163.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFriends (20150320172108)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "friends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "fb_id" integer, "circle_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150320172108')
+  [1m[36m (142.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRequests (20150329175214)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "long_destination" decimal, "lat_destination" decimal, "long_curr" decimal, "lat_curr" decimal, "car_color" varchar(255), "car_model" varchar(255), "car_number" varchar(255), "seats" integer, "air_conditioner" boolean, "smoking" boolean, "trunk" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329175214')
+  [1m[36m (142.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePlaces (20150329175316)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "long" decimal, "lat" decimal, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329175316')
+  [1m[36m (130.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRatings (20150329175516)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "stars" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329175516')
+  [1m[36m (120.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateBlockeds (20150329180224)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "blockeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329180224')
+  [1m[36m (131.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddFbEmailToUsers (20150329181908)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "fb_email" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329181908')
+  [1m[36m (131.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddNicknameToUsers (20150329182023)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "nickname" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329182023')
+  [1m[36m (131.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddGmailToUsers (20150329182422)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "gmail" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329182422')
+  [1m[36m (132.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddBudgetToUsers (20150329184252)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "budget" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329184252')
+  [1m[36m (111.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateVisits (20150329191022)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "visits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "place_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150329191022')
+  [1m[36m (108.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddFacebookFieldsToUser (20150404201619)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "provider" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "uid" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "oauth_token" varchar(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "oauth_expires_at" datetime
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "faceboook_profileimage" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150404201619')
+  [1m[36m (117.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddDestinationToRequest (20150406205841)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "requests" ADD "destination" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150406205841')
+  [1m[36m (131.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTrips (20150408133101)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "trips" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408133101')
+  [1m[36m (131.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddNameToRequest (20150408135452)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "requests" ADD "name" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408135452')
+  [1m[36m (131.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToTrip (20150408210310)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "trips" ADD "user_id" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408210310')
+  [1m[36m (131.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddRequestIdToTrip (20150408210354)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "trips" ADD "request_id" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408210354')
+  [1m[36m (133.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddCurrentLocToRequest (20150412192754)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "requests" ADD "currentLoc" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150412192754')
+  [1m[36m (109.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToRequests (20150416155247)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "requests" ADD "user_id" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150416155247')
+  [1m[36m (131.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCheckpoints (20150423134003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "checkpoints" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer, "place_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150423134003')
+  [1m[36m (142.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddGenderToUsers (20150423161750)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "gender" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150423161750')
+  [1m[36m (132.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddGirlsOnlyToRequests (20150424172430)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "requests" ADD "girls_only" boolean[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150424172430')
+  [1m[36m (120.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddGentlemenOnlyToRequests (20150424172539)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "requests" ADD "gentlemen_only" boolean[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150424172539')
+  [1m[36m (132.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTags (20150425121022)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_user" integer, "user_id" integer, "request_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150425121022')
+  [1m[36m (143.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNotifications (20150430092515)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "notifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "notifying" integer, "notified" integer, "text" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150430092515')
+  [1m[36m (130.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddDistanceToRequests (20150430155301)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "requests" ADD "distance" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150430155301')
+  [1m[36m (131.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddVerficationToUsers (20150430220118)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "verification" boolean DEFAULT 'f'[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150430220118')
+  [1m[36m (131.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateActivities (20150501025737)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "trackable_id" integer, "trackable_type" varchar(255), "owner_id" integer, "owner_type" varchar(255), "key" varchar(255), "parameters" text, "recipient_id" integer, "recipient_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("activities")
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "index_activities_on_trackable_id_and_trackable_type" ON "activities" ("trackable_id", "trackable_type")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("activities")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_activities_on_trackable_id_and_trackable_type')[0m
+  [1m[35m (0.3ms)[0m  CREATE INDEX "index_activities_on_owner_id_and_owner_type" ON "activities" ("owner_id", "owner_type")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("activities")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_activities_on_owner_id_and_owner_type')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_activities_on_trackable_id_and_trackable_type')[0m
+  [1m[35m (0.3ms)[0m  CREATE INDEX "index_activities_on_recipient_id_and_recipient_type" ON "activities" ("recipient_id", "recipient_type")
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150501025737')[0m
+  [1m[35m (126.8ms)[0m  commit transaction
+Migrating to AddAppIdToFriends (20150501061943)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "friends" ADD "app_id" integer
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150501061943')[0m
+  [1m[35m (132.0ms)[0m  commit transaction
+Migrating to AddProvider1ToUsers (20150501182920)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD "provide1" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150501182920')[0m
+  [1m[35m (122.3ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("activities")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_activities_on_recipient_id_and_recipient_type')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_activities_on_owner_id_and_owner_type')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_activities_on_trackable_id_and_trackable_type')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("basic_profiles")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("blockeds")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("checkpoints")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("circles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("educations")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emails")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("friends")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("full_profiles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("linkedin_oauth_settings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("notifications")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("places")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("positions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("ratings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("tags")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("trips")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("twitter_oauth_settings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("visits")[0m
