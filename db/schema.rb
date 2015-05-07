@@ -10,7 +10,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-ActiveRecord::Schema.define(:version => 20150501061943) do
+
+ActiveRecord::Schema.define(:version => 20150501182920) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -52,14 +53,12 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "updated_at", :null => false
   end
 
-
   create_table "checkpoints", :force => true do |t|
     t.integer  "request_id"
     t.integer  "place_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
 
   create_table "circles", :force => true do |t|
     t.string   "name"
@@ -95,7 +94,6 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "app_id"
-
   end
 
   create_table "full_profiles", :force => true do |t|
@@ -116,7 +114,6 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "updated_at", :null => false
   end
 
-
   create_table "notifications", :force => true do |t|
     t.integer  "notifying"
     t.integer  "notified"
@@ -124,7 +121,6 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
 
   create_table "places", :force => true do |t|
     t.decimal  "long"
@@ -171,7 +167,9 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "name"
     t.string   "currentLoc"
     t.string   "user_id"
-
+    t.boolean  "girls_only"
+    t.boolean  "gentlemen_only"
+    t.integer  "distance"
   end
 
   create_table "tags", :force => true do |t|
@@ -180,11 +178,6 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.integer  "request_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-
-    t.integer  "distance"
-    t.boolean  "girls_only"
-    t.boolean  "gentlemen_only"
-
   end
 
   create_table "trips", :force => true do |t|
@@ -203,9 +196,8 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
   end
 
   create_table "users", :force => true do |t|
-
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -216,7 +208,6 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "last_sign_in_ip"
     t.string   "firstName"
     t.string   "lastName"
-
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.string   "username"
@@ -235,9 +226,9 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "faceboook_profileimage"
-
     t.string   "gender"
     t.boolean  "verification",           :default => false
+    t.string   "provide1"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

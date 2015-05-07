@@ -1,4 +1,3 @@
-
 class ProfilesController < ApplicationController
     before_filter :authenticate_user!
   # A new user will be redirected to that action waiting to verify his/her email @brahim-elgaml.
@@ -14,6 +13,8 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @request = Request.find(params[:request_id])
+  end
+  
   def authorize
   end 
 
@@ -28,7 +29,6 @@ class ProfilesController < ApplicationController
     unless(params[:search==nil])
     @requests = Request.search params[:search] 
   end
-
   end
   
 
@@ -57,6 +57,8 @@ class ProfilesController < ApplicationController
           end
           @circles = @user.circles
           session[:user_id]  = current_user.id
+        end
+end
 
   # The action that called from the verification mail sent to the user @ebrahim-elgaml.
   # Change user.verification to true to enable user to enter my account page @ebrahim-elgaml.
