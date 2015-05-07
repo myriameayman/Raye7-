@@ -119,7 +119,6 @@ class RequestsControllerTest < ActionController::TestCase
     get :show, :id => @myrequest.id
     assert_response :success
   end
-<<<<<<< HEAD
 # testing the estimated distance for an added request
   test "should estimate distance" do
     @user = User.new(:email =>'test@example.com', :username =>'som3a', :password => 'password',
@@ -132,8 +131,6 @@ class RequestsControllerTest < ActionController::TestCase
     get :show, :id => @myrequest.id
     assert_response :success
   end
-end
-=======
 
 
   test "should draw all running trips" do
@@ -150,5 +147,3 @@ end
   
 
 end
-
->>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3
