@@ -32,14 +32,13 @@ RsgLinkedinGem::Application.routes.draw do
   get "places/show"
   
   get "requests/delete" 
-<<<<<<< HEAD
+
   get "raquests/create"
   post "tags/create"
   #get "tags/show"
-=======
 
   get "requests/create_route"
->>>>>>> 74951f46053668c2339d7b77510d74de3c174709
+
   #get "requests/home"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
@@ -72,15 +71,13 @@ RsgLinkedinGem::Application.routes.draw do
 
   
   get "profiles/show1" 
-  
-<<<<<<< HEAD
+
   get "trips/new" 
   get "tags/create"
-=======
-  get "trips/new"
+
+
 
   post "profiles/authorize" 
->>>>>>> 74951f46053668c2339d7b77510d74de3c174709
   
   get "profiles/friend_profile"
 
@@ -96,12 +93,9 @@ RsgLinkedinGem::Application.routes.draw do
 
   get "/places/show", to: "places#show", as: "show" 
 
-<<<<<<< HEAD
-  
 
-=======
   get "/places/friend_places/:id", to: "places#create", as: "show_places" 
->>>>>>> 74951f46053668c2339d7b77510d74de3c174709
+
 
   get "/places/create", to: "places#create", as: "create"
   
@@ -143,12 +137,13 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :profiles 
   
-<<<<<<< HEAD
+
+
   resources :notifications 
-=======
+
   resources :emails 
  
->>>>>>> 74951f46053668c2339d7b77510d74de3c174709
+
   get '/show' => "circles#show" 
   
   resources :twitter 
