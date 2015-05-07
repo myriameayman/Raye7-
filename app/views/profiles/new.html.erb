@@ -68,7 +68,7 @@
      </div> <!-- End of header -->
       <div class="panel-body"> 
         <h6 style="font-style:normal;font-size:15px"></h6>
-    <h6> Please check your email for a verification mail that will be sent to <%= @current_user.email %> and check spam folder if not found in inbox  </h6>
+    <h6> Please check your email for a verification mail that will be sent to <%= current_user.email %> and check spam folder if not found in inbox  </h6>
     <h6>If you have not recieved the email please try agail </h6> <%= link_to "Re-send email", controller: "profiles", action: "sendMe  " %>
       </div><!-- End of panel-body @ebrahim-elgaml -->
     </div><!-- End of panel panel-default @ebrahim-elgaml -->
