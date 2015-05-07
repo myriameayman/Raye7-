@@ -71,6 +71,3 @@ class FacebookController < ApplicationController
   end
 
 end
-5ale 3andak elversion d 3shan d ele hatzbat elmaster
-okii
-Chat Conversation End
