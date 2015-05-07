@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150501061943) do
+ActiveRecord::Schema.define(:version => 20150501182920) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -159,9 +159,9 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "name"
     t.string   "currentLoc"
     t.string   "user_id"
-    t.integer  "distance"
     t.boolean  "girls_only"
     t.boolean  "gentlemen_only"
+    t.integer  "distance"
   end
 
   create_table "trips", :force => true do |t|
@@ -212,6 +212,7 @@ ActiveRecord::Schema.define(:version => 20150501061943) do
     t.string   "faceboook_profileimage"
     t.string   "gender"
     t.boolean  "verification",           :default => false
+    t.string   "provide1"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
