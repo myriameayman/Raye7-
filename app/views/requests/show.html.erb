@@ -1,35 +1,59 @@
-<p>
-<% unless (@request.name==nil) %>	
-  <strong>Trip name:</strong>
-  <%= @request.name %>
-<% end %>
-<br>
-<% unless (@request.air_conditioner==nil) %>
-  <strong>AC:</strong>
-  <%= @request.air_conditioner %>
-<% end %>
-<br>
-<% unless (@request.car_model==nil) %>
-  <strong>car model:</strong>
-  <%= @request.car_model%>
-<% end %>
-<br>
-<% unless (@request.destination==nil) %>
-  <strong>To:</strong>
-  <%= @request.destination %>
-<% end %>
-</p>
- <%= form_tag :controller => 'trips', :action => 'create', :method => 'post',id: @request.id do %>
-
-
-	      <button> join <%=@request.name %></button><!--/# Join the user to this Request -->. 
-	      
- <% end %><!-- end of form taf -->
-
-
-  <%= form_tag :controller => 'tags', :action => 'create', :method => 'post' ,id:@request.id  do %>
-          <h4> Tag ur friend ;)</h4>
-          <%= text_field_tag :tagList, params[:tagList], :id => 'tagList_field' %>
-          <br>
-          <%= submit_tag "tag", :name => nil %>
-  <% end %> <!-- end of form tag -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="cont" style="width:550px;margin-top:10px;height:280px;margin-left: auto;
+    margin-right: auto;">
+                <div class="header">
+                    <h1 style="font-size:20px">Join This Trip!</h1>
+                </div>
+                <div class="body">
+                <div class="row">
+                  <div  class="col-md-5">
+                    <div class="image-frame" style="padding:0px">
+                        <div style="width: 200px;height: 200px;background-size: cover;border-radius: 80px;display: block;">
+                        <img class='resize_fit_center'
+                          src='../assets/m.png' style="padding-left:30px;max-height:90%;max-width:90%" />
+                        </div><!-- close div if profile image-->
+                    </div><!-- close tdi of image frame -->
+                  </div>
+                  <div class="col-md-6" style="padding-top:10px">
+                    <p>
+                      <% unless (@request.name==nil) %> 
+                        <strong>Trip name:</strong>
+                        <%= @request.name %>
+                      <% end %>
+                      <br>
+                      <% unless (@request.air_conditioner==nil) %>
+                        <strong>AC:</strong>
+                        <%= @request.air_conditioner %>
+                      <% end %>
+                      <br>
+                      <% unless (@request.car_model==nil) %>
+                        <strong>car model:</strong>
+                        <%= @request.car_model%>
+                      <% end %>
+                      <br>
+                      <% unless (@request.destination==nil) %>
+                        <strong>To:</strong>
+                        <%= @request.destination %>
+                      <% end %>
+                      <br>
+                      <% unless (@request.distance==nil) %>
+                        <strong>Estimated distance:</strong>
+                        <%= @request.distance %>
+                        Km
+                      <% end %>
+                       </p>                     
+                       <%= form_tag :controller => 'trips', :action => 'create', :method => 'post',id: @request.id  do %>
+                      <button class ="myButton"> Join <%=@request.name %></button><!--/# Join the user to this Request -->. 
+                    <% end %> 
+                    </div>
+                </div>              
+     </div>
+  </div>
+</body>
+</html>
+>>>>>>> 74951f46053668c2339d7b77510d74de3c174709

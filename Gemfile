@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'sqlite3'
+gem 'figaro'
 
 
 
@@ -25,6 +26,7 @@ gem 'factory_girl'
 gem 'factory_girl_rails'
 
 gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'public_activity'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'twitter'
@@ -39,6 +41,7 @@ gem 'fb_graph'
 gem "koala", "~> 2.0"
 gem 'rails_layout', '~> 0.5.11'
 gem 'font-awesome-sass', '~> 4.0.2'
+gem "omniauth-google-oauth2"
 
 
 # Gems used only for assets and not required

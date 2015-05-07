@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class RequestsControllerTest < ActionController::TestCase
+
   include Devise::TestHelpers
 
   test "should get create" do
@@ -67,6 +68,7 @@ class RequestsControllerTest < ActionController::TestCase
     String url = "http://test.host/"
     assert_redirected_to url 
   end
+
   
   
   test "should get home2" do
@@ -81,7 +83,8 @@ class RequestsControllerTest < ActionController::TestCase
   end
   
   
-  test "should get create2" do
+  test "should draw route" do
+
     @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
     @user.save
@@ -89,9 +92,22 @@ class RequestsControllerTest < ActionController::TestCase
     @@form_step = 2 
     @@request = Request.new
     get :create_curr_location
-    String url = "http://test.host/requests/create"
+    String url = "http://test.host/requests/create_route"
     assert_redirected_to url 
   end
+  
+  test "should get checkpoints" do
+    @user = User.new(:email => 'test1@example.com',:username => 'myriame', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
+    @user.save
+    sign_in @user
+    @@form_step = 2 
+    @@request = Request.new
+    get :create_checkpoints
+    assert :success 
+   
+  end
+
   test "should show request" do
     @user =User.new(:email =>'test2@example.com',:username => 'adel', :password => 'password',
     :password_confirmation => 'password', :firstName => 'Aaaaaadsa', :lastName => 'aasdasdsad')
@@ -103,5 +119,36 @@ class RequestsControllerTest < ActionController::TestCase
     get :show, :id => @myrequest.id
     assert_response :success
   end
+<<<<<<< HEAD
+# testing the estimated distance for an added request
+  test "should estimate distance" do
+    @user = User.new(:email =>'test@example.com', :username =>'som3a', :password => 'password',
+      :password_confirmation => 'password', :firstName => 'saaaaaamoon', :lastName => 'ssssssss')
+    @user.save
+    sign_in @user
+    @myrequest = Request.new(:seats=>1,:long_curr=>0.305964923E2,:lat_curr=>0.322714587E2,:long_destination=>0.299668343E2,:lat_destination=>0.325498069E2,:car_color=>"rouge",
+      :car_number=>"34",:distance => 66,:user_id=>@user.id)
+    @myrequest.save
+    get :show, :id => @myrequest.id
+    assert_response :success
+  end
+end
+=======
+
+
+  test "should draw all running trips" do
+    @user = User.new(:email => 'test@example.com',:username => 'Ahmed', :password => 'password',
+    :password_confirmation => 'password', :firstName => 'Ahmed', :lastName => 'Adel')
+    @user.save
+    sign_in @user
+    @@form_step = 2 
+    @@request = Request.new
+    get :view_current_trips
+    String url = "http://test.host/requests/view_current_trips"
+    assert_response :success
+  end
+  
 
 end
+
+>>>>>>> 50d541599773cdea3b3515bdeee36a131b5cbbc3

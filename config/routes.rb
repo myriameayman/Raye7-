@@ -1,5 +1,24 @@
 RsgLinkedinGem::Application.routes.draw do 
  
+
+  get "friends/index"
+
+  get "emails/index"
+
+  get "emails/delete"
+
+  get "emails/create"
+
+  get "emails/show"
+
+  get "emails/update"
+
+  get "emails/verify"
+
+  get "emails/new"
+
+  get "emails/add_email"
+
   get "requests/index" 
 
   get "requests/new" 
@@ -13,9 +32,14 @@ RsgLinkedinGem::Application.routes.draw do
   get "places/show"
   
   get "requests/delete" 
+<<<<<<< HEAD
   get "raquests/create"
   post "tags/create"
   #get "tags/show"
+=======
+
+  get "requests/create_route"
+>>>>>>> 74951f46053668c2339d7b77510d74de3c174709
   #get "requests/home"
   
   get 'auth/:provider/callback', to: 'facebook#create' 
@@ -27,41 +51,67 @@ RsgLinkedinGem::Application.routes.draw do
   root :to => 'profiles#myAccount' 
   
   get "profiles/new" 
-
+  get "profiles/verifyMe" 
+  get "requests/create_checkpoints"
   get "profiles/create" 
 
   get "profiles/show" 
 
+  get "places/friend_places"
+  
   get "profiles/delete" 
 
   get "profiles/index" 
 
-  get "profiles/edit" 
+  get "profiles/edit"
+  get "friends/index", to: "friends#index", as: "friends"
 
   get "welcome/index" 
   
   get "profiles/search" 
+
   
   get "profiles/show1" 
   
+<<<<<<< HEAD
   get "trips/new" 
   get "tags/create"
+=======
+  get "trips/new"
+
+  post "profiles/authorize" 
+>>>>>>> 74951f46053668c2339d7b77510d74de3c174709
   
+  get "profiles/friend_profile"
+
   get "requests/create" 
+  
   get "/places/create"  
+  
   get "requests/create_curr_location" 
   #root :to => 'requests#new' 
   get "/requests/new", to: "requests#new", as: "new" 
   
+  get "/profiles/friend_profile",to: "profiles#friend_profile", as: "friend_profile"
+
   get "/places/show", to: "places#show", as: "show" 
 
+<<<<<<< HEAD
   
 
+=======
+  get "/places/friend_places/:id", to: "places#create", as: "show_places" 
+>>>>>>> 74951f46053668c2339d7b77510d74de3c174709
 
   get "/places/create", to: "places#create", as: "create"
   
   get "/home", to: "requests#home", as: "home" 
   
+  get "/requests/create_route", to: "requests#create_route", as: "create_route" 
+  
+
+  #get "/requests/create_checkpoints", to: "requests#create_checkpoints", as: "create_checkpoints" 
+ 
   get "/geocoding", to: "requests#geocoding", as: "geocoding" 
   
   get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding" 
@@ -93,7 +143,12 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :profiles 
   
+<<<<<<< HEAD
   resources :notifications 
+=======
+  resources :emails 
+ 
+>>>>>>> 74951f46053668c2339d7b77510d74de3c174709
   get '/show' => "circles#show" 
   
   resources :twitter 
@@ -115,6 +170,7 @@ RsgLinkedinGem::Application.routes.draw do
   match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
   resources :circles 
+  resources :friends
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
       root :to => 'user/registrations#myAccount' 
