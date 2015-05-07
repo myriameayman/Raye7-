@@ -1,4 +1,3 @@
-
 class ProfilesController < ApplicationController
     before_filter :authenticate_user!
   # A new user will be redirected to that action waiting to verify his/her email @brahim-elgaml.
@@ -53,6 +52,13 @@ class ProfilesController < ApplicationController
     redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end
 
+  # action to re-send the verification email @ebrahim-elgaml.
+  def sendMe
+     @user = current_user
+     MyMailer.gmail_email(@user).deliver
+     redirect_to url_for(:controller => "profiles", :action => "new") and return
+  end 
+
   # Getting the current login user to retrieve all the info in the profile page 
   # Checking if the user verified or not if not verified redirect to new vaction if verified redirect to myAccount page @ebrahim-elgaml.
   def myAccount 
@@ -77,6 +83,7 @@ class ProfilesController < ApplicationController
           session[:user_id]  = current_user.id
           if   current_user.present?
             #PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 10).reverse
+         
             @activities = PublicActivity::Activity.find(:all, :order => "created_at desc", :limit => 5)
 
           end

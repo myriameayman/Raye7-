@@ -5,8 +5,10 @@ class MyMailer < ActionMailer::Base
   # Action to send verification  email on sign up @ebrahim-elgaml .
   # @myUser is the current user to send the verification email @ebrahim-elgaml.
   def gmail_email(user)
-  	@myUser = user
-    mail(from:'raye7.egypt@gmail.com',to: @myUser.email, subject: 'Confirmation Email')
+    @myUser = user
+    unless(@myUser.email == 'ahmedadelibrahim1994@gmail.com')
+      mail(from:'raye7.egypt@gmail.com',to: @myUser.email, subject: 'Confirmation Email')
+    end
   end
 
   # Action to send verification  email on adding email @ebrahim-elgaml.
@@ -26,7 +28,9 @@ class MyMailer < ActionMailer::Base
     @myUser = user
     @title = title
     @message = message
-    mail(from:'raye7.egypt@gmail.com',to: 'ebrahim.el.gaml@gmail.com', subject: 'feedback')
+    unless(@myUser.email == 'ahmedadelibrahim1994@gmail.com')
+      mail(from:'raye7.egypt@gmail.com',to: 'ebrahim.el.gaml@gmail.com', subject: 'feedback')
+    end
   end
 
   # Action to send  email on filling feedback form to the user @ebrahim-elgaml.
