@@ -12,7 +12,7 @@ class FeedbackController < ApplicationController
     @title = params[:title]
     @message = params[:message]
     MyMailer.send_feedback(@user,@title,@message).deliver
-    MyMaile.send_feedback_to_user(@user,@title,@message).deliver
+    MyMailer.send_feedback_to_user(@user,@title,@message).deliver
     redirect_to root_path  
   end
 
