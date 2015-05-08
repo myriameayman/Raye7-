@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="assets/button.css">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="assets/button.css">
 <link rel="stylesheet" href="assets/styles.css">
 
 <style type="text/css">
@@ -46,13 +46,13 @@
     cursor: pointer;
   }
 .panel.panel-default{
-  	border-radius:60px;
+    border-radius:60px;
 }
 #navlist{
-	display: none;
+  display: none;
 }
 #navlist:hover{
-	display: block;
+  display: block;
 }
 
 
@@ -63,12 +63,13 @@
   <div class="col-md-8"> <!-- News feed container -->
     <div class= "panel panel-default" style="border-top-left-radius: 4px">
      <div class="panel-heading"> <!-- Container header -->
-      <h3 class="panel-title"> About us </h3>
+      <h3 class="panel-title"> Welcome at Raye7</h3>
 
      </div> <!-- End of header -->
       <div class="panel-body"> 
-      	<h6 style="font-style:normal;font-size:15px"></h6>
-		<h6> What is raye7 doing </h6>
+        <h6 style="font-style:normal;font-size:15px"></h6>
+    <h6> Please check your email for a verification mail that will be sent to <%= current_user.email %> and check spam folder if not found in inbox  </h6>
+    <h6>If you have not recieved the email please try agail </h6> <%= link_to "Re-send email", controller: "profiles", action: "sendMe  " %>
       </div><!-- End of panel-body @ebrahim-elgaml -->
     </div><!-- End of panel panel-default @ebrahim-elgaml -->
   </div> <!-- End of col-md-8 @ebrahim-elgaml -->

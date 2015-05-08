@@ -10,7 +10,7 @@ class EmailsController < ApplicationController
     @user = current_user
     @array_emails = params[:array].split(',')
     @array_emails.each do |grant|
-      MyMailer.add_email(@user,grant).deliver  
+    MyMailer.add_email(@user,grant).deliver  
     end
     redirect_to url_for(:controller => "profiles", :action => "myAccount") and return
   end

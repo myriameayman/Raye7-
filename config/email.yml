@@ -2,13 +2,13 @@ development:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
-  :user_name: ebrahim.el.gaml@gmail.com
-  :password: 0121838455
+  :user_name: raye7.egypt@gmail.com
+  :password: Ee01221838455
   :enable_starttls_auto: true
 production:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
-  :user_name: ebrahim.el.gaml@gmail.com
-  :password: 0121838455
+  :user_name: raye7.egypt@gmail.com
+  :password: Ee01221838455
   :enable_starttls_auto: true
