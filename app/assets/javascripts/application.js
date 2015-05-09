@@ -15,11 +15,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require bootstrap-sprockets
-//= require turbolinks
+
 //= require bootstrap
 //= require map/gmap
 //= require jquery
 //= require jquery_ujs
+//= require twitter.js.coffee
+
+
 //= require_tree .
+
+//= require websocket_rails/main
+
 

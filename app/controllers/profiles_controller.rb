@@ -75,7 +75,7 @@ class ProfilesController < ApplicationController
           end
 
           unless(params[:search==nil])
-            @requests = Request.search params[:search]
+            @requests = Request.search(params[:search])
           end
           
           #MyMailer.sample_email(@user).deliver

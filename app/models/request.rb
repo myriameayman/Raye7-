@@ -4,9 +4,9 @@ class Request < ActiveRecord::Base
       has_many :trip
       has_many :checkpoints
       has_many :places, through: :checkpoints
-      attr_accessible :air_conditioner, :car_color, :car_model, :car_number, :lat_curr,
-       :lat_destination, :long_curr, :long_destination, :seats, :smoking, :trunk, :user_id,
-       :girls_only, :gentlemen_only, :distance
+      #attr_accessible :air_conditioner, :car_color, :car_model, :car_number, :lat_curr,
+       #:lat_destination, :long_curr, :long_destination, :seats, :smoking, :trunk, :user_id,
+       #:girls_only, :gentlemen_only, :distance
       #validates :air_conditioner, presence: true
       validates :user_id, presence: true
       #validates :car_color, presence: true
@@ -19,8 +19,9 @@ class Request < ActiveRecord::Base
       validates :seats, presence: true
       #validates :smoking, presence: true
       #validates :trunk, presence: true
+      VALID_EMAIL_REGEX = /\A[\w+\-]+\z/i
       validates :seats, numericality: { only_integer: true }
-      validates_format_of :car_color, :with => /^[-a-z]+$/
+      validates_format_of :car_color, :with => VALID_EMAIL_REGEX
       #validate :my_string_is_valid
       def self.search(search)
         find(:all, :conditions => ['destination LIKE ?', search])

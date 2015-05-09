@@ -18,7 +18,9 @@ RsgLinkedinGem::Application.routes.draw do
   get "emails/add_email"
 
   get"feedback/index"
+
   post"feedback/create"
+
   get "feedback/create"
  
   get "requests/index" 
@@ -42,7 +44,7 @@ RsgLinkedinGem::Application.routes.draw do
 
   get 'auth/failure', to: redirect('/') 
 
-  get 'signout', to: 'facebook#destroy', as: 'signout' 
+  #get 'signout', to: 'facebook#destroy', as: 'signout' 
   
   root :to => 'profiles#myAccount' 
   
@@ -93,7 +95,7 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "/home", to: "requests#home", as: "home" 
   
-  get "/requests/create_route", to: "requests#create_route", as: "create_route" 
+  #get "/requests/create_route", to: "requests#create_route", as: "create_route" 
   
 
   get "/requests/create_checkpoints", to: "requests#create_checkpoints", as: "create_checkpoints" 
@@ -102,13 +104,17 @@ RsgLinkedinGem::Application.routes.draw do
   
   get "/reverse_geocoding", to: "requests#reverse_geocoding", as: "reverse_geocoding" 
   #devise_for :users 
-  get "/requests/home/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
+
+  get "requests/home"
+  get "requests/update"
+  #get "/requests/home/:latitude/:longitude" ,to: "requests#update", as: "create_form" 
   
-  get "/requests/create_curr_location/:latitude/:longitude/:loc" ,to: "requests#update", as: "create_form" 
+  get "requests/create_curr_location"
+  #get "/requests/create_curr_location/:latitude/:longitude/:loc" ,to: "requests#update", as: "create_form" 
   
   get "/requests/create_curr_location/:latitude/:longitude/:loc" => "requests#update" 
-  
-  get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
+  get "requests/create_ride_info"
+  #get "/requests/create_ride_info/:car_color/:car_model/:car_number/:seats" ,to: "requests#create_ride_info", as: "create_form" 
   
   get "/requests/create_ride_info" ,to: "requests#create_ride_info", as: "create_form" 
   
@@ -116,7 +122,7 @@ RsgLinkedinGem::Application.routes.draw do
 
   get 'request/:id' => 'profiles#show' 
   
-  match '/request/:id' => 'trips#create', :via => :post 
+  #match '/request/:id' => 'trips#create', :via => :post 
 
   devise_for :users, :controllers => {:registrations => "registrations"} 
 
@@ -132,29 +138,44 @@ RsgLinkedinGem::Application.routes.draw do
   
   resources :twitter 
   
-  match '/twitter_profile' => "twitter#twitter_profile" 
+  #match '/twitter_profile' => "twitter#twitter_profile" 
+  #
+  #match '/oauth_account' => "twitter#oauth_account" 
+  #
+  #match '/twitter_oauth_url' => 'twitter#generate_twitter_oauth_url' 
   
-  match '/oauth_account' => "twitter#oauth_account" 
   
-  match '/twitter_oauth_url' => 'twitter#generate_twitter_oauth_url' 
+  get 'twitter/twitter_profile' 
+  get 'twitter/oauth_account'  
   
+  get 'twitter/twitter_oauth_url'  
+  
+
+
   resources :linkedin 
   
   get 'linkedin/index' 
   
-  match '/linkedin_profile' => "linkedin#linkedin_profile" 
+  #match '/linkedin_profile' => "linkedin#linkedin_profile" 
   #match '/index' => "linkedin#index" 
-  match '/Linkedin_oauth_account' => "linkedin#Linkedin_oauth_account" 
+  #match '/Linkedin_oauth_account' => "linkedin#Linkedin_oauth_account" 
   
-  match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
+  #match '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
   
+  get 'linkedin/linkedin_profile' 
+  #match '/index' => "linkedin#index" 
+  get 'linkedin/Linkedin_oauth_account' 
+  
+  get 'linkedin/linkedin_oauth_url'  
+  
+
   resources :circles 
   devise_scope :user do 
       #root :to => 'profiles#myAccount' 
-      root :to => 'user/registrations#myAccount' 
+     # root :to => 'user/registrations#myAccount' 
       #get 'user/registrations/myAccount' 
       get "/users/myAccount" => "user/registrations#myAccount", :as => "myAccount" 
-      get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo" 
+      #get "/ConnectTo.html.erb" => "welcome#ConnectTo", :as => "ConnectTo" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
       #get "/users/newLinkedin"=> "user/registrations#newLinkedin", :as => "newLinkedin" 
 
