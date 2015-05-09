@@ -9,11 +9,11 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150501182920) do
+ActiveRecord::Schema.define(version: 20150501182920) do
 
-  create_table "activities", :force => true do |t|
+  create_table "activities", force: true do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
     t.integer  "owner_id"
@@ -22,15 +22,15 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.text     "parameters"
     t.integer  "recipient_id"
     t.string   "recipient_type"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "activities", ["owner_id", "owner_type"], :name => "index_activities_on_owner_id_and_owner_type"
-  add_index "activities", ["recipient_id", "recipient_type"], :name => "index_activities_on_recipient_id_and_recipient_type"
-  add_index "activities", ["trackable_id", "trackable_type"], :name => "index_activities_on_trackable_id_and_trackable_type"
+  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
+  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
-  create_table "basic_profiles", :force => true do |t|
+  create_table "basic_profiles", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "maiden_name"
@@ -43,31 +43,31 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.string   "picture_url"
     t.string   "public_profile_url"
     t.integer  "user_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  create_table "blockeds", :force => true do |t|
+  create_table "blockeds", force: true do |t|
     t.integer  "friend_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "checkpoints", :force => true do |t|
+  create_table "checkpoints", force: true do |t|
     t.integer  "request_id"
     t.integer  "place_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "circles", :force => true do |t|
+  create_table "circles", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "educations", :force => true do |t|
+  create_table "educations", force: true do |t|
     t.string   "school_name"
     t.string   "field_of_study"
     t.date     "start_date"
@@ -76,53 +76,53 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.string   "activities"
     t.string   "notes"
     t.integer  "full_profile_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "emails", :force => true do |t|
+  create_table "emails", force: true do |t|
     t.string   "email"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "friends", :force => true do |t|
+  create_table "friends", force: true do |t|
     t.string   "name"
     t.integer  "fb_id"
     t.integer  "circle_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "app_id"
   end
 
-  create_table "full_profiles", :force => true do |t|
+  create_table "full_profiles", force: true do |t|
     t.string   "associations"
     t.string   "honors"
     t.string   "interests"
     t.string   "following"
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table "linkedin_oauth_settings", :force => true do |t|
+  create_table "linkedin_oauth_settings", force: true do |t|
     t.string   "atoken"
     t.string   "asecret"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "places", :force => true do |t|
+  create_table "places", force: true do |t|
     t.decimal  "long"
     t.decimal  "lat"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "positions", :force => true do |t|
+  create_table "positions", force: true do |t|
     t.string   "title"
     t.string   "summary"
     t.date     "start_date"
@@ -130,18 +130,18 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.boolean  "is_current"
     t.string   "company"
     t.integer  "full_profile_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "ratings", :force => true do |t|
+  create_table "ratings", force: true do |t|
     t.integer  "stars"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "requests", :force => true do |t|
+  create_table "requests", force: true do |t|
     t.decimal  "long_destination"
     t.decimal  "lat_destination"
     t.decimal  "long_curr"
@@ -153,8 +153,8 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.boolean  "air_conditioner"
     t.boolean  "smoking"
     t.boolean  "trunk"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "destination"
     t.string   "name"
     t.string   "currentLoc"
@@ -164,36 +164,36 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.integer  "distance"
   end
 
-  create_table "trips", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "trips", force: true do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "request_id"
   end
 
-  create_table "twitter_oauth_settings", :force => true do |t|
+  create_table "twitter_oauth_settings", force: true do |t|
     t.string   "atoken"
     t.string   "asecret"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "firstName"
     t.string   "lastName"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "username"
     t.string   "name"
     t.string   "screen_name"
@@ -211,18 +211,18 @@ ActiveRecord::Schema.define(:version => 20150501182920) do
     t.datetime "oauth_expires_at"
     t.string   "faceboook_profileimage"
     t.string   "gender"
-    t.boolean  "verification",           :default => false
+    t.boolean  "verification",           default: false
     t.string   "provide1"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "visits", :force => true do |t|
+  create_table "visits", force: true do |t|
     t.integer  "user_id"
     t.integer  "place_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
