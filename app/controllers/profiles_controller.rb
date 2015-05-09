@@ -12,6 +12,9 @@ class ProfilesController < ApplicationController
   def authorize
   end 
 
+  def chat
+  end
+
 
   def show
   end
